@@ -31,7 +31,7 @@
 
                                     <div class="col-md-2 col-sm-2">
                                         <div class="form-group">
-                                            <button type="button" id="show2" class="btn btn-primary submit"><i data-toggle="tooltip" data-placement="top" title="Submit Property"><img src="assets/img/plus.png" alt=""></i>Property</button>
+                                            <button type="button" onclick="location.href='submit.php';"  class="btn btn-primary submit">Register Property</button>
                                         </div>
 
 
@@ -462,30 +462,42 @@
                     </div>
                     <!--end caption-->
                     <div class="options">
-                        <div class="container">
-                            <div class="wrapper">
-                                <h3><p>Market Analysis</p></h3>
-                                <div class="row">
 
-                                </div>
-                                <!--end row-->
-                            </div>
-                            <!--end wrapper-->
-                        </div>
-                        <!--end container-->
+
+                        <h3 class="text-center " style="color: white;">Market Analysis</h3>
+
+
+                        <!--end row-->
                     </div>
-                    <!--end options-->
+
+
                 </div>
                 <!--end hero-wrapper-->
-
             </div>
             <!--end hero-inner-->
 
             <!--end plate-->
         </form>
         <!--end form-->
-
     </div>
-    <!--end hero-section-->
+
+
+    <div id="nt-title-container">
+        <ul id="nt-title">
+            <li>
+                A powerful, flexible and animated vertical news ticker plugin.
+            </li>
+            <li>
+                Provides hight flexibility thanks to numerous callbacks & methods.
+            </li>
+            <li>
+                Fully customizable to every kind of vertical scrolling need.
+            </li>
+            <li>
+                Light-weight and optimized JQuery plugin.
+            </li>
+        </ul>
+    </div>
+
 
 

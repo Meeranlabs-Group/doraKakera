@@ -24,6 +24,52 @@
 <script src={{ url("assets/js/ie.js")}}></script>
 <![endif]-->
 
+<script src={{url("assets/js/prism.js")}}></script>
+<script src={{url("assets/js/jquery.mCustomScrollbar.min.js")}}></script>
+<script src={{url("assets/js/jquery.newsTicker.js")}}></script>
+
+<script>
+
+
+
+    $(window).load(function(){
+        $('code.language-javascript').mCustomScrollbar();
+    });
+    var nt_title = $('#nt-title').newsTicker({
+        row_height: 40,
+        max_rows: 1,
+        duration: 3000,
+        pauseOnHover: 0
+    });
+
+
+
+</script>
+
+<!--[if lte IE 9]>
+<script src="assets/js/ie.js"></script>
+<![endif]-->
+
+
+
+
+<script>
+
+
+
+    var nt_title = $('#nt-title').newsTicker({
+        row_height: 40,
+        max_rows: 1,
+        duration: 3000,
+        pauseOnHover: 0
+    });
+
+
+
+</script>
+
+
+
 
 
 <script>
@@ -69,4 +115,10 @@
     var useAjax = true;
     bigMap(_latitude,_longitude, element, useAjax);
 </script>
+
+
+
+
+
+
 </body>

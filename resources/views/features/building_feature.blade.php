@@ -17,8 +17,6 @@
                 <li><label><input type="checkbox" name="6a">Waste Disposal</label></li>
                 <li><label><input type="checkbox" name="7a">Elevator or Lift</label></li>
                 <li><label><input type="checkbox" name="8a">Service Elevators in Building</label></li>
-                
-                
 
             </ul>
             <!--end checkboxes-->
