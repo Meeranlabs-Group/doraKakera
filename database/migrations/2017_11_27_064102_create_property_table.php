@@ -22,12 +22,9 @@ class CreatePropertyTable extends Migration
             $table->double('price') ->nullable();
             $table->string('city') ->nullable();
             $table->string('address') ->nullable();
-            $table->string('email') ->nullable();
-            $table->string('number') ->nullable();
 
             $table->text('body') ->nullable();
             $table->timestamps();
-
 
         });
     }

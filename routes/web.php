@@ -12,23 +12,30 @@
 */
 
 Route::get('/', function () {
-    return view('properties');
-//    return view('welcome');
+
+    return view('welcome');
 });
+
 Route::get('/contact-us', function () {
     return view('contact-us');
 });
 Route::get('/about-us', function () {
     return view('about-us');
 });
+
+Route::get('/properties','PropertyController@show_all');
+Route::get('/detail','PropertyController@detail');
+
+//Route::get('/addproperty', function () {
+//    return view('addproperty');
+//});
+
+
+
 Route::get('/addproperty', function () {
     return view('addproperty');
 });
 
-//Route::get('/addproperty','PropertyController@addProperty');
-
-
 
 Route::post('/submit', 'PropertyController@store');
-
 
