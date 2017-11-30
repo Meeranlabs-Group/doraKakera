@@ -55,9 +55,14 @@
                                     {{--<li><a href="listing-matrix.html">Matrix Listing</a></li>--}}
                                 {{--</ul>--}}
                             </li>
+
+                            <li>
+                                <a href={{ url("/properties") }} >Properties</a>
+                            </li>
                             <li>
                                 <a href="MarketAnalysis.php" class="has-child">Market Analysis</a>
                                 <ul class="child-nav">
+                                    <li><a href="MarketDetails.php">Transfer Charges</a></li>
                                     <li><a href="MarketDetails.php">News</a></li>
                                     <li><a href="">Property Evaluator</a></li>
                                 </ul>
@@ -65,21 +70,28 @@
 
                             </li>
 
-                            <li>
-                                <a href="#" >DHA Plots</a>
 
-                            </li>
-                            <li>
-                                <a href="#" >DHA Files</a>
 
-                            </li>
+
+                                    <li><a href="#">DHA Plots</a></li>
+                                    <li><a href="#">DHA Files</a></li>
+                            {{--<li>--}}
+
+
+                                {{--<a href="#" >DHA Plots</a>--}}
+
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="#" >DHA Files</a>--}}
+
+                            {{--</li>--}}
                             <li>
                                 <a href="Map.php">Maps</a>
 
                             </li>
 
                             <li>
-                                <a href="#" >Transfer Charges</a>
+                                {{--<a href="#" >Transfer Charges</a>--}}
 
                             </li>
                             <li><a href={{ url("/contact-us")}}>Contact Us</a></li>

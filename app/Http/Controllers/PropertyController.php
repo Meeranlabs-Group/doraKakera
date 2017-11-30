@@ -56,6 +56,14 @@ class PropertyController extends Controller
 
     }
 
+
+    public function show_all(){
+
+        $property= Property::all() ;
+
+        return view('properties',compact('property'));
+    }
+
     /**
      * Display the specified resource.
      *
@@ -65,7 +73,19 @@ class PropertyController extends Controller
     public function show($id)
     {
         //
+
+        $posts= Property::latest('published_at')->get();
+
+
+
     }
+
+    public function detail(){
+
+        return view('propertyDetail');
+    }
+
+
 
     /**
      * Show the form for editing the specified resource.

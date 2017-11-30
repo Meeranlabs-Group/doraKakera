@@ -20,6 +20,9 @@
 
             <div class="col-md-9">
 
+
+
+
                 <div class="main-content">
                     <div class="title">
                         <h1>Listing</h1>
@@ -30,13 +33,37 @@
                         {{--</div>--}}
                     </div>
 
-                @include('partials.listingproperty')
-            </div>
+
+
+                    @foreach($property as $data)
+                        @include('partials.listingproperty')
+                    @endforeach
+
+
+
+                </div>
         </div>
 
 
 
          </div>
+
+        <div class="center">
+            <ul class="pagination">
+                <li class="prev">
+                    <a href="#"><i class="arrow_left"></i></a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li class="next">
+                    <a href="#"><i class="arrow_right"></i></a>
+                </li>
+            </ul>
+            <!-- end pagination-->
+        </div>
     </div>
 </div>
 
