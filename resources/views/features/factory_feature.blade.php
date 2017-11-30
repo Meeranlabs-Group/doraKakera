@@ -9,7 +9,10 @@
             <ul class="checkboxes inline half list-unstyled">
                 
                 
-                <li><label><input type="checkbox" name="1">Waste Disposal</label></li><li><label><input type="checkbox" name="2">Elevator or Lift</label></li>                
+                <li><label><input type="text" name="1">Waste Disposal</label></li>
+                <li><label><input type="checkbox" name="1">Waste Disposal</label></li>
+                <li><label><input type="checkbox" name="1">Waste Disposal</label></li>
+                <li><label><input type="checkbox" name="2">Elevator or Lift</label></li>                
                 
                 
 
