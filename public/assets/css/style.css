@@ -104,7 +104,7 @@ Headers:		'Lato', sans-serif;
 #page-header .primary-nav {
   display: table;
   width: 100%;
-  padding: 25px 0;
+  padding: 0px 0;
 }
 #page-header .primary-nav #brand {
   display: block;
@@ -168,7 +168,7 @@ Headers:		'Lato', sans-serif;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 2px solid;
- border-color:#1E88E5;
+ border-color:#1A237E;
   font-size: 0px;
   height: 36px;
   width: 36px;
@@ -179,6 +179,10 @@ Headers:		'Lato', sans-serif;
   margin: auto;
   right: 0;
 }
+
+
+
+
 #page-header .primary-nav nav > ul li.submit i img {
   position: absolute;
   top: 0px;
@@ -488,6 +492,20 @@ hr {
   margin-bottom: 25px;
 }
 
+
+
+
+
+#nt-title li {
+	font-size: 27px;
+	color: #4E4E4E;
+	white-space: nowrap;
+	list-style: none;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+}
+
 html, body {
   height: 100%;
 }
@@ -626,6 +644,12 @@ ul.half li {
 }
 .label.label-danger {
   background-color: #ed2a21;
+}
+.label.label-Available {
+  background-color: #488f3e;
+}
+.label.label-InProcess {
+  background-color: #EC971F;
 }
 
 .font-color-white {
@@ -1462,7 +1486,7 @@ ul.half li {
   z-index: 1;
 }
 .gallery-carousel .owl-prev:hover, .gallery-carousel .owl-next:hover {
-  background-color: #488f3e;
+  background-color: #1A237E;
 }
 .gallery-carousel .owl-prev:hover:after, .gallery-carousel .owl-next:hover:after {
   color: #fff;
@@ -1733,7 +1757,7 @@ ul.half li {
 }
 
 .hero-section {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
   position: relative;
 }
 .hero-section[data-height='100'] .hero-wrapper {
@@ -2154,7 +2178,7 @@ ul.half li {
   margin: 10px 0 5px 0;
   font-size: 16px;
   font-weight: bold;
-  color: #488f3e;
+  color: #1a237e;
 }
 .item .description .info .location {
   font-size: 12px;
@@ -2436,6 +2460,9 @@ ul.half li {
 .item .price-info .price.warning {
   color: #ed2a21;
 }
+.item .price-info .price.call{
+  color: #1A237E;
+}
 .item .price-info .appendix {
   font-size: 11px;
   font-weight: bold;
@@ -2584,7 +2611,7 @@ ul.half li {
   line-height: 34px;
 }
 .mark-circle.top {
-  background-color: #488f3e;
+  background-color: #1A237E;
   cursor: default;
   color: #fff;
   bottom: -18px;
@@ -3137,7 +3164,7 @@ ul.half li {
 .popover.right .close {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
-  background-color: #488f3e;
+  background-color: #1A237E;
   color: #fff;
   height: 100%;
   position: absolute;
@@ -5123,7 +5150,7 @@ body::before {
   }
 
   .hero-section {
-    margin-bottom: 60px;
+    margin-bottom: 0px;
   }
   .hero-section.checkboxes.inline li {
     width: 49%;
