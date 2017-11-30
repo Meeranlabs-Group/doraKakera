@@ -9,14 +9,14 @@
             <ul class="checkboxes inline half list-unstyled">
                 
                 
-                <li><label><input type="checkbox" name="1">Public Parking</label></li>
-                <li><label><input type="checkbox" name="2">Underground Parking</label></li>
-                <li><label><input type="checkbox" name="3">Lobby in Building</label></li>
-                <li><label><input type="checkbox" name="4">Central Air Conditioning</label></li>
-                <li><label><input type="checkbox" name="5">Central Heating</label></li>
-                <li><label><input type="checkbox" name="6">Waste Disposal</label></li>
-                <li><label><input type="checkbox" name="7">Elevator or Lift</label></li>
-                <li><label><input type="checkbox" name="8">Service Elevators in Building</label></li>
+                <li><label><input type="checkbox" name="1a">Public Parking</label></li>
+                <li><label><input type="checkbox" name="2a">Underground Parking</label></li>
+                <li><label><input type="checkbox" name="3a">Lobby in Building</label></li>
+                <li><label><input type="checkbox" name="4a">Central Air Conditioning</label></li>
+                <li><label><input type="checkbox" name="5a">Central Heating</label></li>
+                <li><label><input type="checkbox" name="6a">Waste Disposal</label></li>
+                <li><label><input type="checkbox" name="7a">Elevator or Lift</label></li>
+                <li><label><input type="checkbox" name="8a">Service Elevators in Building</label></li>
                 
                 
 
