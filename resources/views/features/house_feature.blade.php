@@ -14,12 +14,12 @@
                 <li><label><input type="text" name="View">View</label></li>
                 <li><label><input type="text" name="Parking_Spaces">Parking Spaces</label></li>
                 
-                <li><label><input type="checkbox" name="house_Double_Glazed_Windows">Double Glazed Windows</label></li>
+                <li><label><input type="checkbox" name="Double_Glazed_Windows">Double Glazed Windows</label></li>
                 <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
                 <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
                 
                 <label>Flooring</label>
-                <select name="flooring">
+                <select name="Flooring">
                 <option value="Flooring_Tiles">Tiles</option>
                 <option value="Flooring_Marble">Marble</option>
                 <option value="Flooring_Wooden">Wooden</option>
@@ -57,11 +57,11 @@
 
             <ul class="checkboxes inline half list-unstyled">
                 
-                <li><label><input type="checkbox" name="house_Broadband_Internet_Access">Broadband Internet Access</label></li>
-                <li><label><input type="checkbox" name="house_Satellite_or_Cable_TV_Ready">Satellite or Cable TV Ready</label></li>
-                <li><label><input type="checkbox" name="house_Intercom">Intercom</label></li>
+                <li><label><input type="checkbox" name="Broadband_Internet_Access">Broadband Internet Access</label></li>
+                <li><label><input type="checkbox" name="Satellite_or_Cable_TV_Ready">Satellite or Cable TV Ready</label></li>
+                <li><label><input type="checkbox" name="Intercom">Intercom</label></li>
 
-                <li><label><input type="text" name="house_Other_Business_and_Communication_Facilities">Other Business and Communication Facilities</label></li>
+                <li><label><input type="text" name="Other_Business_and_Communication_Facilities">Other Business and Communication Facilities</label></li>
 
             </ul>
             <!--end checkboxes-->
@@ -73,14 +73,14 @@
             <h3>Nearby Locations and Other Facilities</h3>
             <ul class="checkboxes inline half list-unstyled">
                 
-               <li><label><input type="checkbox" name="house_Nearby_Schools">Nearby Schools</label></li>
-                <li><label><input type="checkbox" name="house_Nearby_Hospitals">Nearby Hospitals</label></li>
-                <li><label><input type="checkbox" name="house_Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
-                <li><label><input type="checkbox" name="house_Nearby_Restaurants">Nearby Restaurants</label></li>
-                <li><label><input type="checkbox" name="house_Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
+               <li><label><input type="checkbox" name="Nearby_Schools">Nearby Schools</label></li>
+                <li><label><input type="checkbox" name="Nearby_Hospitals">Nearby Hospitals</label></li>
+                <li><label><input type="checkbox" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
+                <li><label><input type="checkbox" name="Nearby_Restaurants">Nearby Restaurants</label></li>
+                <li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
 
-                {{--<li><label><input type="text" name="house_Other_Nearby_Places">Other Nearby Places</label></li>--}}
-                <li><label><input type="text" name="house_Distance_From_Airport(kms)">Distance From Airport(kms)</label></li>
+                {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
+                <li><label><input type="text" name="Distance_From_Airport(kms)">Distance From Airport(kms)</label></li>
             </ul>
             <!--end checkboxes-->
         </div>
@@ -94,27 +94,27 @@
             <h3>Rooms</h3>
             <ul class="checkboxes inline half list-unstyled">
                
-                <li><label><input type="text" name="house_Number_of_Bedrooms">Number of Bedrooms</label></li>
-                <li><label><input type="text" name="house_Number_of_Bathrooms">Number of Bathrooms</label></li>
-                <li><label><input type="text" name="house_Number_of_Servant_Quarters">Number of Servant Quarters</label></li>
+                <li><label><input type="text" name="Number_of_Bedrooms">Number of Bedrooms</label></li>
+                <li><label><input type="text" name="Number_of_Bathrooms">Number of Bathrooms</label></li>
+                <li><label><input type="text" name="Number_of_Servant_Quarters">Number of Servant Quarters</label></li>
                 
-                <li><label><input type="checkbox" name="house_Drawing_Room">Drawing Room</label></li>
-                <li><label><input type="checkbox" name="house_Dining_Room">Dining Room</label></li>
+                <li><label><input type="checkbox" name="Drawing_Room">Drawing Room</label></li>
+                <li><label><input type="checkbox" name="Dining_Room">Dining Room</label></li>
                 
-                <li><label><input type="text" name="house_Number_of_Kitchens">Number of Kitchens</label></li>
+                <li><label><input type="text" name="Number_of_Kitchens">Number of Kitchens</label></li>
                 
-                <li><label><input type="checkbox" name="house_Study_Room">Study Room</label></li>
-                <li><label><input type="checkbox" name="house_Prayer_Room">Prayer Room</label></li>
-                <li><label><input type="checkbox" name="house_Powder_Room">Powder Room</label></li>
-                <li><label><input type="checkbox" name="house_Gym_Room">Gym Room</label></li>
+                <li><label><input type="checkbox" name="Study_Room">Study Room</label></li>
+                <li><label><input type="checkbox" name="Prayer_Room">Prayer Room</label></li>
+                <li><label><input type="checkbox" name="Powder_Room">Powder Room</label></li>
+                <li><label><input type="checkbox" name="Gym_Room">Gym Room</label></li>
                 
-                <li><label><input type="text" name="house_Number_of_Store_Rooms">Number of Store Rooms</label></li>
+                <li><label><input type="text" name="Number_of_Store_Rooms">Number of Store Rooms</label></li>
                 
-                <li><label><input type="checkbox" name="house_Steaming_Room">Steaming Room</label></li>
-                <li><label><input type="checkbox" name="house_Lounge_or_Sitting_Room">Lounge or Sitting Room</label></li>
-                <li><label><input type="checkbox" name="house_Laundry_Room">Laundry Room</label></li>
+                <li><label><input type="checkbox" name="Steaming_Room">Steaming Room</label></li>
+                <li><label><input type="checkbox" name="Lounge_or_Sitting_Room">Lounge or Sitting Room</label></li>
+                <li><label><input type="checkbox" name="Laundry_Room">Laundry Room</label></li>
                 
-                <li><label><input type="text" name="house_Other_Rooms">Other Rooms</label></li>
+                <li><label><input type="text" name="Other_Rooms">Other Rooms</label></li>
                 
             </ul>
             <!--end checkboxes-->
@@ -126,12 +126,12 @@
             <h3>Healthcare Recreational</h3>
             <ul class="checkboxes inline half list-unstyled">
                 
-                <li><label><input type="checkbox" name="house_Lawn_or_Garden">Lawn or Garden</label></li>
-                <li><label><input type="checkbox" name="house_Swimming_Pool">Swimming Pool</label></li>
-                <li><label><input type="checkbox" name="house_Sauna">Sauna</label></li>
-                <li><label><input type="checkbox" name="house_Jacuzzi">Jacuzzi</label></li>
+                <li><label><input type="checkbox" name="Lawn_or_Garden">Lawn or Garden</label></li>
+                <li><label><input type="checkbox" name="Swimming_Pool">Swimming Pool</label></li>
+                <li><label><input type="checkbox" name="Sauna">Sauna</label></li>
+                <li><label><input type="checkbox" name="Jacuzzi">Jacuzzi</label></li>
                 
-                <li><label><input type="text" name="house_Other_Healthcare_and_Recreation_Facilities">Other Healthcare and Recreation Facilities</label></li>
+                <li><label><input type="text" name="Other_Healthcare_and_Recreation_Facilities">Other Healthcare and Recreation Facilities</label></li>
                 
             </ul>
             <!--end checkboxes-->
@@ -142,11 +142,11 @@
         <div class="col-md-4">
             <h3>Other Facilities</h3>
             <ul class="checkboxes inline half list-unstyled">
-                <li><label><input type="checkbox" name="house_Maintenance_Staff">Maintenance Staff</label></li>
-                <li><label><input type="checkbox" name="house_Security_Staff">Security Staff</label></li>
-                <li><label><input type="checkbox" name="house_Facilities_for_Disabled">Facilities for Disabled</label></li>
+                <li><label><input type="checkbox" name="Maintenance_Staff">Maintenance Staff</label></li>
+                <li><label><input type="checkbox" name="Security_Staff">Security Staff</label></li>
+                <li><label><input type="checkbox" name="Facilities_for_Disabled">Facilities for Disabled</label></li>
                 
-                <li><label><input type="text" name="house_Other_Facilities">Other Facilities</label></li>
+                <li><label><input type="text" name="Other_Facilities">Other Facilities</label></li>
  
             </ul>
             <!--end checkboxes-->
