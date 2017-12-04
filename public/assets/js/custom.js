@@ -76,7 +76,7 @@ $(document).ready(function($) {
         var target = _this.attr("data-target");
         e.preventDefault();
         $.ajax({
-            url: "assets/external/modal.php",
+            url: "assets/external/modal.blade.php",
             data: { tab: tab },
             method: "POST",
             success: function(data){
@@ -105,7 +105,7 @@ $(document).ready(function($) {
     $("[data-ajax-action]").on('click',function (e) {
         e.preventDefault();
         $.ajax({
-            url: "assets/external/modal.php",
+            url: "assets/external/modal.blade.php",
             //dataType: "json",
             //data: { action: "modal", data:  },
             method: "POST",

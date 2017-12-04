@@ -43,8 +43,8 @@ class PropertyController extends Controller
         $post['price']=$request['price'];
         $post['city']=$request['city'];
         $post['address']=$request['address'];
-        $post['email']=$request['email'];
-        $post['number']=$request['number'];
+       // $post['email']=$request['email'];
+       // $post['number']=$request['number'];
         $post['body']=$request['body'];
 
 // $post['Published_at']= Carbon::now();

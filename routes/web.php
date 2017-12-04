@@ -39,3 +39,11 @@ Route::get('/addproperty', function () {
 
 Route::post('/submit', 'PropertyController@store');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
