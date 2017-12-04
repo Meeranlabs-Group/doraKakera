@@ -14,7 +14,11 @@ class CreateFeatureTable extends Migration
     public function up()
     {
         Schema::create('feature', function (Blueprint $table) {
-            $table->increments('id');
+//            $table->increments('id');
+
+
+            $table->foreign('property_id')->references('id')->on('feature');
+
             $table->string('built_in_year')->nullable();
             $table->string('view')->nullable();
             $table->string('parking_space')->nullable();
@@ -59,12 +63,15 @@ class CreateFeatureTable extends Migration
             $table->string('lounge_or_sitting_room')->nullable();
             $table->string('laundry_room')->nullable();
             $table->string('other_room')->nullable();
+
             $table->string('nearby_schools')->nullable();
             $table->string('nearby_hospitals')->nullable();
             $table->string('nearby_shopping_malls')->nullable();
             $table->string('nearby_restaurants')->nullable();
             $table->string('distance_from_airport_kms')->nullable();
             $table->string('other_nearby_places')->nullable();
+
+
             $table->string('lawn_or_garden')->nullable();
             $table->string('swimming_pool')->nullable();
             $table->string('sauna')->nullable();

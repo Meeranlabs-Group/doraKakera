@@ -46,10 +46,10 @@
             </div>
 
 
-        {{--<div class="form-group">--}}
-        {{--<label>Place on Map</label>--}}
-        {{--<div class="map height-300 box" id="map-item"></div>--}}
-        {{--</div>--}}
+        <div class="form-group">
+        <label>Place on Map</label>
+        <div class="map  box" id="map-item"></div>
+        </div>
 
         <!--end map-->
             <h3>Position</h3>

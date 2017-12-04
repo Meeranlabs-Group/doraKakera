@@ -10,45 +10,45 @@
             <h3>Main Features</h3>
             <ul class="checkboxes inline half list-unstyled">
                 
-                <li><label><input type="text" name="flat_Built_in_Year">Built in Year</label></li>
-                <li><label><input type="text" name="flat_View">View</label></li>
-                <li><label><input type="text" name="flat_Parking_Spaces">Parking Spaces</label></li>
+                <li><label><input type="text" name="Built_in_Year">Built in Year</label></li>
+                <li><label><input type="text" name="View">View</label></li>
+                <li><label><input type="text" name="Parking_Spaces">Parking Spaces</label></li>
                 
                 <li><label><input type="checkbox" name="flat_Lobby_in_Building">Lobby in Building</label></li>
                 <li><label><input type="checkbox" name="flat_Double_Glazed_Windows">Double Glazed Windows</label></li>
-                <li><label><input type="checkbox" name="flat_Central_Air_Conditioning">Central Air Conditioning</label></li>
-                <li><label><input type="checkbox" name="flat_Central_Heating">Central Heating</label></li>
+                <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+                <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
                 
                 <label>Flooring</label>
                 <select>
-                <option value="flat_Flooring_Tiles">Tiles</option>
-                <option value="flat_Flooring_Marble">Marble</option>
-                <option value="flat_Flooring_Wooden">Wooden</option>
-                <option value="flat_Flooring_Chip">Chip</option>
-                <option value="flat_Flooring_Cement">Cement</option>
-                <option value="flat_Flooring_Other">Other</option>
+                <option value="Flooring_Tiles">Tiles</option>
+                <option value="Flooring_Marble">Marble</option>
+                <option value="Flooring_Wooden">Wooden</option>
+                <option value="Flooring_Chip">Chip</option>
+                <option value="Flooring_Cement">Cement</option>
+                <option value="Flooring_Other">Other</option>
                 </select>
                 
                 <label>Electricity Backup</label>
                 <select>
-                <option value="flat_Electricity_Backup_None">None</option>
-                <option value="flat_Electricity_Backup_Generator">Generator</option>
-                <option value="flat_Electricity_Backup_Ups">Ups</option>
-                <option value="flat_Electricity_Backup_Solar">Solar</option>
-                <option value="flat_Electricity_Backup_Other">Other</option>
+                <option value="Electricity_Backup_None">None</option>
+                <option value="Electricity_Backup_Generator">Generator</option>
+                <option value="Electricity_Backup_Ups">Ups</option>
+                <option value="Electricity_Backup_Solar">Solar</option>
+                <option value="Electricity_Backup_Other">Other</option>
                 </select>
                 
                 <li><label><input type="checkbox" name="flat_Waste_Disposal">Waste Disposal</label></li>
                 
-                <li><label><input type="text" name="flat_Floor">Floor</label></li>
-                <li><label><input type="text" name="flat_Total_Floors_in_Building">Total Floors in Building</label></li>
-                <li><label><input type="text" name="flat_Number_of_Elevators_in_Building">Number of Elevators in Building</label></li>
+                <li><label><input type="text" name="Floor">Floor</label></li>
+                <li><label><input type="text" name="Total_Floors_in_Building">Total Floors in Building</label></li>
+                <li><label><input type="text" name="Number_of_Elevators_in_Building">Number of Elevators in Building</label></li>
                 
-                <li><label><input type="checkbox" name="flat_Service_Elevators_in_Building">Service Elevators in Building</label></li> 
+                <li><label><input type="checkbox" name="Service_Elevators_in_Building">Service Elevators in Building</label></li>
                 
-                <li><label><input type="text" name="flat_Other_Main_Features">Other Main Features</label></li>
+                <li><label><input type="text" name="Other_Main_Features">Other Main Features</label></li>
                 
-                <li><label><input type="checkbox" name="flat_Furnished">Furnished</label></li>
+                <li><label><input type="checkbox" name="Furnished">Furnished</label></li>
                 
 
             </ul>

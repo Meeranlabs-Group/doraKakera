@@ -29,8 +29,8 @@
                                 <li><a href="#main-information" class="scroll">Main Information</a></li>
                                 <li><a href="#location" class="scroll">Location</a></li>
                                 <li><a href="#gallery" class="scroll">Gallery</a></li>
-                                <li><a href="#facilities" class="scroll">Facilities</a></li>
-                                <li><a href="#additional-information" class="scroll">Additional Information</a></li>
+                                <li><a href="#facilities" class="scroll">Features</a></li>
+                                {{--<li><a href="#additional-information" class="scroll">Additional Information</a></li>--}}
                             </ul>
                         </div>
                     </div>
@@ -42,8 +42,9 @@
                     <div class="form-submit labels-uppercase" id="form-submit" enctype="multipart/form-data">
 
 
-<div class="row">
+<div class="row" >
     <div class="col-md-6">
+
                                 <label for="object-type">Purpose <span style="color: red">*</span></label>
 
                                 <select class="framed width-100 " name="property_type" id="object-type"  >
@@ -90,123 +91,199 @@
     </div>
 
 
+    <br>
+    <br>
+    <br>
+
+    <hr>
+
 </div>
 
                         <div class="hidden" id="main-info" >
 
-                            @include('addProperty.main-information')
-                            @include('addProperty.location')
-                            @include('addProperty.gallery')
+
+
+
+                            {{--<div  id="Plot-Files">--}}
+                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.house')--}}
+                                {{--@include('addProperty.additional-information')--}}
+                            {{--</div>--}}
+
+                             {{--<div  id="Plot-Forms">--}}
+                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.house')--}}
+                                {{--@include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
 
                             {{--house feature--}}
-                            <div  id="Houses">
-                                @include('features.house')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div  id="Houses">--}}
+                                {{--@include('addProperty.main-information')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.house_feature')--}}
+                                {{--@include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
 
 
                             {{--commercial factory--}}
-                            <div  id="Factories">
-                                @include('features.factory_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div  id="Factories">--}}
+                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.factory_feature')--}}
+                                {{--@include('addProperty.additional-information')--}}
+                            {{--</div>--}}
                             {{--commpercial building--}}
-                            <div  id="Buildings">
-                                @include('features.building_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div  id="Buildings">--}}
+                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.building_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
 
 
                             {{--houses--}}
                              <div  id="Flates">
+                                 @include('addProperty.main-information')
+                                 @include('addProperty.location')
+                                 @include('addProperty.gallery')
                                 @include('features.flat_feature')
                                 @include('addProperty.additional-information')
                             </div>
 
                             {{--plot commercil agriculture--}}
 
-                            <div id="Agricultural-Land">
-                                @include('features.land_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Agricultural-Land">--}}
+                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.land_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--plot commercil agriculture--}}
 
-                            <div id="Industrial-Land">
-                                @include('features.land_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Industrial-Land">--}}
+                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.land_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--compercail--}}
-                            <div id="Commercial-office">
-                                @include('features.office_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Commercial-office">--}}
+                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.office_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--commercial--}}
-                            <div id="Other">
-                                @include('features.other_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Other">--}}
+                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.other_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                 {{--plot--}}
-                            <div id="Commercial-Plots">
-                                @include('features.plot_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Commercial-Plots">--}}
+                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.plot_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                {{--plot--}}
-                            <div id="Residential-Plots">
-                                @include('features.plot_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Residential-Plots">--}}
+                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.plot_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--houses  lower and upper and farm house--}}
-                            <div id="Lower-Portions">
-                                @include('features.portion&farm_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Lower-Portions">--}}
+                                {{--@include('addProperty.main-information')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.portion&farm_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--houses  lower and upper and farm house--}}
-                            <div id="Upper-Portions">
-                                @include('features.portion&farm_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Upper-Portions">--}}
+                                {{--@include('addProperty.main-information')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.portion&farm_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--houses  lower and upper and farm house--}}
-                            <div id="Farms-House">
-                                @include('features.portion&farm_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Farms-House">--}}
+                                {{--@include('addProperty.main-information')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.portion&farm_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--shop feature--}}
-                            <div id="Shops">
-                                @include('features.shop_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Shops">--}}
+                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.shop_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--commercial warehouse --}}
-                            <div id="Warehouses">
-                                @include('features.warehouse_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                            {{--<div id="Warehouses">--}}
+                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.location')--}}
+                                {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.warehouse_feature')--}}
+{{--                                @include('addProperty.additional-information')--}}
+                            {{--</div>--}}
+
+
+
+
+                            <hr>
+                            <section>
+                                <div class="form-group center">
+                                    <button type="submit" id="button" class="btn btn-primary btn-rounded btn-xlarge">Submit Now</button>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="center"><a href="#" class="btn btn-framed btn-default btn-rounded">Preview</a></div>
+                            </section>
+
+
 
 
                         </div>
 
 
-                        <hr>
-                        <section>
-                            <div class="form-group center">
-                                <button type="submit" class="btn btn-primary btn-rounded btn-xlarge">Submit Now</button>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="center"><a href="#" class="btn btn-framed btn-default btn-rounded">Preview</a></div>
-                        </section>
+
+
+
+
                     </div>
                 {!! Form::close() !!}
                 <!--end form-->
@@ -245,6 +322,8 @@
         $("#Shops").addClass("hidden");
         $("#Warehouses").addClass("hidden");
         $("#Other").addClass("hidden");
+        $("#Plot-Files").addClass("hidden");
+        $("#Plot-Forms").addClass("hidden");
 
 
 
