@@ -141,7 +141,7 @@
                             </div>
 
                             {{--compercail--}}
-                            <div id="Commercial-Plots">
+                            <div id="Commercial-office">
                                 @include('features.office_feature')
                                 @include('addProperty.additional-information')
                             </div>
@@ -220,6 +220,7 @@
     </div>
 <!--end page-wrapper-->
 
+
 <script>
     document.getElementById('object-type').onchange = function () {
         document.getElementById("Property-type").disabled = this.value == '01';
@@ -237,21 +238,23 @@
         $("#Industrial-Land").addClass("hidden");
         $("#Commercial-Plots").addClass("hidden");
         $("#Residential-Plots").addClass("hidden");
+        $("#Commercial-office").addClass("hidden");
         $("#Lower-Portions").addClass("hidden");
         $("#Upper-Portions").addClass("hidden");
         $("#Farms-House").addClass("hidden");
         $("#Shops").addClass("hidden");
         $("#Warehouses").addClass("hidden");
+        $("#Other").addClass("hidden");
 
 
 
-//
-//        var e = document.getElementById("Property-type");
-//        var value = e.options[e.selectedIndex].value;
-//        var str1="#";
-//        var text = e.options[e.selectedIndex].text;
-//        var text=str1.concat(text);
-//        $(text).removeClass("hidden");
+
+                var e = document.getElementById("Property-type");
+                var value = e.options[e.selectedIndex].value;
+                var str1="#";
+                var text = e.options[e.selectedIndex].text;
+                var text=str1.concat(value);
+                $(text).removeClass("hidden");
 
     }
 
@@ -259,7 +262,6 @@
 
 
 </script>
-
 
 @include('partials.footer')
 @include('include.foot')
