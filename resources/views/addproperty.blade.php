@@ -105,7 +105,7 @@
 
 
                             {{--<div  id="Plot-Files">--}}
-                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.house')--}}
@@ -113,7 +113,7 @@
                             {{--</div>--}}
 
                              {{--<div  id="Plot-Forms">--}}
-                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.house')--}}
@@ -134,7 +134,7 @@
 
                             {{--commercial factory--}}
                             <div  id="Factories">
-                                @include('addProperty.commercial')
+                                @include('addProperty.main-information')
                                 @include('addProperty.location')
                                 @include('addProperty.gallery')
                                 @include('features.factory_feature')
@@ -143,7 +143,7 @@
 
                             {{--commpercial building--}}
                             {{--<div  id="Buildings">--}}
-                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.building_feature')--}}
@@ -164,7 +164,7 @@
                             {{--plot commercil agriculture--}}
 
                             {{--<div id="Agricultural-Land">--}}
-                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.land_feature')--}}
@@ -174,7 +174,7 @@
                             {{--plot commercil agriculture--}}
 
                             {{--<div id="Industrial-Land">--}}
-                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.land_feature')--}}
@@ -192,7 +192,7 @@
 
                             {{--commercial--}}
                             {{--<div id="Other">--}}
-                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.other_feature')--}}
@@ -210,7 +210,7 @@
 
                {{--plot--}}
                             {{--<div id="Residential-Plots">--}}
-                                {{--@include('addProperty.plot')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.plot_feature')--}}
@@ -246,7 +246,7 @@
 
                             {{--shop feature--}}
                             {{--<div id="Shops">--}}
-                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.shop_feature')--}}
@@ -255,7 +255,7 @@
 
                             {{--commercial warehouse --}}
                             {{--<div id="Warehouses">--}}
-                                {{--@include('addProperty.commercial')--}}
+                                {{--@include('addProperty.main-information')--}}
                                 {{--@include('addProperty.location')--}}
                                 {{--@include('addProperty.gallery')--}}
                                 {{--@include('features.warehouse_feature')--}}

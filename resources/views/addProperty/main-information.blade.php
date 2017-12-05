@@ -9,25 +9,19 @@
                 <label for="form-submit-title">Title<em>*</em></label>
                 <input type="text" class="form-control" id="form-submit-title" name="title" placeholder="Accommodation Title" required="">
             </div>
-            <!--end form-group-->
-        </div>
-        <!--end col-md-7-->
 
-        <!--end col-md-5-->
-    </div>
-    <!--end row-->
-
-    <div class="row">
-        <div class="col-md-7">
             <div class="form-group">
                 <label for="form-submit-description">Description<em>*</em></label>
                 <textarea class="form-control" name="description" id="form-submit-description" rows="10" name="description" required="" placeholder="Describe your accommodation"></textarea>
             </div>
             <!--end form-group-->
+
+
         </div>
+        <!--end col-md-7-->
 
         <div class="col-md-5">
-            <h3>Mian Items<i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Enter price"></i></h3>
+            <h3>Mian Items<i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Enter price And area"></i></h3>
             <div class="form-group-inline">
                 <div class="form-group width-60">
 
@@ -59,59 +53,62 @@
 
             </div>
             <!--end form-group-inline-->
-            <div class="form-group-inline">
-                <!--end form-group-->
-                <div class="form-group">
-                    <h3>Bathroom<i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Choose Number"></i></h3>
-                </div>
 
-                <div class="form-group width-60">
-                    <select class="framed width-100" name="room_type_2" id="room-type_2">
-                        <option value="">-- Select -- </option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="10+">10+</option>
 
-                    </select>
-                </div>
-            </div>
+
+            {{--<div class="form-group-inline">--}}
+                {{--<!--end form-group-->--}}
+                {{--<div class="form-group">--}}
+                    {{--<h3>Bathroom<i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Choose Number"></i></h3>--}}
+                {{--</div>--}}
+
+                {{--<div class="form-group width-60">--}}
+                    {{--<select class="framed width-100" name="room_type_2" id="room-type_2">--}}
+                        {{--<option value="">-- Select -- </option>--}}
+                        {{--<option value="1">1</option>--}}
+                        {{--<option value="2">2</option>--}}
+                        {{--<option value="3">3</option>--}}
+                        {{--<option value="4">4</option>--}}
+                        {{--<option value="5">5</option>--}}
+                        {{--<option value="6">6</option>--}}
+                        {{--<option value="7">7</option>--}}
+                        {{--<option value="8">8</option>--}}
+                        {{--<option value="9">9</option>--}}
+                        {{--<option value="10">10</option>--}}
+                        {{--<option value="10+">10+</option>--}}
+
+                    {{--</select>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <!--end form-group-inline-->
 
 
 
-            <div class="form-group-inline">
-                <!--end form-group-->
-                <div class="form-group">
+            {{--<div class="form-group-inline">--}}
+                {{--<!--end form-group-->--}}
+                {{--<div class="form-group">--}}
 
-                    <h3>Bedroom<i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Choose Number"></i></h3>
-                </div>
+                    {{--<h3>Bedroom<i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Choose Number"></i></h3>--}}
+                {{--</div>--}}
 
-                <div class="form-group width-60">
-                    <select class="framed width-100" name="room_type_2" id="room-type_2">
-                        <option value="">-- Bedroom --</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                        <option value="10">10</option>
-                        <option value="10+">10+</option>
+                {{--<div class="form-group width-60">--}}
+                    {{--<select class="framed width-100" name="room_type_2" id="room-type_2">--}}
+                        {{--<option value="">-- Bedroom --</option>--}}
+                        {{--<option value="1">1</option>--}}
+                        {{--<option value="2">2</option>--}}
+                        {{--<option value="3">3</option>--}}
+                        {{--<option value="4">4</option>--}}
+                        {{--<option value="5">5</option>--}}
+                        {{--<option value="6">6</option>--}}
+                        {{--<option value="7">7</option>--}}
+                        {{--<option value="8">8</option>--}}
+                        {{--<option value="9">9</option>--}}
+                        {{--<option value="10">10</option>--}}
+                        {{--<option value="10+">10+</option>--}}
 
-                    </select>
-                </div>
-            </div>
+                    {{--</select>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <!--end form-group-inline-->
 
 
@@ -147,6 +144,20 @@
         <!--end form-group-inline-->
             {{--<a href="#" class="link icon"><i class="fa fa-plus"></i>Add Room Type</a>--}}
         </div>
+        <!--end col-md-5-->
+    </div>
+    <!--end row-->
+
+    <div class="row">
+        <div class="col-md-7">
+
+            <!--end form-group-->
+
+
+
+        </div>
+
+
         <!--end col-md-5-->
     </div>
     <!--end row-->
