@@ -4123,7 +4123,7 @@ input[type="number"], input[type="tel"], textarea.form-control, input[type="date
   padding-top: 8px;
   padding-bottom: 8px;
   width: 100%;
-  height: inherit;
+  height: 25px;
 }
 input[type="text"]:active, input[type="text"]:focus, input[type="email"]:active, input[type="email"]:focus, input[type="date"]:active, input[type="date"]:focus, input[type="time"]:active, input[type="time"]:focus, input[type="search"]:active, input[type="search"]:focus, input[type="password"]:active, input[type="password"]:focus,
 input[type="number"]:active,

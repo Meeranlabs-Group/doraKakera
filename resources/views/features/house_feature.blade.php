@@ -6,43 +6,76 @@
 
 
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
             <h3>Main Features</h3>
+
+          <div class="row">
+              <div class="col-md-3 height-20">
+                <label>Built in Year</label>
+                <input type="text" name="Built_in_Year">
+              </div>
+
+              <div class="col-md-3">
+            <label>Parking Spaces</label>
+
+            <input type="text" name="Parking_Spaces">
+              </div>
+
+              <div class="col-md-3">
+                  <div class="form-group width-80">
+              <label>Flooring</label>
+              <select name="Flooring_type" class="framed width-80">
+                  <option value="Flooring_None">None</option>
+                  <option value="Flooring_Tiles">Tiles</option>
+                  <option value="Flooring_Marble">Marble</option>
+                  <option value="Flooring_Wooden">Wooden</option>
+                  <option value="Flooring_Chip">Chip</option>
+                  <option value="Flooring_Cement">Cement</option>
+                  <option value="Flooring_Other">Other</option>
+              </select>
+                  </div>
+              </div>
+              <div class="col-md-3">
+                  <div class="form-group width-80">
+              <label>Electricity Backup</label>
+              <select name="Electricity_Backup_type" class="framed width-80">
+                  <option value="Electricity_Backup_None">None</option>
+                  <option value="Electricity_Backup_Generator">Generator</option>
+                  <option value="Electricity_Backup_Ups">Ups</option>
+                  <option value="Electricity_Backup_Solar">Solar</option>
+                  <option value="Electricity_Backup_Other">Other</option>
+              </select>
+                  </div>
+                  </div>
+              <div class="col-md-3">
+            <label>Total Number of Floors</label>
+              <input type="text" name="Total_Number_of_Floors">
+              </div>
+          <div  class="col-md-3">
+            <label>Other Main Features</label>
+                <input type="text" name="Other_Main_Features">
+          </div>
+
+          </div>
+           <div class="row">
+
             <ul class="checkboxes inline half list-unstyled">
+                <li>
+                    <label> Double Glazed Windows</label>
+
+                        <input type="checkbox" name="Double_Glazed_Windows"></li>
+                <li><label>Central Air Conditioning</label>
+                    <input type="checkbox" name="Central_Air_Conditioning"></li>
+                <li><label>Central Heating</label>
+
+                        <input type="checkbox" name="Central_Heating"></li>
                 
-                <li><label><input type="text" name="Built_in_Year">Built in Year</label></li>
-                <li><label><input type="text" name="View">View</label></li>
-                <li><label><input type="text" name="Parking_Spaces">Parking Spaces</label></li>
+
                 
-                <li><label><input type="checkbox" name="Double_Glazed_Windows">Double Glazed Windows</label></li>
-                <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
-                <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
-                
-                <label>Flooring</label>
-                <select name="Flooring_type" class="form-control">
-                <option value="Flooring_Tiles">Tiles</option>
-                <option value="Flooring_Marble">Marble</option>
-                <option value="Flooring_Wooden">Wooden</option>
-                <option value="Flooring_Chip">Chip</option>
-                <option value="Flooring_Cement">Cement</option>
-                <option value="Flooring_Other">Other</option>
-                </select>
-                
-                <label>Electricity Backup</label>
-                <select name="Electricity_Backup_type">
-                <option value="Electricity_Backup_None">None</option>
-                <option value="Electricity_Backup_Generator">Generator</option>
-                <option value="Electricity_Backup_Ups">Ups</option>
-                <option value="Electricity_Backup_Solar">Solar</option>
-                <option value="Electricity_Backup_Other">Other</option>
-                </select>
-                
+
                 <li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>
                 
-                <li><label><input type="text" name="Total_Number_of_Floors">Total Number of Floors</label></li>
-                
-                <li><label><input type="text" name="Other_Main_Features">Other Main Features</label></li>
-                
+
                 <li><label><input type="checkbox" name="Furnished">Furnished</label></li>
 
 

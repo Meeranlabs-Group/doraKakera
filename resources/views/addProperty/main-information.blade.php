@@ -10,9 +10,9 @@
                 <input type="text" class="form-control" id="form-submit-title" name="title" placeholder="Accommodation Title" required="">
             </div>
 
-            <div class="form-group">
+            <div class="form-group ">
                 <label for="form-submit-description">Description<em>*</em></label>
-                <textarea class="form-control" name="description" id="form-submit-description" rows="10" name="description" required="" placeholder="Describe your accommodation"></textarea>
+                <textarea style="height: 100px;" class="form-control" name="description" id="form-submit-description" rows="10" name="description" required="" placeholder="Describe your accommodation"></textarea>
             </div>
             <!--end form-group-->
 
@@ -44,6 +44,8 @@
 
 
                 </div>
+
+
 
 
 
@@ -114,6 +116,7 @@
 
             <div class="form-group-inline">
                 <div class="form-group width-60">
+                    <label for="price">Unit Type</label>
                     <select class="framed width-100" name="room_type_2" id="room-type_2">
                         <option value="">Size Unit Type</option>
                         <option value="1">Marla</option>
@@ -125,7 +128,8 @@
                 </div>
                 <!--end form-group-->
                 <div class="form-group">
-                    <input type="number" class="form-control" id="number-of-rooms_2" name="room_number_2" placeholder="1">
+                    <label for="price">Size</label>
+                    <input type="number" class="form-control" id="number-of-rooms_2" name="room_number_2" placeholder="1" min="1" >
                 </div>
                 <!--end form-group-->
             </div>

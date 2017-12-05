@@ -43,7 +43,7 @@
 
 
 <div class="row" >
-    <div class="col-md-6">
+    <div class="col-md-3 ">
 
                                 <label for="object-type">Purpose <span style="color: red">*</span></label>
 
@@ -57,7 +57,7 @@
 
 
 
-    <div class="col-md-6">
+    <div class="col-md-3 ">
         <label for="object-type">Object Type</label>
 
         <select class="framed width-100" name="property_type" id="Property-type"  disabled>
