@@ -149,7 +149,7 @@ class PropertyController extends Controller
 
                 //            Other Facilities
 
-                $feature['maintainance_staff'] = $request['Maintenance_Staff'];
+                $feature['maintenance_staff'] = $request['Maintenance_Staff'];
                 $feature['security_staff'] = $request['Security_Staff'];
                 $feature['facilities_for_disabled'] = $request['Facilities_for_Disabled'];
                 $feature['laundry_or_dry_cleaning_facilities'] = $request['Laundry_or_Dry_Cleaning_Facility'];
