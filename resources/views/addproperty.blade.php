@@ -133,13 +133,14 @@
 
 
                             {{--commercial factory--}}
-                            {{--<div  id="Factories">--}}
-                                {{--@include('addProperty.commercial')--}}
-                                {{--@include('addProperty.location')--}}
-                                {{--@include('addProperty.gallery')--}}
-                                {{--@include('features.factory_feature')--}}
-                                {{--@include('addProperty.additional-information')--}}
-                            {{--</div>--}}
+                            <div  id="Factories">
+                                @include('addProperty.commercial')
+                                @include('addProperty.location')
+                                @include('addProperty.gallery')
+                                @include('features.factory_feature')
+                                @include('addProperty.additional-information')
+                            </div>
+
                             {{--commpercial building--}}
                             {{--<div  id="Buildings">--}}
                                 {{--@include('addProperty.commercial')--}}
@@ -152,13 +153,13 @@
 
 
                             {{--houses--}}
-                             <div  id="Flates">
-                                 @include('addProperty.main-information')
-                                 @include('addProperty.location')
-                                 @include('addProperty.gallery')
-                                @include('features.flat_feature')
-                                @include('addProperty.additional-information')
-                            </div>
+                             {{--<div  id="Flates">--}}
+                                 {{--@include('addProperty.main-information')--}}
+                                 {{--@include('addProperty.location')--}}
+                                 {{--@include('addProperty.gallery')--}}
+                                {{--@include('features.flat_feature')--}}
+                                {{--@include('addProperty.additional-information')--}}
+                            {{--</div>--}}
 
                             {{--plot commercil agriculture--}}
 

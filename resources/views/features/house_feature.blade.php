@@ -19,7 +19,7 @@
                 <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
                 
                 <label>Flooring</label>
-                <select name="Flooring">
+                <select name="Flooring" class="form-control">
                 <option value="Flooring_Tiles">Tiles</option>
                 <option value="Flooring_Marble">Marble</option>
                 <option value="Flooring_Wooden">Wooden</option>

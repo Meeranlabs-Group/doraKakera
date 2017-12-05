@@ -12,7 +12,7 @@
                 
                 <li><label><input type="text" name="Built_in_Year">Built in Year</label></li>
                 <li><label><input type="text" name="View">View</label></li>
-                <li><label><input type="text" name="Parking_Spaces">Parking Spaces</label></li>
+                <li><label><input type="text" name="Parking_Space">Parking Spaces</label></li>
                 
                 <li><label><input type="checkbox" name="Lobby_in_Building">Lobby in Building</label></li>
                 <li><label><input type="checkbox" name="Double_Glazed_Windows">Double Glazed Windows</label></li>

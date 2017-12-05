@@ -54,12 +54,12 @@
         <!--end map-->
             <h3>Position</h3>
             <ul class="checkboxes inline list-unstyled">
-                <li><label><input type="checkbox" name="1">Near the beach</label></li>
-                <li><label><input type="checkbox" name="2">Near the forest</label></li>
-                <li><label><input type="checkbox" name="3">Near the ski center</label></li>
-                <li><label><input type="checkbox" name="4">At he town center</label></li>
-                <li><label><input type="checkbox" name="5">Isolated</label></li>
-                <li><label><input type="checkbox" name="6">Private island</label></li>
+                <li><label><input type="checkbox" name="Near the beach">Near the beach</label></li>
+                <li><label><input type="checkbox" name="Near the forest">Near the forest</label></li>
+                <li><label><input type="checkbox" name="Near the ski center">Near the ski center</label></li>
+                <li><label><input type="checkbox" name="At he town center">At he town center</label></li>
+                <li><label><input type="checkbox" name="Isolated">Isolated</label></li>
+                <li><label><input type="checkbox" name="Private island">Private island</label></li>
             </ul>
             <!--end checkboxes-->
         </div>

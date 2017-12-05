@@ -14,10 +14,10 @@ class CreateFeatureTable extends Migration
     public function up()
     {
         Schema::create('feature', function (Blueprint $table) {
-//            $table->increments('id');
+            $table->increments('id');
 
 
-            $table->foreign('property_id')->references('id')->on('feature');
+//            $table->foreign('property_id')->references('id')->on('feature');
 
             $table->string('built_in_year')->nullable();
             $table->string('view')->nullable();
@@ -32,9 +32,11 @@ class CreateFeatureTable extends Migration
             $table->string('other_main_feature')->nullable();
             $table->string('furnished')->nullable();
             $table->string('lobby_in_building')->nullable();
+
+
             $table->string('floor')->nullable();
             $table->string('total_floor_building')->nullable();
-            $table->string('number_of-elevators_in_building')->nullable();
+            $table->string('number_of_elevators_in_building')->nullable();
             $table->string('service_elevators_in_building')->nullable();
             $table->string('public_parking')->nullable();
             $table->string('underground_parking')->nullable();
@@ -49,7 +51,7 @@ class CreateFeatureTable extends Migration
             $table->string('confrence_room_in_building')->nullable();
             $table->string('atm_and_machine_in_building')->nullable();
             $table->string('number_of_bedrooms')->nullable();
-            $table->string('number_of-bathrooms')->nullable();
+            $table->string('number_of_bathrooms')->nullable();
             $table->string('number_of_servant_quaters')->nullable();
             $table->string('drawing_room')->nullable();
             $table->string('dining_room')->nullable();

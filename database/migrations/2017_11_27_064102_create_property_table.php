@@ -25,6 +25,8 @@ class CreatePropertyTable extends Migration
             $table->string('city') ->nullable();
             $table->string('address') ->nullable();
 
+            $table->string('position') ->nullable();
+
             $table->text('body') ->nullable();
             $table->timestamps();
 

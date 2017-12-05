@@ -37,8 +37,22 @@ Route::get('/addproperty', function () {
 });
 
 
+Route::get('/MarketAnalysis', function () {
+    return view('partials.MarketAnalysis');
+});
+
+
+Route::get('/MarketDetails', function () {
+    return view('partials.MarketDetails');
+});
+
+
 Route::post('/submit', 'PropertyController@store');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 

@@ -102,7 +102,7 @@
                                 <a href={{ url("/properties") }} >Properties</a>
                             </li>
                             <li>
-                                <a href="MarketAnalysis.php" class="has-child">Market Analysis</a>
+                                <a href="/MarketAnalysis" class="has-child">Market Analysis</a>
                                 <ul class="child-nav">
                                     <li><a href="MarketDetails.php">Transfer Charges</a></li>
                                     <li><a href="MarketDetails.php">News</a></li>
