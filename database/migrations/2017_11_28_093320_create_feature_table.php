@@ -25,8 +25,8 @@ class CreateFeatureTable extends Migration
             $table->string('double_glazed_window')->nullable();
             $table->string('central_air_conditioning')->nullable();
             $table->string('central_heating')->nullable();
-            $table->string('flooring')->nullable();
-            $table->string('electricity_backup')->nullable();
+            $table->string('flooring_type')->nullable();
+            $table->string('electricity_backup_type')->nullable();
             $table->string('waste_disposal')->nullable();
             $table->string('total_number_of_floors')->nullable();
             $table->string('other_main_feature')->nullable();
@@ -40,7 +40,7 @@ class CreateFeatureTable extends Migration
             $table->string('service_elevators_in_building')->nullable();
             $table->string('public_parking')->nullable();
             $table->string('underground_parking')->nullable();
-            $table->string('service_elevator')->nullable();
+            $table->string('elevator_or_lift')->nullable();
             $table->string('number_of_units')->nullable();
             $table->string('broadband_internet_access')->nullable();
             $table->string('satellite_or_cable_tv_ready')->nullable();
@@ -72,6 +72,7 @@ class CreateFeatureTable extends Migration
             $table->string('nearby_restaurants')->nullable();
             $table->string('distance_from_airport_kms')->nullable();
             $table->string('other_nearby_places')->nullable();
+            $table->string('nearby_public_transport')->nullable();
 
 
             $table->string('lawn_or_garden')->nullable();
@@ -88,6 +89,9 @@ class CreateFeatureTable extends Migration
             $table->string('pet_policies')->nullable();
             $table->string('cctv_security_installed')->nullable();
             $table->string('cafeteria_or_canteen_in_building')->nullable();
+
+            $table->string('pet_policy_type')->nullable();
+
             $table->string('possesion')->nullable();
             $table->string('corner')->nullable();
             $table->string('park_facing')->nullable();

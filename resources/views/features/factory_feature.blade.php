@@ -12,7 +12,7 @@
                 <li><label><input type="text" name="Parking_Spaces">Parking Spaces</label></li>
                  
                 <label>Electricity Backup</label>
-                <select>
+                <select name="Electricity_Backup_type">
                 <option value="Electricity_Backup_None">None</option>
                 <option value="Electricity_Backup_Generator">Generator</option>
                 <option value="Electricity_Backup_Ups">Ups</option>

@@ -16,7 +16,7 @@
 <script type="text/javascript" src={{ url("assets/js/icheck.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/owl.carousel.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/masonry.pkgd.min.js")}}></script>
-
+<script type="text/javascript" src={{ url("assets/js/jQuery.MultiFile.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/maps.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/custom.js")}}></script>
 

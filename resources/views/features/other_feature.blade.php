@@ -18,7 +18,7 @@
                 <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
                 
                 <label>Flooring</label>
-                <select>
+                <select name="Flooring_type">
                 <option value="Flooring_Tiles">Tiles</option>
                 <option value="Flooring_Marble">Marble</option>
                 <option value="Flooring_Wooden">Wooden</option>
@@ -28,7 +28,7 @@
                 </select>
                 
                 <label>Electricity Backup</label>
-                <select>
+                <select name="Electricity_Backup_type">
                 <option value="Electricity_Backup_None">None</option>
                 <option value="Electricity_Backup_Generator">Generator</option>
                 <option value="Electricity_Backup_Ups">Ups</option>
@@ -102,7 +102,7 @@
                 <li><label><input type="checkbox" name="Facilities_for_Disabled">Facilities for Disabled</label></li>
                 
                 <label>Pet Policy</label>
-                <select>
+                <select name="Pet_Policy_type">
                 <option value="Pet_Policy_Allowed">Allowed</option>
                 <option value="Pet_Policy_Not_Allowed">Not Allowed</option>
                 </select>
