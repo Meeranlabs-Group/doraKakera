@@ -68,22 +68,22 @@ class PropertyController extends Controller
             $feature['double_glazed_window'] = $request['Double_Glazed_Windows'];
             $feature['central_air_conditioning'] = $request['Central_Air_Conditioning'];
             $feature['central_heating'] = $request['Central_Heating'];
-            $feature['flooring'] = $request['Flooring'];
-            $feature['electricity_backup'] = $request['Electricity_Backup'];
+            $feature['flooring_type'] = $request['Flooring_type'];
+            $feature['electricity_backup_type'] = $request['Electricity_Backup'];
             $feature['waste_disposal'] = $request['Waste_Disposal'];
 
             $feature['floor'] = $request['Floor'];
             $feature['total_number_of_floors'] = $request['Total_Number_of_Floors'];
             $feature['other_main_feature'] = $request['Other_Main_Features'];
             $feature['furnished'] = $request['Furnished'];
-            $feature['lobby_in_building '] = $request['Lobby_in_Building'];
-            $feature['total_floor_building '] = $request['Total_Floors_in_Building'];
-            $feature['number_of-elevators_in_building '] = $request['Number_of_Elevators_in_Building'];
-            $feature['service_elevators_in_building '] = $request['Service_Elevators_in_Building'];
+            $feature['lobby_in_building'] = $request['Lobby_in_Building'];
+            $feature['total_floor_building'] = $request['Total_Floors_in_Building'];
+            $feature['number_of_elevators_in_building'] = $request['Number_of_Elevators_in_Building'];
+            $feature['service_elevators_in_building'] = $request['Service_Elevators_in_Building'];
             $feature['public_parking'] = $request['Public_Parking'];
-            $feature['underground_parking '] = $request['Underground_Parking'];
+            $feature['underground_parking'] = $request['Underground_Parking'];
             $feature['elevator_or_lift'] = $request['Elevator_or_Lift'];
-            $feature['number_of_units '] = $request['Number_of_Units'];
+            $feature['number_of_units'] = $request['Number_of_Units'];
 
             $feature['flooring_type'] = $request['Flooring_type'];
             $feature['electricity_backup_type'] = $request['Electricity_Backup_type'];
@@ -96,7 +96,7 @@ class PropertyController extends Controller
             $feature['intercom'] = $request['Intercom'];
             $feature['other_business_and_communication'] = $request['Other_Business_and_Communication_Facilities'];
             $feature['business_center_or_media_room_building'] = $request['Business_Center_or_Media_Room_in_Building'];
-            $feature['confrence_room_in_building '] = $request['Conference_Room_in_Building'];
+            $feature['confrence_room_in_building'] = $request['Conference_Room_in_Building'];
             $feature['atm_and_machine_in_building'] = $request['ATM_Credit_Card_Machines_in_Building'];
 
 
@@ -117,7 +117,7 @@ class PropertyController extends Controller
             //            Rooms
 
             $feature['number_of_bedrooms'] = $request['Number_of_Bedrooms'];
-            $feature['number_of-bathrooms'] = $request['Number_of_Bathrooms'];
+            $feature['number_of_bathrooms'] = $request['Number_of_Bathrooms'];
             $feature['number_of_servant_quaters'] = $request['Number_of_Servant_Quarters'];
             $feature['drawing_room'] = $request['Drawing_Room'];
             $feature['dining_room'] = $request['Dining_Room'];
@@ -153,9 +153,9 @@ class PropertyController extends Controller
                 $feature['security_staff'] = $request['Security_Staff'];
                 $feature['facilities_for_disabled'] = $request['Facilities_for_Disabled'];
                 $feature['laundry_or_dry_cleaning_facilities'] = $request['Laundry_or_Dry_Cleaning_Facility'];
-                $feature['communal_or_shared_kitchen_in_building '] = $request['Communal_or_Shared_Kitchen_in_Building'];
-                $feature['cctv_security_installed '] = $request['CCTV_Security_Installed'];
-                $feature['cafeteria_or_canteen_in_building '] = $request['Cafeteria_or_Canteen_in_Building'];
+                $feature['communal_or_shared_kitchen_in_building'] = $request['Communal_or_Shared_Kitchen_in_Building'];
+                $feature['cctv_security_installed'] = $request['CCTV_Security_Installed'];
+                $feature['cafeteria_or_canteen_in_building'] = $request['Cafeteria_or_Canteen_in_Building'];
                 $feature['pet_policy_type'] = $request['Pet_Policy_type'];
 
 

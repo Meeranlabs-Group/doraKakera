@@ -78,9 +78,11 @@ class CreateFeatureTable extends Migration
             $table->string('lawn_or_garden')->nullable();
             $table->string('swimming_pool')->nullable();
             $table->string('sauna')->nullable();
+
+
             $table->string('jacuzzi')->nullable();
             $table->string('other_health_and_recreational')->nullable();
-            $table->string('maintainance_staff')->nullable();
+            $table->string('maintenance_staff')->nullable();
             $table->string('security_staff')->nullable();
             $table->string('facilities_for_disabled')->nullable();
             $table->string('other_facilities')->nullable();
