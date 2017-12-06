@@ -62,7 +62,7 @@
 
         <select class="framed width-100" name="property_type" id="Property-type"  disabled>
 
-            {{--<option value="">  Any Type  </option>--}}
+            <option value="">  Any Type  </option>
             <option value="" disabled>  --- HOUSE --- </option>
             <option value="Houses">  Houses</option>
             <option value="Flates">  Flates</option>
@@ -106,7 +106,6 @@
 
 
                             <div  id="Plot-Files">
-
                                 @include('features.house_feature')
                             </div>
 
