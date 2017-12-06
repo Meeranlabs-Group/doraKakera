@@ -158,9 +158,14 @@
                 <li><label><input type="checkbox" name="Broadband_Internet_Access">Broadband Internet Access</label></li>
                 <li><label><input type="checkbox" name="Satellite_or_Cable_TV_Ready">Satellite or Cable TV Ready</label></li>
                 <li><label><input type="checkbox" name="Intercom">Intercom</label></li>
+                <div class="clearfix"></div>
+                <li> <label>Other Business and Communication <br>Facilities</label> </li>
+                <li><div class="form-group width-60">
 
-               <label>Other Business and Communication Facilities</label>
-                <input type="text" name="Other_Business_and_Communication_Facilities">
+                     <input type="text" name="Other_Business_and_Communication_Facilities">
+                </div>
+                </li>
+
 
             </ul>
             </div>
@@ -181,7 +186,12 @@
                 <li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
 
                 {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
-                <li><label>Distance From Airport(kms)</label><input type="text" name="Distance_From_Airport(kms)"></li>
+                <div class="clearfix"></div>
+                <li><label>Distance From Airport(kms)</label></li>
+                <li><div class="form-group width-60">
+
+                    <input type="text" name="Distance_From_Airport(kms)">
+                </div></li>
             </ul>
             </div>
             <!--end checkboxes-->
@@ -213,9 +223,11 @@
                 <li><label><input type="checkbox" name="Steaming_Room">Steaming Room</label></li>
                 <li><label><input type="checkbox" name="Lounge_or_Sitting_Room">Lounge or Sitting Room</label></li>
                 <li><label><input type="checkbox" name="Laundry_Room">Laundry Room</label></li>
-
-                <label>Other Rooms</label>
-                <div class="input-number">
+<div class="clearfix"></div>
+                <li><label>Other Rooms</label></li>
+                <li>
+                    <div class="form-group width-60">
+                    <div class="input-number">
                     <div class="change-button plus">
                         <i class="fa fa-caret-up"></i>
                     </div>
@@ -224,10 +236,14 @@
                     </div>
                     <input type="number" name="Other_Rooms">
                 </div>
+                    </div>
+                </li>
 
 
-                <label>Number of Servant Quarters</label>
-                    <div class="input-number">
+                <li><label>Number of Servant Quarters</label> </li>
+                </li>
+                <li> <div class="form-group width-60">
+                     <div class="input-number">
                         <div class="change-button plus">
                             <i class="fa fa-caret-up"></i>
                         </div>
@@ -238,9 +254,12 @@
                         </div>
                         <input type="number" name="Number_of_Servant_Quarters">
                     </div>
+                </div> </li>
 
-                <label>Number of Store Rooms</label>
-                <div class="input-number">
+                <li>  <label>Number of Store Rooms</label> </li>
+                <li>
+                    <div class="form-group width-60">
+                    <div class="input-number">
                     <div class="change-button plus">
                         <i class="fa fa-caret-up"></i>
                     </div>
@@ -251,7 +270,8 @@
                     </div>
                     <input type="number" name="Number_of_Store_Rooms">
                 </div>
-                
+                </li>
+
             </ul>
 
             </div>            <!--end checkboxes-->
@@ -268,9 +288,13 @@
                 <li><label><input type="checkbox" name="Swimming_Pool">Swimming Pool</label></li>
                 <li><label><input type="checkbox" name="Sauna">Sauna</label></li>
                 <li><label><input type="checkbox" name="Jacuzzi">Jacuzzi</label></li>
-                
-               <label>
-                        Other Healthcare and Recreation Facilities</label><input type="text" name="Other_Healthcare_and_Recreation_Facilities">
+
+                <li><label>
+                        Other Healthcare and Recreation Facilities</label></li>
+                <li>
+                    <div class="form-group width-60">
+                    <input type="text" name="Other_Healthcare_and_Recreation_Facilities">
+                    </div></li>
                 
             </ul>
             </div>
@@ -287,8 +311,13 @@
                 <li><label><input type="checkbox" name="Security_Staff">Security Staff</label></li>
                 <li><label><input type="checkbox" name="Facilities_for_Disabled">Facilities for Disabled</label></li>
                 
-            <label>Other Facilities<input type="text" name="Other_Facilities"></label>
- 
+           <li><label>Other Facilities</label></li>
+                <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities">
+
+                    </div>
+
+                </li>
+
             </ul>
             </div>
             <!--end checkboxes-->
