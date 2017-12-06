@@ -19,7 +19,7 @@
                         <ul class="links">
                             <li><a href={{ url("/about-us")}}>About Us</a></li>
                             {{--<li><a href="become-an-affiliate.html">Become an Affiliate</a></li>--}}
-                            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                            {{--<li><a href="terms-and-conditions.html">Terms & Conditions</a></li>--}}
                             <li class="active"><a href={{ url("/contact-us")}}>Contact Us</a></li>
                         </ul>
                     </div>
@@ -39,11 +39,14 @@
                             <div class="col-md-4">
                                 <h2>Address</h2>
                                 <address>
-                                    <strong>Your Company</strong><br>
-                                    4877 Spruce Drive<br>
-                                    West Newton, PA 15089<br>
+                                    <strong>Head Office</strong><br>
+                                    G -16, Phase 1, Masjid Chowk,<br>
+                                    Defence Housing Authority Lahore Cantt., Pakistan.<br>
                                     <br>
-                                    +1 (734) 123-4567<br>
+                                    <strong>UAN:</strong> +92-42-111-124-124<br>
+                                    <strong>Mobile:</strong> 0321 9124124<br>
+                                    <strong>Tel:</strong> +92-42-35727771-4, 35728881-4<br>
+                                    <strong>Fax:</strong> +92-42-35729990<br>
                                     <a href="#">hello@example.com</a><br>
                                     <strong>skype:</strong> your.company
                                 </address>
@@ -58,7 +61,14 @@
                             <!--end col-md-8-->
                             <div class="col-md-8">
                                 <h2>Map</h2>
-                                <div id="contact-map" class="map"></div>
+                                {{--<div id="contact-map" class="map">--}}
+
+                                    <div class="form-group">
+                                        <label>Place on Map</label>
+                                        <div class="map height-300 box" id="map-item"></div>
+                                    </div>
+
+                                {{--</div>--}}
                                 <!--end contact-map-->
                             </div>
                             <!--end col-md-8-->

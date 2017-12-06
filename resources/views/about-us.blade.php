@@ -15,7 +15,7 @@
                         <h2>About Us</h2>
                         <ul class="links">
                             <li class="active"><a href={{ url("/about-us")}}>About Us</a></li>
-                            <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                            {{--<li><a href="terms-and-conditions.html">Terms & Conditions</a></li>--}}
                             <li><a href={{ url("/contact-us")}}>Contact Us</a></li>
                         </ul>
                     </div>
@@ -31,24 +31,23 @@
                     </div>
                     <!--end title-->
                     <section>
-                        <h2>What is Accommodo?</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel magna vulputate magna
-                            semper laoreet ac eu sapien. Donec blandit nulla eu lacus convallis faucibus. Etiam ut efficitur
-                            velit, dictum volutpat ante. Integer hendrerit turpis porta neque efficitur, sed efficitur libero
-                            lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse non ex id
-                            sapien venenatis mattis. Nam facilisis molestie pulvinar. Morbi tincidunt, eros sit amet imperdiet
-                            finibus, velit sapien rutrum enim, consectetur dictum diam massa eu nibh. Sed aliquam ut orci eget
-                            dictum. Sed consectetur sem sit amet metus tempor condimentum. In nec semper ante, mattis placerat lacus.
+                        <h2>Who We Are..</h2>
+                        <p>Chohan Estate was established in 1985.This company was formed keeping in mind the
+                            growing desires of the people and the demand to owe own house.
+                            No one better than us could have capture the dreams and requirements of the people of Pakistan.
                         </p>
                         <p>
-                            Sed eu dui nisl. Suspendisse at massa dictum odio lacinia semper ut eu odio. Etiam viverra,
-                            nunc at sagittis convallis, tortor dolor volutpat purus, a mollis nunc arcu eget nulla. Mauris
-                            gravida nibh nec suscipit rutrum. Vestibulum commodo lacus vulputate, ultrices ligula at,
-                            posuere augue. Proin fermentum mattis sem vel ultrices. Donec porta turpis non hendrerit porttitor.
+                            At Chohan we are committed to developing projects modified to the needs of the market and the
+                            expectations of our clients and partners, whilst at the same time enriching these projects with our vision, aims, and values.
+                        </p>
+
+                        <p>
+                            In conclusion, Please allow our extensive knowledge of real estate and our experienced staff to assist you with whatever your needs may be.
+                            From rentals to property management, we are fully equipped to handle all of your real estate needs.
                         </p>
                     </section>
                     <section>
-                        <h2>Our Team</h2>
+                        <h2>Our Agents</h2>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="member">

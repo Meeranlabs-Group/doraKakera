@@ -109,8 +109,9 @@
 
 
 <script>
-    var _latitude = 48.47292127;
-    var _longitude = 4.28672791;
+
+    var _latitude = 31.483434 ;
+    var _longitude = 74.393061;
     var element = "map-item";
     var useAjax = true;
     bigMap(_latitude,_longitude, element, useAjax);

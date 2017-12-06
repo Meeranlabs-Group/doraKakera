@@ -62,8 +62,8 @@
 
         <select class="framed width-100" name="property_type" id="Property-type"  disabled>
 
-            <option value="">  Any Type  </option>
-            <option value="">  --- HOUSE --- </option>
+            {{--<option value="">  Any Type  </option>--}}
+            <option value="" disabled>  --- HOUSE --- </option>
             <option value="Houses">  Houses</option>
             <option value="Flates">  Flates</option>
             <option value="Upper-Portions">  Upper Portions</option>
@@ -71,7 +71,7 @@
             <option value="Farms-House">  Farms House</option>
             <option value="Rooms">  Rooms</option>
 
-            <option value="">  --- PLOTS ---</option>
+            <option value="" disabled>  --- PLOTS ---</option>
             <option value="Residential-Plots">  Residential Plots</option>
             <option value="Commercial-Plots">  Commercial Plots</option>
             <option value="Agricultural-Land">  Agricultural Land</option>
@@ -79,7 +79,7 @@
             <option value="Plot-Files">  Plot Files</option>
             <option value="Plot-Forms">  Plot Forms</option>
 
-            <option value="">  --- COMMERCIAL ---</option>
+            <option value="" disabled>  --- COMMERCIAL ---</option>
             <option value="Offices">  Offices</option>
             <option value="Shops">  Shops</option>
             <option value="Warehouses">  Warehouses</option>

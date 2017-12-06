@@ -5,8 +5,10 @@ echo json_encode(
 
     [
         'id' => 1,
-        'latitude' => 48.42737804,
-        'longitude' => 3.68179321,
+
+
+        'latitude' => 31.484889,
+        'longitude' => 74.393056 ,
     ],
 
     [

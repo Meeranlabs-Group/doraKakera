@@ -1,10 +1,12 @@
 <div class="item list" data-map-latitude="48.87" data-map-longitude="2.29" data-id="1">
     <div class="image-wrapper">
-        <div class="mark-circle description" data-toggle="tooltip" data-placement="right" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin quis erat vel quam aliquet hendrerit semper eget elit. Aenean tincidunt ultrices bibendum. Proin nisi erat, iaculis non pulvinar a, scelerisque ut est. "><i class="fa fa-question"></i></div>
+        <div class="mark-circle description" data-toggle="tooltip" data-placement="right" title="scelerisque ut est" {{ $data->location }} ><i class="fa fa-question"></i></div>
         <div class="mark-circle map" data-toggle="tooltip" data-placement="right" title="Show on map"><i class="fa fa-map-marker"></i></div>
-        <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>
+
+        <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i>
+        </div>
         <div class="image">
-            <a href="detail.html" class="wrapper">
+            <a href="detail" class="wrapper">
                 <div class="gallery">
                     <img src="assets/img/items/01.jpg" alt="">
                     <img src="#" class="owl-lazy" alt="" data-src="assets/img/items/02.jpg">
@@ -30,19 +32,17 @@
         </div>
         <!--end meta-->
         <div class="info">
-            <a href={{ "/detail" }}><h3>1 Kanal  HOUSE FOR Banglaow in DHA LAHORE </h3></a>
-            <figure class="location">DHA Phase 1</figure>
+            <a href={{ "/detail" }}><h3> {{ $data->title }} </h3></a>
+            <figure class="location">{{ $data->address }}</figure>
             <figure class="label label-info">House</figure>
             <figure class="label label-Available">Available</figure>
             <figure class="label label-InProcess">In-Process</figure>
             <figure class="label label-danger">Sold</figure>
 
             <p>
-                Consectetur adipiscing elit. Vivamus nec augue ac dui sodales euismod. Suspendisse
-                at dui sit amet felis commodo dictum. Class aptent taciti sociosqu ad
-                litora torquent per conubia nostra,
+                {{ $data->description }}
             </p>
-            <div class="price-info">Price<span class="price">PKR-32,000,000</span><span class="price call"><i class="fa fa-phone"></i> 03224531314</span></div>
+            <div class="price-info">Price<span class="price">PKR-{{ $data->price }}</span><span class="price call"><i class="fa fa-phone"></i> 03224531314</span></div>
 
             <a href={{ "/detail" }} class="btn btn-rounded btn-default btn-framed btn-small">View detail</a>
         </div>

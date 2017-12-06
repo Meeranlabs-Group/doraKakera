@@ -4,18 +4,33 @@
             <h2>Search</h2>
             <form id="form-filter" class="labels-uppercase">
                 <div class="form-group">
-                    <label for="form-filter-destination">Destination</label>
-                    <input type="text" class="form-control" id="form-filter-destination" name="destination" placeholder="Destination">
+                    <label for="form-filter-destination">City</label>
+                    <input type="text" class="form-control" id="form-filter-destination" name="city" placeholder="Destination">
+                </div>
+
+                <div class="form-group">
+                    <label for="form-filter-destination">Area</label>
+                    <input type="text" class="form-control" id="form-filter-destination" name="area" placeholder="Destination">
                 </div>
                 <!--end form-group-->
                 <div class="form-group-inline">
                     <div class="form-group">
-                        <label for="form-filter-check-in">Check In</label>
-                        <input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">
-                    </div>
-                    <!--end form-group-->
-                    <div class="form-group">
-                        <label for="form-filter-check-out">Nights</label>
+                        <label for="form-filter-check-in">Land Area</label>
+                        {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
+                        <select name="area" id="area_type" class="form-control">
+                            <option value="">Select Unit</option>
+                            <option value="Square_Feet">Square Feet</option>
+                            <option value="Square_Yards">Square Yards</option>
+                            <option value="Square_Meters">Square Meters</option>
+                            <option value="Marla">Marla</option>
+                            <option value="Kanal">Kanal</option>
+                        </select>
+
+                    {{--</div>--}}
+                    {{--<!--end form-group-->--}}
+
+                    {{--<div class="form-group">--}}
+                        {{--<label for="form-filter-check-out">Nights</label>--}}
                         <input type="number" class="form-control" id="form-filter-check-out" name="check-out">
                     </div>
                     <!--end form-group-->

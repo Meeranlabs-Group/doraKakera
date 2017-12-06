@@ -5,13 +5,18 @@ echo json_encode(
 
     [
         'id' => 1,
-        'latitude' => 48.42737804,
-        'longitude' => 3.68179321,
-        'title' => "Spring Hotel",
-        'location' => "Montenegro",
-        'type' => "Hotel",
-        'rating' => 8.9,
-        'beds' => 360,
+
+
+
+
+
+        'latitude' => 31.483434,
+        'longitude' => 74.393061,
+        'title' => "Chohan Estate",
+        'location' => "G -16, Phase 1, Masjid Chowk,Defence Housing Authority Lahore Cantt., Pakistan.",
+        'type' => "Real Estate",
+        'rating' => 9.5,
+
         "image" => "assets/img/items/01.jpg",
         "url" => "detail.html"
     ],
@@ -268,8 +273,10 @@ echo json_encode(
 
     [
         'id' => 21,
-        'latitude' => 48.852549,
-        'longitude' => 2.329574,
+
+
+        'latitude' => 31.484889,
+        'longitude' => 74.393056,
         'title' => "Primal Court Resort",
         'location' => "Norway",
         'type' => "Cottage",

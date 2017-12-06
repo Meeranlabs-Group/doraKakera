@@ -12,7 +12,7 @@ $title = "";
 $location = "";
 $image = "";
 $rating = "";
-$beds = "";
+
 
 ob_start();
 include 'locations.php';
@@ -26,7 +26,6 @@ for( $i=0; $i < count($locations); $i++){
         $location = $locations[$i]['location'];
         $image = $locations[$i]['image'];
         $rating = $locations[$i]['rating'];
-        $beds = $locations[$i]['beds'];
     }
 }
 
@@ -50,6 +49,6 @@ echo
     </div>
     <div class="meta">
         <span><i class="fa fa-star"></i>'. $rating .'</span>
-        <span><i class="fa fa-bed"></i>'. $beds .'</span>
+    
     </div>
 </a>';

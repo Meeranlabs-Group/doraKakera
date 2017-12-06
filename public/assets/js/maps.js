@@ -28,7 +28,7 @@ function simpleMap(_latitude,_longitude, element, markerDrag){
     }
     var mapCenter = new google.maps.LatLng(_latitude,_longitude);
     var mapOptions = {
-        zoom: 9,
+        zoom: 15,
         center: mapCenter,
         disableDefaultUI: true,
         scrollwheel: true,
@@ -170,7 +170,7 @@ function bigMap(_latitude,_longitude, element, useAjax){
         }
         var geocoder = new google.maps.Geocoder();
         var map = new google.maps.Map(document.getElementById(element), {
-            zoom: 9,
+            zoom: 15,
             scrollwheel: true,
             center: new google.maps.LatLng(_latitude, _longitude),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -365,7 +365,7 @@ function bigMap(_latitude,_longitude, element, useAjax){
                             '</div>' +
                             '<div class="meta">' +
                                 '<span><i class="fa fa-star"></i>' + locations[i]["rating"] + '</span>' +
-                                '<span><i class="fa fa-bed"></i>' + locations[i]["beds"] + '</span>' +
+                                '<span>' + locations[i]["beds"] + '</span>' +
                             '</div>' +
                         '</a>';
             }
