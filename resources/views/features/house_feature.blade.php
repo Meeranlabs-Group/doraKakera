@@ -270,6 +270,7 @@
                     </div>
                     <input type="number" name="Number_of_Store_Rooms">
                 </div>
+                    </div>
                 </li>
 
             </ul>

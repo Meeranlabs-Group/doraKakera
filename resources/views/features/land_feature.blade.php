@@ -4,7 +4,7 @@
         <aside class="step">4</aside>
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-6">
             <h3>Plot Features</h3>
             <ul class="checkboxes inline half list-unstyled">
                 
@@ -17,30 +17,66 @@
                 <li><label><input type="checkbox" name="Accessible_by_Road">Accessible by Road</label></li> 
                 <li><label><input type="checkbox" name="Perimeter_Fencing">Perimeter Fencing</label></li> 
                 <li><label><input type="checkbox" name="Is_Land_Fertile">Is Land Fertile</label></li> 
-                <li><label><input type="checkbox" name="Boundary_Lines">Boundary Lines</label></li> 
-                
-                <li><label><input type="text" name="Nearby_Water_Resources">Nearby Water Resources</label></li> 
-                <li><label><input type="text" name="Other_Land_Features">Other Land Features</label></li> 
+                <li><label><input type="checkbox" name="Boundary_Lines">Boundary Lines</label></li>
+
+                    <div class="form-group width-80">
+                        <label>Nearby Water Resources</label>
+                        <input type="text" name="Nearby_Water_Resources">
+
+                    </div>
+
+
+
+                    <div class="form-group width-80">
+                        <label>Other Land Features</label>
+                        <input type="text" name="Other_Land_Features">
+
+                    </div>
+
+                {{--<li><label><input type="text" name="Nearby_Water_Resources">Nearby Water Resources</label></li> --}}
+                {{--<li><label><input type="text" name="Other_Land_Features">Other Land Features</label></li> --}}
 
             </ul>
             <!--end checkboxes-->
         </div>
-        
-    
-        <div class="col-md-4">
-            <h3>Nearby Locations and Other Facilities</h3>
-            <ul class="checkboxes inline half list-unstyled">
-                <li><label><input type="text" name="Nearby_Schools">Nearby Schools</label></li>
-                <li><label><input type="text" name="Nearby_Hospitals">Nearby Hospitals</label></li>
-                <li><label><input type="text" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
-                <li><label><input type="text" name="Nearby_Restaurants">Nearby Restaurants</label></li>
-                <li><label><input type="text" name="Distance_From_Airport(kms)">Distance From Airport(kms)</label></li>
-                <li><label><input type="text" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
-                <li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>
 
-            </ul>
+
+        <div class="col-md-6">
+            <h3>Nearby Locations </h3>
+            <div  id="N&L">
+                <ul class="checkboxes inline half list-unstyled">
+
+                    <li><label><input type="checkbox" name="Nearby_Schools">Nearby Schools</label></li>
+                    <li><label><input type="checkbox" name="Nearby_Hospitals">Nearby Hospitals</label></li>
+                    <li><label><input type="checkbox" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
+                    <li><label><input type="checkbox" name="Nearby_Restaurants">Nearby Restaurants</label></li>
+                    <li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
+
+                    {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
+                    <div class="clearfix"></div>
+                    <li><label>Distance From Airport(kms)</label></li>
+                    <li><div class="form-group width-60">
+
+                            <input type="text" name="Distance_From_Airport(kms)">
+                        </div></li>
+                </ul>
+            </div>
             <!--end checkboxes-->
         </div>
+        {{--<div class="col-md-6">--}}
+            {{--<h3>Nearby Locations and Other Facilities</h3>--}}
+            {{--<ul class="checkboxes inline half list-unstyled">--}}
+                {{--<li><label><input type="text" name="Nearby_Schools">Nearby Schools</label></li>--}}
+                {{--<li><label><input type="text" name="Nearby_Hospitals">Nearby Hospitals</label></li>--}}
+                {{--<li><label><input type="text" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>--}}
+                {{--<li><label><input type="text" name="Nearby_Restaurants">Nearby Restaurants</label></li>--}}
+                {{--<li><label><input type="text" name="Distance_From_Airport(kms)">Distance From Airport(kms)</label></li>--}}
+                {{--<li><label><input type="text" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>--}}
+                {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
+
+            {{--</ul>--}}
+            {{--<!--end checkboxes-->--}}
+        {{--</div>--}}
     </div>
     <!--end row-->
     
