@@ -22,7 +22,8 @@
                         <h1>Submit Accommodation</h1>
                     </div>
                     <!--end title-->
-                    <div class="quick-navigation" data-fixed-after-touch="">
+
+                    <div  class="quick-navigation" data-fixed-after-touch="">
                         <div class="wrapper">
                             <ul>
 
@@ -104,101 +105,10 @@
                             @include('addProperty.location')
                             @include('addProperty.gallery')
 
-
-                            <div  id="Plot-Files">
-                                @include('features.house_feature')
-                            </div>
-
-                             <div  id="Plot-Forms">
-
-                                @include('features.house_feature')
-                            </div>
+<div id="view">
 
 
-                            {{--house feature--}}
-                            <div  id="Houses">
-
-                                @include('features.house_feature')
-                            </div>
-
-
-
-                            {{--commercial factory--}}
-                            <div  id="Factories">
-
-                                @include('features.factory_feature')
-                            </div>
-
-                            {{--commpercial building--}}
-                            <div  id="Buildings">
-
-                                @include('features.building_feature')
-]                            </div>
-
-
-
-                            {{--houses--}}
-                             <div  id="Flates">
-                                   @include('features.flat_feature')
-                            </div>
-
-                            {{--plot commercil agriculture--}}
-
-                            <div id="Agricultural-Land">
-                                @include('features.land_feature')
-                            </div>
-
-                            {{--plot commercil agriculture--}}
-
-                            <div id="Industrial-Land">
-                                @include('features.land_feature')
-                            </div>
-
-                            {{--compercail--}}
-                            <div id="Commercial-office">
-                                @include('features.office_feature')
-                            </div>
-
-                            {{--commercial--}}
-                            <div id="Other">
-                                @include('features.other_feature')
-                            </div>
-
-                {{--plot--}}
-                            <div id="Commercial-Plots">
-                                @include('features.plot_feature')
-                            </div>
-
-               {{--plot--}}
-                            <div id="Residential-Plots">
-                                @include('features.plot_feature')
-                            </div>
-
-                            {{--houses  lower and upper and farm house--}}
-                            <div id="Lower-Portions">
-                                @include('features.portion&farm_feature')
-                            </div>
-
-                            {{--houses  lower and upper and farm house--}}
-                            <div id="Upper-Portions">
-                                @include('features.portion&farm_feature')
-                            </div>
-
-                            {{--houses  lower and upper and farm house--}}
-                            <div id="Farms-House">
-                                @include('features.portion&farm_feature')
-                            </div>
-
-                            {{--shop feature--}}
-                            <div id="Shops">
-                                @include('features.shop_feature')
-                            </div>
-
-                            {{--commercial warehouse --}}
-                            <div id="Warehouses">
-                                @include('features.warehouse_feature')
-                            </div>
-
+</div>
 
 
 
@@ -236,44 +146,91 @@
 <!--end page-wrapper-->
 
 
+
 <script>
     document.getElementById('object-type').onchange = function () {
         document.getElementById("Property-type").disabled = this.value == '01';
     }
 
-
-
     document.getElementById('Property-type').onchange = function () {
         $("#main-info").removeClass("hidden");
-        $("#Houses").addClass("hidden");
-        $("#Buildings").addClass("hidden");
-        $("#Factories").addClass("hidden");
-        $("#Flates").addClass("hidden");
-        $("#Agricultural-Land").addClass("hidden");
-        $("#Industrial-Land").addClass("hidden");
-        $("#Commercial-Plots").addClass("hidden");
-        $("#Residential-Plots").addClass("hidden");
-        $("#Commercial-office").addClass("hidden");
-        $("#Lower-Portions").addClass("hidden");
-        $("#Upper-Portions").addClass("hidden");
-        $("#Farms-House").addClass("hidden");
-        $("#Shops").addClass("hidden");
-        $("#Warehouses").addClass("hidden");
-        $("#Other").addClass("hidden");
-        $("#Plot-Files").addClass("hidden");
-        $("#Plot-Forms").addClass("hidden");
+        var e = document.getElementById("Property-type");
+        var value = e.options[e.selectedIndex].value;
+        var str1="#";
+        var text = e.options[e.selectedIndex].text;
+
+        var text=str1.concat(value);
+        $(text).removeClass("hidden");
+
+
+        if(value=='Houses') {
+            $('#view').load('/Housesview/');
+        }
+        else if(value=='Flates'){
+            $('#view').load('/Flatesview/');
+
+        }
+        else if(value=='Upper-Portions'){
+            $('#view').load('/Upper-Portionsview/');
+
+        } else if(value=='Lower-Portions'){
+            $('#view').load('/Lower-Portionsview/');
+
+        } else if(value=='Farms-House'){
+            $('#view').load('/Farms-Houseview/');
+
+        } else if(value=='Residential-Plots'){
+            $('#view').load('/Residential-Plotsview/');
+
+        } else if(value=='Commercial-Plots'){
+            $('#view').load('/Commercial-Plotsview/');
+
+        } else if(value=='Agricultural-Land'){
+            $('#view').load('/Agricultural-Landview/');
+
+        } else if(value=='Industrial-Land'){
+            $('#view').load('/Industrial-Landview/');
+
+        }
+         else if(value=='Offices'){
+            $('#view').load('/Officesview/');
+
+        } else if(value=='Shops'){
+            $('#view').load('/Shopsview/');
+
+        } else if(value=='Warehouses'){
+            $('#view').load('/Warehousesview/');
+
+        } else if(value=='Factories'){
+            $('#view').load('/Factoriesview/');
+
+        } else if(value=='Buildings'){
+            $('#view').load('/Buildingsview/');
+
+        } else if(value=='Other'){
+            $('#view').load('/Otherview/');
+
+        }
+        else {
+
+            $('#view').hidden;
+
+        }
 
 
 
 
-                var e = document.getElementById("Property-type");
-                var value = e.options[e.selectedIndex].value;
-                var str1="#";
-                var text = e.options[e.selectedIndex].text;
-                var text=str1.concat(value);
-                $(text).removeClass("hidden");
+        var a = document.getElementById("view");
+
+
+
 
     }
+
+
+
+
+
 
 
 

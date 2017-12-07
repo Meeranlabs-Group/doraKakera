@@ -24,11 +24,92 @@ Route::get('/about-us', function () {
 });
 
 Route::get('/properties','PropertyController@show_all');
+
+
+Route::get('/viewloader','PropertyController@viewloader');
+
+
 Route::get('/detail','PropertyController@detail');
 
-//Route::get('/addproperty', function () {
-//    return view('addproperty');
-//});
+Route::get('/Housesview', function () {
+
+    return View::make('features.house_feature');
+
+});
+
+
+Route::get('/Flatesview', function () {
+
+    return View::make('features.flat_feature');
+
+});
+
+Route::get('/Upper-Portionsview', function () {
+
+    return View::make('features.portion&farm_feature');
+
+});
+Route::get('/Lower-Portions', function () {
+
+    return View::make('features.portion&farm_feature');
+
+});
+Route::get('/Farms-House', function () {
+
+    return View::make('features.portion&farm_feature');
+
+});
+Route::get('/Residential-Plotsview', function () {
+
+    return View::make('features.plot_feature');
+
+});
+
+Route::get('/Commercial-Plotsview', function () {
+
+    return View::make('features.plot_feature');
+
+});
+Route::get('/Agricultural-Landview', function () {
+
+    return View::make('features.land_feature');
+
+});
+Route::get('/Industrial-Landview', function () {
+
+    return View::make('features.land_feature');
+
+});
+Route::get('/Officesview', function () {
+
+    return View::make('features.office_feature');
+
+});
+Route::get('/Shopsview', function () {
+
+    return View::make('features.shop_feature');
+
+});
+Route::get('/Warehousesview', function () {
+
+    return View::make('features.warehouse_feature');
+
+});
+Route::get('/Factoriesview', function () {
+
+    return View::make('features.factory_feature');
+
+});
+Route::get('/Buildingsview', function () {
+
+    return View::make('features.building_feature');
+
+});
+Route::get('/Otherview', function () {
+
+    return View::make('features.other_feature');
+
+});
 
 
 

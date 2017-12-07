@@ -27,7 +27,17 @@ class PropertyController extends Controller
     public function create()
     {
         //
+
+
+
     }
+
+
+
+
+
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -199,13 +209,13 @@ class PropertyController extends Controller
 
     }
 
-
     public function show_all(){
 
         $property= Property::all() ;
 
-        return view('properties',compact('property'));
+//        return view('properties',compact('property'));
     }
+
 
     /**
      * Display the specified resource.
