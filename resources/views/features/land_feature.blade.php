@@ -19,19 +19,21 @@
                 <li><label><input type="checkbox" name="Is_Land_Fertile">Is Land Fertile</label></li> 
                 <li><label><input type="checkbox" name="Boundary_Lines">Boundary Lines</label></li>
 
-                    <div class="form-group width-80">
-                        <label>Nearby Water Resources</label>
+
+
+                <li><label>Nearby Water Resources</label></li>
+                <li><div class="form-group width-60">
+
                         <input type="text" name="Nearby_Water_Resources">
-
                     </div>
+                </li>
+                <li><label>Other Land Features</label></li>
+                <li><div class="form-group width-60">
 
-
-
-                    <div class="form-group width-80">
-                        <label>Other Land Features</label>
                         <input type="text" name="Other_Land_Features">
-
                     </div>
+                </li>
+
 
                 {{--<li><label><input type="text" name="Nearby_Water_Resources">Nearby Water Resources</label></li> --}}
                 {{--<li><label><input type="text" name="Other_Land_Features">Other Land Features</label></li> --}}
@@ -88,8 +90,12 @@
                 
                 <li><label><input type="checkbox" name="Security_Staff">Security Staff</label></li>
                 
-                <li><label><input type="text" name="Other_Facilities">Other Facilities</label></li> 
-              
+
+                <li><label>Other Facilities</label></li>
+                <li><div class="form-group width-60">
+
+                        <input type="text" name="Other_Facilities">
+                    </div></li>
             </ul>
             <!--end checkboxes-->
         </div>

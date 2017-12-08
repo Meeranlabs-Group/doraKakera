@@ -18,11 +18,15 @@
                 <li><label><input type="checkbox" name="Electricity">Electricity</label></li> 
                 <li><label><input type="checkbox" name="Water_Supply">Water Supply</label></li> 
                 <li><label><input type="checkbox" name="Sui_Gas">Sui Gas</label></li> 
-                <li><label><input type="checkbox" name="Boundary_Wall">Boundary Wall</label></li> 
-                
-                <li><label><input type="text" name="Other_Plot_Features">Other Plot Features</label></li> 
-                
+                <li><label><input type="checkbox" name="Boundary_Wall">Boundary Wall</label></li>
+                <div class="clearfix"></div>
 
+                <li> <label>Other Plot Features</label> </li>
+                <li><div class="form-group width-60">
+
+                        <input type="text" name="Other_Plot_Features">
+                    </div>
+                </li>
             </ul>
             <!--end checkboxes-->
         </div>
@@ -42,7 +46,7 @@
                     <div class="clearfix"></div>
                     <li><label>Distance From Airport(kms)</label></li>
                     <li><div class="form-group width-60">
-
+                            <div class="clearfix"></div>
                             <input type="text" name="Distance_From_Airport(kms)">
                         </div></li>
                 </ul>
@@ -70,12 +74,18 @@
       
        
         
-        <div class="col-md-4">
+        <div class="col-md-6">
             <h3>Other Facilities</h3>
             <ul class="checkboxes inline half list-unstyled">
                 
                 <li><label><input type="checkbox" name="Security_Staff">Security Staff</label></li>
-                <li><label><input type="text" name="Other_Facilities">Other Facilities</label></li>
+
+                <li><label>Other Facilities</label></li>
+                <li><div class="form-group width-60">
+
+                        <input type="text" name="Other_Facilities">
+                    </div></li>
+
               
             </ul>
             <!--end checkboxes-->
