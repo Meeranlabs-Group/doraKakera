@@ -1,6 +1,7 @@
-@extends('layouts.app')
+@include('include.head')
 
-@section('content')
+@include('partials.navbar')
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -74,4 +75,8 @@
         </div>
     </div>
 </div>
-@endsection
+
+@include('partials.totalproperties')
+
+@include('partials.footer')
+@include('include.foot')

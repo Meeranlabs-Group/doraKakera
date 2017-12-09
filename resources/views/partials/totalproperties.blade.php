@@ -4,7 +4,7 @@
 <div class="block">
     <div class="container">
         <div class="title">
-            <h2>Total Properties</h2>
+            <h2 class="center">Available Properties</h2>
         </div>
         <!--end title-->
 
@@ -44,6 +44,10 @@
             <li><a href="#">Isle of Wight<span>74</span></a></li>
             <li><a href="#">Jersey<span>51</span></a></li>
             <li><a href="#">Isle of Man<span>23</span></a></li>
+            <li><a href="#">Santoríni<span>36</span></a></li>
+            <li><a href="#">Mykonos<span>55</span></a></li>
+            <li><a href="#">Lanzarote<span>78</span></a></li>
+            <li><a href="#">Bali<span>17</span></a></li>
             <li><a href="#">Santoríni<span>36</span></a></li>
             <li><a href="#">Mykonos<span>55</span></a></li>
             <li><a href="#">Lanzarote<span>78</span></a></li>
