@@ -145,8 +145,7 @@
 
                             </li>
                             <li><a href={{ url("/contact-us")}}>Contact Us</a></li>
-                            <li class="submit"><a href={{ url("/addproperty") }}><span>Submit Property</span><i data-toggle="tooltip" data-placement="top" title="Submit Property"><img src="assets/img/plus.png" alt=""></i></a></li>
-                        </ul>
+                            </ul>
                     </nav>
                     <!--end nav-->
                 </div>
