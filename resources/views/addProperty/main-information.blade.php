@@ -57,78 +57,21 @@
             <!--end form-group-inline-->
 
 
-
-            {{--<div class="form-group-inline">--}}
-                {{--<!--end form-group-->--}}
-                {{--<div class="form-group">--}}
-                    {{--<h3>Bathroom<i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Choose Number"></i></h3>--}}
-                {{--</div>--}}
-
-                {{--<div class="form-group width-60">--}}
-                    {{--<select class="framed width-100" name="room_type_2" id="room-type_2">--}}
-                        {{--<option value="">-- Select -- </option>--}}
-                        {{--<option value="1">1</option>--}}
-                        {{--<option value="2">2</option>--}}
-                        {{--<option value="3">3</option>--}}
-                        {{--<option value="4">4</option>--}}
-                        {{--<option value="5">5</option>--}}
-                        {{--<option value="6">6</option>--}}
-                        {{--<option value="7">7</option>--}}
-                        {{--<option value="8">8</option>--}}
-                        {{--<option value="9">9</option>--}}
-                        {{--<option value="10">10</option>--}}
-                        {{--<option value="10+">10+</option>--}}
-
-                    {{--</select>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            <!--end form-group-inline-->
-
-
-
-            {{--<div class="form-group-inline">--}}
-                {{--<!--end form-group-->--}}
-                {{--<div class="form-group">--}}
-
-                    {{--<h3>Bedroom<i class="fa fa-question-circle tooltip-question" data-toggle="tooltip" data-placement="right" title="Choose Number"></i></h3>--}}
-                {{--</div>--}}
-
-                {{--<div class="form-group width-60">--}}
-                    {{--<select class="framed width-100" name="room_type_2" id="room-type_2">--}}
-                        {{--<option value="">-- Bedroom --</option>--}}
-                        {{--<option value="1">1</option>--}}
-                        {{--<option value="2">2</option>--}}
-                        {{--<option value="3">3</option>--}}
-                        {{--<option value="4">4</option>--}}
-                        {{--<option value="5">5</option>--}}
-                        {{--<option value="6">6</option>--}}
-                        {{--<option value="7">7</option>--}}
-                        {{--<option value="8">8</option>--}}
-                        {{--<option value="9">9</option>--}}
-                        {{--<option value="10">10</option>--}}
-                        {{--<option value="10+">10+</option>--}}
-
-                    {{--</select>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            <!--end form-group-inline-->
-
-
             <div class="form-group-inline">
                 <div class="form-group width-60">
                     <label for="price">Unit Type</label>
                     <select class="framed width-100" name="room_type_2" id="room-type_2">
                         <option value="">Size Unit Type</option>
-                        <option value="1">Marla</option>
-                        <option value="2">Kanal</option>
-                        <option value="3">Square Feet</option>
-                        <option value="4">Square Meter</option>
-                        <option value="5">Square Yard</option>
+                        <option value="Marla">Marla</option>
+                        <option value="Kanal">Kanal</option>
+                        <option value="Square Feet">Square Feet</option>
+                        <option value="Square Meter">Square Meter</option>
+                        <option value="Square Yard">Square Yard</option>
                     </select>
                 </div>
                 <!--end form-group-->
                 <div class="form-group">
-                    <label for="price">Size</label>
+                    <label for="number-of-rooms_2">Size</label>
                     <input type="number" class="form-control" id="number-of-rooms_2" name="room_number_2" placeholder="1" min="1" >
                 </div>
                 <!--end form-group-->

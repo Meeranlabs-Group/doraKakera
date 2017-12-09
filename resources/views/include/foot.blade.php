@@ -3,6 +3,7 @@
 
 
 
+
 <script type="text/javascript" src={{ url("assets/js/jquery-2.2.1.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/jquery-migrate-1.2.1.min.js")}}></script>
 <script type="text/javascript" src={{ url("http://maps.google.com/maps/api/js?sensor=false&libraries=places")}}></script>
@@ -72,6 +73,8 @@
 
 
 
+
+
 <script>
     $(document).ready(function(){
         $("#show").click(function(){
@@ -119,7 +122,79 @@
 
 
 
+<script>
+    document.getElementById('object-type').onchange = function () {
+        document.getElementById("Property-type").disabled = this.value == '01';
+    }
+
+    document.getElementById('Property-type').onchange = function () {
+        $("#main-info").removeClass("hidden");
+        var e = document.getElementById("Property-type");
+        var value = e.options[e.selectedIndex].value;
+        var str1="#";
+        var text = e.options[e.selectedIndex].text;
+
+        var text=str1.concat(value);
+        $(text).removeClass("hidden");
+
+
+        if(value=='Houses') {
+            $('#view').load('/Housesview/');
+        }
+        else if(value=='Flates'){
+            $('#view').load('/Flatesview/');
+        }
+        else if(value=='Upper-Portions'){
+            $('#view').load('/Upper-Portionsview/');
+
+        } else if(value=='Lower-Portions'){
+            $('#view').load('/Lower-Portionsview/');
+
+        } else if(value=='Farms-House'){
+            $('#view').load('/Farms-Houseview/');
+
+        } else if(value=='Residential-Plots'){
+            $('#view').load('/Residential-Plotsview/');
+
+        } else if(value=='Commercial-Plots'){
+            $('#view').load('/Commercial-Plotsview/');
+
+        } else if(value=='Agricultural-Land'){
+            $('#view').load('/Agricultural-Landview/');
+
+        } else if(value=='Industrial-Land'){
+            $('#view').load('/Industrial-Landview/');
+        }
+        else if(value=='Offices'){
+            $('#view').load('/Officesview/');
+
+        } else if(value=='Shops'){
+            $('#view').load('/Shopsview/');
+
+        } else if(value=='Warehouses'){
+            $('#view').load('/Warehousesview/');
+
+        } else if(value=='Factories'){
+            $('#view').load('/Factoriesview/');
+
+        } else if(value=='Buildings'){
+            $('#view').load('/Buildingsview/');
+
+        } else if(value=='Other'){
+            $('#view').load('/Otherview/');
+        }
+        else {
+
+            $('#view').html('');
+            $('#view').addClass('hidden');
+
+        }
+
+    }
+</script>
+
 
 
 
 </body>
+</html>

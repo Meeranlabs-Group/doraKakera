@@ -22,7 +22,7 @@
                             </div>
 
                             <div class="element">
-                                <a href="#tab-register" data-toggle="modal" data-tab="true" data-target="#sign-in-register-modal">Upload Property</a>
+                                <a href="{{ url("/addproperty") }}" >Upload Property</a>
                             </div>
                             <!--end element-->
 

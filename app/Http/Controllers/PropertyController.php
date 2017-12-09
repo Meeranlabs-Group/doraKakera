@@ -64,7 +64,11 @@ class PropertyController extends Controller
             $post['price'] = $request['price'];
             $post['city'] = $request['city'];
             $post['address'] = $request['address'];
-            $post['position'] = $request['address'];
+            $post['purpose'] = $request['purpose'];
+            $post['unit_type'] = $request['unit_type'];
+            $post['unit_size'] = $request['unit_size'];
+
+
 
 
 
@@ -167,6 +171,7 @@ class PropertyController extends Controller
                 $feature['cctv_security_installed'] = $request['CCTV_Security_Installed'];
                 $feature['cafeteria_or_canteen_in_building'] = $request['Cafeteria_or_Canteen_in_Building'];
                 $feature['pet_policy_type'] = $request['Pet_Policy_type'];
+                $feature['facilities'] = $request['Other_Facilities'];
 
 
 
@@ -213,7 +218,32 @@ class PropertyController extends Controller
 
         $property= Property::all() ;
 
-//        return view('properties',compact('property'));
+       return view('properties',compact('property'));
+    }
+
+
+
+    public function mainPage(){ //showing cities and their count of properties
+
+
+        $Property= Property::select('city')->Distinct()->get();
+        $i=0;
+        echo "<br>";
+        foreach ( $Property as $p) {
+
+            $count = Property::select('city')-> where('city', '=', $p->city)->groupby()->count();
+
+            $Property1[$i] = array('city'=>$p->city,'count'=>$count);
+
+$i++;
+
+        }
+
+
+print_r($Property1);
+
+
+     // return view('welcome',compact('Property1'));
     }
 
 

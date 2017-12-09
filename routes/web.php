@@ -11,10 +11,12 @@
 |
 */
 
-Route::get('/', function () {
+//Route::get('/', function () {
+//
+//    return view('welcome');
+//});
 
-    return view('welcome');
-});
+Route::get('/', 'PropertyController@mainPage');
 
 Route::get('/contact-us', function () {
     return view('contact-us');
@@ -54,7 +56,7 @@ Route::get('/Lower-Portions', function () {
     return View::make('features.portion&farm_feature');
 
 });
-Route::get('/Farms-House', function () {
+Route::get('/Farms-Houseview', function () {
 
     return View::make('features.portion&farm_feature');
 

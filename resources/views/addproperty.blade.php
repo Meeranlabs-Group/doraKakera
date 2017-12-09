@@ -48,11 +48,11 @@
 
                                 <label for="object-type">Purpose <span style="color: red">*</span></label>
 
-                                <select class="framed width-100 " name="property_type" id="object-type"  >
+                                <select class="framed width-100 " name="purpose" id="object-type"  >
 
                                     <option value="">Select</option>
-                                    <option value="1">For Sale</option>
-                                    <option value="2">Rent</option>
+                                    <option value="Sale">For Sale</option>
+                                    <option value="Rent">Rent</option>
                                 </select>
     </div>
 
@@ -92,24 +92,33 @@
     </div>
 
 
+
+</div>
+
+
+
     <br>
     <br>
     <br>
 
     <hr>
 
-</div>
+
+
 
                         <div class="hidden" id="main-info" >
                             @include('addProperty.main-information')
                             @include('addProperty.location')
                             @include('addProperty.gallery')
 
-<div id="view">
 
 
-</div>
+     <section id="facilities">
+            <div id="view">
 
+
+            </div>
+      </section>
 
 
                             <hr>
@@ -126,12 +135,6 @@
 
 
                         </div>
-
-
-
-
-
-
                     </div>
                 {!! Form::close() !!}
                 <!--end form-->
@@ -140,102 +143,11 @@
             </div>
             <!--end container-->
         </div>
-
         <!--end page-content-->
     </div>
 <!--end page-wrapper-->
 
 
-
-<script>
-    document.getElementById('object-type').onchange = function () {
-        document.getElementById("Property-type").disabled = this.value == '01';
-    }
-
-    document.getElementById('Property-type').onchange = function () {
-        $("#main-info").removeClass("hidden");
-        var e = document.getElementById("Property-type");
-        var value = e.options[e.selectedIndex].value;
-        var str1="#";
-        var text = e.options[e.selectedIndex].text;
-
-        var text=str1.concat(value);
-        $(text).removeClass("hidden");
-
-
-        if(value=='Houses') {
-            $('#view').load('/Housesview/');
-        }
-        else if(value=='Flates'){
-            $('#view').load('/Flatesview/');
-
-        }
-        else if(value=='Upper-Portions'){
-            $('#view').load('/Upper-Portionsview/');
-
-        } else if(value=='Lower-Portions'){
-            $('#view').load('/Lower-Portionsview/');
-
-        } else if(value=='Farms-House'){
-            $('#view').load('/Farms-Houseview/');
-
-        } else if(value=='Residential-Plots'){
-            $('#view').load('/Residential-Plotsview/');
-
-        } else if(value=='Commercial-Plots'){
-            $('#view').load('/Commercial-Plotsview/');
-
-        } else if(value=='Agricultural-Land'){
-            $('#view').load('/Agricultural-Landview/');
-
-        } else if(value=='Industrial-Land'){
-            $('#view').load('/Industrial-Landview/');
-
-        }
-         else if(value=='Offices'){
-            $('#view').load('/Officesview/');
-
-        } else if(value=='Shops'){
-            $('#view').load('/Shopsview/');
-
-        } else if(value=='Warehouses'){
-            $('#view').load('/Warehousesview/');
-
-        } else if(value=='Factories'){
-            $('#view').load('/Factoriesview/');
-
-        } else if(value=='Buildings'){
-            $('#view').load('/Buildingsview/');
-
-        } else if(value=='Other'){
-            $('#view').load('/Otherview/');
-
-        }
-        else {
-
-            $('#view').hidden;
-
-        }
-
-
-
-
-        var a = document.getElementById("view");
-
-
-
-
-    }
-
-
-
-
-
-
-
-
-
-</script>
 
 @include('partials.footer')
 @include('include.foot')

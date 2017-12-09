@@ -1,4 +1,4 @@
-<section id="features">
+
     <div class="title">
         <h2>Features</h2>
         <aside class="step">4</aside>
@@ -103,13 +103,13 @@
                   <div class="form-group width-80">
               <label>Flooring</label>
               <select name="Flooring_type" class="framed width-80">
-                  <option value="Flooring_None">None</option>
-                  <option value="Flooring_Tiles">Tiles</option>
-                  <option value="Flooring_Marble">Marble</option>
-                  <option value="Flooring_Wooden">Wooden</option>
-                  <option value="Flooring_Chip">Chip</option>
-                  <option value="Flooring_Cement">Cement</option>
-                  <option value="Flooring_Other">Other</option>
+                  <option value="None">None</option>
+                  <option value="Tiles">Tiles</option>
+                  <option value="Marble">Marble</option>
+                  <option value="Wooden">Wooden</option>
+                  <option value="Chip">Chip</option>
+                  <option value="Cement">Cement</option>
+                  <option value="Other">Other</option>
               </select>
                   </div>
               </div>
@@ -117,28 +117,31 @@
                   <div class="form-group width-80">
               <label>Electricity Backup</label>
               <select name="Electricity_Backup_type" class="framed width-80">
-                  <option value="Electricity_Backup_None">None</option>
-                  <option value="Electricity_Backup_Generator">Generator</option>
-                  <option value="Electricity_Backup_Ups">Ups</option>
-                  <option value="Electricity_Backup_Solar">Solar</option>
-                  <option value="Electricity_Backup_Other">Other</option>
+                  <option value="None">None</option>
+                  <option value="Generator">Generator</option>
+                  <option value="Ups">Ups</option>
+                  <option value="Solar">Solar</option>
+                  <option value="Other">Other</option>
               </select>
                   </div>
                   </div>
+
               <div class="col-md-3">
                   <div class="form-group width-70">
+
             <label>Total Number of Floors</label>
 
-
-
-                  <div class="input-number">
+                  <div class="input-number" >
                       <div class="change-button plus">
                           <i class="fa fa-caret-up"></i>
                       </div>
                       <div class="change-button minus">
                           <i class="fa fa-caret-down"></i>
                       </div>
-                      <input type="number"  name="Total_Number_of_Floors">
+
+
+                      <input type="number" name="Total_Number_of_Floors" placeholder="1" min="1">
+
                   </div>
                   </div>
               </div>
@@ -326,4 +329,3 @@
         <!--end col-md-4-->
     </div>
     <!--end row-->
-</section>

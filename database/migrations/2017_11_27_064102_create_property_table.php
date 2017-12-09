@@ -18,12 +18,17 @@ class CreatePropertyTable extends Migration
 
 
             $table->string('title') ->nullable();
+            $table->string('purpose') ->nullable();
             $table->string('property_type') ->nullable();
             $table->text('description') ->nullable();
 
             $table->double('price') ->nullable();
             $table->string('city') ->nullable();
             $table->string('address') ->nullable();
+
+
+            $table->string('unit_type') ->nullable();
+            $table->string('unit_size') ->nullable();
 
             $table->string('position') ->nullable();
 

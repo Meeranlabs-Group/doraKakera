@@ -11,7 +11,7 @@
                 <select class="framed width-100" name="city" id="city">
                     <option value="" selected="">Select City</option>
                     <option value="Islamabad">Islamabad</option>
-                    <option value="Karachi">Karachi</option>
+                    <option value="Lahore">Lahore</option>
                     <option value="Karachi">Karachi</option>
                     <option value="Rawalpindi">Rawalpindi</option>
                     <option value="disabled" disabled="">------------------------------------------------------</option>

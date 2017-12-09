@@ -1,5 +1,5 @@
 
-<footer id="page-footer">
+<footer id="page-footer" >
     <div class="row-one">
         <div class="container">
             <div class="logos">
