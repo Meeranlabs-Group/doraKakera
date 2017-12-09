@@ -89,7 +89,7 @@
         <div class="container">
             <div class="primary-nav">
                 <div class="left">
-                    <a href={{ url("/") }} id="brand"><img src="assets/img/logo.png" height="70%" width="80%" alt=""></a>
+                    <a href={{ url("/") }} id="brand"><img src="assets/img/logo.png" height="65%" width="75%" alt=""></a>
                     <a class="nav-trigger" data-toggle="collapse" href="#primary-nav" aria-expanded="false" aria-controls="primary-nav"><i class="fa fa-navicon"></i></a>
                 </div>
                 <!--end left-->
