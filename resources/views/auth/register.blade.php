@@ -1,12 +1,15 @@
 @include('include.head')
 
 @include('partials.navbar')
-
+<br>
 <div class="container">
+    <div class="title">
+        <h2 class="center">Register</h2>
+    </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">Register</div>
+                <div class="center"><img width="40%"  src="/assets/img/logo.png"/></div>
 
                 <div class="panel-body">
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">

@@ -20,7 +20,13 @@
 
                                     </div>
 
+                                    <div class="col-md-2 col-sm-2">
+                                        <div class="form-group">
+                                            <button type="button" onclick="location.href='{{ url("/addproperty") }}';"  class="btn btn-primary submit">SELL</button>
+                                        </div>
 
+
+                                    </div>
                                     <div class="col-md-2 col-sm-2">
                                         <div class="form-group">
                                             <button type="button" id="show1" class="btn btn-primary">RENT</button>
@@ -29,13 +35,7 @@
 
                                     </div>
 
-                                    <div class="col-md-2 col-sm-2">
-                                        <div class="form-group">
-                                            <button type="button" onclick="location.href='submit.php';"  class="btn btn-primary submit">Register Property</button>
-                                        </div>
 
-
-                                    </div>
 
                                 </div>
                                 <div class="row no-gutters">
