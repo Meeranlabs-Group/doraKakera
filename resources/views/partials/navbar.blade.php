@@ -5,6 +5,7 @@
                 <div class="nav-trigger"><a data-toggle="collapse" href="#secondary-nav" aria-expanded="false" aria-controls="secondary-nav"><i class="fa fa-user"></i></a></div>
                 <div id="secondary-nav">
                     <nav>
+
                         <div class="left opacity-60">
                             <a href=""><i class="fa fa-phone"></i>042 111 124 124 </a>
                             <a href="mailto:info@chohanestate.com"><i class="fa fa-envelope"></i>info@chohanestate.com</a>
@@ -12,71 +13,78 @@
                         {{--<!--end left-->--}}
                         <div class="right">
 
-                            <!--end element-->
                             <div class="element">
-                                <a href="#tab-sign-in" data-toggle="modal" data-tab="true" data-target="#sign-in-register-modal">Sign In</a>
-                            </div>
-                            <!--end element-->
-                            <div class="element">
-                                <a href="#tab-register" data-toggle="modal" data-tab="true" data-target="#sign-in-register-modal">Register</a>
+                                <!-- Authentication Links -->
+                                @guest
+                                    <a href="{{ route('login') }}">Login</a>
+                                    <a href="{{ route('register') }}">Register</a>
+                                     <a href="{{ url("/addproperty") }}" >Upload Property</a>
+                                @else
                             </div>
 
-                            <div class="element">
-                                <a href="{{ url("/addproperty") }}" >Upload Property</a>
-                            </div>
+
+
+                                            <a href="/profile" >
+                                                {{ Auth::user()->name }}
+                                            </a>
+
+                                                    <a href="{{ url("/properties") }}" >My Properties</a>
+                                                    <a href="{{ url("/profile") }}" >Profile</a>
+
+
+                                                    <a href="{{ route('logout') }}"
+                                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                        Logout
+                                                    </a>
+
+                                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                        {{ csrf_field() }}
+                                                    </form>
+
+
+                                        @endguest
+
+
+
+
+
+
+
+
                             <!--end element-->
+                            {{--<div class="element">--}}
+                                {{--href="#tab-sign-in"--}}
+                                {{--<a href="{{ url("/login") }}">Sign In</a>--}}
+                            {{--</div>--}}
+                            {{--<!--end element-->--}}
+                            {{--<div class="element">--}}
+                                {{--<a href="#tab-register" data-toggle="modal" data-tab="true" data-target="#sign-in-register-modal">Register</a>--}}
+                            {{--</div>--}}
+
+                            {{--<div class="element">--}}
+                                {{--<a href="{{ url("/addproperty") }}" >Upload Property</a>--}}
+                            {{--</div>--}}
+                            {{--<!--end element-->--}}
 
                             <!--end element-->
                         </div>
 
-
-
-                        {{--<div class="collapse navbar-collapse" id="app-navbar-collapse">--}}
-                            {{--<!-- Left Side Of Navbar -->--}}
-                            {{--<ul class="nav navbar-nav">--}}
-                                {{--&nbsp;--}}
-                            {{--</ul>--}}
-
-                            {{--<!-- Right Side Of Navbar -->--}}
-                            {{--<ul class="nav navbar-nav navbar-right">--}}
-                                {{--<!-- Authentication Links -->--}}
-                                {{--@guest--}}
-                                    {{--<li><a href="{{ route('login') }}">Login</a></li>--}}
-
-                                    {{--<li><a href="#tab-sign-in" data-toggle="modal" data-tab="true" data-target="#sign-in-register-modal">Sign In</a></li>--}}
-                                    {{--<li><a href="{{ route('register') }}">Register</a></li>--}}
-                                    {{--@else--}}
-                                        {{--<li class="dropdown">--}}
-                                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">--}}
-                                                {{--{{ Auth::user()->name }} <span class="caret"></span>--}}
-                                            {{--</a>--}}
-
-                                            {{--<ul class="dropdown-menu">--}}
-                                                {{--<li>--}}
-                                                    {{--<a href="{{ route('logout') }}"--}}
-                                                       {{--onclick="event.preventDefault();--}}
-                                                     {{--document.getElementById('logout-form').submit();">--}}
-                                                        {{--Logout--}}
-                                                    {{--</a>--}}
-
-                                                    {{--<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">--}}
-                                                        {{--{{ csrf_field() }}--}}
-                                                    {{--</form>--}}
-                                                {{--</li>--}}
-                                            {{--</ul>--}}
-                                        {{--</li>--}}
-                                        {{--@endguest--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-
-
-                        <!--end right-->
                     </nav>
                 </div>
             </div>
             <!--end secondary-nav-->
         </div>
         <!--end container-->
+
+
+
+
+
+
+
+
+
         <hr>
         <div class="container">
             <div class="primary-nav">

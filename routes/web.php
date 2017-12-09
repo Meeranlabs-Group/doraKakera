@@ -11,12 +11,12 @@
 |
 */
 
-//Route::get('/', function () {
-//
-//    return view('welcome');
-//});
+Route::get('/', function () {
 
-Route::get('/', 'PropertyController@mainPage');
+    return view('welcome');
+});
+
+//Route::get('/', 'PropertyController@mainPage');
 
 Route::get('/contact-us', function () {
     return view('contact-us');
@@ -117,7 +117,7 @@ Route::get('/Otherview', function () {
 
 Route::get('/addproperty', function () {
     return view('addproperty');
-});
+})->middleware('auth');
 
 
 Route::get('/MarketAnalysis', function () {
@@ -137,10 +137,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+?>
