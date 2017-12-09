@@ -13,23 +13,25 @@
                         {{--<!--end left-->--}}
                         <div class="right">
 
-
-
-
+                            <div class="element">
                                 <!-- Authentication Links -->
                                 @guest
-                                    <li><a href="{{ route('login') }}">Login</a></li>
-                                    <li><a href="{{ route('register') }}">Register</a></li>
-                                    <li> <a href="{{ url("/addproperty") }}" >Upload Property</a></li>
+                                    <a href="{{ route('login') }}">Login</a>
+                                    <a href="{{ route('register') }}">Register</a>
+                                     <a href="{{ url("/addproperty") }}" >Upload Property</a>
                                 @else
-                                        <li> <a href="{{ url("/addproperty") }}" >Upload Property</a></li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </div>
+
+
+
+                                            <a href="/profile" >
+                                                {{ Auth::user()->name }}
                                             </a>
 
-                                            <ul class="dropdown-menu">
-                                                <li>
+                                                    <a href="{{ url("/properties") }}" >My Properties</a>
+                                                    <a href="{{ url("/profile") }}" >Profile</a>
+
+
                                                     <a href="{{ route('logout') }}"
                                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -39,10 +41,11 @@
                                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                                         {{ csrf_field() }}
                                                     </form>
-                                                </li>
-                                            </ul>
-                                        </li>
+
+
                                         @endguest
+
+
 
 
 
@@ -73,6 +76,15 @@
             <!--end secondary-nav-->
         </div>
         <!--end container-->
+
+
+
+
+
+
+
+
+
         <hr>
         <div class="container">
             <div class="primary-nav">

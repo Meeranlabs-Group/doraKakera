@@ -117,7 +117,7 @@ Route::get('/Otherview', function () {
 
 Route::get('/addproperty', function () {
     return view('addproperty');
-});
+})->middleware('auth');
 
 
 Route::get('/MarketAnalysis', function () {
