@@ -85,30 +85,30 @@
                     <div class="col-md-3">
                         <div class="form-group width-80">
                             <label>Total Floors in Building</label>
-                            <div class="input-number">
-                                <div class="change-button plus">
-                                    <i class="fa fa-caret-up"></i>
-                                </div>
-                                <div class="change-button minus">
-                                    <i class="fa fa-caret-down"></i>
-                                </div>
+                            {{--<div class="input-number">--}}
+                                {{--<div class="change-button plus">--}}
+                                    {{--<i class="fa fa-caret-up"></i>--}}
+                                {{--</div>--}}
+                                {{--<div class="change-button minus">--}}
+                                    {{--<i class="fa fa-caret-down"></i>--}}
+                                {{--</div>--}}
                                 <input type="number" name="Total_Floors_in_Building">
-                            </div>
+                            {{--</div>--}}
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group width-80">
                             <label>Number of Elevators in Building</label>
-                            <div class="input-number">
-                                <div class="change-button plus">
-                                    <i class="fa fa-caret-up"></i>
-                                </div>
-                                <div class="change-button minus">
-                                    <i class="fa fa-caret-down"></i>
-                                </div>
+                            {{--<div class="input-number">--}}
+                                {{--<div class="change-button plus">--}}
+                                    {{--<i class="fa fa-caret-up"></i>--}}
+                                {{--</div>--}}
+                                {{--<div class="change-button minus">--}}
+                                    {{--<i class="fa fa-caret-down"></i>--}}
+                                {{--</div>--}}
                                 <input type="number" name="Number_of_Elevators_in_Building">
 
-                            </div>
+                            {{--</div>--}}
 
 
                         </div>
@@ -293,27 +293,27 @@
             <!--end checkboxes-->
         </div>
         <!--end col-md-4-->
-        <div class="col-md-6">
-            <h3>Other Facilities</h3>
-            <ul class="checkboxes inline half list-unstyled">
-                <li><label><input type="checkbox" name="Maintenance_Staff">Maintenance Staff</label></li>
-                <li><label><input type="checkbox" name="Security_Staff">Security Staff</label></li>
-                <li><label><input type="checkbox" name="CCTV_Security_Installed">CCTV Security Installed</label></li>
-                <li><label><input type="checkbox" name="Cafeteria_or_Canteen_in_Building">Cafeteria or Canteen in Building</label></li>
-                <li><label><input type="checkbox" name="Laundry_or_Dry_Cleaning_Facility">Laundry or Dry Cleaning Facility</label></li>
-                <li><label><input type="checkbox" name="Facilities_for_Disabled">Facilities for Disabled</label></li>
-                
-                <label>Pet Policy</label>
-                <select name="Pet_Policy_type">
-                <option value="Pet_Policy_Allowed">Allowed</option>
-                <option value="Pet_Policy_Not_Allowed">Not Allowed</option>
-                </select>
-                
-                <li><label><input type="text" name="Other_Facilities">Other Facilities</label></li>
+        {{--<div class="col-md-6">--}}
+            {{--<h3>Other Facilities</h3>--}}
+            {{--<ul class="checkboxes inline half list-unstyled">--}}
+                {{--<li><label><input type="checkbox" name="Maintenance_Staff">Maintenance Staff</label></li>--}}
+                {{--<li><label><input type="checkbox" name="Security_Staff">Security Staff</label></li>--}}
+                {{--<li><label><input type="checkbox" name="CCTV_Security_Installed">CCTV Security Installed</label></li>--}}
+                {{--<li><label><input type="checkbox" name="Cafeteria_or_Canteen_in_Building">Cafeteria or Canteen in Building</label></li>--}}
+                {{--<li><label><input type="checkbox" name="Laundry_or_Dry_Cleaning_Facility">Laundry or Dry Cleaning Facility</label></li>--}}
+                {{--<li><label><input type="checkbox" name="Facilities_for_Disabled">Facilities for Disabled</label></li>--}}
+                {{----}}
+                {{--<label>Pet Policy</label>--}}
+                {{--<select name="Pet_Policy_type">--}}
+                {{--<option value="Pet_Policy_Allowed">Allowed</option>--}}
+                {{--<option value="Pet_Policy_Not_Allowed">Not Allowed</option>--}}
+                {{--</select>--}}
+                {{----}}
+                {{--<li><label><input type="text" name="Other_Facilities">Other Facilities</label></li>--}}
 
-            </ul>
-            <!--end checkboxes-->
-        </div>
+            {{--</ul>--}}
+            {{--<!--end checkboxes-->--}}
+        {{--</div>--}}
         <!--end col-md-4-->
     </div>
     <!--end row-->

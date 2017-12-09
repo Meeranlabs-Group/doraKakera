@@ -131,18 +131,18 @@
 
             <label>Total Number of Floors</label>
 
-                  <div class="input-number" >
-                      <div class="change-button plus">
-                          <i class="fa fa-caret-up"></i>
-                      </div>
-                      <div class="change-button minus">
-                          <i class="fa fa-caret-down"></i>
-                      </div>
+                  {{--<div class="input-number" >--}}
+                      {{--<div class="change-button plus">--}}
+                          {{--<i class="fa fa-caret-up"></i>--}}
+                      {{--</div>--}}
+                      {{--<div class="change-button minus">--}}
+                          {{--<i class="fa fa-caret-down"></i>--}}
+                      {{--</div>--}}
 
 
                       <input type="number" name="Total_Number_of_Floors" placeholder="1" min="1">
 
-                  </div>
+                  {{--</div>--}}
                   </div>
               </div>
 
@@ -230,49 +230,50 @@
                 <li><label>Other Rooms</label></li>
                 <li>
                     <div class="form-group width-60">
-                    <div class="input-number">
-                    <div class="change-button plus">
-                        <i class="fa fa-caret-up"></i>
-                    </div>
-                    <div class="change-button minus">
-                        <i class="fa fa-caret-down"></i>
-                    </div>
+                    {{--<div class="input-number">--}}
+                    {{--<div class="change-button plus">--}}
+                        {{--<i class="fa fa-caret-up"></i>--}}
+                    {{--</div>--}}
+                    {{--<div class="change-button minus">--}}
+                        {{--<i class="fa fa-caret-down"></i>--}}
+                    {{--</div>--}}
                     <input type="number" name="Other_Rooms">
                 </div>
-                    </div>
+                    {{--</div>--}}
                 </li>
 
 
                 <li><label>Number of Servant Quarters</label> </li>
                 </li>
-                <li> <div class="form-group width-60">
-                     <div class="input-number">
-                        <div class="change-button plus">
-                            <i class="fa fa-caret-up"></i>
-                        </div>
-                        <div class="change-button minus">
-                            <i class="fa fa-caret-down"></i>
+                <li>
+                    <div class="form-group width-60">
+                     {{--<div class="input-number">--}}
+                        {{--<div class="change-button plus">--}}
+                            {{--<i class="fa fa-caret-up"></i>--}}
+                        {{--</div>--}}
+                        {{--<div class="change-button minus">--}}
+                            {{--<i class="fa fa-caret-down"></i>--}}
 
 
-                        </div>
+                        {{--</div>--}}
                         <input type="number" name="Number_of_Servant_Quarters">
-                    </div>
+                    {{--</div>--}}
                 </div> </li>
 
                 <li>  <label>Number of Store Rooms</label> </li>
                 <li>
                     <div class="form-group width-60">
-                    <div class="input-number">
-                    <div class="change-button plus">
-                        <i class="fa fa-caret-up"></i>
-                    </div>
-                    <div class="change-button minus">
-                        <i class="fa fa-caret-down"></i>
+                    {{--<div class="input-number">--}}
+                    {{--<div class="change-button plus">--}}
+                        {{--<i class="fa fa-caret-up"></i>--}}
+                    {{--</div>--}}
+                    {{--<div class="change-button minus">--}}
+                        {{--<i class="fa fa-caret-down"></i>--}}
 
 
-                    </div>
+                    {{--</div>--}}
                     <input type="number" name="Number_of_Store_Rooms">
-                </div>
+                {{--</div>--}}
                     </div>
                 </li>
 
