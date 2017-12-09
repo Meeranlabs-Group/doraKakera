@@ -7,7 +7,7 @@
 
 
 
-    <div class="page-wrapper">
+
 
         <div id="page-content">
             <div class="container">
@@ -144,10 +144,9 @@
             <!--end container-->
         </div>
         <!--end page-content-->
-    </div>
-<!--end page-wrapper-->
 
 
+@include('partials.totalproperties')
 
 @include('partials.footer')
 @include('include.foot')
