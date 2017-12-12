@@ -15,6 +15,14 @@ Route::get('/', function () {
 
     return view('welcome');
 });
+Route::get('/profile', function () {
+
+    return view('profile');
+});
+Route::get('/myproperties', function () {
+
+    return view('myproperties');
+});
 
 //Route::get('/', 'PropertyController@mainPage');
 

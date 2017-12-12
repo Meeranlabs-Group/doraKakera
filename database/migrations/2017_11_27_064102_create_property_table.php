@@ -11,13 +11,19 @@ class CreatePropertyTable extends Migration
      *
      * @return void
      */
+
+
+    protected $filable =['path'];
     public function up()
     {
         Schema::create('Property', function (Blueprint $table) {
+
             $table->increments('property_id');
-
-
             $table->string('title') ->nullable();
+
+
+
+
             $table->string('purpose') ->nullable();
             $table->string('property_type') ->nullable();
             $table->text('description') ->nullable();
@@ -25,8 +31,6 @@ class CreatePropertyTable extends Migration
             $table->double('price') ->nullable();
             $table->string('city') ->nullable();
             $table->string('address') ->nullable();
-
-
             $table->string('unit_type') ->nullable();
             $table->string('unit_size') ->nullable();
 

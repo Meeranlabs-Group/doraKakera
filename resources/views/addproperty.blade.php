@@ -38,9 +38,9 @@
                     <!--end quick-navigation-->
 
 
-                    {!! Form::open(['url' => '/submit']) !!}
+                    {!! Form::open(['url' => '/submit','files'=>'true', 'enctype'=>'multipart/form-data']) !!}
 
-                    <div class="form-submit labels-uppercase" id="form-submit" enctype="multipart/form-data">
+                    <div class="form-submit labels-uppercase" id="form-submit" >
 
 
 <div class="row" >

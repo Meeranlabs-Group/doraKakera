@@ -28,7 +28,7 @@
                                                 {{ Auth::user()->name }}
                                             </a>
 
-                                                    <a href="{{ url("/properties") }}" >My Properties</a>
+                                                    <a href="{{ url("/myproperties") }}" >My Properties</a>
                                                     <a href="{{ url("/profile") }}" >Profile</a>
 
 

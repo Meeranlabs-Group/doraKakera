@@ -16,6 +16,9 @@ class CreateFeatureTable extends Migration
         Schema::create('feature', function (Blueprint $table) {
             $table->increments('id');
 
+            $table->integer('property_id')->unsigned();
+
+
 
 //            $table->foreign('property_id')->references('id')->on('feature');
 
