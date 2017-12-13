@@ -9,12 +9,32 @@ class Property extends Model
 {
     //
 
+
+
+
     protected $table = 'property';
-//    public function user(){
+
+
+    public function user(){
+
+        return $this->belongsTo('App\User');
+    }
+
+//    public function Property(){
 //
-//
-//        $this->hasOne('App\User','user_id')->user();
+//        return $this->Property();
 //    }
+
+    public function feature(){
+        $this->hasOne('App\Feature');
+    }
+
+    public function photo(){
+        $this->hasMany('App\Photo');
+    }
+    public function getid(){
+        return $this->id;
+    }
 
 
 }

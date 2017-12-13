@@ -4,16 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class feature extends Model
+class Photo extends Model
 {
     //
-
-    protected $table = 'feature';
 
     public function property(){
 
         return $this->belongsTo('App\Property');
     }
+
 
 
 }
