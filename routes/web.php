@@ -15,10 +15,13 @@ Route::get('/', function () {
 
     return view('welcome');
 });
-Route::get('/profile', function () {
+//Route::get('/profile', function () {
+//
+//    return view('profile');
+//});
+Route::get('/profile','ProfileController@profile');
+Route::post('/profile','ProfileController@updateprofile');  //profile update
 
-    return view('profile');
-});
 Route::get('/myproperties', function () {
 
     return view('myproperties');

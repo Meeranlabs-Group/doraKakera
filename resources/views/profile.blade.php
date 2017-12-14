@@ -13,20 +13,36 @@
         <!--end breadcrumb-->
         <div class="main-content">
             <div class="title">
-                <h1 class="inactive"><a href="my-accommodations.html">My Accommodations</a></h1>
-                <h1><a href="profile.html">Profile</a></h1>
+                {{--<h1 class="inactive"><a href="my-accommodations.html">My Accommodations</a></h1>--}}
+
+                <h1><a href="profile">Profile</a></h1>
             </div>
             <!--end title-->
             <div class="row">
                 <div class="col-md-9">
-                    <form id="form-profile" class="labels-uppercase" method="post" action="?" enctype="multipart/form-data">
+
+
+
+                    {!! Form::open(['url' => '/profile', 'id'=>'form-profile','class'=>'labels-uppercase','files'=>'true', 'enctype'=>'multipart/form-data']) !!}
+
                         <div class="row">
                             <!--Profile Picture-->
                             <div class="col-md-3 col-sm-3">
                                 <section>
                                     <h3>Profile Picture</h3>
                                     <div id="profile-picture" class="profile-picture single-file-preview">
-                                        <img src="assets/img/person-01.jpg" alt="" class="image">
+
+                                        {{--if( {{ $data->path}} == ""){--}}
+
+                                        {{--<img src="assets/img/person-01.jpg" alt="" class="image">--}}
+                                        {{--}--}}
+                                        {{--else--}}
+                                        {{--{--}}
+                                        <img src="{{$data->path}}" alt="{{$data->name}}" class="image">
+                                        {{--}--}}
+
+
+
                                         <div class="input">
                                             <input name="file" type="file" class="">
                                             <span>Click to upload a picture</span>
@@ -44,7 +60,7 @@
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label for="name">Name</label>
-                                                <input type="text" class="form-control" id="name" name="name" value="Jane Doe">
+                                                <input type="text" class="form-control" id="name" name="name" value="{{$data->name}}">
                                             </div>
                                             <!--end form-group-->
                                         </div>
@@ -52,7 +68,7 @@
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label for="email">Email</label>
-                                                <input type="email" class="form-control" id="email" name="email" value="janedoe@example.com">
+                                                <input type="email" class="form-control" id="email" name="email" value="{{$data->email}}">
                                             </div>
                                             <!--end form-group-->
                                         </div>
@@ -60,38 +76,29 @@
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label for="mobile">Mobile</label>
-                                                <input type="text" class="form-control" id="mobile" name="mobile" pattern="\d*" value="903-675-5323">
+                                                <input type="text" class="form-control" id="mobile" name="number" pattern="\d*" value="{{$data->number}}">
                                             </div>
                                             <!--end form-group-->
                                         </div>
                                         <!--end col-md-3-->
-                                        <div class="col-md-6 col-sm-6">
-                                            <div class="form-group">
-                                                <label for="phone">Phone</label>
-                                                <input type="text" class="form-control" id="phone" name="phone" pattern="\d*" value="(0)123 456 7890">
-                                            </div>
-                                            <!--end form-group-->
-                                        </div>
+
                                         <!--end col-md-3-->
                                     </div>
                                 </section>
                                 <section>
                                     <h3>Address</h3>
-                                    <div class="form-group">
-                                        <label for="state">State</label>
-                                        <input type="text" class="form-control" id="state" name="state" value="Ohio">
-                                    </div>
+
                                     <!--end form-group-->
                                     <div class="form-group">
                                         <label for="city">City</label>
-                                        <input type="text" class="form-control" id="city" name="city" value="Georgetown">
+                                        <input type="text" class="form-control" id="city" name="city" value="{{$data->city}}">
                                     </div>
                                     <!--end form-group-->
                                     <div class="row">
                                         <div class="col-md-8 col-sm-8">
                                             <div class="form-group">
-                                                <label for="street">Street</label>
-                                                <input type="text" class="form-control" id="street" name="street" value="2050 Sampson Street">
+                                                <label for="street">Addresst</label>
+                                                <input type="text" class="form-control" id="street" name="address" value="{{$data->address}}">
                                             </div>
                                             <!--end form-group-->
                                         </div>
@@ -99,29 +106,16 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                                 <label for="zip">ZIP</label>
-                                                <input type="text" class="form-control" id="zip" name="zip" pattern="\d*" value="80444">
+                                                <input type="text" class="form-control" id="zip" name="zip" pattern="\d*" value="{{$data->zip}}">
                                             </div>
                                             <!--end form-group-->
                                         </div>
                                     </div>
                                     <!--end col-md-3-->
-                                    <div class="form-group">
-                                        <label for="additional-address">Additional Address Line</label>
-                                        <input type="text" class="form-control" id="additional-address" name="additional-address">
-                                    </div>
+
                                     <!--end form-group-->
                                 </section>
-                                <section>
-                                    <h3>About Me</h3>
-                                    <div class="form-group">
-                                        <label for="about-me">Some Words About Me</label>
-                                        <div class="form-group">
-                                            <textarea class="form-control" id="about-me" rows="3" name="about-me" required></textarea>
-                                        </div>
-                                        <!--end form-group-->
-                                    </div>
-                                    <!--end form-group-->
-                                </section>
+
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-large btn-primary btn-rounded" id="submit">Save Changes</button>
                                 </div>
@@ -129,10 +123,18 @@
                             </div>
                             <!--end col-md-6-->
                         </div>
-                    </form>
+
+
+                    {!! Form::close() !!}
+
+
                 </div>
+
                 <!--Password-->
                 <div class="col-md-3 col-sm-9">
+
+
+
                     <form class="labels-uppercase" id="form-password" method="post" action="?">
                         <h3>Password Change</h3>
                         <div class="form-group">

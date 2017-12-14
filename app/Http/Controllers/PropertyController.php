@@ -189,14 +189,11 @@ class PropertyController extends Controller
             //            Healthcare Recreational
 
 
-
                 $feature['lawn_or_garden'] = $request['Lawn_or_Garden'];
                 $feature['swimming_pool'] = $request['Swimming_Pool'];
                 $feature['sauna'] = $request['Sauna'];
                 $feature['jacuzzi'] = $request['Jacuzzi'];
                 $feature['other_health_and_recreational'] = $request['Other_Healthcare_and_Recreation_Facilities'];
-
-
 
 
                 //            Other Facilities
@@ -210,10 +207,6 @@ class PropertyController extends Controller
                 $feature['cafeteria_or_canteen_in_building'] = $request['Cafeteria_or_Canteen_in_Building'];
                 $feature['pet_policy_type'] = $request['Pet_Policy_type'];
                 $feature['facilities'] = $request['Other_Facilities'];
-
-
-
-
 
 
                 //plot features
@@ -261,7 +254,7 @@ class PropertyController extends Controller
 
 
         $feature->save();
-//        return redirect('/');
+        return redirect('/');
 
     }
 
@@ -269,8 +262,8 @@ class PropertyController extends Controller
 
         $property= Property::all() ;
 
-      // return view('properties',compact('property'));
-        print_r(phpinfo());
+       return view('properties',compact('property'));
+//        print_r(phpinfo());
     }
 
 

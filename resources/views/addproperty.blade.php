@@ -1,8 +1,15 @@
 @include('include.head')
+
 @include('partials.navbar')
 
 
-<div id="page-content">
+
+
+
+
+
+
+        <div id="page-content">
             <div class="container">
                 <ol class="breadcrumb">
                     <li><a href="/">Home</a></li>
@@ -83,6 +90,7 @@
 
         </select>
     </div>
+
 
 </div>
 
