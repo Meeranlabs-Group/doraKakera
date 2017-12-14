@@ -134,29 +134,48 @@
                 <div class="col-md-3 col-sm-9">
 
 
+                    {!! Form::open(['url' => '/updatepassword', 'id'=>'form-password','class'=>'labels-uppercase']) !!}
 
-                    <form class="labels-uppercase" id="form-password" method="post" action="?">
+
+
+
+
                         <h3>Password Change</h3>
                         <div class="form-group">
                             <label for="current-password">Current Password</label>
-                            <input type="password" class="form-control" id="current-password" name="current-password">
+                            <input type="password" class="form-control" id="current-password" name="current_password">
                         </div>
+
+
+
                         <!--end form-group-->
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="new-password">New Password</label>
-                            <input type="password" class="form-control" id="new-password" name="new-password">
+                            <input type="password" class="form-control" id="password" name="password">
+
+                            @if ($errors->has('password'))
+                                <span class="help-block">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                            @endif
                         </div>
                         <!--end form-group-->
+
+
+
                         <div class="form-group">
                             <label for="confirm-new-password">Confirm New Password</label>
-                            <input type="password" class="form-control" id="confirm-new-password" name="confirm-new-password">
+                            <input type="password" class="form-control" id="password-confirm" name="password_confirmation">
                         </div>
+
+
                         <!--end form-group-->
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-rounded btn-framed">Change Password</button>
                         </div>
                         <!-- end form-group -->
-                    </form>
+
+                    {!! Form::close() !!}
                 </div>
                 <!-- end col-md-3-->
             </div>

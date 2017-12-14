@@ -21,6 +21,14 @@ class CreatePropertyTable extends Migration
             $table->increments('id');
             $table->string('title') ->nullable();
 
+
+            $table->tinyInteger('status') ->default('0');
+            $table->tinyInteger('hot') ->default('0');
+            $table->tinyInteger('superhot') ->default('0');
+
+
+
+
                         $table->integer("user_id")->unsigned();
 
 

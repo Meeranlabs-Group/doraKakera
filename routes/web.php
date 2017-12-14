@@ -21,11 +21,15 @@ Route::get('/', function () {
 //});
 Route::get('/profile','ProfileController@profile');
 Route::post('/profile','ProfileController@updateprofile');  //profile update
+Route::post('/updatepassword','ProfileController@updatepassword');  //profile update
 
-Route::get('/myproperties', function () {
+//Route::get('/myproperties', function () {
+//
+//    return view('myproperties');
+//});
 
-    return view('myproperties');
-});
+Route::get('/myproperties','PropertyController@myproperties');
+
 
 //Route::get('/', 'PropertyController@mainPage');
 
@@ -37,12 +41,16 @@ Route::get('/about-us', function () {
 });
 
 Route::get('/properties','PropertyController@show_all');
+Route::get('/editproperty/{id}/{purpose}/{type}','PropertyController@editproperty');
 
 
 Route::get('/viewloader','PropertyController@viewloader');
 
 
 Route::get('/detail','PropertyController@detail');
+
+
+
 
 Route::get('/Housesview', function () {
 

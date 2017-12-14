@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\User;
+
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -55,5 +57,44 @@ class ProfileController extends Controller
                 return redirect('/profile');
 
     }
+
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+    }
+
+
+
+
+
+        public function updatepassword(Request $request)
+        {
+
+
+            $update = new User();
+
+            //        $update['name'] = $request['name'];
+//echo     Auth::user()->password ;
+
+//            $echo =     ) ;
+//
+//
+//            echo "<br>";
+//         echo $echo;
+
+
+            if (Hash::check($request['password'], Auth::user()->password ) ){
+                echo "dsvjsdnvkj";
+            }
+
+
+//            Auth::user()->where('id', Auth::user()->getid())->update(['password'=> $request['password'] ]);
+
+
+
+        }
 
 }

@@ -254,7 +254,7 @@ class PropertyController extends Controller
 
 
         $feature->save();
-        return redirect('/');
+        return redirect('/myproperties');
 
     }
 
@@ -291,6 +291,28 @@ print_r($Property1);
      // return view('welcome',compact('Property1'));
     }
 
+
+    public function myproperties(){
+
+        $id=Auth::user()->id;
+
+        $data= Property::where('user_id',$id)->get();
+
+
+
+
+       return view('myproperties',compact('data'));
+
+    }
+
+
+    public function editproperty($id,$type,$purpose){
+
+
+        echo $id;
+        echo $purpose;
+        echo $type;
+    }
 
     /**
      * Display the specified resource.

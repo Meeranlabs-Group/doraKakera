@@ -29,7 +29,7 @@
                                             </a>
 
                                                     <a href="{{ url("/myproperties") }}" >My Properties</a>
-                                                    <a href="{{ url("/profile") }}" >Profile</a>
+                                                    <a href="{{ url("/addproperty") }}" >Upload Property</a>
 
 
                                                     <a href="{{ route('logout') }}"
