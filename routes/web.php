@@ -43,6 +43,12 @@ Route::get('/about-us', function () {
 Route::get('/properties','PropertyController@show_all');
 Route::get('/editproperty/{id}/{purpose}/{type}','PropertyController@editproperty');
 
+Route::get('/maps', function () {
+
+    return view('map');
+
+});
+
 
 Route::get('/viewloader','PropertyController@viewloader');
 
@@ -57,6 +63,7 @@ Route::get('/Housesview', function () {
     return View::make('features.house_feature');
 
 });
+
 
 
 Route::get('/Flatesview', function () {

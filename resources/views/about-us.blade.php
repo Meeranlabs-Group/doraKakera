@@ -253,4 +253,4 @@
 </div>
 <!--end page-content-->
 @include('partials.footer');
-@include('include.foot');?>
+@include('include.foot');
