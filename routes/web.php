@@ -47,7 +47,7 @@ Route::get('/editproperty/{id}/{purpose}/{type}','PropertyController@editpropert
 Route::get('/viewloader','PropertyController@viewloader');
 
 
-Route::get('/detail','PropertyController@detail');
+Route::get('/propertydetail/{id}','PropertyController@propertydetail');
 
 
 

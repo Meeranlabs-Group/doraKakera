@@ -5,12 +5,21 @@
 
         <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i>
         </div>
+
+
         <div class="image">
-            <a href="detail" class="wrapper">
+            <a href="propertydetail/{{ $data->id }}" class="wrapper">
+
+
                 <div class="gallery">
-                    <img src="assets/img/items/01.jpg" alt="">
-                    <img src="#" class="owl-lazy" alt="" data-src="assets/img/items/02.jpg">
-                    <img src="#" class="owl-lazy" alt="" data-src="assets/img/items/03.jpg">
+
+                    @foreach($photos as $photo)
+                        @if($photo->property_id == $data->id )
+                            <img src="{{ asset($photo->path)  }}" style="width:250px;height: 200px;"  alt="">
+                        @endif
+                    {{--<img src="#" class="owl-lazy" alt="" data-src="assets/img/items/02.jpg">--}}
+                    {{--<img src="#" class="owl-lazy" alt="" data-src="assets/img/items/03.jpg">--}}
+                @endforeach
                 </div>
             </a>
             <div class="map-item">
@@ -32,7 +41,7 @@
         </div>
         <!--end meta-->
         <div class="info">
-            <a href={{ "/detail" }}><h3> {{ $data->title }} </h3></a>
+            <a href=" /propertydetail/{{ $data->id }} " ><h3> {{ $data->title }} </h3></a>
             <figure class="location">{{ $data->address }}</figure>
             <figure class="label label-info">House</figure>
             <figure class="label label-Available">Available</figure>
@@ -44,7 +53,7 @@
             </p>
             <div class="price-info">Price<span class="price">PKR-{{ $data->price }}</span><span class="price call"><i class="fa fa-phone"></i> 03224531314</span></div>
 
-            <a href={{ "/detail" }} class="btn btn-rounded btn-default btn-framed btn-small">View detail</a>
+            <a href="/propertydetail/{{ $data->id }}"  class="btn btn-rounded btn-small btn-default btn-framed" >View detail</a>
         </div>
         <!--end info-->
     </div>

@@ -261,8 +261,9 @@ class PropertyController extends Controller
     public function show_all(){
 
         $property= Property::all() ;
+        $photos = Photo::all();
 
-       return view('properties',compact('property'));
+       return view('properties',compact('property','photos'));
 //        print_r(phpinfo());
     }
 
@@ -330,9 +331,14 @@ print_r($Property1);
 
     }
 
-    public function detail(){
+    public function propertydetail($id){
 
-        return view('propertyDetail');
+        $data = Property::find($id)->get();
+
+        $photos = Photo::where("property_id","$id")->get();
+
+
+        return view('propertyDetail',compact('data','photos'));
     }
 
 

@@ -4,23 +4,23 @@
         <div class="container">
             <div class="logos">
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo-1.png" alt=""></a>
+                    <a href="#"><img src={{asset("assets/img/logo-1.png") }} alt=""></a>
                 </div>
                 <!--/ .logo-->
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo-2.png" alt=""></a>
+                    <a href="#"><img src={{ asset("assets/img/logo-2.png")}} alt=""></a>
                 </div>
                 <!--/ .logo-->
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo-3.png" alt=""></a>
+                    <a href="#"><img src={{ asset("assets/img/logo-3.png")}} alt=""></a>
                 </div>
                 <!--/ .logo-->
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo-4.png" alt=""></a>
+                    <a href="#"><img src={{ asset("assets/img/logo-4.png")}} alt=""></a>
                 </div>
                 <!--/ .logo-->
                 <div class="logo">
-                    <a href="#"><img src="assets/img/logo-5.png" alt=""></a>
+                    <a href="#"><img src={{ asset("assets/img/logo-5.png")}} alt=""></a>
                 </div>
                 <!--/ .logo-->
             </div>
@@ -38,7 +38,7 @@
                 <a href={{ url("/contact-us")}}>Contact Us</a>
             </div>
         </div>
-        <div class="bg-transfer"><img src="assets/img/footer-bg.jpg" alt=""></div>
+        <div class="bg-transfer"><img src={{ asset("assets/img/footer-bg.jpg") }} alt=""></div>
     </div>
     <!--end row-two-->
 </footer>
