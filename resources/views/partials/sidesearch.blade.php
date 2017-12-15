@@ -2,19 +2,24 @@
     <div class="sidebar">
         <div class="box filter">
             <h2>Search</h2>
-            <form id="form-filter" class="labels-uppercase">
+
+            {!! Form::open(['url' => '/search','class'=>'labels-uppercase','id'=>'form-filter']) !!}
+
+
                 <div class="form-group">
                     <label for="form-filter-destination">City</label>
                     <input type="text" class="form-control" id="form-filter-destination" name="city" placeholder="Destination">
                 </div>
 
                 <div class="form-group">
-                    <label for="form-filter-destination">Area</label>
-                    <input type="text" class="form-control" id="form-filter-destination" name="area" placeholder="Destination">
+                    <label for="form-filter-destination">Location</label>
+                    <input type="text" class="form-control" id="form-filter-destination" name="location" placeholder="Destination">
                 </div>
                 <!--end form-group-->
-                <div class="form-group-inline">
+                <div class="row">
                     <div class="form-group">
+
+                        <div class="col-md-6">
                         <label for="form-filter-check-in">Land Area</label>
                         {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
                         <select name="area" id="area_type" class="form-control">
@@ -25,17 +30,23 @@
                             <option value="Marla">Marla</option>
                             <option value="Kanal">Kanal</option>
                         </select>
-
+                        </div>
                     {{--</div>--}}
                     {{--<!--end form-group-->--}}
 
                     {{--<div class="form-group">--}}
                         {{--<label for="form-filter-check-out">Nights</label>--}}
-                        <input type="number" class="form-control" id="form-filter-check-out" name="check-out">
+                        <div class="col-md-6">
+                            <label for="form-filter-check-in">Size</label>
+                            <input type="number" class="form-control" id="form-filter-check-in" name="size">
+                    </div>
                     </div>
                     <!--end form-group-->
                 </div>
                 <!--end form-group-inline-->
+
+
+
                 <div class="center">
                     <a href="#filter-advanced-search" class="link icon" data-toggle="collapse" aria-expanded="false" aria-controls="filter-advanced-search">Advanced Search<i class="fa fa-plus"></i></a>
                 </div>
@@ -90,7 +101,12 @@
                 <div class="form-group center">
                     <button type="submit" class="btn btn-primary btn-rounded form-control">Search</button>
                 </div>
-            </form>
+
+
+
+        {!! Form::close() !!}
+
+
             <!--end form-filter-->
         </div>
         <!--end filter-->

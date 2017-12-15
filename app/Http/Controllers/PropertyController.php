@@ -28,9 +28,37 @@ class PropertyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function sidesearch(Request $request)
     {
         //
+
+        $city = $request['city'];
+        $address = $request['location'];
+        $area = $request['area'];
+        $size = $request['size'];
+
+
+        $property = Property::orwhere('city', '=', $city)
+//            ->where('address','like', '%'.$address.'%')
+//            ->where('unit_type','=',$area)
+            ->Where('unit_size', 'like', '%' . $size . '%')
+//            ->whereIn('id', [1, 2, 3, 4, 5])
+            ->get();
+
+
+        $photos = Photo::all();
+//        foreach ($property as $data)
+//            echo $data->city;
+//
+////       print_r($property);
+
+        if ($property=="[]") {
+         return redirect('/properties');
+
+        } else
+        {
+            return view('properties', compact('property', 'photos'));
+    }
 
 
 
@@ -260,8 +288,9 @@ class PropertyController extends Controller
 
     public function show_all(){
 
-        $property= Property::all() ;
+        $property= Property::all();
         $photos = Photo::all();
+
 
        return view('properties',compact('property','photos'));
 //        print_r(phpinfo());

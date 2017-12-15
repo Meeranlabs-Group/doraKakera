@@ -31,7 +31,7 @@ Route::post('/updatepassword','ProfileController@updatepassword');  //profile up
 Route::get('/myproperties','PropertyController@myproperties');
 
 
-//Route::get('/', 'PropertyController@mainPage');
+Route::post('/search', 'PropertyController@sidesearch');
 
 Route::get('/contact-us', function () {
     return view('contact-us');
