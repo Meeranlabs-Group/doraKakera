@@ -136,7 +136,7 @@
 
                             {{--</li>--}}
                             <li>
-                                <a href={{ url("/maps") }}>Maps</a>
+                                <a href={{ url("/map") }}>Maps</a>
 
                             </li>
 

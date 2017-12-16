@@ -2,72 +2,81 @@
 @include('partials.navbar')
 
 
-<div id="page-content">
 
-    <div class="block">
-        <div class="container">
-            <div class="title">
-                <h2>Properties Available</h2>
-            </div>
-            <!--end title-->
-            <ul class="list-links">
-                <li><a href="{{map\ABDALIAN.jpg}}">Abdalian</a></li>
-                <li><a href="{{map\ALLAMA-IQBAL-TOWN.jpg}}">Allama Iqbal Town</a></li>
-                <li><a href="{{map\ARMYWELFAIR.jpg}}">Army Welfair</a></li>
-                <li><a href="{{map\CANAL-VIEW.jpg}}">Canal View</a></li>
-                <li><a href="{{map\CAVLARY-GROUND.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\CHANAR-BAGH.jpg}}">Chanar Bagh</a></li>
-                <li><a href="{{map\DH-PH-8-updated.jpg}}">DHA Phase 8 Upadated</a></li>
-                <li><a href="{{map\DHA 1-5.jpg}}">DHA Phase 1-5</a></li>
-                <li><a href="{{map\DHA-COMM-1-11 (1).jp}}">DHA Phase Commercial 1-11></a></li>
-                <li><a href="{{map\DHA-Phase-1.jpg}}">DHA Phase 1</a></li>
-                <li><a href="{{map\DHA-Phase-2.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\DHA-Phase-3.jpg}}">DHA Phase 3</a></li>
-                <li><a href="{{map\DHA-Phase-4.jpg}}">DHA Phase 4</a></li>
-                <li><a href="{{map\DHA-Phase-5.jpg}}">DHA Phase 6</a></li>
-                <li><a href="{{map\DHA-PHASE-9-TOWN.jpg}}">DHA Phase 9 Town</a></li>
-                <li><a href="{{map\DHA-PHASE-XI-11-HALLOKI-GARDEN-1.jpg}}">DHA Phase XI HALLOKI GARDEN</a></li>
-                <li><a href="{{map\DHA-PHASE-XI-11-RAHBAR.jpg}}">DHA Phase 11 Rahbar></a></li>
-                <li><a href="{{map\EME.jpg}}">DHA EME Sector</a></li>
-                <li><a href="{{map\FAISAL-TOWN.jpg}}">Faisal Town + Model Town Ext</a></li>
-                <li><a href="{{map\FAZAIA15-6-12-Q.jpg}}">Fazaia Housing Scheme </a></li>
-                <li><a href="{{map\FORMANITE.jpg}}">Formanites Housing Scheme</a></li>
-                <li><a href="{{map\GARDEN-TOWN.jpg}}">New Garden Town</a></li>
-                <li><a href="{{map\HBFC.jpg}}"> HBFC Officers Cooperative Housing Society</a></li>
-                <li><a href="{{map\IZMIR-TOWN.jpg}}">Izmir Town</a></li>
-                <li><a href="{{map\JOHAR-TOWN-2.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\JUBLLE-TOWN.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\LAHORE.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\}}">DHA Phase 2</a></li>
-                <li><a href="{{map\LDA-1.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\MODEL-TOWN.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\MUSLIM-TOWN.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\NFC-2.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\OPF.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\PECO.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\PND.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\PUBLIC-HALTH.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\PUNJAB-COP.jpg}}">DHA Phase 2</a></li>
+<div class="block">
+    <div class="container">
+        <div class="title">
+            <h2 class="center">Available Properties</h2>
+        </div>
+        <!--end title-->
 
 
-                <li><a href="{{map\RAILTOWN.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\rsz_1new_phase_67.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\SABZAZAR.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\STATE-LIFE-1.jpg}}">DHA Phase 2</a></li>
 
 
-                <li><a href="{{map\STATE-LIFE-2.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\SUIGAS-2.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\TnT.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\TOWN-SHIP.jpg}}">DHA Phase 2</a></li>
+
+        {{--{{ $Property->where('city','=',"Lahore") }}--}}
+        {{--{{ $total= Property::where('city',"Lahore") }}--}}
+        {{--{{ $total }}--}}
+
+        <ul class="list-links">
+
+            <li><a href="{{ asset('maps/ABDALIAN.jpg') }}">Abdalian</a></li>
+            <li><a href="{{ asset('maps/ALLAMA-IQBAL-TOWN.jpg') }}">Allama Iqbal Town</a></li>
+            <li><a href="{{ asset('maps/ARMYWELFAIR.jpg' ) }}">Army Welfair</a></li>
+            <li><a href="{{ asset('maps/CANAL-VIEW.jpg') }}">Canal View</a></li>
+            <li><a href="{{ asset('maps/CAVLARY-GROUND.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/CHANAR-BAGH.jpg') }}">Chanar Bagh</a></li>
+            <li><a href="{{ asset('maps/DH-PH-8-updated.jpg') }}">DHA Phase 8 Upadated</a></li>
+            <li><a href="{{ asset('maps/DHA 1-5.jpg' ) }}">DHA Phase 1-5</a></li>
+            <li><a href="{{ asset('maps/DHA-COMM-1-11 (1).jpg') }}">DHA Phase Commercial 1-11></a></li>
+            <li><a href="{{ asset('maps/DHA-Phase-1.jpg') }}">DHA Phase 1</a></li>
+            <li><a href="{{ asset('maps/DHA-Phase-2.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/DHA-Phase-3.jpg') }}">DHA Phase 3</a></li>
+            <li><a href="{{ asset('maps/DHA-Phase-4.jpg') }}">DHA Phase 4</a></li>
+            <li><a href="{{ asset('maps/DHA-Phase-5.jpg') }}">DHA Phase 6</a></li>
+            <li><a href="{{ asset('maps/DHA-PHASE-9-TOWN.jpg') }}">DHA Phase 9 Town</a></li>
+            <li><a href="{{ asset('maps/DHA-PHASE-XI-11-HALLOKI-GARDEN-1.jpg') }}">DHA Phase XI HALLOKI GARDEN</a></li>
+            <li><a href="{{ asset('maps/DHA-PHASE-XI-11-RAHBAR.jpg') }}">DHA Phase 11 Rahbar></a></li>
+            <li><a href="{{ asset('maps/EME.jpg') }}">DHA EME Sector</a></li>
+            <li><a href="{{ asset('maps/FAISAL-TOWN.jpg') }}">Faisal Town + Model Town Ext</a></li>
+            <li><a href="{{ asset('maps/FAZAIA15-6-12-Q.jpg') }}">Fazaia Housing Scheme </a></li>
+            <li><a href="{{ asset('maps/FORMANITE.jpg') }}">Formanites Housing Scheme</a></li>
+            <li><a href="{{ asset('maps/GARDEN-TOWN.jpg') }}">New Garden Town</a></li>
+            <li><a href="{{ asset('maps/HBFC.jpg') }}"> HBFC Officers Cooperative Housing Society</a></li>
+            <li><a href="{{ asset('maps/IZMIR-TOWN.jpg') }}">Izmir Town</a></li>
+            <li><a href="{{ asset('maps/JOHAR-TOWN-2.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/JUBLLE-TOWN.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/LAHORE.jpg') }}">DHA Phase 2</a></li>
+            {{--<li><a href="{{ asset('maps/) }}">DHA Phase 2</a></li>--}}
+            <li><a href="{{ asset('maps/LDA-1.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/MODEL-TOWN.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/MUSLIM-TOWN.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/NFC-2.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/OPF.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/PECO.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/PND.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/PUBLIC-HALTH.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/PUNJAB-COP.jpg') }}">DHA Phase 2</a></li>
 
 
-                <li><a href="{{map\uu.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\WAPDA-TOWN.jpg}}">DHA Phase 2</a></li>
-                <li><a href="{{map\Z-BLOCK.jpg}}">DHA Phase 2</a></li>
-            
+            <li><a href="{{ asset('maps/RAILTOWN.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/rsz_1new_phase_67.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/SABZAZAR.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/STATE-LIFE-1.jpg') }}">DHA Phase 2</a></li>
 
-            </ul>
+
+            <li><a href="{{ asset('maps/STATE-LIFE-2.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/SUIGAS-2.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/TnT.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/TOWN-SHIP.jpg') }}">DHA Phase 2</a></li>
+
+
+            <li><a href="{{ asset('maps/uu.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/WAPDA-TOWN.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/Z-BLOCK.jpg') }}">DHA Phase 2</a></li>
+
+        </ul>
+
             <!--end list-links-->
         </div>
         <!--end container-->
@@ -76,8 +85,7 @@
 
 
     <!--end block-->
-</div>
-<!--end page-content-->
+
 
 
 

@@ -43,7 +43,7 @@ Route::get('/about-us', function () {
 Route::get('/properties','PropertyController@show_all');
 Route::get('/editproperty/{id}/{purpose}/{type}','PropertyController@editproperty');
 
-Route::get('/maps', function () {
+Route::get('/map', function () {
 
     return view('map');
 
