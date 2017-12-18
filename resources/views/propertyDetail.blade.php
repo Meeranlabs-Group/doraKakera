@@ -68,12 +68,14 @@
 
 
 
-@foreach($photos as $photo)
+                        @foreach($photos as $photo)
                                 <div class="image">
 
                                     <img src="{{ asset($photo->path)  }}" alt="">
                                 </div>
-                                    @endforeach
+                        @endforeach
+
+
                             </div>
                         </div>
                     </section>

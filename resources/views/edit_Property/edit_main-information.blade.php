@@ -7,12 +7,13 @@
         <div class="col-md-7">
             <div class="form-group">
                 <label for="form-submit-title">Title<em>*</em></label>
-                <input type="text" class="form-control" id="form-submit-title" name="title" placeholder="Accommodation Title" required="">
+                <input type="text" class="form-control" id="form-submit-title" name="title" value="{{$property[0]->title}}" required="">
             </div>
 
             <div class="form-group ">
                 <label for="form-submit-description">Description<em>*</em></label>
-                <textarea style="height: 100px;" class="form-control" name="description" id="form-submit-description" rows="10" name="description" required="" placeholder="Describe your accommodation"></textarea>
+                <textarea style="height: 100px;" class="form-control" name="description" id="form-submit-description" rows="10"
+                          placeholder="{{ $property[0]->description }}"  required>{{ $property[0]->description }}</textarea>
             </div>
             <!--end form-group-->
 
@@ -30,18 +31,8 @@
 
                     {{--<div class="form-group">--}}
                     <label for="price">Price</label>
-                    <input type="text" class="form-control" id="check-in-to" name="price" placeholder="10000">
+                    <input type="text" class="form-control" id="check-in-to" value="{{$property[0]->price}} "name="price" placeholder="10000">
                     {{--</div>--}}
-
-
-                    {{--<select class="framed width-100" name="room_type_1" id="room-type_1">--}}
-                    {{--<option value="">Select Room Type</option>--}}
-                    {{--<option value="1">Apartment</option>--}}
-                    {{--<option value="2">Family Room</option>--}}
-                    {{--<option value="3">Double Room</option>--}}
-                    {{--</select>--}}
-
-
 
                 </div>
 
@@ -61,7 +52,9 @@
                 <div class="form-group width-60">
                     <label for="price">Unit Type</label>
                     <select class="framed width-100" name="room_type_2" id="room-type_2">
-                        <option value="">Size Unit Type</option>
+
+                        <option value="{{ $property[0]->unit_type}}">{{ $property[0]->unit_type }}</option>
+                        <option disabled> Select Unit Type </option>
                         <option value="Marla">Marla</option>
                         <option value="Kanal">Kanal</option>
                         <option value="Square Feet">Square Feet</option>
@@ -72,7 +65,7 @@
                 <!--end form-group-->
                 <div class="form-group">
                     <label for="number-of-rooms_2">Size</label>
-                    <input type="number" class="form-control" id="number-of-rooms_2" name="room_number_2" placeholder="1" min="1" >
+                    <input type="number" class="form-control" id="number-of-rooms_2" name="room_number_2" value="{{ $property[0]->unit_size }}" placeholder="1" min="1" >
                 </div>
                 <!--end form-group-->
             </div>

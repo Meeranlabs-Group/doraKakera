@@ -1,3 +1,9 @@
+@extends('edit_feature.mainview')
+@section('body')
+
+
+
+
 <section id="features">
     <div class="title">
         <h2>Features</h2>
@@ -323,3 +329,4 @@
     </div>
     <!--end row-->
 </section>
+@endsection

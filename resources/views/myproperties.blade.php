@@ -21,7 +21,7 @@
                     <thead>
                     <tr>
                         <th>Accommodation</th>
-                        <th>Featured</th>
+                        {{--<th>Featured</th>--}}
                         <th>Views</th>
                         <th>Reviews</th>
                         <th>Rating</th>
@@ -35,7 +35,7 @@
                     <tr class="my-item">
                         <td>
                             <div class="image-wrapper">
-                                <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>
+                                {{--<div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>--}}
                                 <a href="edit.html" class="image">
                                     <div class="bg-transfer">
                                         <img src="assets/img/items/01.jpg">
@@ -43,18 +43,18 @@
                                 </a>
                             </div>
                             <div class="info">
-                                <a href="detail.html"><h2>{{$property->title}}</h2></a>
+                                <a href="propertydetail/{{ $property->id }}"><h2>{{$property->title}}</h2></a>
                                 <figure class="location">{{$property->city}}</figure>
                                 <figure class="label label-info">{{$property->property_type}}</figure>
                                 <div class="meta">
                                     <span><i class="fa fa-bed"></i>365</span>
-                                    <span class="price-info">From<span class="price">{{$property->price}}</span><span class="appendix">/night</span></span>
+                                    <span class="price-info">Price: <span class="price">{{$property->price}}</span></span>
                                 </div>
                                 <!--end meta-->
                             </div>
                             <!--end info-->
                         </td>
-                        <td><div class="featured yes"><i class="fa fa-check"></i><aside></aside></div></td>
+                        {{--<td><div class="featured yes"><i class="fa fa-check"></i><aside></aside></div></td>--}}
                         <td class="views">426</td>
                         <td class="reviews">45</td>
                         <td class="rating">9.3</td>
@@ -62,9 +62,9 @@
                         <td class="last-reservation">
 
                             <div >
-                                <a href="/editproperty/{{$property->id}}/{{$property->purpose}}/{{$property->property_type}}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
+                                <a href="/editproperty/{{$property->id}}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
 
-                                <a href="#" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>
+                                <a href="/deleteproperty/{{$property->id}}" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>
                             </div>
                             <!--end edit-options-->
                         </td>

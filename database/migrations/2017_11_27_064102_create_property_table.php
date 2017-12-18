@@ -33,6 +33,7 @@ class CreatePropertyTable extends Migration
 
 
             $table->string('purpose') ->nullable();
+            $table->tinyInteger('ad_status') ->default('1');
             $table->string('property_type') ->nullable();
             $table->text('description') ->nullable();
 

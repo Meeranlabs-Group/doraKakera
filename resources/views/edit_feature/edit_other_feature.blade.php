@@ -1,4 +1,6 @@
-<section id="features">
+@extends('edit_feature.mainview')
+@section('body')
+        <section id="features">
     <div class="title">
         <h2>Features</h2>
         <aside class="step">4</aside>
@@ -318,3 +320,4 @@
     </div>
     <!--end row-->
 </section>
+@endsection
