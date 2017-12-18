@@ -18,10 +18,11 @@ class PropertyController extends Controller
     public function deleteproperty($id)
     {
 
-        $property = Property::where('id', '=', $id)->get();
+        $property = Property::where('id', '=', $id)->update([ 'ad_status'=> 0 ]);
+        return redirect('/myproperties');
 
-        $feature = feature::where('property_id', '=', $id)->get();
-        $photos = Photo::where('property_id', '=', $id);
+//        $feature = feature::where('property_id', '=', $id)->get();
+//        $photos = Photo::where('property_id', '=', $id);
 
     }
 
@@ -433,7 +434,7 @@ class PropertyController extends Controller
     public function myproperties(){
 
         $id=Auth::user()->id;
-        $data= Property::where('user_id',$id)->get();
+        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->get();
        return view('myproperties',compact('data'));
 
     }
@@ -452,18 +453,5 @@ class PropertyController extends Controller
     }
 
 
-
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
 }

@@ -23,7 +23,7 @@
                                         <?php
                                         for($i = 1990 ; $i <= date('Y'); $i++){
 
-                                            if($feature[0]->built_in_year == $i)
+                                            if( $feature[0]->built_in_year == $i)
                                             {
                                                 echo "<option value=".$i." selected>".$i."</option>";
                                             }
@@ -45,6 +45,7 @@
                                     <select  name="Parking_Spaces" class="framed width-80">
 
 
+
                                         <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -62,6 +63,8 @@
 
 
                                     <select  name="Number_of_Bedrooms" class="framed width-80">
+
+
 
 
                                         <option value="0">0</option>
@@ -142,14 +145,6 @@
                                 <div class="form-group width-70">
 
                                     <label>Total Number of Floors</label>
-
-                                    {{--<div class="input-number" >--}}
-                                    {{--<div class="change-button plus">--}}
-                                    {{--<i class="fa fa-caret-up"></i>--}}
-                                    {{--</div>--}}
-                                    {{--<div class="change-button minus">--}}
-                                    {{--<i class="fa fa-caret-down"></i>--}}
-                                    {{--</div>--}}
 
 
                                     <input type="number" name="Total_Number_of_Floors" placeholder="1" min="1">
