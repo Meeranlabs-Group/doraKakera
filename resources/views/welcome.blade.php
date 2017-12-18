@@ -6,7 +6,10 @@
 
 
         @include('partials.search')
-        @include('partials.featureproperties')
+
+
+            @include('partials.featureproperties')
+
         @include('partials.totalproperties')
 
         @include('partials.footer')

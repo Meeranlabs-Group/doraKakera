@@ -11,27 +11,24 @@
 |
 */
 
-Route::get('/', function () {
-
-    return view('welcome');
-});
-//Route::get('/profile', function () {
+//Route::get('/', function () {
 //
-//    return view('profile');
+//    return view('welcome');
 //});
+
+Route::get('/','PropertyController@mainPage');
+
+
+
 Route::get('/profile','ProfileController@profile');
 Route::post('/profile','ProfileController@updateprofile');  //profile update
 Route::post('/updatepassword','ProfileController@updatepassword');  //profile update
 
-//Route::get('/myproperties', function () {
-//
-//    return view('myproperties');
-//});
 
 Route::get('/myproperties','PropertyController@myproperties');
 
 
-Route::post('/search', 'PropertyController@sidesearch');
+Route::post('/search', 'PropertyController@search');
 
 Route::get('/contact-us', function () {
     return view('contact-us');
@@ -41,7 +38,10 @@ Route::get('/about-us', function () {
 });
 
 Route::get('/properties','PropertyController@show_all');
-Route::get('/editproperty/{id}/{purpose}/{type}','PropertyController@editproperty');
+Route::get('/properties/{city}','PropertyController@show_all');
+
+
+Route::get('/editproperty/{id}','PropertyController@editproperty');
 
 Route::get('/map', function () {
 
@@ -50,10 +50,10 @@ Route::get('/map', function () {
 });
 
 
-Route::get('/viewloader','PropertyController@viewloader');
-
-
 Route::get('/propertydetail/{id}','PropertyController@propertydetail');
+
+
+
 
 
 

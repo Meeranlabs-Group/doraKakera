@@ -4,74 +4,39 @@
             <h2 class="center">Our Feature Properties</h2>
         </div>
         <!--end title-->
+
         <div class="gallery-carousel">
+
+            @foreach($hot as $data)
             <div class="gallery-item">
-                <a href="blog-detail.html"><div class="image"><img src="assets/img/items/tip-01.jpg" alt=""></div></a>
+
+
+                @foreach($photos as $photo)
+                    @if( ($data->id == $photo->property_id) &&  $photo->rank ==1 )
+
+                        <a href="propertydetail/{{ $data->id }}"><div class="image"><img src= "{{ $photo->path }}" alt=""></div></a>
+                    @endif
+                @endforeach
+
                 <div class="description">
-                    <a href="blog-detail.html"><h3>Silver Peak Resort</h3></a>
-                    <figure>Austria</figure>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus posuere mattis. Donec </p>
-                    <a href="blog-detail.html" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
+                    <a href="propertydetail/{{ $data->id }}"><h3> {{ $data->title }} </h3></a>
+                    <figure>{{ $data->city }}</figure>
+                    <p>{{ $data->description }}</p>
+                    <a href="propertydetail/{{ $data->id }}" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
                 </div>
             </div>
-            <!--end gallery-item-->
-            <div class="gallery-item">
-                <a href="blog-detail.html"><div class="image"><img src="assets/img/items/tip-02.jpg" alt=""></div></a>
-                <div class="description">
-                    <a href="blog-detail.html"><h3>Silver Peak Resort</h3></a>
-                    <figure>Austria</figure>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus posuere mattis. Donec </p>
-                    <a href="blog-detail.html" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
-                </div>
-            </div>
-            <!--end gallery-item-->
-            <div class="gallery-item">
-                <a href="blog-detail.html"><div class="image"><img src="assets/img/items/tip-03.jpg" alt=""></div></a>
-                <div class="description">
-                    <a href="blog-detail.html"><h3>Silver Peak Resort</h3></a>
-                    <figure>Austria</figure>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus posuere mattis. Donec </p>
-                    <a href="blog-detail.html" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
-                </div>
-            </div>
-            <!--end gallery-item-->
-            <div class="gallery-item">
-                <a href="blog-detail.html"><div class="image"><img src="assets/img/items/tip-01.jpg" alt=""></div></a>
-                <div class="description">
-                    <a href="blog-detail.html"><h3>Silver Peak Resort</h3></a>
-                    <figure>Austria</figure>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus posuere mattis. Donec </p>
-                    <a href="blog-detail.html" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
-                </div>
-            </div>
-            <!--end gallery-item-->
-            <div class="gallery-item">
-                <a href="blog-detail.html"><div class="image"><img src="assets/img/items/tip-02.jpg" alt=""></div></a>
-                <div class="description">
-                    <a href="blog-detail.html"><h3>Silver Peak Resort</h3></a>
-                    <figure>Austria</figure>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus posuere mattis. Donec </p>
-                    <a href="blog-detail.html" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
-                </div>
-            </div>
-            <!--end gallery-item-->
-            <div class="gallery-item">
-                <a href="blog-detail.html"><div class="image"><img src="assets/img/items/tip-03.jpg" alt=""></div></a>
-                <div class="description">
-                    <a href="blog-detail.html"><h3>Silver Peak Resort</h3></a>
-                    <figure>Austria</figure>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum luctus posuere mattis. Donec </p>
-                    <a href="blog-detail.html" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
-                </div>
-            </div>
+
+        @endforeach
             <!--end gallery-item-->
         </div>
+
+
         <!--end gallery-carousel-->
     </div>
     <!--end container-->
 
     <div class="bg opacity-30">
-        <img src="assets/img/bg-map.jpg" alt="">
+        <img src={{ asset("assets/img/bg-map.jpg") }} alt="">
     </div>
 </div>
 <!--end block-->

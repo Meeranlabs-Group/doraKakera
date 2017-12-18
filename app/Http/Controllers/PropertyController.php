@@ -13,22 +13,25 @@ use Illuminate\Support\Facades\Auth;
 
 class PropertyController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+    public function editproperty($id)
     {
-        //
+
+        $property = Property::find($id)->get();
+
+        $feature= feature::where('property_id','=',$id)->get();
+        $photos =Photo::where('property_id','=',$id);
+
+
+
+
+
+       return view('edit_property',compact('property','feature','photos'));
+
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function sidesearch(Request $request)
+
+    public function search(Request $request)
     {
         //
 
@@ -65,18 +68,6 @@ class PropertyController extends Controller
     }
 
 
-
-
-
-
-
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
 
@@ -301,64 +292,45 @@ class PropertyController extends Controller
     public function mainPage(){ //showing cities and their count of properties
 
 
-        $Property= Property::select('city')->Distinct()->get();
-        $i=0;
-        echo "<br>";
-        foreach ( $Property as $p) {
-
-            $count = Property::select('city')-> where('city', '=', $p->city)->groupby()->count();
-
-            $Property1[$i] = array('city'=>$p->city,'count'=>$count);
-
-$i++;
-
-        }
+        $Property1 = DB::table('Property')->select('city',DB::raw('count(*) as total'))->groupBy('city')->get();
 
 
-print_r($Property1);
+
+//
+//        foreach (  $Property1 as $p) {
+//
+//          echo $p->city;
+//            echo $p->total;
+//            echo "<br>";
+//
+//
+//        }
 
 
-     // return view('welcome',compact('Property1'));
+
+
+        $hot=Property::where('superhot','=',1)->get();
+
+
+        $photos = Photo::all();
+//
+//
+//
+//      return view('welcome',compact('hot','photos'));
+      return view('welcome',compact('hot','photos','Property1'));
     }
 
 
     public function myproperties(){
 
         $id=Auth::user()->id;
-
         $data= Property::where('user_id',$id)->get();
-
-
-
-
        return view('myproperties',compact('data'));
 
     }
 
 
-    public function editproperty($id,$type,$purpose){
 
-
-        echo $id;
-        echo $purpose;
-        echo $type;
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-
-        $posts= Property::latest('published_at')->get();
-
-
-
-    }
 
     public function propertydetail($id){
 
@@ -372,16 +344,6 @@ print_r($Property1);
 
 
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
 
     /**
      * Update the specified resource in storage.
@@ -395,14 +357,4 @@ print_r($Property1);
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
