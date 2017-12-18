@@ -165,18 +165,12 @@
         {!! Form::close() !!}
 
 
-            <!--end form-filter-->
+
         </div>
-        <!--end filter-->
-        {{--<div class="box">--}}
-            {{--<h2>Weather in Destination</h2>--}}
-            {{--<div id="weather" class="weather weather-detail"></div>--}}
-            {{--<!--end weather-->--}}
-        {{--</div>--}}
-        <!--end box-->
+
         <a href="#" class="advertising-banner">
             <span class="banner-badge">Advertising</span>
-            <img src="assets/img/ad-banner-02.jpg" alt="">
+            <img src="{{ asset("assets/img/ad-banner-02.jpg") }}" alt="">
         </a>
     </div>
     <!--end sidebar-->

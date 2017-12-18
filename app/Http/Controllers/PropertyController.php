@@ -14,10 +14,23 @@ use Illuminate\Support\Facades\Auth;
 class PropertyController extends Controller
 {
 
-    public function editproperty($id)
+
+    public function deleteproperty($id)
     {
 
-        $property = Property::find($id)->get();
+        $property = Property::where('id', '=', $id)->update([ 'ad_status'=> 0 ]);
+        return redirect('/myproperties');
+
+//        $feature = feature::where('property_id', '=', $id)->get();
+//        $photos = Photo::where('property_id', '=', $id);
+
+    }
+
+
+        public function editproperty($id)
+    {
+
+        $property = Property::where('id','=',$id)->get();
 
         $feature= feature::where('property_id','=',$id)->get();
         $photos =Photo::where('property_id','=',$id);
@@ -26,7 +39,85 @@ class PropertyController extends Controller
 
 
 
-       return view('edit_property',compact('property','feature','photos'));
+        //HOUSE PORTION
+
+        if($property[0]->property_type== "Houses"){
+            return view('edit_feature.edit_house_feature',compact('property','feature','photos'));
+        }
+
+
+        else if($property[0]->property_type== "Flates"){
+            return view('edit_feature.edit_flat_feature',compact('property','feature','photos'));
+        }
+        else if($property[0]->property_type== "Buildings"){
+            return view('edit_feature.edit_building_feature',compact('property','feature','photos'));
+        }
+
+
+
+
+
+        else if($property[0]->property_type== "Office"){
+            return view('edit_feature.edit_office_feature',compact('property','feature','photos'));
+        }
+        else if($property[0]->property_type== "Warehouses"){
+            return view('edit_feature.edit_warehouse_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Upper-Portions"){
+            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Lower-Portions"){
+            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Farms-House"){
+            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Residential-Plots"){
+            return view('edit_feature.edit_plot_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Commercial-Plots"){
+            return view('edit_feature.edit_plot_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Agricultural-Land"){
+            return view('edit_feature.edit_land_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Industrial-Land"){
+            return view('edit_feature.edit_land_feature',compact('property','feature','photos'));
+        }
+
+
+        else if($property[0]->property_type== "Shops"){
+            return view('edit_feature.edit_shop_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Warehouses"){
+            return view('edit_feature.edit_Warehouses_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Factories"){
+            return view('edit_feature.edit_factory_feature',compact('property','feature','photos'));
+        }
+
+        else if($property[0]->property_type== "Buildings"){
+            return view('edit_feature.edit_building_feature',compact('property','feature','photos'));
+        }
+
+        else
+        {
+            return view('edit_feature.edit_other_feature',compact('property','feature','photos'));
+        }
+
+
+
+
+//       return view('edit_property',compact('property','feature','photos'));
 
     }
 
@@ -66,6 +157,27 @@ class PropertyController extends Controller
 
 
     }
+
+
+    public function updateproperty(Request $request){
+
+        $property_id= $request['property_id'];
+        $feature_id = $request['feature_id'];
+
+
+
+
+        Property::where('id','=',$property_id)->update(['title'=> $request['title'],'property_type'=>$request['property_type'],
+            'description' => $request['description'], 'price' =>$request['price'], 'city'=>$request['city'],
+            'address'=>$request['address'], 'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],
+            'unit_size'=>$request['unit_size'] ]);
+
+
+
+
+
+    }
+
 
 
     public function store(Request $request)
@@ -287,8 +399,6 @@ class PropertyController extends Controller
 //        print_r(phpinfo());
     }
 
-
-
     public function mainPage(){ //showing cities and their count of properties
 
 
@@ -324,7 +434,7 @@ class PropertyController extends Controller
     public function myproperties(){
 
         $id=Auth::user()->id;
-        $data= Property::where('user_id',$id)->get();
+        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->get();
        return view('myproperties',compact('data'));
 
     }
@@ -343,18 +453,5 @@ class PropertyController extends Controller
     }
 
 
-
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
 
 }

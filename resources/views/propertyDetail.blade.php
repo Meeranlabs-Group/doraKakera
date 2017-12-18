@@ -33,15 +33,7 @@
 
 
 
-                {{--<div class="main-content">--}}
-                    {{--<div class="title">--}}
-                        {{--<h1>Listing</h1>--}}
-                        {{--<div class="display-selector">--}}
-                        {{--<span>Display:</span>--}}
-                        {{--<a href="listing.html" class="active" data-toggle="tooltip" data-placement="left" title="Display list"><i class="fa fa-th-list"></i></a>--}}
-                        {{--<a href="listing-matrix.html" data-toggle="tooltip" data-placement="left" title="Display matrix"><i class="fa fa-th"></i></a>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
+
 
 
 
@@ -68,12 +60,14 @@
 
 
 
-@foreach($photos as $photo)
+                        @foreach($photos as $photo)
                                 <div class="image">
 
                                     <img src="{{ asset($photo->path)  }}" alt="">
                                 </div>
-                                    @endforeach
+                        @endforeach
+
+
                             </div>
                         </div>
                     </section>

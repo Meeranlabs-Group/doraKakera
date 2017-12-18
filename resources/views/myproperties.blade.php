@@ -13,17 +13,17 @@
         <!--end breadcrumb-->
         <div class="main-content">
             <div class="title">
-                <h1><a href="my-accommodations.html">My Accommodations</a></h1>
-                <h1 class="inactive"><a href="profile.html">Profile</a></h1>
+                {{--<h1><a href="my-accommodations.html">My Accommodations</a></h1>--}}
+                <h1 class="inactive"><a href="/profile">{{ Auth::user()->name }}</a></h1>
             </div>
             <div class="my-items table-responsive">
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Accommodation</th>
-                        <th>Featured</th>
+                        <th>Properties</th>
+                        {{--<th>Featured</th>--}}
+                        <th>Likes</th>
                         <th>Views</th>
-                        <th>Reviews</th>
                         <th>Rating</th>
                         <th>Last Reservation</th>
                     </tr>
@@ -35,7 +35,7 @@
                     <tr class="my-item">
                         <td>
                             <div class="image-wrapper">
-                                <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>
+                                {{--<div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>--}}
                                 <a href="edit.html" class="image">
                                     <div class="bg-transfer">
                                         <img src="assets/img/items/01.jpg">
@@ -43,18 +43,18 @@
                                 </a>
                             </div>
                             <div class="info">
-                                <a href="detail.html"><h2>{{$property->title}}</h2></a>
+                                <a href="propertydetail/{{ $property->id }}"><h2>{{$property->title}}</h2></a>
                                 <figure class="location">{{$property->city}}</figure>
                                 <figure class="label label-info">{{$property->property_type}}</figure>
                                 <div class="meta">
                                     <span><i class="fa fa-bed"></i>365</span>
-                                    <span class="price-info">From<span class="price">{{$property->price}}</span><span class="appendix">/night</span></span>
+                                    <span class="price-info">Price: <span class="price">{{$property->price}}</span></span>
                                 </div>
                                 <!--end meta-->
                             </div>
                             <!--end info-->
                         </td>
-                        <td><div class="featured yes"><i class="fa fa-check"></i><aside></aside></div></td>
+                        {{--<td><div class="featured yes"><i class="fa fa-check"></i><aside></aside></div></td>--}}
                         <td class="views">426</td>
                         <td class="reviews">45</td>
                         <td class="rating">9.3</td>
@@ -62,9 +62,9 @@
                         <td class="last-reservation">
 
                             <div >
-                                <a href="/editproperty/{{$property->id}}/{{$property->purpose}}/{{$property->property_type}}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
+                                <a href="/editproperty/{{$property->id}}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
 
-                                <a href="#" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>
+                                <a href="/deleteproperty/{{$property->id}}" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>
                             </div>
                             <!--end edit-options-->
                         </td>
@@ -73,125 +73,32 @@
 
                     @endforeach
 
-                    {{--<tr class="my-item">--}}
-                        {{--<td>--}}
-                            {{--<div class="image-wrapper">--}}
-                                {{--<a href="edit.html" class="image">--}}
-                                    {{--<div class="bg-transfer">--}}
-                                        {{--<img src="assets/img/items/02.jpg">--}}
-                                    {{--</div>--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                            {{--<div class="info">--}}
-                                {{--<a href="detail.html"><h2>Mountain Paradise</h2></a>--}}
-                                {{--<figure class="location">Montenegro</figure>--}}
-                                {{--<figure class="label label-info">Hotel</figure>--}}
-                                {{--<div class="meta">--}}
-                                    {{--<span><i class="fa fa-bed"></i>365</span>--}}
-                                    {{--<span class="price-info">From<span class="price">$32</span><span class="appendix">/night</span></span>--}}
-                                {{--</div>--}}
-                                {{--<!--end meta-->--}}
-                            {{--</div>--}}
-                            {{--<!--end info-->--}}
-                        {{--</td>--}}
-                        {{--<td class="featured"><i class="fa fa-times"></i></td>--}}
-                        {{--<td class="views">230</td>--}}
-                        {{--<td class="reviews">28</td>--}}
-                        {{--<td class="rating">9.9</td>--}}
-                        {{--<td class="last-reservation">Yesterday 10:45--}}
-                            {{--<span class="last-edit">Last edited: Today 12:35</span>--}}
-                            {{--<div class="edit-options">--}}
-                                {{--<a href="edit.html" class="link icon"><i class="fa fa-edit"></i>Edit</a>--}}
-                                {{--<a href="reservations.html" class="link icon"><i class="fa fa-check-square-o"></i>Reservations</a>--}}
-                                {{--<a href="reviews.html" class="link icon"><i class="fa fa-comment"></i>Reviews</a>--}}
-                                {{--<a href="#" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>--}}
-                            {{--</div>--}}
-                            {{--<!--end edit-options-->--}}
-                        {{--</td>--}}
-                    {{--</tr>--}}
-                    {{--<!--end my-item-->--}}
-                    {{--<tr class="my-item">--}}
-                        {{--<td>--}}
-                            {{--<div class="image-wrapper">--}}
-                                {{--<div class="ribbon"><div class="offer-number">20%</div><figure>Off Today!</figure></div>--}}
-                                {{--<a href="edit.html" class="image">--}}
-                                    {{--<div class="bg-transfer">--}}
-                                        {{--<img src="assets/img/items/03.jpg">--}}
-                                    {{--</div>--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                            {{--<div class="info">--}}
-                                {{--<a href="detail.html"><h2>Twin Oaks Resort</h2></a>--}}
-                                {{--<figure class="location">Montenegro</figure>--}}
-                                {{--<figure class="label label-info">Hotel</figure>--}}
-                                {{--<div class="meta">--}}
-                                    {{--<span><i class="fa fa-bed"></i>365</span>--}}
-                                    {{--<span class="price-info">From<span class="price">$32</span><span class="appendix">/night</span></span>--}}
-                                {{--</div>--}}
-                                {{--<!--end meta-->--}}
-                            {{--</div>--}}
-                            {{--<!--end info-->--}}
-                        {{--</td>--}}
-                        {{--<td class="featured"><i class="fa fa-times"></i></td>--}}
-                        {{--<td class="views">230</td>--}}
-                        {{--<td class="reviews">28</td>--}}
-                        {{--<td class="rating">9.9</td>--}}
-                        {{--<td class="last-reservation">12.05.2016 11:05--}}
-                            {{--<span class="last-edit">Last edited: Today 12:35</span>--}}
-                            {{--<div class="edit-options">--}}
-                                {{--<a href="edit.html" class="link icon"><i class="fa fa-edit"></i>Edit</a>--}}
-                                {{--<a href="reservations.html" class="link icon"><i class="fa fa-check-square-o"></i>Reservations</a>--}}
-                                {{--<a href="reviews.html" class="link icon"><i class="fa fa-comment"></i>Reviews</a>--}}
-                                {{--<a href="#" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>--}}
-                            {{--</div>--}}
-                            {{--<!--end edit-options-->--}}
-                        {{--</td>--}}
-                    {{--</tr>--}}
-                    {{--<!--end my-item-->--}}
-                    {{--<tr class="my-item">--}}
-                        {{--<td>--}}
-                            {{--<div class="image-wrapper">--}}
-                                {{--<a href="edit.html" class="image">--}}
-                                    {{--<div class="bg-transfer">--}}
-                                        {{--<img src="assets/img/items/04.jpg">--}}
-                                    {{--</div>--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-                            {{--<div class="info">--}}
-                                {{--<a href="detail.html"><h2>Twin Oaks Resort</h2></a>--}}
-                                {{--<figure class="location">Montenegro</figure>--}}
-                                {{--<figure class="label label-info">Hotel</figure>--}}
-                                {{--<div class="meta">--}}
-                                    {{--<span><i class="fa fa-bed"></i>365</span>--}}
-                                    {{--<span class="price-info">From<span class="price">$32</span><span class="appendix">/night</span></span>--}}
-                                {{--</div>--}}
-                                {{--<!--end meta-->--}}
-                            {{--</div>--}}
-                            {{--<!--end info-->--}}
-                        {{--</td>--}}
-                        {{--<td class="featured"><i class="fa fa-times"></i></td>--}}
-                        {{--<td class="views">230</td>--}}
-                        {{--<td class="reviews">28</td>--}}
-                        {{--<td class="rating">9.9</td>--}}
-                        {{--<td class="last-reservation">12.02.2016 08:50--}}
-                            {{--<span class="last-edit">Last edited: Today 12:35</span>--}}
-                            {{--<div class="edit-options">--}}
-                                {{--<a href="edit.html" class="link icon"><i class="fa fa-edit"></i>Edit</a>--}}
-                                {{--<a href="reservations.html" class="link icon"><i class="fa fa-check-square-o"></i>Reservations</a>--}}
-                                {{--<a href="reviews.html" class="link icon"><i class="fa fa-comment"></i>Reviews</a>--}}
-                                {{--<a href="#" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>--}}
-                            {{--</div>--}}
-                            {{--<!--end edit-options-->--}}
-                        {{--</td>--}}
-                    {{--</tr>--}}
-                    <!--end my-item-->
-
-
-
                     </tbody>
                 </table>
             </div>
             <!--end my-items-->
+        </div>
+
+
+
+
+
+
+        <div class="center">
+            <ul class="pagination">
+                <li class="prev">
+                    <a href="#"><i class="arrow_left"></i></a>
+                </li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li class="next">
+                    <a href="#"><i class="arrow_right"></i></a>
+                </li>
+            </ul>
+            <!-- end pagination-->
         </div>
         <!--end main-content-->
     </div>

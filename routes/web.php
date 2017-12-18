@@ -22,6 +22,9 @@ Route::get('/','PropertyController@mainPage');
 
 Route::get('/profile','ProfileController@profile');
 Route::post('/profile','ProfileController@updateprofile');  //profile update
+//
+Route::post('/updateproperty','PropertyController@updateproperty');  //profile update
+
 Route::post('/updatepassword','ProfileController@updatepassword');  //profile update
 
 
@@ -42,6 +45,7 @@ Route::get('/properties/{city}','PropertyController@show_all');
 
 
 Route::get('/editproperty/{id}','PropertyController@editproperty');
+Route::get('/deleteproperty/{id}','PropertyController@deleteproperty');
 
 Route::get('/map', function () {
 

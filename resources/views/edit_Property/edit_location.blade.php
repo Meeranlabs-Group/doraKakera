@@ -9,7 +9,10 @@
             <div class="form-group">
                 <label for="address-autocomplete">City<em>*</em></label>
                 <select class="framed width-100" name="city" id="city">
-                    <option value="" selected="">Select City</option>
+
+
+                    <option value="{{ $property[0]->city }}">{{ $property[0]->city }}</option>
+                    <option value="" disabled="">Select City</option>
                     <option value="Islamabad">Islamabad</option>
                     <option value="Lahore">Lahore</option>
                     <option value="Karachi">Karachi</option>
@@ -90,7 +93,7 @@
 
             <div class="form-group">
                 <label for="address-autocomplete">Address<em>*</em></label>
-                <input type="text" class="form-control" id="address-autocomplete" name="address" placeholder="Accommodation Address" required="">
+                <input type="text" class="form-control" id="address-autocomplete" name="address" value="{{ $property[0]->address }}" required="">
             </div>
 </div>
 
