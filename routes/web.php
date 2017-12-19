@@ -40,6 +40,11 @@ Route::get('/about-us', function () {
     return view('about-us');
 });
 
+Route::get('/dhafile', function () {
+    return view('dhafile');
+});
+
+
 Route::get('/properties','PropertyController@show_all');
 Route::get('/properties/{city}','PropertyController@show_all');
 
