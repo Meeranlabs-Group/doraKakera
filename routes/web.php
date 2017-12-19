@@ -22,6 +22,10 @@ Route::get('/myarticles', function () {
     return view('myarticles');
 });
 
+Route::get('/addarticle', function () {
+    return view('blog.addarticle');
+});
+
 Route::get('/profile','ProfileController@profile');
 Route::post('/profile','ProfileController@updateprofile');  //profile update
 //

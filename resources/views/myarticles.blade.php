@@ -14,7 +14,9 @@
         <div class="main-content">
             <div class="title">
                 {{--<h1><a href="my-accommodations.html">My Accommodations</a></h1>--}}
-                <h1 class="inactive"><a href="/profile">{{ Auth::user()->name }}</a></h1>
+                <h1 class="inactive"><a href="/addarticle"> Add Article</a></h1>
+
+
             </div>
             <div class="my-items table-responsive">
                 <table class="table">

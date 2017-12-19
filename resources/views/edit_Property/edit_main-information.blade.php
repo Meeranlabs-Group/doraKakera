@@ -13,7 +13,7 @@
             <div class="form-group ">
                 <label for="form-submit-description">Description<em>*</em></label>
                 <textarea style="height: 100px;" class="form-control" name="description" id="form-submit-description" rows="10"
-                          placeholder="{{ $property[0]->description }}"  required>{{ $property[0]->description }}</textarea>
+                            required>{{ $property[0]->description }}</textarea>
             </div>
             <!--end form-group-->
 
