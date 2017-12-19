@@ -18,7 +18,9 @@
 
 Route::get('/','PropertyController@mainPage');
 
-
+Route::get('/myarticles', function () {
+    return view('myarticles');
+});
 
 Route::get('/profile','ProfileController@profile');
 Route::post('/profile','ProfileController@updateprofile');  //profile update
@@ -40,9 +42,7 @@ Route::get('/about-us', function () {
     return view('about-us');
 });
 
-Route::get('/myarticle', function () {
-    return view('myarticle');
-});
+
 
 Route::get('/properties','PropertyController@show_all');
 Route::get('/properties/{city}','PropertyController@show_all');
