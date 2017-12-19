@@ -116,7 +116,7 @@
                                     <li><a href="MarketDetails.php">News</a></li>
                                     <li><a href="">Property Evaluator</a></li>
                                 </ul>
-
+ 
 
                             </li>
 
