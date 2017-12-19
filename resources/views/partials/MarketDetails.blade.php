@@ -76,99 +76,99 @@
                             </div>
                         </div>
                     </section>
-                    <section id="comments">
-                        <header><h2 class="no-border">Comments</h2></header>
-                        <ul class="comments">
-                            <li class="comment">
-                                <figure>
-                                    <div class="image">
-                                        <img alt="" src="assets/img/person-02.jpg">
-                                    </div>
-                                </figure>
-                                <div class="comment-wrapper">
-                                    <div class="name pull-left">Catherine Brown</div>
-                                    <span class="date pull-right"><span class="fa fa-calendar"></span>12.05.2014</span>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, sem ut sollicitudin consectetur,
-                                        augue diam ornare massa, ac vehicula leo turpis eget purus. Nunc pellentesque vestibulum mauris, eget suscipit
-                                        mauris imperdiet vel. Nulla et massa metus. Nam porttitor quam eget ante elementum consectetur. Aenean ac nisl
-                                        et nulla placerat suscipit eu a mauris. Curabitur quis augue condimentum, varius mi in, ultricies velit.
-                                        Suspendisse potenti.
-                                    </p>
-                                    <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                    <hr>
-                                </div>
-                            </li>
-                            <li>
-                                <ul class="comments-child">
-                                    <li class="comment">
-                                        <figure>
-                                            <div class="image">
-                                                <img alt="" src="assets/img/person-03.jpg">
-                                            </div>
-                                        </figure>
-                                        <div class="comment-wrapper">
-                                            <div class="name">John Doe</div>
-                                            <span class="date"><span class="fa fa-calendar"></span>24.06.2014</span>
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, sem ut sollicitudin consectetur,
-                                                augue diam ornare massa, ac vehicula leo turpis eget purus. Nunc pellentesque vestibulum mauris, eget suscipit
-                                                mauris.
-                                            </p>
-                                            <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                            <hr>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li class="comment">
-                                <figure>
-                                    <div class="image">
-                                        <img alt="" src="assets/img/person-04.jpg">
-                                    </div>
-                                </figure>
-                                <div class="comment-wrapper">
-                                    <div class="name">John Doe</div>
-                                    <span class="date"><span class="fa fa-calendar"></span>08.05.2014</span>
-                                    <p>Quisque iaculis neque at dui cursus posuere. Sed tristique pharetra orci, eu malesuada ante tempus nec.
-                                        Phasellus enim odio, facilisis et ante vel, tempor congue sapien. Praesent eget ligula
-                                        eu libero cursus facilisis vel non arcu. Sed vitae quam enim.
-                                    </p>
-                                    <a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>
-                                    <hr>
-                                </div>
-                            </li>
-                        </ul>
-                    </section><!-- /#comments -->
-                    <section id="leave-reply">
-                        <header><h2 class="no-border">Leave a Reply</h2></header>
-                        <form role="form" id="form-blog-reply" method="post"  class="clearfix">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form-blog-reply-name">Your Name<em>*</em></label>
-                                        <input type="text" class="form-control" id="form-blog-reply-name" name="form-blog-reply-name" required>
-                                    </div><!-- /.form-group -->
-                                </div><!-- /.col-md-6 -->
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="form-blog-reply-email">Your Email<em>*</em></label>
-                                        <input type="email" class="form-control" id="form-blog-reply-email" name="form-blog-reply-email" required>
-                                    </div><!-- /.form-group -->
-                                </div><!-- /.col-md-6 -->
-                            </div><!-- /.row -->
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="form-blog-reply-message">Your Message<em>*</em></label>
-                                        <textarea class="form-control" id="form-blog-reply-message" rows="5" name="form-blog-reply-message" required></textarea>
-                                    </div><!-- /.form-group -->
-                                </div><!-- /.col-md-12 -->
-                            </div><!-- /.row -->
-                            <div class="form-group clearfix">
-                                <button type="submit" class="btn pull-right btn-primary btn-rounded" id="form-blog-reply-submit">Leave a Reply</button>
-                            </div><!-- /.form-group -->
-                            <div id="form-rating-status"></div>
-                        </form><!-- /#form-contact -->
-                    </section>
+                    {{--<section id="comments">--}}
+                        {{--<header><h2 class="no-border">Comments</h2></header>--}}
+                        {{--<ul class="comments">--}}
+                            {{--<li class="comment">--}}
+                                {{--<figure>--}}
+                                    {{--<div class="image">--}}
+                                        {{--<img alt="" src="assets/img/person-02.jpg">--}}
+                                    {{--</div>--}}
+                                {{--</figure>--}}
+                                {{--<div class="comment-wrapper">--}}
+                                    {{--<div class="name pull-left">Catherine Brown</div>--}}
+                                    {{--<span class="date pull-right"><span class="fa fa-calendar"></span>12.05.2014</span>--}}
+                                    {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, sem ut sollicitudin consectetur,--}}
+                                        {{--augue diam ornare massa, ac vehicula leo turpis eget purus. Nunc pellentesque vestibulum mauris, eget suscipit--}}
+                                        {{--mauris imperdiet vel. Nulla et massa metus. Nam porttitor quam eget ante elementum consectetur. Aenean ac nisl--}}
+                                        {{--et nulla placerat suscipit eu a mauris. Curabitur quis augue condimentum, varius mi in, ultricies velit.--}}
+                                        {{--Suspendisse potenti.--}}
+                                    {{--</p>--}}
+                                    {{--<a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>--}}
+                                    {{--<hr>--}}
+                                {{--</div>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<ul class="comments-child">--}}
+                                    {{--<li class="comment">--}}
+                                        {{--<figure>--}}
+                                            {{--<div class="image">--}}
+                                                {{--<img alt="" src="assets/img/person-03.jpg">--}}
+                                            {{--</div>--}}
+                                        {{--</figure>--}}
+                                        {{--<div class="comment-wrapper">--}}
+                                            {{--<div class="name">John Doe</div>--}}
+                                            {{--<span class="date"><span class="fa fa-calendar"></span>24.06.2014</span>--}}
+                                            {{--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum, sem ut sollicitudin consectetur,--}}
+                                                {{--augue diam ornare massa, ac vehicula leo turpis eget purus. Nunc pellentesque vestibulum mauris, eget suscipit--}}
+                                                {{--mauris.--}}
+                                            {{--</p>--}}
+                                            {{--<a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>--}}
+                                            {{--<hr>--}}
+                                        {{--</div>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                            {{--<li class="comment">--}}
+                                {{--<figure>--}}
+                                    {{--<div class="image">--}}
+                                        {{--<img alt="" src="assets/img/person-04.jpg">--}}
+                                    {{--</div>--}}
+                                {{--</figure>--}}
+                                {{--<div class="comment-wrapper">--}}
+                                    {{--<div class="name">John Doe</div>--}}
+                                    {{--<span class="date"><span class="fa fa-calendar"></span>08.05.2014</span>--}}
+                                    {{--<p>Quisque iaculis neque at dui cursus posuere. Sed tristique pharetra orci, eu malesuada ante tempus nec.--}}
+                                        {{--Phasellus enim odio, facilisis et ante vel, tempor congue sapien. Praesent eget ligula--}}
+                                        {{--eu libero cursus facilisis vel non arcu. Sed vitae quam enim.--}}
+                                    {{--</p>--}}
+                                    {{--<a href="#" class="reply"><span class="fa fa-reply"></span>Reply</a>--}}
+                                    {{--<hr>--}}
+                                {{--</div>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                    {{--</section><!-- /#comments -->--}}
+                    {{--<section id="leave-reply">--}}
+                        {{--<header><h2 class="no-border">Leave a Reply</h2></header>--}}
+                        {{--<form role="form" id="form-blog-reply" method="post"  class="clearfix">--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="form-blog-reply-name">Your Name<em>*</em></label>--}}
+                                        {{--<input type="text" class="form-control" id="form-blog-reply-name" name="form-blog-reply-name" required>--}}
+                                    {{--</div><!-- /.form-group -->--}}
+                                {{--</div><!-- /.col-md-6 -->--}}
+                                {{--<div class="col-md-6">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="form-blog-reply-email">Your Email<em>*</em></label>--}}
+                                        {{--<input type="email" class="form-control" id="form-blog-reply-email" name="form-blog-reply-email" required>--}}
+                                    {{--</div><!-- /.form-group -->--}}
+                                {{--</div><!-- /.col-md-6 -->--}}
+                            {{--</div><!-- /.row -->--}}
+                            {{--<div class="row">--}}
+                                {{--<div class="col-md-12">--}}
+                                    {{--<div class="form-group">--}}
+                                        {{--<label for="form-blog-reply-message">Your Message<em>*</em></label>--}}
+                                        {{--<textarea class="form-control" id="form-blog-reply-message" rows="5" name="form-blog-reply-message" required></textarea>--}}
+                                    {{--</div><!-- /.form-group -->--}}
+                                {{--</div><!-- /.col-md-12 -->--}}
+                            {{--</div><!-- /.row -->--}}
+                            {{--<div class="form-group clearfix">--}}
+                                {{--<button type="submit" class="btn pull-right btn-primary btn-rounded" id="form-blog-reply-submit">Leave a Reply</button>--}}
+                            {{--</div><!-- /.form-group -->--}}
+                            {{--<div id="form-rating-status"></div>--}}
+                        {{--</form><!-- /#form-contact -->--}}
+                    {{--</section>--}}
                 </div>
                 <!--end main-content-->
             </div>
