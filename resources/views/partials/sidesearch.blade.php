@@ -5,17 +5,79 @@
 
             {!! Form::open(['url' => '/search','class'=>'labels-uppercase','id'=>'form-filter']) !!}
 
+            <div class="form-group>
+                <label for="form-filter-check-in">Purpose</label>
+                {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
+                <select class="form-control" name="area" id="area_type" class="form-control">
+                    <option value="lahore">Sale</option>
 
-                <div class="form-group">
-                    <label for="form-filter-destination">City</label>
-                    <input type="text" class="form-control" id="form-filter-destination" name="city" placeholder="Destination">
-                </div>
+                    <option value="Kanal">Rent</option>
+                </select>
+            </div>
 
+            <div class="form-group">
+                <label for="form-filter-check-in">City</label>
+                {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
+                <select name="area" id="area_type" class="form-control">
+                    <option value="lahore">Lahore</option>
+                    <option value="islamabad">Islamabad</option>
+                    <option value="faislabad">Faislabad</option>
+                    <option value="gujrat">Gujrat</option>
+                    <option value="Kanal">other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="form-filter-check-in">Society</label>
+                {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
+                <select name="area" id="area_type" class="form-control">
+                    <option value="">Select</option>
+                    <option value="revenue">Revenue</option>
+                    <option value="suigas">sui gas</option>
+                    <option value="lda">LDA</option>
+                    <option value="singhar">Singhar</option>
+                    <option value="other">other</option>
+                </select>
+            </div>
+
+                <!--end form-group-->
+
+            <div class="row">
                 <div class="form-group">
-                    <label for="form-filter-destination">Location</label>
-                    <input type="text" class="form-control" id="form-filter-destination" name="location" placeholder="Destination">
+
+                    <div class="col-md-6">
+                        <label for="form-filter-check-in">Phase</label>
+                        {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
+                        <select  name="area" id="area_type" class="form-control">
+                            <option value="">Phase</option>
+                            <option value="Square_Feet">Square Feet</option>
+                            <option value="Square_Yards">Square Yards</option>
+                            <option value="Square_Meters">Square Meters</option>
+                            <option value="Marla">Marla</option>
+                            <option value="Kanal">Kanal</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <label for="form-filter-check-in">Block</label>
+                        {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
+                        <select name="area" id="area_type" class="form-control">
+                            <option value="">Block</option>
+                            <option value="Square_Feet">Square Feet</option>
+                            <option value="Square_Yards">Square Yards</option>
+                            <option value="Square_Meters">Square Meters</option>
+                            <option value="Marla">Marla</option>
+                            <option value="Kanal">Kanal</option>
+                        </select>
+                    </div>
+
+
+
                 </div>
                 <!--end form-group-->
+            </div>
+
                 <div class="row">
                     <div class="form-group">
 
@@ -41,8 +103,13 @@
                             <input type="number" class="form-control" id="form-filter-check-in" name="size">
                     </div>
                     </div>
-                    <!--end form-group-->
                 </div>
+
+        
+
+
+
+
                 <!--end form-group-inline-->
 
 
@@ -52,16 +119,7 @@
                 </div>
                 <div class="collapse" id="filter-advanced-search">
                     <div class="wrapper">
-                        <section>
-                            <h3>Rate (per night)</h3>
-                            <ul class="checkboxes list-unstyled">
-                                <li><label><input type="checkbox" name="hotel">$0 - $50<span>12</span></label></li>
-                                <li><label><input type="checkbox" name="apartment">$50 - $100<span>48</span></label></li>
-                                <li><label><input type="checkbox" name="breakfast-only">$150 - $150<span>36</span></label></li>
-                                <li><label><input type="checkbox" name="spa-wellness">$150+<span>56</span></label></li>
-                            </ul>
-                            <!--end checkboxes-->
-                        </section>
+
                         <!--end section-->
                         <section>
                             <h3>Property Type </h3>
