@@ -11,10 +11,23 @@
 |
 */
 
-//Route::get('/', function () {
+//Route::get('/myarticles', function () {
 //
-//    return view('welcome');
+//    return view('user.blog.myarticles');
 //});
+Route::get('/addarticle', function () {
+
+    return view('user.blog.addarticle');
+});
+
+Route::get('/myarticles','BlogController@showAll');
+//
+Route::post('/savearticle','BlogController@saveArticle');
+
+
+
+
+
 
 Route::get('/','PropertyController@mainPage');
 
@@ -29,6 +42,7 @@ Route::post('/updatepassword','ProfileController@updatepassword');  //profile up
 
 
 Route::get('/myproperties','PropertyController@myproperties');
+
 
 
 Route::post('/search', 'PropertyController@search');
@@ -60,9 +74,6 @@ Route::get('/map', function () {
 
 
 Route::get('/propertydetail/{id}','PropertyController@propertydetail');
-
-
-
 
 
 

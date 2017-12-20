@@ -5,7 +5,7 @@
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="ThemeStarz">
-
+    <script type="text/javascript" src={{ url("assets/js/ckeditor.js")}}></script>
     <link href={{ url("assets/fonts/font-awesome.css") }} rel="stylesheet" type="text/css">
     <link href={{ url("assets/fonts/elegant-fonts.css") }} rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900,400italic' rel='stylesheet' type='text/css'>
