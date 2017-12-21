@@ -168,7 +168,6 @@
                             <input type="password" class="form-control" id="password-confirm" name="password_confirmation">
                         </div>
 
-
                         <!--end form-group-->
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary btn-rounded btn-framed">Change Password</button>
@@ -187,7 +186,10 @@
 <!--end page-content-->
 
 
-
+<div class="form-group">
+    <label for="confirm-new-password">Confirm New Password</label>
+    <textarea name="editor1"></textarea>
+</div>
 </div>
 
 

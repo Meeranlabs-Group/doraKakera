@@ -29,6 +29,7 @@
                                             </a>
 
                                                     <a href="{{ url("/myproperties") }}" >My Properties</a>
+                                                    <a href="{{ url("/myarticles") }}" >My Articles</a>
                                                     <a href="{{ url("/addproperty") }}" >Upload Property</a>
 
 
