@@ -401,31 +401,12 @@ class PropertyController extends Controller
 
     public function mainPage(){ //showing cities and their count of properties
 
-
         $Property1 = DB::table('Property')->select('city',DB::raw('count(*) as total'))->groupBy('city')->get();
-
-
-
-//
-//        foreach (  $Property1 as $p) {
-//
-//          echo $p->city;
-//            echo $p->total;
-//            echo "<br>";
-//
-//
-//        }
-
-
-
 
         $hot=Property::where('superhot','=',1)->get();
 
-
         $photos = Photo::all();
-//
-//
-//
+
 //      return view('welcome',compact('hot','photos'));
       return view('welcome',compact('hot','photos','Property1'));
     }
@@ -435,7 +416,9 @@ class PropertyController extends Controller
 
         $id=Auth::user()->id;
         $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->get();
-       return view('myproperties',compact('data'));
+        $photos = Photo::all();
+
+       return view('user.property.myproperties',compact('data','photos'));
 
     }
 
@@ -449,7 +432,7 @@ class PropertyController extends Controller
         $photos = Photo::where("property_id","$id")->get();
 
 
-        return view('propertyDetail',compact('data','photos'));
+        return view('user.property.propertyDetail',compact('data','photos'));
     }
 
 

@@ -15,12 +15,18 @@
 //
 //    return view('user.blog.myarticles');
 //});
-Route::get('/addarticle', function () {
 
+Route::get('/myarticles','BlogController@showAll');
+
+Route::get('/addarticle', function () {
     return view('user.blog.addarticle');
 });
 
-Route::get('/myarticles','BlogController@showAll');
+Route::get('/editarticle/{id}','BlogController@editArticle');
+
+Route::post('/updatearticle','BlogController@updateArticle');
+
+
 //
 Route::post('/savearticle','BlogController@saveArticle');
 

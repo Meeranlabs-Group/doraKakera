@@ -20,7 +20,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Properties</th>
+                        <th>Bogs</th>
                         {{--<th>Featured</th>--}}
                         <th>Likes</th>
                         <th>Views</th>
@@ -38,9 +38,12 @@
                                     {{--<div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>--}}
                                     <a href="edit.html" class="image">
                                         <div class="bg-transfer">
-                                            <img src="{{ asset($article->path ) }}"  alt="">
+                                            <img src="{{$article->path}}" alt="{{$article->title}}" class="image">
                                         </div>
                                     </a>
+
+
+
                                 </div>
                                 <div class="info">
 
@@ -68,7 +71,7 @@
 
 
                                     {{--/editproperty/{{$property->id}}--}}
-                                    <a href="/" class="link icon"><i class="fa fa-edit"></i>Edit</a>
+                                    <a href="/editarticle/{{ $article->id }}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
 
 
                                     {{--/deleteproperty/{{$property->id}}--}}

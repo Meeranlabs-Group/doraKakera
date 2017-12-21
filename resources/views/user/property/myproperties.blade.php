@@ -38,7 +38,15 @@
                                 {{--<div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>--}}
                                 <a href="edit.html" class="image">
                                     <div class="bg-transfer">
-                                        <img src="assets/img/items/01.jpg">
+
+
+                                        @foreach($photos as $photo)
+                                            @if( $photo->property_id == $property->id  && $photo->rank==1)
+                                                <img src="{{asset($photo->path)}}" class="image">
+                                            @endif
+                                        @endforeach
+
+
                                     </div>
                                 </a>
                             </div>

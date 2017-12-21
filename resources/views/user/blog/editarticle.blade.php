@@ -30,12 +30,17 @@
                         <div class="col-md-3 col-sm-3">
                             <section>
                                 <h3>Blog Picture</h3>
+
+
+
+
+                                <input type="hidden" value="{{$data[0]->path}}" name="path">
                                 <div id="profile-picture" class="profile-picture single-file-preview">
 
 
-                                    <img src={{ asset("assets/img/person-01.jpg") }} alt="" class="image">
+                                    {{--<img src={{ asset("assets/img/person-01.jpg") }} alt="" class="image">--}}
 
-                                    {{--<img src="{{$data->path}}" alt="{{$data->name}}" class="image">--}}
+                                    <img src="{{asset($data[0]->path)}}" alt="{{$data[0]->title}}" class="image">
 
 
 
@@ -45,6 +50,7 @@
                                     </div>
                                 </div>
                             </section>
+
                         </div>
                         <!--end col-md-3-->
 
@@ -57,13 +63,16 @@
                                 <!--end form-group-->
                                 <div class="form-group">
                                     <label for="title">Title</label>
-                                    <input type="text" class="form-control" id="title" name="title">
+                                    <input type="text" class="form-control" id="title" name="title" value="{{ $data[0]->title }}">
                                 </div>
                                 <!--end form-group-->
 
+                                <input type="hidden" name="article_id" value="{{ $data[0]->id }}">
                                 <div class="form-group">
                                     <label for="description">Description</label>
-                                    <textarea class="form-control" id="description" name="description" rows="10" required></textarea>
+                                    <textarea class="form-control" id="description" name="description" required>
+                                        {{ $data[0]->description }}
+                                    </textarea>
 
                                 </div>
                                 <!--end col-md-3-->

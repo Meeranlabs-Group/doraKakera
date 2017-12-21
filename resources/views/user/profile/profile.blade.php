@@ -17,8 +17,14 @@
 
                 <h1><a href="profile">Profile</a></h1>
             </div>
+
+
             <!--end title-->
             <div class="row">
+                <div class="col-md-3 ">
+                    @include('partials.sidesearch')
+                </div>
+
                 <div class="col-md-9">
 
 
@@ -38,6 +44,7 @@
                                         {{--}--}}
                                         {{--else--}}
                                         {{--{--}}
+                                        <input type="hidden" value="{{$data->path}}" name="path">
                                         <img src="{{$data->path}}" alt="{{$data->name}}" class="image">
                                         {{--}--}}
 

@@ -35,36 +35,49 @@ class BlogController extends Controller
 
         public function showAll(){
 
-                    $id=Auth::user()->getid();
-
-
+            $id=Auth::user()->getid();
             $articles= Blog::where('user_id','=',$id)->get();
 
-//             echo $articles[0]->title;
-
-
-
-
-
-
-
-
-            //            $articles=Blog::where('user_id','=',$id);
 
 
            return view('user.blog.myarticles',compact('articles'));
 //
-
         }
 
-        public function editArticle(){
+        public function editArticle($id){
 
+            $data = Blog::where('id','=',$id)->get();
 
-
+            return view('user.blog.editarticle',compact('data'));
         }
 
 
+        public function updateArticle(Request $request){
+
+            $article_id= $request['article_id'];
+//            $feature_id = $request['feature_id'];
+
+//            ($files=$request->file('file'));
+//            $name = $files->getClientOriginalName();
+//            $path = $files->move($request['title'], $name);
+////            $update['path'] = $path;
+
+            if( ($files=$request->file('file'))  ){
+                $name = $files->getClientOriginalName();
+                $path = $files->move($request['title'], $name);
+//                $update['path'] = $path;
+            }
+
+
+            else{
+                $path = $request->path;
+            }
 
 
 
+            Blog::where('id','=',$article_id)->update(['title'=> $request['title'],'description'=>$request['description'],
+                'path'=> $path ]);
+
+            return redirect('/myarticles');
+        }
 }
