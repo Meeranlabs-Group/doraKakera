@@ -22,7 +22,7 @@
             <!--end title-->
             <div class="row">
                 <div class="col-md-3 ">
-                    @include('partials.sidesearch')
+                    @include('user.profile.usermenu')
                 </div>
 
                 <div class="col-md-9">
@@ -38,17 +38,8 @@
                                     <h3>Profile Picture</h3>
                                     <div id="profile-picture" class="profile-picture single-file-preview">
 
-                                        {{--if( {{ $data->path}} == ""){--}}
-
-                                        {{--<img src="assets/img/person-01.jpg" alt="" class="image">--}}
-                                        {{--}--}}
-                                        {{--else--}}
-                                        {{--{--}}
                                         <input type="hidden" value="{{$data->path}}" name="path">
                                         <img src="{{$data->path}}" alt="{{$data->name}}" class="image">
-                                        {{--}--}}
-
-
 
                                         <div class="input">
                                             <input name="file" type="file" class="">
@@ -193,10 +184,10 @@
 <!--end page-content-->
 
 
-<div class="form-group">
-    <label for="confirm-new-password">Confirm New Password</label>
-    <textarea name="editor1"></textarea>
-</div>
+{{--<div class="form-group">--}}
+    {{--<label for="confirm-new-password">Confirm New Password</label>--}}
+    {{--<textarea name="editor1"></textarea>--}}
+{{--</div>--}}
 </div>
 
 

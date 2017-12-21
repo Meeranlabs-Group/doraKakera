@@ -11,10 +11,6 @@
 |
 */
 
-//Route::get('/myarticles', function () {
-//
-//    return view('user.blog.myarticles');
-//});
 
 Route::get('/myarticles','BlogController@showAll');
 
@@ -30,13 +26,7 @@ Route::post('/updatearticle','BlogController@updateArticle');
 //
 Route::post('/savearticle','BlogController@saveArticle');
 
-
-
-
-
-
 Route::get('/','PropertyController@mainPage');
-
 
 
 Route::get('/profile','ProfileController@profile');
@@ -63,7 +53,6 @@ Route::get('/about-us', function () {
 Route::get('/dhafile', function () {
     return view('dhafile');
 });
-
 
 Route::get('/properties','PropertyController@show_all');
 Route::get('/properties/{city}','PropertyController@show_all');

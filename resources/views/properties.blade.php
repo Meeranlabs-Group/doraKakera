@@ -49,21 +49,10 @@
          </div>
 
         <div class="center">
-            <ul class="pagination">
-                <li class="prev">
-                    <a href="#"><i class="arrow_left"></i></a>
-                </li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li class="next">
-                    <a href="#"><i class="arrow_right"></i></a>
-                </li>
-            </ul>
-            <!-- end pagination-->
+            {{$property->render()}}
         </div>
+
+        <!-- end pagination-->
 
 
 

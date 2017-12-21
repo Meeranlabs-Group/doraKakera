@@ -16,16 +16,24 @@
                 {{--<h1><a href="my-accommodations.html">My Accommodations</a></h1>--}}
                 <h1 class="inactive"><a href="/addarticle">Add Article</a></h1>
             </div>
+            <div class="row">
+                <div class="col-md-3 ">
+                    @include('user.profile.usermenu')
+                </div>
+
+
+                <div class="col-md-9">
+
             <div class="my-items table-responsive">
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>Bogs</th>
+                        <th>Articles</th>
                         {{--<th>Featured</th>--}}
                         <th>Likes</th>
                         <th>Views</th>
-                        <th>Rating</th>
-                        <th>Last Reservation</th>
+
+                        <th>Edit/Delete</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -63,7 +71,7 @@
                             {{--<td><div class="featured yes"><i class="fa fa-check"></i><aside></aside></div></td>--}}
                             <td class="views">426</td>
                             <td class="reviews">45</td>
-                            <td class="rating">9.3</td>
+
 
                             <td class="last-reservation">
 
@@ -92,7 +100,8 @@
 
 
 
-
+</div>
+        </div>
 
 
         <div class="center">

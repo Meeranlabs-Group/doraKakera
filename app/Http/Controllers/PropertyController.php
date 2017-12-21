@@ -391,7 +391,7 @@ class PropertyController extends Controller
 
     public function show_all(){
 
-        $property= Property::all();
+        $property= Property::paginate(8);
         $photos = Photo::all();
 
 

@@ -16,6 +16,15 @@
                 {{--<h1><a href="my-accommodations.html">My Accommodations</a></h1>--}}
                 <h1 class="inactive"><a href="/profile">{{ Auth::user()->name }}</a></h1>
             </div>
+
+            <div class="row">
+                <div class="col-md-3 ">
+                    @include('user.profile.usermenu')
+                </div>
+
+
+                <div class="col-md-9">
+
             <div class="my-items table-responsive">
                 <table class="table">
                     <thead>
@@ -24,8 +33,8 @@
                         {{--<th>Featured</th>--}}
                         <th>Likes</th>
                         <th>Views</th>
-                        <th>Rating</th>
-                        <th>Last Reservation</th>
+                        <th>Type</th>
+                        <th>Edit/Delete Property</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -86,6 +95,7 @@
             </div>
             <!--end my-items-->
         </div>
+            </div>
 
 
 
