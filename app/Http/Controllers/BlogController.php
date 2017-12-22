@@ -33,7 +33,12 @@ class BlogController extends Controller
         }
 
 
-        public function showAll(){
+        public function blogDetail($id){
+            $article=Blog::where("id",'=',$id)->get();
+            return view('partials.MarketDetails',compact('article'));
+         }
+
+        public function showAll(){  // user articles
 
             $id=Auth::user()->getid();
             $articles= Blog::where('user_id','=',$id)->get();
@@ -49,6 +54,13 @@ class BlogController extends Controller
             $data = Blog::where('id','=',$id)->get();
 
             return view('user.blog.editarticle',compact('data'));
+        }
+
+        public function allBlogs(){ //market analysis All Blogs
+
+            $articles=Blog::paginate(2);
+
+            return view('partials.MarketAnalysis',compact('articles'));
         }
 
 

@@ -18,7 +18,7 @@
             <section>
                 <h2>My Properties</h2><hr>
                 <ul class="checkboxes">
-                    <li><label><a name="hotel"><h3>Rent<span>67</span></h3></a></label></li>
+                    <li><label><a href=" "><h3>Rent<span>67</span></h3></a></label></li>
                     <li><label><a name="hotel"><h3>Sale<span>67</span></h3></a></label></li>
                     <li><label><a name="hotel"><h3>Deleted<span>67</span></h3></a></label></li>
                     <li><label><a name="hotel"><h3>Add Property</h3></a></label></li>

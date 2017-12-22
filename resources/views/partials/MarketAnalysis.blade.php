@@ -12,66 +12,54 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="main-content">
+
+
+
+
                     <div class="title">
                         <h1>Blog Posts</h1>
                     </div>
                     <!--end title-->
+
+                    @foreach($articles as $article)
+
                     <article class="blog-post">
-                        <a href="/MarketDetails"><img src="assets/img/items/01_b.jpg"></a>
-                        <header><a href="/MarketDetails"><h2>Vivamus porta orci eu turpis vulputate ornare fusce hendrerit arcu risu</h2></a></header>
+                        <a href="/MarketDetail/{{$article->id}}">
+                            <img src="{{ asset($article->path)}}"></a>
+                        <header><a href="/MarketDetail/{{$article->id}}"><h2>{{ $article->title }}</h2></a></header>
                         <figure class="meta">
                             <a href="#" class="link icon"><i class="fa fa-user"></i>Admin</a>
-                            <a href="#" class="link icon"><i class="fa fa-calendar"></i>06/04/2014</a>
+                            <a href="#" class="link icon"><i class="fa fa-calendar"></i>{{ $article->created_at }}4</a>
                             <div class="tags">
                                 <a href="#" class="tag article">Architecture</a>
                                 <a href="#" class="tag article">Design</a>
                                 <a href="#" class="tag article">Trend</a>
                             </div>
                         </figure>
-                        <p>Fusce quis nulla volutpat, rhoncus ligula ut, pulvinar nisi. In dapibus urna sit amet accumsan
-                            tristique. Donec odio ligula, luctus venenatis varius id, tincidunt ac ipsum. Cras commodo,
-                            velit nec aliquam dictum, tortor velit dictum ipsum, sed ornare nunc leo nec ipsum. Vestibulum
-                            sagittis sapien vitae tristique mollis. Aliquam hendrerit nulla semper, viverra mi et,
-                            hendrerit mauris. Maecenas hendrerit congue ultrices. In laoreet erat blandit eros aliquet,
-                            in malesuada sem rutrum. In placerat porta egestas.
+                        <p>
+                            {{ $article->description }}
+
+                            Phasellus metus ipsum, sollicitudin lacinia turpis in, pellentesque pulvinar diam.
+                            Cras ultricies augue sapien, aliquam hendrerit mi suscipit at. Suspendisse vulputate felis eget
+                            felis convallis fermentum et eu nulla. Donec sagittis sit amet erat non eleifend. Mauris at convallis
+                            magna. Quisque pellentesque id mauris vitae placerat. Mauris facilisis odio nec metus cursus commodo.
+                            Integer vel libero nunc. Donec ac lorem commodo, laoreet elit eget, tempus ante. Quisque eu nunc blandit
+                            erat rutrum feugiat ac sed arcu. In nisi risus, molestie a sem adipiscing, porta volutpat velit.
+                            Pellentesque nec felis sit amet nunc porta tincidunt sit amet et justo.
                         </p>
-                        <a href="/MarketDetails" class="btn btn-rounded btn-default btn-framed btn-small">Read More</a>
+                        <a href="/MarketDetail/{{$article->id}}" class="btn btn-rounded btn-default btn-framed btn-small">Read More</a>
                     </article><!-- /.blog-post -->
-                    <article class="blog-post">
-                        <header><a href="/MarketDetails"><h2>Nulla sapien leo, placerat sed lacinia nec, rutrum quis</h2></a></header>
-                        <figure class="meta">
-                            <a href="#" class="link icon"><i class="fa fa-user"></i>Admin</a>
-                            <a href="#" class="link icon"><i class="fa fa-calendar"></i>06/04/2014</a>
-                            <div class="tags">
-                                <a href="#" class="tag article">Interior</a>
-                                <a href="#" class="tag article">New Living</a>
-                            </div>
-                        </figure>
-                        <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                            Donec rutrum imperdiet ligula in bibendum. Aenean vulputate rutrum lobortis. Nullam non
-                            mi ac dui egestas venenatis. Etiam venenatis fermentum accumsan. Lorem ipsum dolor
-                            sit amet, consectetur adipiscing elit. Donec at lacus sapien.
-                        </p>
-                        <a href="/MarketDetails" class="btn btn-rounded btn-default btn-framed btn-small">Read More</a>
-                    </article><!-- /.blog-post -->
+                  @endforeach
+
 
 
 
                     <!-- Pagination -->
                     <div class="center">
-                        <ul class="pagination">
-                            <li class="prev">
-                                <a href="#"><i class="arrow_left"></i></a>
-                            </li>
-                            <li class="active"><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li class="next">
-                                <a href="#"><i class="arrow_right"></i></a>
-                            </li>
-                        </ul>
+
+
+                        {{ $articles->render() }}
+
                         <!-- end pagination-->
                     </div>
                     <!-- end center-->

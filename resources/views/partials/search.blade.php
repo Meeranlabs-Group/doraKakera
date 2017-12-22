@@ -591,7 +591,7 @@
                     <div class="options">
 
 
-                        <h3 class="text-center " style="color: white;">Market Analysis</h3>
+                        <a href="/MarketAnalysis"><h3 class="text-center " style="color: white;">Market Analysis</h3></a>
 
 
                         <!--end row-->
@@ -611,18 +611,14 @@
 
     <div id="nt-title-container">
         <ul id="nt-title">
+
+
+
+            @foreach($articles as $article)
             <li>
-                A powerful, flexible and animated vertical news ticker plugin.
+                <a href="MarketDetail/{{ $article->id }}">{{ $article->title }}</a>
             </li>
-            <li>
-                Provides hight flexibility thanks to numerous callbacks & methods.
-            </li>
-            <li>
-                Fully customizable to every kind of vertical scrolling need.
-            </li>
-            <li>
-                Light-weight and optimized JQuery plugin.
-            </li>
+                @endforeach
         </ul>
     </div>
 

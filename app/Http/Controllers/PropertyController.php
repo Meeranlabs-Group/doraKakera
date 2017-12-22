@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\Blog;
 use App\Photo;
 use App\Property;
 use Illuminate\Http\UploadedFile;
@@ -133,10 +134,8 @@ class PropertyController extends Controller
 
 
         $property = Property::orwhere('city', '=', $city)
-//            ->where('address','like', '%'.$address.'%')
-//            ->where('unit_type','=',$area)
+
             ->Where('unit_size', 'like', '%' . $size . '%')
-//            ->whereIn('id', [1, 2, 3, 4, 5])
             ->get();
 
 
@@ -399,8 +398,10 @@ class PropertyController extends Controller
 //        print_r(phpinfo());
     }
 
-    public function mainPage(){ //showing cities and their count of properties
+    public function mainPage(){ //showing cities and their count of properties and Blog Title
 
+
+        $articles= Blog::all();
         $Property1 = DB::table('Property')->select('city',DB::raw('count(*) as total'))->groupBy('city')->get();
 
         $hot=Property::where('superhot','=',1)->get();
@@ -408,7 +409,7 @@ class PropertyController extends Controller
         $photos = Photo::all();
 
 //      return view('welcome',compact('hot','photos'));
-      return view('welcome',compact('hot','photos','Property1'));
+      return view('welcome',compact('hot','photos','Property1','articles'));
     }
 
 

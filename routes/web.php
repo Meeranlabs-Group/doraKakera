@@ -12,6 +12,30 @@
 */
 
 
+
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Admin Routes
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+Route::get('/adminpage',function(){
+    return view('Admin.adminpage');
+});
+
+
+
+
+
+
+
 Route::get('/myarticles','BlogController@showAll');
 
 Route::get('/addarticle', function () {
@@ -55,6 +79,7 @@ Route::get('/dhafile', function () {
 });
 
 Route::get('/properties','PropertyController@show_all');
+
 Route::get('/properties/{city}','PropertyController@show_all');
 
 
@@ -161,15 +186,6 @@ Route::get('/addproperty', function () {
 })->middleware('auth');
 
 
-Route::get('/MarketAnalysis', function () {
-    return view('partials.MarketAnalysis');
-});
-
-
-Route::get('/MarketDetails', function () {
-    return view('partials.MarketDetails');
-});
-
 
 Route::post('/submit', 'PropertyController@store');
 
@@ -177,6 +193,8 @@ Route::post('/submit', 'PropertyController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/MarketAnalysis', 'BlogController@allBlogs');
+Route::get('/MarketDetail/{id}', 'BlogController@blogDetail');
 
 
 
