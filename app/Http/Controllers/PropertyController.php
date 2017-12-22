@@ -55,9 +55,6 @@ class PropertyController extends Controller
         }
 
 
-
-
-
         else if($property[0]->property_type== "Office"){
             return view('edit_feature.edit_office_feature',compact('property','feature','photos'));
         }
@@ -172,8 +169,13 @@ class PropertyController extends Controller
             'unit_size'=>$request['unit_size'] ]);
 
 
+        feature::where('feature_id','=',$feature_id)->update([ 'built_in_year' => $request['Built_in_Year'],
+            'view' => $request['View'], 'parking_space' => $request['Parking_Spaces'], 'double_glazed_window'=> $request['Double_Glazed_Windows'],
+            'central_air_conditioning'=>$request['Central_Air_Conditioning'],
 
 
+
+        ]);
 
     }
 
@@ -182,22 +184,9 @@ class PropertyController extends Controller
     public function store(Request $request)
     {
 
-
-//       ini_set('post_max_size','256M');
-
-
         $post=new Property;
         $feature=new Feature;
-
-
-
-
-
-
-
         {
-
-
 //                $post['user_id']=Auth::user()->getid();
 //
 //           $post['title'] = $request['title'];
@@ -218,11 +207,6 @@ class PropertyController extends Controller
                 ]
 
             );
-
-
-
-
-
             if($files=$request->file('files')){
                 for($i=0;$i<count($files);$i++) {
                     $photo=new Photo;

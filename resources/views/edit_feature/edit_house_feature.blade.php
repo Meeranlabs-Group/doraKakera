@@ -44,6 +44,10 @@
                                     <label>Parking Spaces</label>
                                     <select  name="Parking_Spaces" class="framed width-80">
 
+                                        <option value="{{$feature[0]->parking_space }}" selected>{{$feature[0]->parking_space }}</option>
+
+                                        <option value="">Select</option>
+
 
 
                                         <option value="0">0</option>
@@ -64,6 +68,9 @@
 
                                     <select  name="Number_of_Bedrooms" class="framed width-80">
 
+                                        <option value="{{$feature[0]->number_of_bathrooms }}" selected>{{$feature[0]->number_of_bathrooms}}</option>
+
+                                        <option value="">Select</option>
 
 
 
@@ -84,6 +91,10 @@
                                     <select  name="Number_of_Kitchens" class="framed width-80">
 
 
+                                        <option value="{{$feature[0]->number_of_kitchens }}" selected>{{$feature[0]->number_of_kitchens}}</option>
+
+                                        <option value="">Select</option>
+
                                         <option value="0">0</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -100,6 +111,10 @@
                                     <label>Number of Bathrooms</label>
 
                                     <select  name="Number_of_Bathrooms" class="framed width-80">
+
+                                        <option value="{{$feature[0]->number_of_bathrooms }}" selected>{{$feature[0]->number_of_bathrooms}}</option>
+
+                                        <option value="">Select</option>
 
 
                                         <option value="0">0</option>
@@ -119,6 +134,10 @@
                                     <label>Flooring</label>
                                     <select name="Flooring_type" class="framed width-80">
                                         <option value="None">None</option>
+
+                                        <option value="{{ $feature[0]->flooring_type  }}">{{ $feature[0]->flooring_type  }}</option>
+                                        <option value="">Select</option>
+
                                         <option value="Tiles">Tiles</option>
                                         <option value="Marble">Marble</option>
                                         <option value="Wooden">Wooden</option>
@@ -132,6 +151,10 @@
                                 <div class="form-group width-80">
                                     <label>Electricity Backup</label>
                                     <select name="Electricity_Backup_type" class="framed width-80">
+
+                                        <option value="{{ $feature[0]->electricity_backup_type }}">{{ $feature[0]->electricity_backup_type }}</option>
+                                        <option value="">Select</option>
+
                                         <option value="None">None</option>
                                         <option value="Generator">Generator</option>
                                         <option value="Ups">Ups</option>
@@ -147,7 +170,7 @@
                                     <label>Total Number of Floors</label>
 
 
-                                    <input type="number" name="Total_Number_of_Floors" placeholder="1" min="1">
+                                    <input type="number" name="Total_Number_of_Floors" placeholder="1" min="1" value="{{ $feature[0]->total_number_of_floors }}">
 
                                     {{--</div>--}}
                                 </div>
@@ -244,7 +267,7 @@
                                         {{--<div class="change-button minus">--}}
                                         {{--<i class="fa fa-caret-down"></i>--}}
                                         {{--</div>--}}
-                                        <input type="number" name="Other_Rooms">
+                                        <input type="number" name="Other_Rooms" value="{{ $feature[0]->other_room }}">
                                     </div>
                                     {{--</div>--}}
                                 </li>
@@ -263,7 +286,7 @@
 
 
                                         {{--</div>--}}
-                                        <input type="number" name="Number_of_Servant_Quarters">
+                                        <input type="number" name="Number_of_Servant_Quarters" value="{{ $feature[0]->number_of_servant_quaters }}">
                                         {{--</div>--}}
                                     </div> </li>
 
@@ -279,7 +302,7 @@
 
 
                                         {{--</div>--}}
-                                        <input type="number" name="Number_of_Store_Rooms">
+                                        <input type="number" name="Number_of_Store_Rooms" value="{{ $feature[0]->number_of_store_rooms }}">
                                         {{--</div>--}}
                                     </div>
                                 </li>
@@ -305,7 +328,7 @@
                                         Other Healthcare and Recreation Facilities</label></li>
                                 <li>
                                     <div class="form-group width-60">
-                                        <input type="text" name="Other_Healthcare_and_Recreation_Facilities">
+                                        <input type="text" name="Other_Healthcare_and_Recreation_Facilities" >
                                     </div></li>
 
                             </ul>

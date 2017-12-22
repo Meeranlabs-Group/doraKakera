@@ -18,8 +18,10 @@
                 <div class="col-md-3">
                     <div class="form-group width-80">
                         <label>Built in Year</label>
+
                         <select  name="Built_in_Year" class="framed width-80">
 
+                            <option value="{{ $feature }}"></option>
                             <?php
                             for($i = 1990 ; $i <= date('Y'); $i++){
                                 echo "<option value=".$i.">".$i."</option>";
@@ -133,18 +135,8 @@
                 <div class="col-md-3">
                     <div class="form-group width-70">
                         <label>Total Number of Floors</label>
+                            <input type="number"  name="Total_Number_of_Floors" value="{{ $feature[0]->total_number_of_floors }}">
 
-
-
-                        {{--<div class="input-number">--}}
-                            {{--<div class="change-button plus">--}}
-                                {{--<i class="fa fa-caret-up"></i>--}}
-                            {{--</div>--}}
-                            {{--<div class="change-button minus">--}}
-                                {{--<i class="fa fa-caret-down"></i>--}}
-                            {{--</div>--}}
-                            <input type="number"  name="Total_Number_of_Floors">
-                        {{--</div>--}}
                     </div>
                 </div>
 
@@ -156,22 +148,40 @@
 
 
 
-
-                <li><label><input type="checkbox" name="Double_Glazed_Windows">Double Glazed Windows</label></li>
-                <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
-                <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
-
-
-
+                @if($feature[0]->double_glazed_window)
+                    <li><label><input type="checkbox" checked name="Double_Glazed_Windows">Double Glazed Windows</label></li>
+               @else
+                    <li><label><input type="checkbox" name="Double_Glazed_Windows">Double Glazed Windows</label></li>
+                @endif
 
 
-                <li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>
+                @if($feature[0]->central_air_conditioning)
+                        <li><label><input type="checkbox" checked name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+                @else
+                        <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+
+                @endif
 
 
+                    @if($feature[0]->central_heating)
+                        <li><label><input type="checkbox" checked name="Central_Heating">Central Heating</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
+
+                    @endif
 
 
-                <li><label><input type="checkbox" name="Furnished">Furnished</label></li>
+                    @if($feature[0]->waste_disposal)
+                        <li><label><input type="checkbox" checked name="Waste_Disposal">Waste Disposal</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>
+                    @endif
 
+                    @if($feature[0]->furnished)
+                        <li><label><input type="checkbox" checked name="Furnished">Furnished</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Furnished">Furnished</label></li>
+                    @endif
 
             </ul>
 
@@ -186,7 +196,10 @@
             <div  id="b&c">
                 <ul class="checkboxes inline half list-unstyled " >
 
+
+
                     <li><label><input type="checkbox" name="Broadband_Internet_Access">Broadband Internet Access</label></li>
+
                     <li><label><input type="checkbox" name="Satellite_or_Cable_TV_Ready">Satellite or Cable TV Ready</label></li>
                     <li><label><input type="checkbox" name="Intercom">Intercom</label></li>
                     <div class="clearfix"></div>

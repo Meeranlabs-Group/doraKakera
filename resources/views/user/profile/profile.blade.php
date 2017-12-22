@@ -95,7 +95,7 @@
                                     <div class="row">
                                         <div class="col-md-8 col-sm-8">
                                             <div class="form-group">
-                                                <label for="street">Addresst</label>
+                                                <label for="street">Address</label>
                                                 <input type="text" class="form-control" id="street" name="address" value="{{$data->address}}">
                                             </div>
                                             <!--end form-group-->
