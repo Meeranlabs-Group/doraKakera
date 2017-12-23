@@ -57,20 +57,15 @@
 
                         <select class="framed width-100" name="property_type" id="Property-type"  >
 
+                            <option value="{{ $property[0]->property_type }}">{{ $property[0]->property_type }}</option>
                             <option value="">  Any Type  </option>
                             <option value="" disabled>  --- HOUSE --- </option>
 
-                            @if($property[0]->property_type=="Houses")
-                            <option value="Houses" selected>  Houses</option>
-                            @else
-                                <option value="Houses" selected>  Houses</option>
-                            @endif
 
-                            @if($property[0]->property_type=="Flates")
-                            <option selected value="Flates">  Flates</option>
-                            @else
-                                <option value="Flates">  Flates</option>
-                            @endif
+                                <option value="Houses" selected>  Houses</option>
+
+                            <option value="Flates">  Flates</option>
+
                             <option value="Upper-Portions">  Upper Portions</option>
                             <option value="Lower-Portions">  Lower Portions</option>
                             <option value="Farms-House">  Farms House</option>
