@@ -106,6 +106,7 @@
 
 
      <section id="facilities">
+
             <div id="view">
 
 

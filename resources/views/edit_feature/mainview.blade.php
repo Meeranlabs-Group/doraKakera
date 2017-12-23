@@ -44,22 +44,23 @@
 
                         <select class="framed width-100 " name="purpose" id="object-type"  >
 
+
                             <option value="{{ $property[0]->purpose }}" selected>{{ $property[0]->purpose}}</option>
-                            <option value="">Select</option>
+                            <option disabled="">Select</option>
                             <option value="Sale">For Sale</option>
                             <option value="Rent">Rent</option>
                         </select>
                     </div>
 
-
+<input type="hidden" value="{{ $property[0]->id}}" id="id" name="id"></input>
 
                     <div class="col-md-3 ">
                         <label for="object-type">Object Type</label>
 
-                        <select class="framed width-100" name="property_type" id="Property-type"  >
+                        <select class="framed width-100" name="property_type" id="Property-type1"  >
 
                             <option value="{{ $property[0]->property_type }}" selected>{{ $property[0]->property_type }}</option>
-                            <option value="">  Any Type  </option>
+
                             <option value="" disabled>  --- HOUSE --- </option>
 
 
@@ -105,7 +106,9 @@
 
                 <section id="facilities">
 
+
                         @yield('body')
+
 
                 </section>
 
@@ -139,7 +142,40 @@
 </div>
 <!--end page-content-->
 
+<script>
+    document.getElementById('Property-type1').onchange = function () {
 
+        var e = document.getElementById("Property-type1");
+        var g = document.getElementById("id");
+        var value2=g.value;
+        var value = e.options[e.selectedIndex].value;
+        $('#facilities').html('');
+        $.ajaxSetup({
+
+            headers: {
+
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+
+            }
+
+        });
+        $.ajax
+        ({
+            url: '{{ url('/load') }}',
+            data:({"id":value2,"property_type":value}),
+            type: 'POST',
+            dataType: 'html',
+            success: function(data)
+            {
+
+                console.log(data);
+                $("#facilities").append(data);
+            }
+        });
+
+
+    }
+</script>
 {{--@include('partials.totalproperties')--}}
 
 @include('partials.footer')

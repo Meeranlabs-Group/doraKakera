@@ -40,8 +40,9 @@ class PropertyController extends Controller
 
 
 
-        //HOUSE PORTION
-
+//
+//        //HOUSE PORTION
+//
         if($property[0]->property_type== "Houses"){
             return view('edit_feature.edit_house_feature',compact('property','feature','photos'));
         }
@@ -115,7 +116,99 @@ class PropertyController extends Controller
 
 
 
-//       return view('edit_property',compact('property','feature','photos'));
+
+
+    }
+    public function OnChangeeditproperty(Request $request)
+    {
+
+
+        $property = Property::where('id','=',$request['id'])->get();
+
+        $feature= feature::where('property_id','=',$request['id'])->get();
+        $photos =Photo::where('property_id','=',$request['id']);
+
+
+
+
+
+//
+//        //HOUSE PORTION
+//
+        if($request['property_type']== "Houses"){
+            return view('edit_feature.edit_house_feature',compact('property','feature','photos'));
+        }
+
+
+        else if($request['property_type']== "Flates"){
+            return view('edit_feature.edit_flat_feature',compact('property','feature','photos'));
+        }
+        else if($request['property_type']== "Buildings"){
+            return view('edit_feature.edit_building_feature',compact('property','feature','photos'));
+        }
+
+
+        else if($request['property_type']== "Office"){
+            return view('edit_feature.edit_office_feature',compact('property','feature','photos'));
+        }
+        else if($request['property_type']== "Warehouses"){
+            return view('edit_feature.edit_warehouse_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Upper-Portions"){
+            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Lower-Portions"){
+            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Farms-House"){
+            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Residential-Plots"){
+            return view('edit_feature.edit_plot_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Commercial-Plots"){
+            return view('edit_feature.edit_plot_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Agricultural-Land"){
+            return view('edit_feature.edit_land_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Industrial-Land"){
+            return view('edit_feature.edit_land_feature',compact('property','feature','photos'));
+        }
+
+
+        else if($request['property_type']== "Shops"){
+            return view('edit_feature.edit_shop_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Warehouses"){
+            return view('edit_feature.edit_Warehouses_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Factories"){
+            return view('edit_feature.edit_factory_feature',compact('property','feature','photos'));
+        }
+
+        else if($request['property_type']== "Buildings"){
+            return view('edit_feature.edit_building_feature',compact('property','feature','photos'));
+        }
+
+        else
+        {
+            return view('edit_feature.edit_other_feature',compact('property','feature','photos'));
+        }
+
+
+
+
+
 
     }
 

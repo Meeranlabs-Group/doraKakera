@@ -57,6 +57,7 @@ Route::get('/profile','ProfileController@profile');
 Route::post('/profile','ProfileController@updateprofile');  //profile update
 //
 Route::post('/updateproperty','PropertyController@updateproperty');  //profile update
+Route::post('/load','PropertyController@OnChangeeditproperty');  //profile update
 
 Route::post('/updatepassword','ProfileController@updatepassword');  //profile update
 

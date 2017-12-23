@@ -60,7 +60,7 @@
             <div class="form-group-inline">
                 <div class="form-group width-60">
                     <label for="price">Unit Type</label>
-                    <select class="framed width-100" name="room_type_2" id="room-type_2">
+                    <select class="framed width-100" name="unit_type" id="room-type_2">
                         <option value="">Size Unit Type</option>
                         <option value="Marla">Marla</option>
                         <option value="Kanal">Kanal</option>
@@ -72,7 +72,7 @@
                 <!--end form-group-->
                 <div class="form-group">
                     <label for="number-of-rooms_2">Size</label>
-                    <input type="number" class="form-control" id="number-of-rooms_2" name="room_number_2" placeholder="1" min="1" >
+                    <input type="number" class="form-control" id="number-of-rooms_2" name="unit_size" placeholder="1" min="1" >
                 </div>
                 <!--end form-group-->
             </div>
