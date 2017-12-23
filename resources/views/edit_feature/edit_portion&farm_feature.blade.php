@@ -376,14 +376,16 @@
 
                         </div> </li>
 
-                        {{--<li>  <label>Number of Store Rooms</label> </li>--}}
-                        {{--<li>--}}
-                            {{--<div class="form-group width-60">--}}
 
-                            {{--<input type="number" name="Number_of_Servant_Quarters" value="{{ $feature[0]->number_of_servant_quaters}}">--}}
 
-                        {{--</div>--}}
-                    {{--</li>--}}
+                        <li>  <label>Number of Store Rooms</label> </li>
+                        <li>
+                            <div class="form-group width-60">
+
+                            <input type="number" name="Number_of_Store_Rooms" value="{{ $feature[0]->number_of_store_rooms}}">
+
+                        </div>
+                    </li>
 
                 </ul>
 
