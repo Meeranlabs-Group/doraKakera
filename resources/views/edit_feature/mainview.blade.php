@@ -44,6 +44,7 @@
 
                         <select class="framed width-100 " name="purpose" id="object-type"  >
 
+                            <option value="{{ $property[0]->purpose }}" selected>{{ $property[0]->purpose}}</option>
                             <option value="">Select</option>
                             <option value="Sale">For Sale</option>
                             <option value="Rent">Rent</option>
@@ -57,12 +58,12 @@
 
                         <select class="framed width-100" name="property_type" id="Property-type"  >
 
-                            <option value="{{ $property[0]->property_type }}">{{ $property[0]->property_type }}</option>
+                            <option value="{{ $property[0]->property_type }}" selected>{{ $property[0]->property_type }}</option>
                             <option value="">  Any Type  </option>
                             <option value="" disabled>  --- HOUSE --- </option>
 
 
-                                <option value="Houses" selected>  Houses</option>
+                                <option value="Houses" >  Houses</option>
 
                             <option value="Flates">  Flates</option>
 

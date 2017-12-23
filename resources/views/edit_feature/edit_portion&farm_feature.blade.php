@@ -456,7 +456,7 @@
 
 
                 <li><label>Other Facilities</label></li>
-                <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature->other_facilities }}">
+                <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->other_facilities }}">
 
                     </div>
 
