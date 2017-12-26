@@ -362,80 +362,62 @@
                 <!--end checkboxes-->
             </div>
 
-            {{--<div class="col-md-6">--}}
+            <div class="col-md-6">
 
 
-                {{--<h3>Nearby Locations </h3>--}}
-                {{--<div  id="N&L">--}}
-                    {{--<ul class="checkboxes inline half list-unstyled">--}}
 
-                        {{--<li><label><input type="checkbox" name="Nearby_Schools">Nearby Schools</label></li>--}}
-                        {{--<li><label><input type="checkbox" name="Nearby_Hospitals">Nearby Hospitals</label></li>--}}
-                        {{--<li><label><input type="checkbox" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>--}}
-                        {{--<li><label><input type="checkbox" name="Nearby_Restaurants">Nearby Restaurants</label></li>--}}
-                        {{--<li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>--}}
-
-                        {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
-                        {{--<div class="clearfix"></div>--}}
-                        {{--<li><label>Distance From Airport(kms)</label></li>--}}
-                        {{--<li><div class="form-group width-60">--}}
-
-                                {{--<input type="text" name="Distance_From_Airport(kms)">--}}
-                            {{--</div></li>--}}
-                    {{--</ul>--}}
-                {{--</div>--}}
-                {{--<div class="col-md-6">--}}
-                    {{--<h3>Nearby Locations </h3>--}}
-                    {{--<div  id="N&L">--}}
-                        {{--<ul class="checkboxes inline half list-unstyled">--}}
+                <div class="col-md-6">
+                    <h3>Nearby Locations </h3>
+                    <div  id="N&L">
+                        <ul class="checkboxes inline half list-unstyled">
 
 
-                            {{--@if($feature[0]->nearby_schools)--}}
-                                {{--<li><label><input type="checkbox" checked name="Nearby_Schools">Nearby Schools</label></li>--}}
-                            {{--@else--}}
-                                {{--<li><label><input type="checkbox" name="Nearby_Schools">Nearby Schools</label></li>--}}
-                            {{--@endif--}}
+                            @if($feature[0]->nearby_schools)
+                                <li><label><input type="checkbox" checked name="Nearby_Schools">Nearby Schools</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Nearby_Schools">Nearby Schools</label></li>
+                            @endif
 
-                            {{--@if($feature[0]->nearby_hospitals)--}}
-                                {{--<li><label><input type="checkbox" checked name="Nearby_Hospitals">Nearby Hospitals</label></li>--}}
-                            {{--@else--}}
-                                {{--<li><label><input type="checkbox" name="Nearby_Hospitals">Nearby Hospitals</label></li>--}}
-                            {{--@endif--}}
+                            @if($feature[0]->nearby_hospitals)
+                                <li><label><input type="checkbox" checked name="Nearby_Hospitals">Nearby Hospitals</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Nearby_Hospitals">Nearby Hospitals</label></li>
+                            @endif
 
-                            {{--@if($feature[0]->nearby_shopping_malls)--}}
-                                {{--<li><label><input type="checkbox" checked name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>--}}
-                            {{--@else--}}
-                                {{--<li><label><input type="checkbox" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>--}}
-                            {{--@endif--}}
+                            @if($feature[0]->nearby_shopping_malls)
+                                <li><label><input type="checkbox" checked name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
+                            @endif
 
-                            {{--@if($feature[0]->nearby_restaurants)--}}
-                                {{--<li><label><input type="checkbox" checked name="Nearby_Restaurants">Nearby Restaurants</label></li>--}}
-                            {{--@else--}}
-                                {{--<li><label><input type="checkbox" name="Nearby_Restaurants">Nearby Restaurants</label></li>--}}
-                            {{--@endif--}}
-
-
-                            {{--@if($feature[0]->nearby_public_transport)--}}
-                                {{--<li><label><input type="checkbox" checked name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>--}}
-                            {{--@else--}}
-                                {{--<li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>--}}
-                            {{--@endif--}}
+                            @if($feature[0]->nearby_restaurants)
+                                <li><label><input type="checkbox" checked name="Nearby_Restaurants">Nearby Restaurants</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Nearby_Restaurants">Nearby Restaurants</label></li>
+                            @endif
 
 
-                            {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
-                            {{--<div class="clearfix"></div>--}}
-                            {{--<li><label>Distance From Airport(kms)</label></li>--}}
-                            {{--<li><div class="form-group width-60">--}}
-
-                                    {{--<input type="text" name="Distance_From_Airport(kms)" value="{{ $feature[0]->distance_from_airport_kms }}">--}}
-                                {{--</div></li>--}}
-                        {{--</ul>--}}
-                    {{--</div>--}}
-                    {{--<!--end checkboxes-->--}}
-                {{--</div>--}}
+                            @if($feature[0]->nearby_public_transport)
+                                <li><label><input type="checkbox" checked name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
+                            @endif
 
 
-            {{--</div>--}}
+                            <li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>
+                            <div class="clearfix"></div>
+                            <li><label>Distance From Airport(kms)</label></li>
+                            <li><div class="form-group width-60">
+
+                                    <input type="text" name="Distance_From_Airport(kms)" value="{{ $feature[0]->distance_from_airport_kms }}">
+                                </div></li>
+                        </ul>
+                    </div>
+                    <!--end checkboxes-->
+                </div>
+
+
+            </div>
             <!--end row-->
             <div class="clearfix"></div>
 
