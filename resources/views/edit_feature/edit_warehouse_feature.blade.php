@@ -16,7 +16,8 @@
                         <div class="form-group width-80">
                             <label>Built in Year</label>
                             <select  name="Built_in_Year" class="framed width-80">
-
+                                <option value="{{ $feature[0]->built_in_year }}">{{ $feature[0]->built_in_year }}</option>
+                                <option value="" disabled>Select</option>
                                 <?php
                                 for($i = 1990 ; $i <= date('Y'); $i++){
                                     echo "<option value=".$i.">".$i."</option>";
@@ -37,7 +38,8 @@
                         <div class="form-group width-80">
                             <label>Parking Spaces</label>
                             <select  name="Parking_Spaces" class="framed width-80">
-
+                                <option value="{{ $feature[0]->parking_space }}">{{ $feature[0]->parking_space }}</option>
+                                <option value="" disabled>Select</option>
 
                                 <option value="0">0</option>
                                 <option value="1">1</option>
@@ -54,7 +56,8 @@
                         <div class="form-group width-80">
                             <label>Flooring</label>
                             <select  name="Flooring_type" class="framed width-80">
-
+                                <option value="{{ $feature[0]->	flooring_type }}">{{ $feature[0]->flooring_type }}</option>
+                                <option value="" disabled>Select</option>
                                 <option value="Flooring_None">None</option>
                                 <option value="Flooring_Tiles">Tiles</option>
                                 <option value="Flooring_Marble">Marble</option>
@@ -71,6 +74,8 @@
                         <div class="form-group width-80">
                             <label>Electricity Backup</label>
                             <select name="Electricity_Backup_type" class="framed width-80">
+                                <option value="{{ $feature[0]->electricity_backup_type }}">{{ $feature[0]->electricity_backup_type}}</option>
+                                <option value="" disabled>Select</option>
                                 <option value="Electricity_Backup_None">None</option>
                                 <option value="Electricity_Backup_Generator">Generator</option>
                                 <option value="Electricity_Backup_Ups">Ups</option>
@@ -95,7 +100,7 @@
                                 {{--<div class="change-button minus">--}}
                                     {{--<i class="fa fa-caret-down"></i>--}}
                                 {{--</div>--}}
-                                <input type="number" name="Total_Floors_in_Building">
+                            <input type="number"  name="Total_Number_of_Floors" value="{{ $feature[0]->total_number_of_floors }}">
                             {{--</div>--}}
                         </div>
                     </div>
@@ -109,8 +114,7 @@
                                 {{--<div class="change-button minus">--}}
                                     {{--<i class="fa fa-caret-down"></i>--}}
                                 {{--</div>--}}
-                                <input type="number" name="Number_of_Elevators_in_Building">
-
+                            <input type="number"  name="Number_of_Elevators_in_Building" value="{{ $feature[0]->number_of_elevators_in_building }}">
                             {{--</div>--}}
 
 
@@ -127,8 +131,8 @@
                                 {{--<div class="change-button minus">--}}
                                     {{--<i class="fa fa-caret-down"></i>--}}
                                 {{--</div>--}}
-                                <input type="number" name="Floor">
 
+                            <input type="number"  name="Floor" value="{{ $feature[0]->Floor }}">
                             {{--</div>--}}
 
 
@@ -137,8 +141,8 @@
                     <div class="col-md-3">
                         <div class="form-group width-80">
                             <label>View</label>
-                            <input type="text" name="View">
 
+                            <input type="number"  name="View" value="{{ $feature[0]->View }}">
                         </div>
                     </div>
 
@@ -250,18 +254,45 @@
             <div  id="N&L">
                 <ul class="checkboxes inline half list-unstyled">
 
-                    <li><label><input type="checkbox" name="Nearby_Schools">Nearby Schools</label></li>
-                    <li><label><input type="checkbox" name="Nearby_Hospitals">Nearby Hospitals</label></li>
-                    <li><label><input type="checkbox" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
-                    <li><label><input type="checkbox" name="Nearby_Restaurants">Nearby Restaurants</label></li>
-                    <li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
+
+                    @if($feature[0]->nearby_schools)
+                        <li><label><input type="checkbox" checked name="Nearby_Schools">Nearby Schools</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Nearby_Schools">Nearby Schools</label></li>
+                    @endif
+
+                    @if($feature[0]->nearby_hospitals)
+                        <li><label><input type="checkbox" checked name="Nearby_Hospitals">Nearby Hospitals</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Nearby_Hospitals">Nearby Hospitals</label></li>
+                    @endif
+
+                    @if($feature[0]->nearby_shopping_malls)
+                        <li><label><input type="checkbox" checked name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
+                    @endif
+
+                    @if($feature[0]->nearby_restaurants)
+                        <li><label><input type="checkbox" checked name="Nearby_Restaurants">Nearby Restaurants</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Nearby_Restaurants">Nearby Restaurants</label></li>
+                    @endif
+
+
+                    @if($feature[0]->nearby_public_transport)
+                        <li><label><input type="checkbox" checked name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
+                    @endif
+
 
                     {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
                     <div class="clearfix"></div>
                     <li><label>Distance From Airport(kms)</label></li>
                     <li><div class="form-group width-60">
 
-                            <input type="text" name="Distance_From_Airport(kms)">
+                            <input type="text" name="Distance_From_Airport(kms)" value="{{ $feature[0]->distance_from_airport_kms }}">
                         </div></li>
                 </ul>
             </div>
@@ -270,16 +301,24 @@
         <div class="col-md-6">
             <h3>Other Facilities</h3>
             <ul class="checkboxes inline half list-unstyled">
+                @if($feature[0]->maintenance_staff)
+                    <li><label><input type="checkbox" checked name="Maintenance_Staff">Maintenance Staff</label></li>
+                @else
+                    <li><label><input type="checkbox" name="Maintenance_Staff">Maintenance Staff</label></li>
+                @endif
 
-                <li><label><input type="checkbox" name="Maintenance_Staff">Maintenance Staff</label></li>
-                <li><label><input type="checkbox" name="Security_Staff">Security Staff</label></li>
+                @if($feature[0]->security_staff)
+                    <li><label><input type="checkbox" checked  name="Security_Staff">Security Staff</label></li>
+                @else
+                    <li><label><input type="checkbox" name="Security_Staff">Security Staff</label></li>
+                @endif
 
 
 
                 <li><label>Other Facilities</label></li>
                 <li><div class="form-group width-60">
 
-                        <input type="text" name="Other_Facilities">
+                        <input type="text" name="Other_Facilities" value="{{ $feature[0]->other_facilities }}">
                     </div></li>
             </ul>
             <!--end checkboxes-->
@@ -312,13 +351,13 @@
 
                 <li><label>Number of Rooms</label></li>
                 <li><div class="form-group width-60">
+                        <input type="text" name="Number_of_Rooms" value="{{ $feature[0]->Number_of_Rooms }}">
 
-                        <input type="text" name="Number_of_Rooms">
                     </div></li>
                 <li><label>Other Rooms</label></li>
                 <li><div class="form-group width-60">
+                        <input type="text" name="Other_Rooms" value="{{ $feature[0]->Other_Rooms }}">
 
-                        <input type="text" name="Other_Rooms">
                     </div></li>
             </ul>
             <!--end checkboxes-->

@@ -20,7 +20,8 @@
                         <div class="form-group width-80">
                             <label>Built in Year</label>
                             <select  name="Built_in_Year" class="framed width-80">
-
+                                <option value="{{ $feature[0]->built_in_year }}">{{ $feature[0]->built_in_year }}</option>
+                                <option value="" disabled>Select</option>
                                 <?php
                                 for($i = 1990 ; $i <= date('Y'); $i++){
                                     echo "<option value=".$i.">".$i."</option>";
@@ -41,6 +42,8 @@
                         <div class="form-group width-80">
                             <label>Parking Spaces</label>
                             <select  name="Parking_Spaces" class="framed width-80">
+                                <option value="{{ $feature[0]->parking_space }}">{{ $feature[0]->parking_space }}</option>
+                                <option value="" disabled>Select</option>
 
 
                                 <option value="0">0</option>
@@ -58,7 +61,8 @@
                         <div class="form-group width-80">
                             <label>Flooring</label>
                             <select  name="Flooring_type" class="framed width-80">
-
+                                <option value="{{ $feature[0]->Flooring_type }}">{{ $feature[0]->number_of_bedrooms }}</option>
+                                <option value="" disabled>Select</option>
                                 <option value="Flooring_None">None</option>
                                 <option value="Flooring_Tiles">Tiles</option>
                                 <option value="Flooring_Marble">Marble</option>
@@ -75,6 +79,8 @@
                         <div class="form-group width-80">
                             <label>Electricity Backup</label>
                             <select name="Electricity_Backup_type" class="framed width-80">
+                                <option value="{{ $feature[0]->Electricity_Backup_type }}">{{ $feature[0]->number_of_bedrooms }}</option>
+                                <option value="" disabled>Select</option>
                                 <option value="Electricity_Backup_None">None</option>
                                 <option value="Electricity_Backup_Generator">Generator</option>
                                 <option value="Electricity_Backup_Ups">Ups</option>
@@ -99,7 +105,7 @@
                                 {{--<div class="change-button minus">--}}
                                     {{--<i class="fa fa-caret-down"></i>--}}
                                 {{--</div>--}}
-                                <input type="number" name="Total_Floors_in_Building">
+                            <input type="number"  name="Total_Floors_in_Building" value="{{ $feature[0]->total_floor_building }}">
                             {{--</div>--}}
                         </div>
                     </div>

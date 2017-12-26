@@ -79,17 +79,7 @@
                         <li><label><input type="checkbox" name="Boundary_Wall">Boundary Wall</label></li>
                     @endif
 
-                    <li><label><input type="checkbox" name="Possesion">Possesion</label></li>
-                <li><label><input type="checkbox" name="Corner">Corner</label></li>
-                <li><label><input type="checkbox" name="Park_Facing">Park Facing</label></li>
-                <li><label><input type="checkbox" name="Disputed">Disputed</label></li>  
-                <li><label><input type="checkbox" name="File">File</label></li> 
-                <li><label><input type="checkbox" name="Balloted">Balloted</label></li> 
-                <li><label><input type="checkbox" name="Sewerage">Sewerage</label></li> 
-                <li><label><input type="checkbox" name="Electricity">Electricity</label></li> 
-                <li><label><input type="checkbox" name="Water_Supply">Water Supply</label></li> 
-                <li><label><input type="checkbox" name="Sui_Gas">Sui Gas</label></li> 
-                <li><label><input type="checkbox" name="Boundary_Wall">Boundary Wall</label></li>
+
                 <div class="clearfix"></div>
 
                 <li> <label>Other Plot Features</label> </li>
