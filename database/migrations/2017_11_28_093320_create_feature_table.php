@@ -108,6 +108,18 @@ class CreateFeatureTable extends Migration
             $table->string('water_supply')->nullable();
             $table->string('sui_gas')->nullable();
             $table->string('boundry_wall')->nullable();
+
+            $table->string('Irrigation')->nullable();
+            $table->string('Tube_Wells')->nullable();
+            $table->string('Accessible_by_Road')->nullable();
+            $table->string('Perimeter_Fencing')->nullable();
+            $table->string('Is_Land_Fertile')->nullable();
+            $table->string('Boundary_Lines')->nullable();
+            $table->string('Nearby_Water_Resources')->nullable();
+            $table->string('Other_Land_Features')->nullable();
+
+
+
             $table->string('other_plot_features')->nullable();
 
             $table->timestamps();
