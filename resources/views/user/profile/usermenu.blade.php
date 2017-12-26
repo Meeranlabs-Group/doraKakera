@@ -5,7 +5,7 @@
 
         <h2 class="center">User Menu</h2>
         <ul class="checkboxes">
-            <li><label><a name="hotel"><h3>Edit Profile</h3></a></label></li>
+            <li><label><a name="hotel" href="/profile"><h3>Edit Profile</h3></a></label></li>
         </ul>
 
 
@@ -18,10 +18,13 @@
             <section>
                 <h2>My Properties</h2><hr>
                 <ul class="checkboxes">
-                    <li><label><a href=" "><h3>Rent<span>67</span></h3></a></label></li>
-                    <li><label><a name="hotel"><h3>Sale<span>67</span></h3></a></label></li>
-                    <li><label><a name="hotel"><h3>Deleted<span>67</span></h3></a></label></li>
-                    <li><label><a name="hotel"><h3>Add Property</h3></a></label></li>
+
+
+
+                    <li><label><a href="/userrent"><h3>Rent<span>{{ $result[1] }}</span></h3></a></label></li>
+                    <li><label><a href="/usersale"><h3>Sale<span>{{ $result[0]}}</span></h3></a></label></li>
+                    <li><label><a href=""><h3>Deleted<span>67</span></h3></a></label></li>
+                    <li><label><a href="/addproperty"><h3>Add Property</h3></a></label></li>
                 </ul>
 
 
@@ -31,10 +34,10 @@
             <section>
                 <h2>My Articles</h2><hr>
                 <ul class="checkboxes">
-                    <li><label><a name="hotel"><h3>Add Article</h3></a></label></li>
-                    <li><label><a name="hotel"><h3>Aproved<span>67</span></h3></a></label></li>
-                    <li><label><a name="hotel"><h3>Disaproved<span>67</span></h3></a></label></li>
-                    <li><label><a name="hotel"><h3>All Articles<span>67</span></h3></a></label></li>
+                    <li><label><a href="/addarticle"><h3>Add Article</h3></a></label></li>
+                    <li><label><a href="/approved"><h3>Approved<span>{{ $result[2] }}</span></h3></a></label></li>
+                    <li><label><a href="/disapproved"><h3>Disapproved<span>{{ $result[3] }}</span></h3></a></label></li>
+                    <li><label><a href="/myarticles"><h3>All Articles<span>{{ $result[4] }}</span></h3></a></label></li>
                 </ul>
 
 

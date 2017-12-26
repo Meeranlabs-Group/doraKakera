@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 
 use App\Blog;
+use App\Property;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
+
+
 
 class BlogController extends Controller
 {
@@ -38,13 +42,32 @@ class BlogController extends Controller
             return view('partials.MarketDetails',compact('article'));
          }
 
+        public function approvedArticles(){
+
+             $id=Auth::user()->getid();
+             $articles= Blog::where('user_id','=',$id)->where('status','=',1)->get();
+
+             $result=$this->usermenu();
+
+
+             return view('user.blog.myarticles',compact('articles','result'));
+
+         }
+
+
+        public function disapprovedArticles(){
+
+                $id=Auth::user()->getid();
+                $articles= Blog::where('user_id','=',$id)->where('status','=',0)->get();
+                 $result=$this->usermenu();
+                return view('user.blog.myarticles',compact('articles','result'));
+
+        }
+
         public function showAll(){  // user articles
 
             $id=Auth::user()->getid();
             $articles= Blog::where('user_id','=',$id)->get();
-
-
-
            return view('user.blog.myarticles',compact('articles'));
 //
         }
@@ -62,7 +85,6 @@ class BlogController extends Controller
 
             return view('partials.MarketAnalysis',compact('articles'));
         }
-
 
         public function updateArticle(Request $request){
 

@@ -11,8 +11,10 @@
 |
 */
 
+//Route::get('/','PropertyController@mainPage');
 
 
+Route::get('/','BlogController@check');
 
 
 
@@ -33,10 +35,17 @@ Route::get('/adminpage',function(){
 
 
 
-
-
+/*
+|--------------------------------------------------------------------------
+| User Blog Routes
+|--------------------------------------------------------------------------
+|
+|
+*/
 
 Route::get('/myarticles','BlogController@showAll');
+Route::get('/approved','BlogController@approvedArticles');
+Route::get('/disapproved','BlogController@disapprovedArticles');
 
 Route::get('/addarticle', function () {
     return view('user.blog.addarticle');
@@ -46,20 +55,37 @@ Route::get('/editarticle/{id}','BlogController@editArticle');
 
 Route::post('/updatearticle','BlogController@updateArticle');
 
-
-//
 Route::post('/savearticle','BlogController@saveArticle');
 
-Route::get('/','PropertyController@mainPage');
 
+
+
+/*
+|--------------------------------------------------------------------------
+| User Profile Routes
+|--------------------------------------------------------------------------
+|
+|
+*/
 
 Route::get('/profile','ProfileController@profile');
 Route::post('/profile','ProfileController@updateprofile');  //profile update
-//
-Route::post('/updateproperty','PropertyController@updateproperty');  //profile update
-Route::post('/load','PropertyController@OnChangeeditproperty');  //profile update
 
 Route::post('/updatepassword','ProfileController@updatepassword');  //profile update
+
+
+
+
+
+
+
+
+
+
+//
+Route::post('/updateproperty','PropertyController@updateproperty');  //profile update
+//Route::post('/load','PropertyController@OnChangeeditproperty');  //profile update
+
 
 
 Route::get('/myproperties','PropertyController@myproperties');
@@ -194,6 +220,8 @@ Route::post('/submit', 'PropertyController@store');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 Route::get('/MarketAnalysis', 'BlogController@allBlogs');
 Route::get('/MarketDetail/{id}', 'BlogController@blogDetail');
 

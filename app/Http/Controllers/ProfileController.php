@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Blog;
+use App\Property;
+
 
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -10,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
-
 
 
     public function profile()
@@ -25,6 +27,15 @@ class ProfileController extends Controller
         return view('user.profile.profile', compact('data'));
     }
 
+
+    public function RentProperties(){
+
+        
+}
+
+    public function SaleProperties(){
+
+}
 
     public function updateprofile(Request $request){
 
@@ -58,10 +69,6 @@ class ProfileController extends Controller
             'password' => 'required|string|min:6|confirmed',
         ]);
     }
-
-
-
-
 
         public function updatepassword(Request $request)
         {
