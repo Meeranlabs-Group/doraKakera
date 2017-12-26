@@ -3,9 +3,8 @@
 <div id="page-content">
     <div class="container">
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Listing</a></li>
-            <li class="active">Detail</li>
+            <li><a href="{{ url("/")}}">Home</a></li>
+            <li class="active">About Us</li>
         </ol>
         <!--end breadcrumb-->
         <div class="row">

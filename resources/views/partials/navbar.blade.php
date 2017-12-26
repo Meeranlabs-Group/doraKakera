@@ -97,7 +97,7 @@
                 <div class="right" >
                     <nav id="primary-nav">
                         <ul>
-                            <li class="active"><a href={{ url("/") }}>Home</a></li>
+                            <li><a href={{ url("/") }}>Home</a></li>
 
                             <li>
                                 <a href={{ url("/about-us") }} >About Us</a>

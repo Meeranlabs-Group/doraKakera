@@ -239,35 +239,19 @@
                                             <!--end form-group-->
                                         </div>
 
-                                        <div class="col-md-4 col-sm-4">
+                                        <div class="col-md-2 col-sm-2">
                                             <div class="form-group">
-                                                <label style="color: white">Area/Location</label>
-                                                <select class="form-control framed white">
-                                                    <option value="">  Any Type  </option>
-                                                    <option value="">  --- HOUSE --- </option>
-                                                    <option value="">  Houses</option>
-                                                    <option value="">  Flates</option>
-                                                    <option value="">  Upper Portions</option>
-                                                    <option value="">  Lower Portions</option>
-                                                    <option value="">  Farms House</option>
-                                                    <option value="">  Rooms</option>
+                                                <label style="color: white">From</label>
+                                                <input type="number" name="sfrom">
 
-                                                    <option value="">  --- PLOTS ---</option>
-                                                    <option value="">  Residential Plots</option>
-                                                    <option value="">  Commercial Plots</option>
-                                                    <option value="">  Agricultural Land</option>
-                                                    <option value="">  Industrial Land</option>
-                                                    <option value="">  Plot Files</option>
-                                                    <option value="">  Plot Forms</option>
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+                                        <div class="col-md-2 col-sm-2">
+                                            <div class="form-group">
+                                                <label style="color: white">To</label>
+                                                <input type="number" name="sTo">
 
-                                                    <option value="">  --- COMMERCIAL ---</option>
-                                                    <option value="">  Offices</option>
-                                                    <option value="">  Shops</option>
-                                                    <option value="">  Warehouses</option>
-                                                    <option value="">  Factories</option>
-                                                    <option value="">  Buildings</option>
-                                                    <option value="">  Other</option>
-                                                </select>
                                             </div>
                                             <!--end form-group-->
                                         </div>
@@ -310,7 +294,7 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group ">
                                                 <label style="color: white">From</label>
-                                                <input type="number" />
+                                                <input type="number" name="" />
                                             </div>
                                             <!--end form-group-->
                                         </div>
