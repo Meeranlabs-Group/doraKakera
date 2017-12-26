@@ -4,9 +4,9 @@
 <div id="page-content">
     <div class="container">
         <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Listing</a></li>
-            <li class="active">Detail</li>
+            <li><a href="{{ url("/")}}">Home</a></li>
+            <li class="active">Market Anaylysis</li>
+
         </ol>
         <!--end breadcrumb-->
         <div class="row">
@@ -17,7 +17,7 @@
 
 
                     <div class="title">
-                        <h1>Blog Posts</h1>
+                        <h1>Market Analysis</h1>
                     </div>
                     <!--end title-->
 

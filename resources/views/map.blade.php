@@ -36,13 +36,13 @@
             <li><a href="{{ asset('maps/DHA-Phase-5.jpg') }}">DHA Phase 6</a></li>
             <li><a href="{{ asset('maps/DHA-PHASE-9-TOWN.jpg') }}">DHA Phase 9 Town</a></li>
             <li><a href="{{ asset('maps/DHA-PHASE-XI-11-HALLOKI-GARDEN-1.jpg') }}">DHA Phase XI HALLOKI GARDEN</a></li>
-            <li><a href="{{ asset('maps/DHA-PHASE-XI-11-RAHBAR.jpg') }}">DHA Phase 11 Rahbar></a></li>
+            <li><a href="{{ asset('maps/DHA-PHASE-XI-11-RAHBAR.jpg') }}">DHA Phase 11 Rahbar</a></li>
             <li><a href="{{ asset('maps/EME.jpg') }}">DHA EME Sector</a></li>
             <li><a href="{{ asset('maps/FAISAL-TOWN.jpg') }}">Faisal Town + Model Town Ext</a></li>
             <li><a href="{{ asset('maps/FAZAIA15-6-12-Q.jpg') }}">Fazaia Housing Scheme </a></li>
             <li><a href="{{ asset('maps/FORMANITE.jpg') }}">Formanites Housing Scheme</a></li>
             <li><a href="{{ asset('maps/GARDEN-TOWN.jpg') }}">New Garden Town</a></li>
-            <li><a href="{{ asset('maps/HBFC.jpg') }}"> HBFC Officers Cooperative Housing Society</a></li>
+
             <li><a href="{{ asset('maps/IZMIR-TOWN.jpg') }}">Izmir Town</a></li>
             <li><a href="{{ asset('maps/JOHAR-TOWN-2.jpg') }}">DHA Phase 2</a></li>
             <li><a href="{{ asset('maps/JUBLLE-TOWN.jpg') }}">DHA Phase 2</a></li>
@@ -74,6 +74,7 @@
             <li><a href="{{ asset('maps/uu.jpg') }}">DHA Phase 2</a></li>
             <li><a href="{{ asset('maps/WAPDA-TOWN.jpg') }}">DHA Phase 2</a></li>
             <li><a href="{{ asset('maps/Z-BLOCK.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/HBFC.jpg') }}"> HBFC Officers Co. Housing Society</a></li>
 
         </ul>
 
