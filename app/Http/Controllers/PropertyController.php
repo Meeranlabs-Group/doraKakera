@@ -524,7 +524,11 @@ class PropertyController extends Controller
         $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->get();
         $photos = Photo::all();
 
-       return view('user.property.myproperties',compact('data','photos'));
+            $result=$this->usermenu();
+
+
+
+       return view('user.property.myproperties',compact('data','photos','result'));
 
     }
 

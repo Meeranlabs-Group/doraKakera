@@ -30,11 +30,28 @@ class ProfileController extends Controller
 
     public function RentProperties(){
 
-        
+
+
+        $id=Auth::user()->id;
+        $data= Property::where('user_id','=',$id)->where('property_type','=','Rent')->where('ad_status','=',1)->get();
+        $photos = Photo::all();
+
+        $result=$this->usermenu();
+
+        return view('user.property.myproperties',compact('data','photos','result'));
+
 }
 
     public function SaleProperties(){
 
+
+        $id=Auth::user()->id;
+        $data= Property::where('user_id','=',$id)->where('property_type','=','Sale')->where('ad_status','=',1)->get();
+        $photos = Photo::all();
+
+        $result=$this->usermenu();
+
+        return view('user.property.myproperties',compact('data','photos','result'));
 }
 
     public function updateprofile(Request $request){

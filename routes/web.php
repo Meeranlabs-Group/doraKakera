@@ -11,10 +11,10 @@
 |
 */
 
-//Route::get('/','PropertyController@mainPage');
+Route::get('/','PropertyController@mainPage');
 
 
-Route::get('/','BlogController@check');
+//Route::get('/','BlogController@check');
 
 
 
@@ -72,6 +72,12 @@ Route::get('/profile','ProfileController@profile');
 Route::post('/profile','ProfileController@updateprofile');  //profile update
 
 Route::post('/updatepassword','ProfileController@updatepassword');  //profile update
+
+
+
+
+Route::post('/userrent','ProfileController@RentProperties');  //profile update
+Route::post('/usersale','ProfileController@SaleProperties');  //profile update
 
 
 
