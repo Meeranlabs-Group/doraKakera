@@ -77,34 +77,29 @@
 
 <script>
     $(document).ready(function(){
-        $("#show").click(function(){
-            $("#1").hide();
-            $("#2").hide();
 
-        });
         $("#show").click(function(){
+            if($(this).hasClass('active')){
+                $(this).removeClass('active')
+            } else {
+                $(this).addClass('active')
+            }
             $("#0").show();
         });
 
 
+
         $("#show1").click(function(){
-            $("#0").hide();
-            $("#2").hide();
+            if($(this).hasClass('active')){
+                $(this).removeClass('active')
+            } else {
+                $(this).addClass('active')
+            }
 
-        });
-        $("#show1").click(function(){
-            $("#1").show();
+            $("#0").show();
         });
 
 
-        $("#show2").click(function(){
-            $("#0").hide();
-            $("#1").hide();
-
-        });
-        $("#show2").click(function(){
-            $("#2").show();
-        });
 
     });
 </script>
