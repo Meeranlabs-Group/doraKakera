@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Blog;
+use App\Photo;
 use App\Property;
 
 
@@ -18,13 +19,16 @@ class ProfileController extends Controller
     public function profile()
     {
         $id = Auth::user()->getid();
+
+        $result=$this->usermenu();
+
         $data= User::find($id);
         if($data->path=="")
         {
             $data->path="assets/img/user logo.png";
         }
 
-        return view('user.profile.profile', compact('data'));
+        return view('user.profile.profile', compact('data','result'));
     }
 
 
@@ -33,10 +37,15 @@ class ProfileController extends Controller
 
 
         $id=Auth::user()->id;
-        $data= Property::where('user_id','=',$id)->where('property_type','=','Rent')->where('ad_status','=',1)->get();
+
+        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Rent')->get();
         $photos = Photo::all();
 
+
+
         $result=$this->usermenu();
+
+
 
         return view('user.property.myproperties',compact('data','photos','result'));
 
@@ -46,7 +55,7 @@ class ProfileController extends Controller
 
 
         $id=Auth::user()->id;
-        $data= Property::where('user_id','=',$id)->where('property_type','=','Sale')->where('ad_status','=',1)->get();
+        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Sale')->get();
         $photos = Photo::all();
 
         $result=$this->usermenu();

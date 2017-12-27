@@ -33,6 +33,17 @@ Route::get('/adminpage',function(){
 });
 
 
+Route::get('/adminpage','AdminController@mainpage');
+
+
+Route::get('/pendingRent','AdminController@pendingRent');
+Route::get('/pendingSale','AdminController@pendingSale');
+
+
+Route::get('/oldRent','AdminController@oldRent');
+Route::get('/oldSale','AdminController@oldSale');
+
+
 
 
 /*
@@ -76,8 +87,8 @@ Route::post('/updatepassword','ProfileController@updatepassword');  //profile up
 
 
 
-Route::post('/userrent','ProfileController@RentProperties');  //profile update
-Route::post('/usersale','ProfileController@SaleProperties');  //profile update
+Route::get('/userrent','ProfileController@RentProperties');  //profile update
+Route::get('/usersale','ProfileController@SaleProperties');  //profile update
 
 
 

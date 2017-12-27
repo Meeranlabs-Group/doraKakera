@@ -22,8 +22,8 @@ class Controller extends BaseController
 
     public function usermenu(){
         $id= Auth::user()->getid();
-        $sale=Property::where('user_id','=',$id)->where('purpose','=','Sale')->count();
-        $rent=Property::where('user_id','=',$id)->where('purpose','=','Rent')->count();
+        $sale=Property::where('user_id','=',$id)->where('purpose','=','Sale')->where('ad_status','=',1)->count();
+        $rent=Property::where('user_id','=',$id)->where('purpose','=','Rent')->where('ad_status','=',1)->count();
         $approved=Blog::where('user_id','=',$id)->where('status','=',1)->count();
         $disapproved=Blog::where('user_id','=',$id)->where('status','=',0)->count();
         $allArticle=Blog::where('user_id','=',$id)->count();
@@ -35,4 +35,5 @@ class Controller extends BaseController
 
 
     }
+
 }

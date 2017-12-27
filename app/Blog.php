@@ -8,6 +8,6 @@ class Blog extends Model
 {
     //
 
-    protected $table = 'blogs';
+    protected $table = 'blog';
 
 }

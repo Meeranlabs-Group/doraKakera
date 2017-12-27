@@ -45,7 +45,7 @@
                         <td>
                             <div class="image-wrapper">
                                 {{--<div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>--}}
-                                <a href="edit.html" class="image">
+                                <a href="propertydetail/{{ $property->id }}" class="image">
                                     <div class="bg-transfer">
 
 

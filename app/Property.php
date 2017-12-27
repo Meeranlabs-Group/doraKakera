@@ -20,13 +20,13 @@ class Property extends Model
         return $this->belongsTo('App\User');
     }
 
-//    public function Property(){
-//
-//        return $this->Property();
-//    }
 
     public function feature(){
         $this->hasOne('App\Feature');
+    }
+
+    public function location(){
+        $this->hasOne('App\Location');
     }
 
     public function photo(){

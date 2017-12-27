@@ -46,12 +46,8 @@ class BlogController extends Controller
 
              $id=Auth::user()->getid();
              $articles= Blog::where('user_id','=',$id)->where('status','=',1)->get();
-
              $result=$this->usermenu();
-
-
              return view('user.blog.myarticles',compact('articles','result'));
-
          }
 
 
@@ -68,7 +64,9 @@ class BlogController extends Controller
 
             $id=Auth::user()->getid();
             $articles= Blog::where('user_id','=',$id)->get();
-           return view('user.blog.myarticles',compact('articles'));
+            $result=$this->usermenu();
+
+           return view('user.blog.myarticles',compact('articles','result'));
 //
         }
 
