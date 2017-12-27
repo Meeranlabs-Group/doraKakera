@@ -234,7 +234,6 @@
                             <li><label><input type="checkbox" name="Business_Center_or_Media_Room_in_Building">Business Center or Media Room</label></li>
                         @endif
 
-                        <li><label><input type="checkbox" name="Conference_Room_in_Building">Conference Room in Building</label></li>
 
 
                         @if($feature[0]->confrence_room_in_building)
@@ -249,7 +248,7 @@
                             <li><label><input type="checkbox" name="Intercom">Intercom</label></li>
                         @endif
 
-                        <li><label><input type="checkbox" name="ATM_Credit_Card_Machines_in_Building">ATM Credit Card Machines in Building</label></li>
+
                         @if($feature[0]->atm_and_machine_in_building)
                             <li><label><input type="checkbox" checked name="ATM_Credit_Card_Machines_in_Building">ATM Credit Card Machines in Building</label></li>
                         @else
