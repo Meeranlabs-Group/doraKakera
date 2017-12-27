@@ -11,10 +11,10 @@
 
 
 
-
+<input type="hidden" id="p" value=""></input>
                                     <div class="col-md-2 col-sm-2 col-md-offset-3">
                                         <div class="form-group">
-                                            <button type="button" id="show" value="buy" class="btn btn-primary">BUY</button>
+                                            <button type="button" id="show" value="BUY" class="btn btn-primary">BUY</button>
                                         </div>
                                     </div>
 
@@ -26,7 +26,7 @@
 
                                     <div class="col-md-2 col-sm-2">
                                         <div class="form-group">
-                                            <button type="button" id="show1" value="rent" class="btn btn-primary">RENT</button>
+                                            <button type="button" id="show1" value="RENT" class="btn btn-primary">RENT</button>
                                         </div>
                                     </div>
 
@@ -239,7 +239,7 @@
                                             <!--end form-group-->
                                         </div>
 
-                                        <div class="col-md-2 ">
+                                        <div class="col-md-2">
                                             <div class="form-group">
                                                 <label style="color: white">From</label>
                                                 <input type="number" name="sfrom">

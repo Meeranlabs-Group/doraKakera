@@ -79,25 +79,16 @@
     $(document).ready(function(){
 
         $("#show").click(function(){
-            if($(this).hasClass('active')){
-                $(this).removeClass('active')
-            } else {
-                $(this).addClass('active')
-            }
             $("#0").show();
+            $("#p").val($("#show").val());
         });
-
 
 
         $("#show1").click(function(){
-            if($(this).hasClass('active')){
-                $(this).removeClass('active')
-            } else {
-                $(this).addClass('active')
-            }
-
             $("#0").show();
+            $("#p").val($("#show1").val());
         });
+
 
 
 
