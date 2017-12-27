@@ -332,6 +332,7 @@ class PropertyController extends Controller
                 for($i=0;$i<count($files);$i++) {
                     $photo=new Photo;
                     $name = $files[$i]->getClientOriginalName();
+                    $name=preg_replace("/[^a-zA-Z0-9\s]/","",$name);
 
                     $path = $files[$i]->move($request['title'], $name);
 
@@ -495,19 +496,17 @@ class PropertyController extends Controller
 
     public function show_all(){
 
-        $property= Property::paginate(8);
+        $property= Property::where('ad_status','=','1')->paginate(8);
         $photos = Photo::all();
 
-
        return view('properties',compact('property','photos'));
-//        print_r(phpinfo());
     }
 
     public function mainPage(){ //showing cities and their count of properties and Blog Title
 
 
         $articles= Blog::all();
-        $Property1 = DB::table('Property')->select('city',DB::raw('count(*) as total'))->groupBy('city')->get();
+        $Property1 = DB::table('Property')->select('city',DB::raw('count(*) as total'))->groupBy('city')->orderBy('city')->get();
 
         $hot=Property::where('superhot','=',1)->get();
 
