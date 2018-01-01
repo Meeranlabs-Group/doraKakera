@@ -25,9 +25,24 @@ class Property extends Model
         $this->hasOne('App\Feature');
     }
 
-    public function location(){
-        $this->hasOne('App\Location');
+
+
+    public function city(){
+        $this->hasOne('App\City');
     }
+
+    public function society(){
+        $this->hasOne('App\Society');
+    }
+    public function phase(){
+        $this->hasOne('App\Phase');
+    }
+    public function block(){
+        $this->hasOne('App\Block');
+    }
+
+
+
 
     public function photo(){
         $this->hasMany('App\Photo');

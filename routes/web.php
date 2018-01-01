@@ -230,9 +230,15 @@ Route::get('/Otherview', function () {
 
 
 
-Route::get('/addproperty', function () {
-    return view('addproperty');
-})->middleware('auth');
+//Route::get('/addproperty', function () {
+//    return view('addproperty');
+//})->middleware('auth');
+
+Route::get('/addproperty', 'PropertyController@addproperty');
+Route::get('/getsocieties/{id}', 'PropertyController@getsocieties');
+
+
+
 
 
 

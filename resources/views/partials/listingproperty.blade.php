@@ -43,6 +43,7 @@
         <div class="info">
             <a href=" /propertydetail/{{ $data->id }} " ><h3> {{ $data->title }} </h3></a>
             <figure class="location">{{ $data->address }}</figure>
+            <figure class="location">{{ $data->city }}</figure>
             <figure class="label label-info">House</figure>
             <figure class="label label-Available">Available</figure>
             <figure class="label label-InProcess">In-Process</figure>

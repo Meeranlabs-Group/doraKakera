@@ -7,10 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Block extends Model
 {
     //
+    protected $table='block';
 
+    public function phase(){
 
-    public function location(){
-
-        return $this->belongsTo('App\location');
+        return $this->belongsTo('App\Phase');
     }
 }
+
+

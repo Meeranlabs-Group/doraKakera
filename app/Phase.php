@@ -8,9 +8,16 @@ class Phase extends Model
 {
     //
 
+    protected $table='phase';
+    public function society(){
 
-    public function location(){
-
-        return $this->belongsTo('App\location');
+        return $this->belongsTo('App\Society');
     }
+
+    public function block(){
+
+        return $this->hasMany('App\Block');
+    }
+
+
 }

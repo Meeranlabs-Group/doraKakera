@@ -10,8 +10,10 @@
 
             @include('partials.featureproperties')
 
-        @include('partials.totalproperties')
 
+
+
+        @include('partials.totalproperties')
         @include('partials.footer')
 
 @include('include.foot')

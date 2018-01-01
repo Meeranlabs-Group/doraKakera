@@ -8,8 +8,19 @@ class City extends Model
 {
     //
 
-    public function location(){
 
-        return $this->belongsTo('App\location');
+    protected $table='city';
+
+    public function property(){
+
+        return $this->belongsTo('App\Property');
     }
+
+
+    public function society(){
+
+        return $this->hasMany('App\Society');
+    }
+
+
 }

@@ -3,9 +3,13 @@
 namespace App\Http\Controllers;
 
 
+use App\Block;
 use App\Blog;
+use App\City;
+use App\Phase;
 use App\Photo;
 use App\Property;
+use App\Society;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use App\feature;
@@ -16,6 +20,25 @@ class PropertyController extends Controller
 {
 
 
+
+    public function getsocieties($id){
+
+        $societies=Society::where('city_id','=',$id)->pluck("society_name","id");
+
+
+        return json_encode($societies);
+
+
+
+    }
+    public function addproperty(){
+       $cities=City::all();
+//       $phases=Phase::all();
+//        $societies=Society::all();
+//       $blocks=Block::all();
+
+       return view('addproperty',compact('cities','societies','phases','blocks'));
+    }
     public function deleteproperty($id)
     {
 

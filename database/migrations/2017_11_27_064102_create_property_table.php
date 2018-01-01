@@ -21,7 +21,17 @@ class CreatePropertyTable extends Migration
             $table->increments('id');
             $table->string('title') ->nullable();
 
-            $table->integer('location') ->nullable();
+//            $table->integer('location') ->nullable();
+//            $table->string('city') ->nullable();
+
+            $table->integer('city_id')->nullable();
+            $table->integer('society_id')->nullable();
+            $table->integer('phase_id')->nullable();
+            $table->integer('block_id')->nullable();
+            $table->string('address') ->nullable();
+
+
+
 
 
             $table->tinyInteger('status') ->default('0');
@@ -40,8 +50,8 @@ class CreatePropertyTable extends Migration
             $table->text('description') ->nullable();
 
             $table->double('price') ->nullable();
-            $table->string('city') ->nullable();
-            $table->string('address') ->nullable();
+
+
             $table->string('unit_type') ->nullable();
             $table->string('unit_size') ->nullable();
 

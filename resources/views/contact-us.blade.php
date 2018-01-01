@@ -26,6 +26,12 @@
                     <!--end filter-->
                 </div>
                 <!--end sidebar-->
+
+                <a href="#" class="advertising-banner">
+                    <span class="banner-badge">Advertising</span>
+                    <img src="{{ asset("assets/img/ad-banner-02.jpg") }}" alt="">
+                </a>
+
             </div>
             <!--end col-md-3-->
             <div class="col-md-9">
