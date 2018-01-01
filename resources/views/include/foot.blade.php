@@ -31,7 +31,31 @@
 <script src={{url("assets/js/jquery.newsTicker.js")}}></script>
 
 <script>
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:5,
+        nav:true,
+        autoplay:true,
+        autoplayTimeout:1000,
+        autoplayHoverPause:true,
+        responsiveClass:true,
+        nav : false,
+        responsive:{
+            0:{
+                items:1
+            },
+            600:{
+                items:3
+            },
+            1000:{
+                items:5
+            }
+        }
 
+
+
+
+    });
 
 
     $(window).load(function(){
