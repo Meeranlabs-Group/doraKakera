@@ -18,6 +18,14 @@
                             <li><a href={{ url("/contact-us")}}>Contact Us</a></li>
                         </ul>
                     </div>
+
+
+                    <a href="#" class="advertising-banner">
+                        <span class="banner-badge">Advertising</span>
+                        <img src="{{ asset("assets/img/ad-banner-02.jpg") }}" alt="">
+                    </a>
+
+
                     <!--end filter-->
                 </div>
                 <!--end sidebar-->
@@ -53,22 +61,25 @@
                     <section>
                         <h2>Our Agents</h2>
                         <div class="row">
+
+
+                            @foreach($agents as $agent)
                             <div class="col-md-6">
                                 <div class="member">
-                                    <div class="image"><img src="assets/img/person-01.jpg" alt=""></div>
+                                    <div class="image"><img src="{{ $agent->path }}" alt=""></div>
                                     <div class="description">
-                                        <h3>Kate Brown</h3>
-                                        <h4>Company CEO</h4>
+                                        <h3>{{ $agent->name }}</h3>
+                                        <h4>{{ $agent->designation }}</h4>
                                         <div class="info">
                                             <dl>
                                                 <dt>Phone:</dt>
-                                                <dd>(123) 456 789</dd>
+                                                <dd>{{ $agent->phone_number }}</dd>
                                                 <dt>Mobile Phone:</dt>
-                                                <dd>888 123 456 789</dd>
+                                                <dd>{{ $agent->mobile_number }}</dd>
                                                 <dt>Email:</dt>
-                                                <dd><a href="mailto:kate.brown@example.com">kate.brown@example.com</a></dd>
+                                                <dd><a href="mailto:{{$agent->email}}">{{ $agent->email }}</a></dd>
                                                 <dt>Skype:</dt>
-                                                <dd>kate.brown</dd>
+                                                <dd>{{ $agent->skype }}</dd>
                                             </dl>
                                         </div>
                                         <!--end info-->
@@ -77,95 +88,19 @@
                                 </div>
                                 <!--member-->
                             </div>
-                            <!--col-md-6-->
-                            <div class="col-md-6">
-                                <div class="member">
-                                    <div class="image"><img src="assets/img/person-02.jpg" alt=""></div>
-                                    <div class="description">
-                                        <h3>Jone Doe</h3>
-                                        <h4>PR Manager</h4>
-                                        <div class="info">
-                                            <dl>
-                                                <dt>Phone:</dt>
-                                                <dd>(123) 456 789</dd>
-                                                <dt>Mobile Phone:</dt>
-                                                <dd>888 123 456 789</dd>
-                                                <dt>Email:</dt>
-                                                <dd><a href="mailto:kate.brown@example.com">kate.brown@example.com</a></dd>
-                                                <dt>Skype:</dt>
-                                                <dd>kate.brown</dd>
-                                            </dl>
-                                        </div>
-                                        <!--end info-->
-                                    </div>
-                                    <!--end description-->
-                                </div>
-                                <!--member-->
-                            </div>
-                            <!--col-md-6-->
-                            <div class="col-md-6">
-                                <div class="member">
-                                    <div class="image"><img src="assets/img/person-03.jpg" alt=""></div>
-                                    <div class="description">
-                                        <h3>Kate Brown</h3>
-                                        <h4>Marketing Guru</h4>
-                                        <div class="info">
-                                            <dl>
-                                                <dt>Phone:</dt>
-                                                <dd>(123) 456 789</dd>
-                                                <dt>Mobile Phone:</dt>
-                                                <dd>888 123 456 789</dd>
-                                                <dt>Email:</dt>
-                                                <dd><a href="mailto:kate.brown@example.com">kate.brown@example.com</a></dd>
-                                                <dt>Skype:</dt>
-                                                <dd>kate.brown</dd>
-                                            </dl>
-                                        </div>
-                                        <!--end info-->
-                                    </div>
-                                    <!--end description-->
-                                </div>
-                                <!--member-->
-                            </div>
-                            <!--col-md-6-->
-                            <div class="col-md-6">
-                                <div class="member">
-                                    <div class="image"><img src="assets/img/person-04.jpg" alt=""></div>
-                                    <div class="description">
-                                        <h3>John Doe</h3>
-                                        <h4>Support Ninja</h4>
-                                        <div class="info">
-                                            <dl>
-                                                <dt>Phone:</dt>
-                                                <dd>(123) 456 789</dd>
-                                                <dt>Mobile Phone:</dt>
-                                                <dd>888 123 456 789</dd>
-                                                <dt>Email:</dt>
-                                                <dd><a href="mailto:kate.brown@example.com">kate.brown@example.com</a></dd>
-                                                <dt>Skype:</dt>
-                                                <dd>kate.brown</dd>
-                                            </dl>
-                                        </div>
-                                        <!--end info-->
-                                    </div>
-                                    <!--end description-->
-                                </div>
-                                <!--member-->
-                            </div>
-                            <!--col-md-6-->
+                            @endforeach
                         </div>
                         <!--end row-->
                     </section>
                 </div>
                 <!--end main-content-->
             </div>
-            <!--end col-md-9-->
 
             <div class="col-md-12">
                 <section>
 
                     <div class="block">
-                        <div class="container">
+                        {{--<div class="container">--}}
                             <div class="title">
                                 <h2 >Our Feature Properties</h2>
                             </div>
@@ -233,7 +168,7 @@
                                 <!--end gallery-item-->
                             </div>
                             <!--end gallery-carousel-->
-                        </div>
+                        {{--</div>--}}
                         <!--end container-->
 
                         <div class="bg opacity-30">

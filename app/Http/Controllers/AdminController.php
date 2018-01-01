@@ -9,6 +9,7 @@ use App\User;
 use App\Blog;
 use App\Photo;
 use App\Property;
+use App\Agent;
 
 
 use Illuminate\Support\Facades\DB;
@@ -53,6 +54,10 @@ class AdminController extends Controller
         return Array($oldsale,$oldrent,$newsale,$newrent);
 
     }
+    public function aboutus(){
+        $agents=Agent::all();
+        return view('about-us',compact('agents'));
+    }
 
 
     public function mainpage(){
@@ -63,8 +68,6 @@ class AdminController extends Controller
         return view('Admin.adminpage',compact('result'));
 
     }
-
-
     public function pendingRent(){
 
         $result=$this->adminmenu();
@@ -79,8 +82,6 @@ class AdminController extends Controller
         return view('Admin.propertieslist',compact('result','photos','user'));
 
     }
-
-
     public function pendingSale(){
 
         $result=$this->adminmenu();
@@ -93,9 +94,6 @@ class AdminController extends Controller
 
 
     }
-
-
-
     public function oldRent(){
         $result=$this->adminmenu();
         $user=Property::select('property.*')->where('purpose','=','Rent')
@@ -104,8 +102,6 @@ class AdminController extends Controller
         return view('Admin.propertieslist',compact('result','photos','user'));
 
     }
-
-
     public function oldSale(){
 
 

@@ -114,9 +114,14 @@ Route::post('/search', 'PropertyController@search');
 Route::get('/contact-us', function () {
     return view('contact-us');
 });
-Route::get('/about-us', function () {
-    return view('about-us');
-});
+
+
+//Route::get('/about-us', function () {
+//    return view('about-us');
+//});
+Route::get('/about-us','AdminController@aboutus');
+
+
 
 Route::get('/dhafile', function () {
     return view('dhafile');
