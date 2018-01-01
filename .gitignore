@@ -13,3 +13,4 @@ yarn-error.log
 *.jpg
 *.png
 .env.example
+app/Blog.php
