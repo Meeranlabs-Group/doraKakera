@@ -17,26 +17,27 @@
 
             <div class="form-group">
                 <label for="form-filter-check-in">City</label>
-                {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
-                <select name="area" id="area_type" class="form-control">
-                    <option value="lahore">Lahore</option>
-                    <option value="islamabad">Islamabad</option>
-                    <option value="faislabad">Faislabad</option>
-                    <option value="gujrat">Gujrat</option>
-                    <option value="Kanal">other</option>
+                {{--<input type="text" class="form-control date" id="form
+                -filter-check-in" name="check-in" placeholder="Check In">--}}
+
+                <select name="city" id="city" class="form-control" >
+               @foreach($cites as $city)
+
+                    <option value="{{ $city->id }}">{{ $city->city_name }}</option>
+                @endforeach
                 </select>
             </div>
+
 
             <div class="form-group">
                 <label for="form-filter-check-in">Society</label>
                 {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
-                <select name="area" id="area_type" class="form-control">
-                    <option value="">Select</option>
-                    <option value="revenue">Revenue</option>
-                    <option value="suigas">sui gas</option>
-                    <option value="lda">LDA</option>
-                    <option value="singhar">Singhar</option>
-                    <option value="other">other</option>
+                <select name="society" id="society" class="form-control">
+
+                {{--@foreach($societies as $society)--}}
+                    {{--<option value="{{ $society->id }}">{{ $society->society_name }}</option>--}}
+                    {{--@endforeach--}}
+
                 </select>
             </div>
 
@@ -48,13 +49,11 @@
                     <div class="col-md-6">
                         <label for="form-filter-check-in">Phase</label>
                         {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
-                        <select  name="area" id="area_type" class="form-control">
-                            <option value="">Phase</option>
-                            <option value="Square_Feet">Square Feet</option>
-                            <option value="Square_Yards">Square Yards</option>
-                            <option value="Square_Meters">Square Meters</option>
-                            <option value="Marla">Marla</option>
-                            <option value="Kanal">Kanal</option>
+                        <select  name="Phase" id="Phase" class="form-control">
+
+                        {{--@foreach($phases as $phase)--}}
+                            {{--<option value="{{ $phase->id }}">{{ $phase->phase_name }}</option>--}}
+                            {{--@endforeach--}}
                         </select>
                     </div>
 
@@ -62,13 +61,10 @@
                     <div class="col-md-6">
                         <label for="form-filter-check-in">Block</label>
                         {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
-                        <select name="area" id="area_type" class="form-control">
-                            <option value="">Block</option>
-                            <option value="Square_Feet">Square Feet</option>
-                            <option value="Square_Yards">Square Yards</option>
-                            <option value="Square_Meters">Square Meters</option>
-                            <option value="Marla">Marla</option>
-                            <option value="Kanal">Kanal</option>
+                        <select name="block" id="block" class="form-control">
+                            {{--@foreach($blocks as $block)--}}
+                                {{--<option value="{{ $block->id }}">{{ $block->block_name }}</option>--}}
+                             {{--@endforeach--}}
                         </select>
                     </div>
 

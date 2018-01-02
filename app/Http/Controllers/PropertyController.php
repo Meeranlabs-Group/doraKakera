@@ -19,14 +19,69 @@ use Illuminate\Support\Facades\Auth;
 class PropertyController extends Controller
 {
 
+    public function getphases($id){
 
+        $codes=Phase::where('society_id','=',$id)->pluck("id");
+        $names=Phase::where('society_id','=',$id)->pluck("phase_name");
+
+        $result=array();
+
+
+        foreach( $codes as $index => $code ) {
+
+            $result[]=array("name"=>$names[$index], "id"=>$code);
+
+
+        }
+
+
+
+        return json_encode($result);
+
+
+
+    }
+    public function getblocks($id){
+
+        $codes=Block::where('phase_id','=',$id)->pluck("id");
+        $names=Block::where('phase_id','=',$id)->pluck("block_name");
+
+        $result=array();
+
+
+        foreach( $codes as $index => $code ) {
+
+            $result[]=array("name"=>$names[$index], "id"=>$code);
+
+
+        }
+
+
+
+        return json_encode($result);
+
+
+
+    }
 
     public function getsocieties($id){
 
-        $societies=Society::where('city_id','=',$id)->pluck("society_name","id");
+        $codes=Society::where('city_id','=',$id)->pluck("id");
+$names=Society::where('city_id','=',$id)->pluck("society_name");
+
+$result=array();
 
 
-        return json_encode($societies);
+        foreach( $codes as $index => $code ) {
+
+            $result[]=array("name"=>$names[$index], "id"=>$code);
+
+
+        }
+
+
+
+        return json_encode($result);
 
 
 
@@ -519,10 +574,15 @@ class PropertyController extends Controller
 
     public function show_all(){
 
+
+        $cites=City::all();
+        $societies=Society::all();
+        $phases=Phase::all();
+        $blocks=Block::all();
         $property= Property::where('ad_status','=','1')->paginate(8);
         $photos = Photo::all();
 
-       return view('properties',compact('property','photos'));
+       return view('properties',compact('property','photos','cites','societies','phases','blocks'));
     }
 
     public function mainPage(){ //showing cities and their count of properties and Blog Title
@@ -559,12 +619,14 @@ class PropertyController extends Controller
 
     public function propertydetail($id){
 
+
+        $cites=City::all();
         $data = Property::find($id)->get();
 
         $photos = Photo::where("property_id","$id")->get();
 
 
-        return view('user.property.propertyDetail',compact('data','photos'));
+        return view('user.property.propertyDetail',compact('data','photos','cites'));
     }
 
 

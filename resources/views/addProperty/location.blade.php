@@ -87,47 +87,207 @@
 </section>
 
 
-<script type="text/javascript">
 
-    document.getElementById('city').onchange = function () {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        var e = document.getElementById("city");
-        var value = e.options[e.selectedIndex].value;
-     if(value){
 
-         var select = document.getElementById("society");
-         for ( i = 0; i < length; i++) {
-             select.options[i] = null;
-         }
+{{--<script type="text/javascript">--}}
+    {{--function removeOptions(selectbox)--}}
+    {{--{--}}
+        {{--var i;--}}
+        {{--for(i = selectbox.options.length - 1 ; i >= 0 ; i--)--}}
+        {{--{--}}
+            {{--selectbox.remove(i);--}}
+        {{--}--}}
+    {{--}--}}
+    {{--//using the function:--}}
 
-         $.ajax({
+    {{--document.getElementById('city').onchange = function () {--}}
+        {{--removeOptions(document.getElementById("society"));--}}
 
 
 
-             url:'/getsocieties/' + value,
-             type: "GET",
-             dataType: "json",
-             success: function(data){
+        {{--removeOptions(document.getElementById("block"));--}}
+        {{--removeOptions(document.getElementById("Phase"));--}}
 
-                 console.log(data[1]);
-                 var option = document.createElement("option");
-                 option.text = data[1];
-                 option.value = 1;
-                 var select = document.getElementById("society");
-                 select.appendChild(option);
-
-
-
-             }
-
-         });
-     }
+        {{--$.ajaxSetup({--}}
+            {{--headers: {--}}
+                {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+            {{--}--}}
+        {{--});--}}
+        {{--var e = document.getElementById("city");--}}
+        {{--var value = e.options[e.selectedIndex].value;--}}
+     {{--if(value){--}}
 
 
-    }
+         {{--removeOptions(document.getElementById("society"));--}}
+         {{--removeOptions(document.getElementById("Phase"));--}}
+         {{--removeOptions(document.getElementById("block"));--}}
 
-</script>
+
+
+
+
+
+
+         {{--$.ajax({--}}
+
+
+
+             {{--url:'/getsocieties/' + value,--}}
+             {{--type: "GET",--}}
+             {{--dataType: "json",--}}
+             {{--success: function(data){--}}
+
+
+                 {{--for (var i = 0; i < data.length; i++) {--}}
+
+
+                     {{--var option = document.createElement("option");--}}
+                     {{--option.text = data[i].name;--}}
+                     {{--option.value = data[i].id;--}}
+                     {{--var select = document.getElementById("society");--}}
+                     {{--select.append(option);--}}
+
+
+                 {{--}--}}
+
+
+
+             {{--}--}}
+
+         {{--});--}}
+     {{--}--}}
+
+
+
+
+
+
+
+
+
+
+
+    {{--}--}}
+
+{{--</script>--}}
+
+
+{{--<script type="text/javascript">--}}
+
+    {{--document.getElementById('society').onchange = function () {--}}
+
+        {{--removeOptions(document.getElementById("Phase"));--}}
+        {{--removeOptions(document.getElementById("block"));--}}
+
+
+
+        {{--$.ajaxSetup({--}}
+            {{--headers: {--}}
+                {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+            {{--}--}}
+        {{--});--}}
+
+
+    {{--var s = document.getElementById("society");--}}
+    {{--var value1 = s.options[s.selectedIndex].value;--}}
+
+
+
+    {{--if(value1){--}}
+        {{--removeOptions(document.getElementById("Phase"));--}}
+        {{--removeOptions(document.getElementById("block"));--}}
+
+        {{--$.ajax({--}}
+
+
+
+            {{--url:'/getphases/' + value1,--}}
+            {{--type: "GET",--}}
+            {{--dataType: "json",--}}
+            {{--success: function(data){--}}
+
+                {{--for (var i = 0; i < data.length; i++) {--}}
+
+
+                    {{--var option = document.createElement("option");--}}
+                    {{--option.text = data[i].name;--}}
+                    {{--option.value = data[i].id;--}}
+                    {{--var select = document.getElementById("Phase");--}}
+                    {{--select.appendChild(option);--}}
+
+
+                {{--}--}}
+
+
+
+            {{--}--}}
+
+        {{--});--}}
+    {{--}--}}
+
+
+{{--}--}}
+
+{{--</script>--}}
+
+{{--<script type="text/javascript">--}}
+
+    {{--document.getElementById('Phase').onchange = function () {--}}
+
+
+
+        {{--removeOptions(document.getElementById("block"));--}}
+
+        {{--$.ajaxSetup({--}}
+            {{--headers: {--}}
+                {{--'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
+            {{--}--}}
+        {{--});--}}
+
+
+
+    {{--var t = document.getElementById("Phase");--}}
+    {{--var value2 = t.options[t.selectedIndex].value;--}}
+
+
+
+    {{--if(value2){--}}
+
+
+        {{--removeOptions(document.getElementById("block"));--}}
+
+        {{--$.ajax({--}}
+
+
+
+            {{--url:'/getblocks/' + value2,--}}
+            {{--type: "GET",--}}
+            {{--dataType: "json",--}}
+            {{--success: function(data){--}}
+
+
+                {{--for (var i = 0; i < data.length; i++) {--}}
+
+
+                    {{--var option = document.createElement("option");--}}
+                    {{--option.text = data[i].name;--}}
+                    {{--option.value = data[i].id;--}}
+                    {{--var select = document.getElementById("block");--}}
+                    {{--select.appendChild(option);--}}
+
+
+                {{--}--}}
+
+
+
+            {{--}--}}
+
+        {{--});--}}
+    {{--}--}}
+
+
+
+{{--}--}}
+
+
+{{--</script>--}}
