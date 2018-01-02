@@ -595,8 +595,11 @@ $result=array();
 
         $photos = Photo::all();
 
+
+        $cities= City::all();
+
 //      return view('welcome',compact('hot','photos'));
-      return view('welcome',compact('hot','photos','Property1','articles'));
+      return view('welcome',compact('hot','photos','Property1','articles','cities'));
     }
 
 

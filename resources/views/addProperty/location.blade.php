@@ -115,47 +115,47 @@
         {{--});--}}
         {{--var e = document.getElementById("city");--}}
         {{--var value = e.options[e.selectedIndex].value;--}}
-     {{--if(value){--}}
+        {{--if(value){--}}
 
 
-         {{--removeOptions(document.getElementById("society"));--}}
-         {{--removeOptions(document.getElementById("Phase"));--}}
-         {{--removeOptions(document.getElementById("block"));--}}
-
-
-
+            {{--removeOptions(document.getElementById("society"));--}}
+            {{--removeOptions(document.getElementById("Phase"));--}}
+            {{--removeOptions(document.getElementById("block"));--}}
 
 
 
 
-         {{--$.ajax({--}}
 
 
 
-             {{--url:'/getsocieties/' + value,--}}
-             {{--type: "GET",--}}
-             {{--dataType: "json",--}}
-             {{--success: function(data){--}}
-
-
-                 {{--for (var i = 0; i < data.length; i++) {--}}
-
-
-                     {{--var option = document.createElement("option");--}}
-                     {{--option.text = data[i].name;--}}
-                     {{--option.value = data[i].id;--}}
-                     {{--var select = document.getElementById("society");--}}
-                     {{--select.append(option);--}}
-
-
-                 {{--}--}}
+            {{--$.ajax({--}}
 
 
 
-             {{--}--}}
+                {{--url:'/getsocieties/' + value,--}}
+                {{--type: "GET",--}}
+                {{--dataType: "json",--}}
+                {{--success: function(data){--}}
 
-         {{--});--}}
-     {{--}--}}
+
+                    {{--for (var i = 0; i < data.length; i++) {--}}
+
+
+                        {{--var option = document.createElement("option");--}}
+                        {{--option.text = data[i].name;--}}
+                        {{--option.value = data[i].id;--}}
+                        {{--var select = document.getElementById("society");--}}
+                        {{--select.append(option);--}}
+
+
+                    {{--}--}}
+
+
+
+                {{--}--}}
+
+            {{--});--}}
+        {{--}--}}
 
 
 
@@ -188,45 +188,45 @@
         {{--});--}}
 
 
-    {{--var s = document.getElementById("society");--}}
-    {{--var value1 = s.options[s.selectedIndex].value;--}}
+        {{--var s = document.getElementById("society");--}}
+        {{--var value1 = s.options[s.selectedIndex].value;--}}
 
 
 
-    {{--if(value1){--}}
-        {{--removeOptions(document.getElementById("Phase"));--}}
-        {{--removeOptions(document.getElementById("block"));--}}
+        {{--if(value1){--}}
+            {{--removeOptions(document.getElementById("Phase"));--}}
+            {{--removeOptions(document.getElementById("block"));--}}
 
-        {{--$.ajax({--}}
-
-
-
-            {{--url:'/getphases/' + value1,--}}
-            {{--type: "GET",--}}
-            {{--dataType: "json",--}}
-            {{--success: function(data){--}}
-
-                {{--for (var i = 0; i < data.length; i++) {--}}
+            {{--$.ajax({--}}
 
 
-                    {{--var option = document.createElement("option");--}}
-                    {{--option.text = data[i].name;--}}
-                    {{--option.value = data[i].id;--}}
-                    {{--var select = document.getElementById("Phase");--}}
-                    {{--select.appendChild(option);--}}
+
+                {{--url:'/getphases/' + value1,--}}
+                {{--type: "GET",--}}
+                {{--dataType: "json",--}}
+                {{--success: function(data){--}}
+
+                    {{--for (var i = 0; i < data.length; i++) {--}}
+
+
+                        {{--var option = document.createElement("option");--}}
+                        {{--option.text = data[i].name;--}}
+                        {{--option.value = data[i].id;--}}
+                        {{--var select = document.getElementById("Phase");--}}
+                        {{--select.appendChild(option);--}}
+
+
+                    {{--}--}}
+
 
 
                 {{--}--}}
 
+            {{--});--}}
+        {{--}--}}
 
 
-            {{--}--}}
-
-        {{--});--}}
     {{--}--}}
-
-
-{{--}--}}
 
 {{--</script>--}}
 
@@ -246,48 +246,48 @@
 
 
 
-    {{--var t = document.getElementById("Phase");--}}
-    {{--var value2 = t.options[t.selectedIndex].value;--}}
+        {{--var t = document.getElementById("Phase");--}}
+        {{--var value2 = t.options[t.selectedIndex].value;--}}
 
 
 
-    {{--if(value2){--}}
+        {{--if(value2){--}}
 
 
-        {{--removeOptions(document.getElementById("block"));--}}
+            {{--removeOptions(document.getElementById("block"));--}}
 
-        {{--$.ajax({--}}
-
-
-
-            {{--url:'/getblocks/' + value2,--}}
-            {{--type: "GET",--}}
-            {{--dataType: "json",--}}
-            {{--success: function(data){--}}
+            {{--$.ajax({--}}
 
 
-                {{--for (var i = 0; i < data.length; i++) {--}}
+
+                {{--url:'/getblocks/' + value2,--}}
+                {{--type: "GET",--}}
+                {{--dataType: "json",--}}
+                {{--success: function(data){--}}
 
 
-                    {{--var option = document.createElement("option");--}}
-                    {{--option.text = data[i].name;--}}
-                    {{--option.value = data[i].id;--}}
-                    {{--var select = document.getElementById("block");--}}
-                    {{--select.appendChild(option);--}}
+                    {{--for (var i = 0; i < data.length; i++) {--}}
+
+
+                        {{--var option = document.createElement("option");--}}
+                        {{--option.text = data[i].name;--}}
+                        {{--option.value = data[i].id;--}}
+                        {{--var select = document.getElementById("block");--}}
+                        {{--select.appendChild(option);--}}
+
+
+                    {{--}--}}
+
 
 
                 {{--}--}}
 
+            {{--});--}}
+        {{--}--}}
 
 
-            {{--}--}}
 
-        {{--});--}}
     {{--}--}}
-
-
-
-{{--}--}}
 
 
 {{--</script>--}}

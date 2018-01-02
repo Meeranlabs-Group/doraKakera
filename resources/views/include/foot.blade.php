@@ -204,7 +204,6 @@
 </script>
 
 
-
 <script type="text/javascript">
     function removeOptions(selectbox)
     {
@@ -407,10 +406,6 @@
 
 
 </script>
-
-
-
-
 
 
 
