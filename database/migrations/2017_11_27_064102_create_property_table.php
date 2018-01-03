@@ -24,6 +24,9 @@ class CreatePropertyTable extends Migration
 //            $table->integer('location') ->nullable();
 //            $table->string('city') ->nullable();
 
+
+
+
             $table->integer('city_id')->nullable();
             $table->integer('society_id')->nullable();
             $table->integer('phase_id')->nullable();
@@ -47,7 +50,7 @@ class CreatePropertyTable extends Migration
             $table->string('purpose') ->nullable();
             $table->tinyInteger('ad_status') ->default('1');
             $table->string('property_type') ->nullable();
-            $table->text('description') ->nullable();
+            $table->longText('description') ->nullable();
 
             $table->double('price') ->nullable();
 
@@ -57,7 +60,7 @@ class CreatePropertyTable extends Migration
 
             $table->string('position') ->nullable();
 
-            $table->text('body') ->nullable();
+            $table->longText('body') ->nullable();
             $table->timestamps();
 
         });

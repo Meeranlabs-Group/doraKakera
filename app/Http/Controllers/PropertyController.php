@@ -401,7 +401,7 @@ $result=array();
             $id = DB::table('property')->insertGetId(
                 [
                     'user_id'=> Auth::user()->getid(),'title'=> $request['title'], 'property_type'=>  $request['property_type'],'description' => $request['description'],
-                    'price'=>$request['price'],'city'=>$request['city'],'address'=>$request['address'],
+                    'price'=>$request['price'],'city'=>$request['city'],'society_id'=>$request['society'],'address'=>$request['address'],
                     'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],'unit_size'=>$request['unit_size']
                 ]
 
@@ -424,6 +424,15 @@ $result=array();
 
 
            $feature['property_id']=$id;
+
+
+
+
+
+
+
+
+
                           /*main feature*/
             $feature['built_in_year'] = $request['Built_in_Year'];
             $feature['view'] = $request['View'];
