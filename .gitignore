@@ -14,3 +14,4 @@ yarn-error.log
 *.png
 .env.example
 app/Blog.php
+app/Http/Controllers/PropertyController.php

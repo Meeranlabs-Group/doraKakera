@@ -146,6 +146,19 @@
                   </div>
               </div>
 
+              <div class="col-md-6">
+
+                  <ul class="checkboxes inline half list-unstyled">
+                      <li><label><input type="checkbox" name="1">Double Glazed Windows</label></li>
+                      <li><label><input type="checkbox" name="2">Central Air Conditioning</label></li>
+                      <li><label><input type="checkbox" name="3">Central Heating</label></li>
+                      <li><label><input type="checkbox" name="4">Waste Disposal</label></li>
+                      <li><label><input type="checkbox" name="5">Furnished</label></li>
+                      <li><label><input type="checkbox" name="6">Bathroom</label></li>
+
+                  </ul>
+                  <!--end checkboxes-->
+              </div>
 
           </div>
 

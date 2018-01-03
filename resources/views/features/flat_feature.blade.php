@@ -197,49 +197,20 @@
 
 
 
-                    {{--<li><label>View</label><input type="text" name="View"></li>--}}
-                {{--<li><label>Parking Spaces</label><input type="text" name="Parking_Space"></li>--}}
+
                 
                 <li><label><input type="checkbox" name="Lobby_in_Building">Lobby in Building</label></li>
                 <li><label><input type="checkbox" name="Double_Glazed_Windows">Double Glazed Windows</label></li>
                 <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
                 <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
-                
-                {{--<label>Flooring</label>--}}
-                {{--<select name="Flooring_type">--}}
-                {{--<option value="Flooring_Tiles">Tiles</option>--}}
-                {{--<option value="Flooring_Marble">Marble</option>--}}
-                {{--<option value="Flooring_Wooden">Wooden</option>--}}
-                {{--<option value="Flooring_Chip">Chip</option>--}}
-                {{--<option value="Flooring_Cement">Cement</option>--}}
-                {{--<option value="Flooring_Other">Other</option>--}}
-                {{--</select>--}}
-                
-                {{--<label>Electricity Backup</label>--}}
-                {{--<select name="Electricity_Backup_type">--}}
-                {{--<option value="Electricity_Backup_None">None</option>--}}
-                {{--<option value="Electricity_Backup_Generator">Generator</option>--}}
-                {{--<option value="Electricity_Backup_Ups">Ups</option>--}}
-                {{--<option value="Electricity_Backup_Solar">Solar</option>--}}
-                {{--<option value="Electricity_Backup_Other">Other</option>--}}
-                {{--</select>--}}
-                    {{--<div class="col-md-3">--}}
-                        {{--<div class="form-group width-80">--}}
-                            {{--<label>View</label>--}}
-                            {{--<input type="text" name="View">--}}
 
-                        {{--</div>--}}
-                    {{--</div>--}}
                 <li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>
                 
-                {{--<li><label><input type="text" name="Floor">Floor</label></li>--}}
-                {{--<li><label><input type="text" name="Total_Floors_in_Building">Total Floors in Building</label></li>--}}
-                {{--<li><label><input type="text" name="Number_of_Elevators_in_Building">Number of Elevators in Building</label></li>--}}
+
 
                 <li><label><input type="checkbox" name="Service_Elevators_in_Building">Service Elevators in Building</label></li>
                 
-                {{--<li><label><input type="text" name="Other_Main_Features">Other Main Features</label></li>--}}
-                
+
                 <li><label><input type="checkbox" name="Furnished">Furnished</label></li>
                       </ul>
                 </div>

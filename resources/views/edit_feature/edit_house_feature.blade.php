@@ -177,6 +177,52 @@
                             </div>
 
 
+                            <ul>
+
+
+
+
+
+
+
+
+
+
+                                @if($feature[0]->double_glazed_window)
+                                    <li><label><input type="checkbox" checked name="Double_Glazed_Windows">Double Glazed Windows</label></li>
+                                @else
+                                    <li><label><input type="checkbox" name="Double_Glazed_Windows">Double Glazed Windows</label></li>
+                                @endif
+
+                                @if($feature[0]->central_air_conditioning)
+                                    <li><label><input type="checkbox" checked name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+                                @else
+                                    <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+
+                                @endif
+                                @if($feature[0]->central_heating)
+                                    <li><label><input type="checkbox" checked name="Central_Heating">Central Heating</label></li>
+                                @else
+                                    <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
+
+                                @endif
+
+
+                                @if($feature[0]->waste_disposal)
+                                    <li><label><input type="checkbox" checked name="Waste_Disposal">Waste Disposal</label></li>
+                                @else
+                                    <li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>
+                                @endif
+
+
+
+                                @if($feature[0]->furnished)
+                                    <li><label><input type="checkbox" checked name="Furnished">Furnished</label></li>
+                                @else
+                                    <li><label><input type="checkbox" name="Furnished">Furnished</label></li>
+                                @endif
+                            </ul>
+
                         </div>
 
                     </div>

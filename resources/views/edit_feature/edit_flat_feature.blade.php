@@ -255,7 +255,7 @@
                             {{--<li><label><input type="text" name="Total_Floors_in_Building">Total Floors in Building</label></li>--}}
                             {{--<li><label><input type="text" name="Number_of_Elevators_in_Building">Number of Elevators in Building</label></li>--}}
 
-                            <li><label><input type="checkbox" name="Service_Elevators_in_Building">Service Elevators in Building</label></li>
+
                             @if($feature[0]->service_elevators_in_building)
                                 <li><label><input type="checkbox" checked name="Service_Elevators_in_Building">Service Elevators in Building</label></li>
                             @else
