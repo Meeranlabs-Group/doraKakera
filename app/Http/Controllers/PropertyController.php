@@ -10,11 +10,13 @@ use App\Phase;
 use App\Photo;
 use App\Property;
 use App\Society;
+use App\User;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\DB;
 use App\feature;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 class PropertyController extends Controller
 {
@@ -335,7 +337,8 @@ $result=array();
 
 
         Property::where('id','=',$property_id)->update(['title'=> $request['title'],'property_type'=>$request['property_type'],
-            'description' => $request['description'], 'price' =>$request['price'], 'city'=>$request['city'],
+            'description' => $request['description'], 'price' =>$request['price'], 'city_id'=>$request['city'],'society_id'=>$request['society'],
+            'phase_id'=>$request['Phase'],'block_id'=>$request['block'],
             'address'=>$request['address'], 'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],
             'unit_size'=>$request['unit_size'] ]);
 
@@ -401,8 +404,10 @@ $result=array();
             $id = DB::table('property')->insertGetId(
                 [
                     'user_id'=> Auth::user()->getid(),'title'=> $request['title'], 'property_type'=>  $request['property_type'],'description' => $request['description'],
-                    'price'=>$request['price'],'city'=>$request['city'],'society_id'=>$request['society'],'address'=>$request['address'],
-                    'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],'unit_size'=>$request['unit_size']
+                    'price'=>$request['price'],'city_id'=>$request['city'],'society_id'=>$request['society'],
+                    'phase_id'=>$request['Phase'],'block_id'=>$request['block'],'address'=>$request['address'],
+                    'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],'unit_size'=>$request['unit_size'],'created_at'=>Carbon::now()
+
                 ]
 
             );
@@ -598,7 +603,7 @@ $result=array();
 
 
         $articles= Blog::all();
-        $Property1 = DB::table('Property')->select('city',DB::raw('count(*) as total'))->groupBy('city')->orderBy('city')->get();
+        $Property1 = DB::table('Property')->select('city_id',DB::raw('count(*) as total'))->groupBy('city_id')->orderBy('city_id')->get();
 
         $hot=Property::where('superhot','=',1)->get();
 
@@ -615,14 +620,23 @@ $result=array();
     public function myproperties(){
 
         $id=Auth::user()->id;
-        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->get();
+       //$data=Property::select('property.*')->leftjoin('feature','property.id','=','feature.property_id')->get();
+        //$data= Property::find(1)->user;
+
         $photos = Photo::all();
 
             $result=$this->usermenu();
 
+// $data=Property::select('property.*')->join('city', 'city.id', '=', 'property.city_id')->join('society','society.id','=','property.society_id')
+//     ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->get();
+//        //$data= Property::find(1)->user;
+$data=Property::select('property.*','feature.*','city.*','society.*','phase.*','block.*')->leftjoin('feature','property.id','=','feature.property_id')->
+join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+    ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->get('property.*');
 
 
-       return view('user.property.myproperties',compact('data','photos','result'));
+
+      return view('user.property.myproperties',compact('data','photos','result'));
 
     }
 

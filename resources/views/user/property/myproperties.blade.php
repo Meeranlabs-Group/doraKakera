@@ -61,10 +61,10 @@
                             </div>
                             <div class="info">
                                 <a href="propertydetail/{{ $property->id }}"><h2>{{$property->title}}</h2></a>
-                                <figure class="location">{{$property->city}}</figure>
+                                <figure class="location">{{$property->block_name }}</figure>
                                 <figure class="label label-info">{{$property->property_type}}</figure>
                                 <div class="meta">
-                                    <span><i class="fa fa-bed"></i>365</span>
+                                    <span><i class="fa fa-bed"></i>{{$property->number_of_bedrooms}}</span>
                                     <span class="price-info">Price: <span class="price">{{$property->price}}</span></span>
                                 </div>
                                 <!--end meta-->
