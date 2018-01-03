@@ -131,15 +131,6 @@
 
             <label>Total Number of Floors</label>
 
-                  {{--<div class="input-number" >--}}
-                      {{--<div class="change-button plus">--}}
-                          {{--<i class="fa fa-caret-up"></i>--}}
-                      {{--</div>--}}
-                      {{--<div class="change-button minus">--}}
-                          {{--<i class="fa fa-caret-down"></i>--}}
-                      {{--</div>--}}
-
-
                       <input type="number" name="Total_Number_of_Floors" placeholder="1" min="1">
 
                   {{--</div>--}}
@@ -148,14 +139,12 @@
 
               <div class="col-md-6">
 
-                  <ul class="checkboxes inline half list-unstyled">
-                      <li><label><input type="checkbox" name="1">Double Glazed Windows</label></li>
-                      <li><label><input type="checkbox" name="2">Central Air Conditioning</label></li>
-                      <li><label><input type="checkbox" name="3">Central Heating</label></li>
-                      <li><label><input type="checkbox" name="4">Waste Disposal</label></li>
-                      <li><label><input type="checkbox" name="5">Furnished</label></li>
-                      <li><label><input type="checkbox" name="6">Bathroom</label></li>
-
+                  <ul class="checkboxes inline half list-unstyled" >
+                      <li><label><input type="checkbox" name="Double_Glazed_Windows">Double Glazed Windows</label></li>
+                      <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+                      <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
+                      <li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>
+                      <li><label><input type="checkbox" name="Furnished">Furnished</label></li>
                   </ul>
                   <!--end checkboxes-->
               </div>
@@ -170,7 +159,7 @@
             <h3> Buisness and Communication</h3>
             <div  id="b&c">
             <ul class="checkboxes inline half list-unstyled " >
-                
+
                 <li><label><input type="checkbox" name="Broadband_Internet_Access">Broadband Internet Access</label></li>
                 <li><label><input type="checkbox" name="Satellite_or_Cable_TV_Ready">Satellite or Cable TV Ready</label></li>
                 <li><label><input type="checkbox" name="Intercom">Intercom</label></li>
@@ -194,7 +183,7 @@
             <h3>Nearby Locations </h3>
             <div  id="N&L">
             <ul class="checkboxes inline half list-unstyled">
-                
+
                <li><label><input type="checkbox" name="Nearby_Schools">Nearby Schools</label></li>
                 <li><label><input type="checkbox" name="Nearby_Hospitals">Nearby Hospitals</label></li>
                 <li><label><input type="checkbox" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>
@@ -222,20 +211,20 @@
             <h3>Rooms</h3>
             <div  id="R">
             <ul class="checkboxes inline half list-unstyled">
-               
+
 
                 <li><label><input type="checkbox" name="Drawing_Room">Drawing Room</label></li>
                 <li><label><input type="checkbox" name="Dining_Room">Dining Room</label></li>
 
 
-                
+
                 <li><label><input type="checkbox" name="Study_Room">Study Room</label></li>
                 <li><label><input type="checkbox" name="Prayer_Room">Prayer Room</label></li>
                 <li><label><input type="checkbox" name="Powder_Room">Powder Room</label></li>
                 <li><label><input type="checkbox" name="Gym_Room">Gym Room</label></li>
-                
 
-                
+
+
                 <li><label><input type="checkbox" name="Steaming_Room">Steaming Room</label></li>
                 <li><label><input type="checkbox" name="Lounge_or_Sitting_Room">Lounge or Sitting Room</label></li>
                 <li><label><input type="checkbox" name="Laundry_Room">Laundry Room</label></li>
@@ -243,13 +232,7 @@
                 <li><label>Other Rooms</label></li>
                 <li>
                     <div class="form-group width-60">
-                    {{--<div class="input-number">--}}
-                    {{--<div class="change-button plus">--}}
-                        {{--<i class="fa fa-caret-up"></i>--}}
-                    {{--</div>--}}
-                    {{--<div class="change-button minus">--}}
-                        {{--<i class="fa fa-caret-down"></i>--}}
-                    {{--</div>--}}
+
                     <input type="number" name="Other_Rooms">
                 </div>
                     {{--</div>--}}
