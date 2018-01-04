@@ -21,7 +21,7 @@
                 <div class="description">
                     <a href="propertydetail/{{ $data->id }}"><h3> {{ $data->title }} </h3></a>
                     <figure>{{ $data->city_name }}</figure>
-                    <p>{{ $data->description }}</p>
+                    <p>  {{ str_limit($data->description , $limit = 150, $end = '...') }}  </p>
                     <a href="propertydetail/{{ $data->id }}" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
                 </div>
             </div>
