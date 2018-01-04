@@ -600,21 +600,14 @@ $result=array();
     public function mainPage(){ //showing cities and their count of properties and Blog Title
 
 
-     $articles= Blog::all();
-
-
-
-
-
-        $Property1 =DB::table('property')->select(DB::raw('count(*) as total'),'property.city_id','city.city_name')->join('city','property.city_id','=','city.id')
-            ->groupBy('property.city_id','city.city_name')->get();
-
+        $articles= Blog::all();
+        $Property1 = DB::table('Property')->select('city_id',DB::raw('count(*) as total'))->groupBy('city_id')->orderBy('city_id')->get();
 
         $hot=Property::where('superhot','=',1)->get();
 
         $photos = Photo::all();
 
-print_r($Property1);
+
         $cities= City::all();
 
 //      return view('welcome',compact('hot','photos'));
