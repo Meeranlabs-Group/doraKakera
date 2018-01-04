@@ -603,17 +603,25 @@ $result=array();
 
 
         $articles= Blog::all();
-        $Property1 = DB::table('Property')->select('city_id',DB::raw('count(*) as total'))->groupBy('city_id')->orderBy('city_id')->get();
+      $Property1 = Property::leftjoin('city','city.id','=','property.city_id')->groupBy('city.city_name')->get();
 
-        $hot=Property::where('superhot','=',1)->get();
+
+
+
+      print_r($Property1);
+
+        $hot=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->leftjoin('feature','property.id','=','feature.property_id')->
+        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+            ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->where('superhot','=',1)->get('property.*');
+
+        //$hot=Property::where('superhot','=',1)->get();
 
         $photos = Photo::all();
 
-
         $cities= City::all();
-
+//print_r($hot);
 //      return view('welcome',compact('hot','photos'));
-      return view('welcome',compact('hot','photos','Property1','articles','cities'));
+    //return view('welcome',compact('hot','photos','Property1','articles','cities'));
     }
 
 
