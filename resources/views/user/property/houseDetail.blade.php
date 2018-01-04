@@ -81,6 +81,20 @@
                                 <h2>Facilities</h2>
                                 <ul class="bullets half">
 
+
+                                    @if($data[0]->double_glazed_window=="")
+                                       {{--// <li><label><input type="checkbox" checked disabled name="Double_Glazed_Windows">Double Glazed Windows</label></li>--}}
+                                    @else
+                                            <li><label><input type="checkbox" checked disabled name="Double_Glazed_Windows">Double Glazed Windows</label></li>
+                                    @endif
+
+
+                                    @if($data[0]->central_air_conditioning)
+                                        <li><label><input type="checkbox" checked disabled name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+                                    @endif
+
+
+
                                     <li>Sauna</li>
                                     <li>Fireplace or fire pit</li>
                                     <li>Outdoor Kitchen</li>

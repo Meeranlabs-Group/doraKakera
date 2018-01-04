@@ -42,7 +42,7 @@
                     <div class="title">
                         <div class="left">
                             <h1>{{$data[0]->title}}</h1>
-                            <h3><a href="#">{{$data[0]->block_name}}</a> (63 properties)</h3>
+                            <h3><a href="#">{{$data[0]->block_name}}, {{$data[0]->phase_name}}, {{$data[0]->society_name}}, {{$data[0]->city_name}}</a> (63 properties)</h3>
                         </div>
 
                         <div class="right">

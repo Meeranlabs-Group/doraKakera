@@ -270,14 +270,6 @@
                     </div>
 
 
-
-                    <!--end col-md-4-->
-
-
-
-
-
-
                     <div class="col-md-6">
                         <h3>Nearby Locations </h3>
                         <div  id="N&L">
