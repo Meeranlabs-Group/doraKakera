@@ -38,6 +38,13 @@
                     </thead>
                     <tbody>
 
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe
+                                class="embed-responsive-item"
+                                src="https://www.vieweet.com/iframe/PLXSQBK?ui=iframe" width="300"
+                                height="150"></iframe></div>
+
+
                     @foreach($articles as $article)
 
                         <tr class="my-item">
