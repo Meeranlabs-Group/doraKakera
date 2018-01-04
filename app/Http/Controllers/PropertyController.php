@@ -603,7 +603,7 @@ $result=array();
      $articles= Blog::all();
 
 
-
+ 
 
 
         $Property1 =DB::table('property')->select(DB::raw('count(*) as total'),'property.city_id','city.city_name')->join('city','property.city_id','=','city.id')
