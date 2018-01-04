@@ -614,7 +614,7 @@ $result=array();
 
         $photos = Photo::all();
 
-print_r($Property1);
+//print_r($Property1);
         $cities= City::all();
 
 //      return view('welcome',compact('hot','photos'));
