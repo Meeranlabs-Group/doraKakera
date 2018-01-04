@@ -587,41 +587,31 @@ $result=array();
     }
 
     public function show_all(){
-
-
         $cites=City::all();
-        $societies=Society::all();
-        $phases=Phase::all();
-        $blocks=Block::all();
-        $property= Property::where('ad_status','=','1')->paginate(8);
         $photos = Photo::all();
-
-       return view('properties',compact('property','photos','cites','societies','phases','blocks'));
+        $property=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->leftjoin('feature','property.id','=','feature.property_id')->
+        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+            ->join('phase','phase.id','=','property.phase_id')
+            ->join('block','block.id','=','property.block_id')
+            ->where('ad_status','=','1')->paginate(8);
+        return view('properties',compact('property','photos','cites'));
     }
 
     public function mainPage(){ //showing cities and their count of properties and Blog Title
 
 
         $articles= Blog::all();
-      $Property1 = Property::leftjoin('city','city.id','=','property.city_id')->groupBy('city.city_name')->get();
+        $Property1 = DB::table('Property')->select('city_id',DB::raw('count(*) as total'))->groupBy('city_id')->orderBy('city_id')->get();
 
-
-
-
-      print_r($Property1);
-
-        $hot=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->leftjoin('feature','property.id','=','feature.property_id')->
-        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
-            ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->where('superhot','=',1)->get('property.*');
-
-        //$hot=Property::where('superhot','=',1)->get();
+        $hot=Property::where('superhot','=',1)->get();
 
         $photos = Photo::all();
 
+
         $cities= City::all();
-//print_r($hot);
+
 //      return view('welcome',compact('hot','photos'));
-    //return view('welcome',compact('hot','photos','Property1','articles','cities'));
+        return view('welcome',compact('hot','photos','Property1','articles','cities'));
     }
 
 
@@ -652,14 +642,16 @@ join('city','city.id','=','property.city_id')->join('society','society.id','=','
 
 
     public function propertydetail($id){
-
-
         $cites=City::all();
+
         $data = Property::find($id)->get();
+        $data=Property::where('property.id','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
+        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+            ->join('phase','phase.id','=','property.phase_id')
+            ->join('block','block.id','=','property.block_id')->get();
+
 
         $photos = Photo::where("property_id","$id")->get();
-
-
         return view('user.property.propertyDetail',compact('data','photos','cites'));
     }
 
