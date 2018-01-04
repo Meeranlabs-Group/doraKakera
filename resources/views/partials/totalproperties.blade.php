@@ -24,7 +24,7 @@
 
             {{--<li><a href="#"> {{ $property[0][0]->city }} <span> {{ $property[0][1]->count}} </span></a></li>--}}
 
-                <li><a href="/properties/{{ $property->city }}">{{ $property->city }}<span>{{ $property->total }}</span></a></li>
+                <li><a href="/properties/{{ $property->city_id }}">{{ $property->city_name }}<span>{{ $property->total }}</span></a></li>
 
             @endforeach
 
