@@ -47,7 +47,7 @@
 
 
             <figure class="location">{{ $data->address }}</figure>
-            <figure class="location">{{ $data->city_name }}</figure>
+            <figure class="location">{{ $data->block_name }}, {{ $data->phase_name }}, {{ $data->society_name }}, {{ $data->city_name }}</figure>
             <figure class="label label-info">{{ $data->property_type }}</figure>
             <figure class="label label-Available">Available</figure>
             <figure class="label label-InProcess">In-Process</figure>
@@ -56,7 +56,7 @@
             <p>
                 {{ $data->description }}
             </p>
-            <div class="price-info">Price<span class="price">PKR- {{ $data->price }}/-</span>
+            <div class="price-info">Price:<span class="price">PKR- {{ $data->price }}/-</span>
                 <span class="price call"><i class="fa fa-phone"></i> 03224531314</span></div>
 
             <a href="/propertydetail/{{ $data->id }}"  class="btn btn-rounded btn-small btn-default btn-framed" >View detail</a>
