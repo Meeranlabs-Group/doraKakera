@@ -651,15 +651,28 @@ join('city','city.id','=','property.city_id')->join('society','society.id','=','
     public function propertydetail($id){
         $cites=City::all();
 
+
+
         $data = Property::find($id)->get();
         $data=Property::where('property.id','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
         join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
             ->join('phase','phase.id','=','property.phase_id')
             ->join('block','block.id','=','property.block_id')->get();
 
-
         $photos = Photo::where("property_id","$id")->get();
-        return view('user.property.propertyDetail',compact('data','photos','cites'));
+
+
+        $opt=$data[0]->property_type;
+
+        if ($opt == "Houses"){
+              return view('user.property.houseDetail',compact('data','photos','cites'));
+        }
+
+        if ($opt == "Flates"){
+              return view('user.property.flateDetail',compact('data','photos','cites'));
+        }
+
+
     }
 
 

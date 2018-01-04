@@ -34,17 +34,21 @@
     <!--end image-->
     <div class="description">
         <div class="meta">
-            <span><i class="fa fa-bath"></i>8.9</span>
-
-            <i class="fa fa-bath" aria-hidden="true">123</i>
-            <span><i class="fa fa-bed"></i>365</span>
+            <span><i class="fa fa-bed"></i>{{ $data->number_of_bedrooms }}</span>
+            <span><i class="fa fa-bath"></i>{{ $data->number_of_bathrooms }}</span>
         </div>
         <!--end meta-->
         <div class="info">
+
+
+
             <a href=" /propertydetail/{{ $data->id }} " ><h3> {{ $data->title }} </h3></a>
+
+
+
             <figure class="location">{{ $data->address }}</figure>
             <figure class="location">{{ $data->city_name }}</figure>
-            <figure class="label label-info">House</figure>
+            <figure class="label label-info">{{ $data->property_type }}</figure>
             <figure class="label label-Available">Available</figure>
             <figure class="label label-InProcess">In-Process</figure>
             <figure class="label label-danger">Sold</figure>
@@ -52,7 +56,8 @@
             <p>
                 {{ $data->description }}
             </p>
-            <div class="price-info">Price<span class="price">PKR-{{ $data->price }}</span><span class="price call"><i class="fa fa-phone"></i> 03224531314</span></div>
+            <div class="price-info">Price<span class="price">PKR- {{ $data->price }}/-</span>
+                <span class="price call"><i class="fa fa-phone"></i> 03224531314</span></div>
 
             <a href="/propertydetail/{{ $data->id }}"  class="btn btn-rounded btn-small btn-default btn-framed" >View detail</a>
         </div>
