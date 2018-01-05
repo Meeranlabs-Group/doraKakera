@@ -100,8 +100,15 @@
                                         <li>Flooring Type <strong>{{$data[0]->flooring_type}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->double_glazed_window!="NULL")
-                                        <label><input type="checkbox" checked disabled >Double Glazed Windows</label>
+                                    @if($data[0]->Public_Parking!="NULL")
+                                        <label><input type="checkbox" checked disabled >Public Parking</label>
+                                    @endif
+                                    @if($data[0]->Underground_Parking!="NULL")
+                                        <label><input type="checkbox" checked disabled >Underground Parking</label>
+                                    @endif
+
+                                    @if($data[0]->Lobby_in_Building!="NULL")
+                                        <label><input type="checkbox" checked disabled >Lobby in Building</label>
                                     @endif
 
 
@@ -114,13 +121,17 @@
                                         <label><input type="checkbox" checked disabled>Central Heating</label>
                                     @endif
 
+                                    @if($data[0]->Service_Elevators_in_Building!="NULL")
+                                        <label><input type="checkbox" checked disabled>Service Elevators in Building</label>
+                                    @endif
+
 
                                     @if($data[0]->waste_disposal!="")
                                         <label><input type="checkbox" checked disabled >Waste Disposal</label>
                                     @endif
 
-                                        @if($data[0]->furnished!="NULL")
-                                            <label><input type="checkbox" checked disabled name="Central_Air_Conditioning">Furnished</label>
+                                        @if($data[0]->Elevator_or_Lift!="NULL")
+                                            <label><input type="checkbox" checked disabled >Elevator_or_Lift</label>
                                         @endif
 
                     <h3>Business and Communication</h3>
@@ -132,10 +143,23 @@
                                         <label><input type="checkbox" checked disabled >Satellite or Cable TV Ready</label>
                                     @endif
 
+                                    @if($data[0]->business_center_or_media_room_building!="NULL")
+                                        <label><input type="checkbox" checked disabled >Business Center or Media Room</label>
+                                    @endif
+
+                                    @if($data[0]->confrence_room_in_building!="NULL")
+                                        <label><input type="checkbox" checked disabled >Conference Room in Building</label>
+                                    @endif
+
+
                                     @if($data[0]->intercom!="NULL")
                                         <label><input type="checkbox" checked disabled >Intercom</label>
                                     @endif
 
+
+                                    @if($data[0]->atm_and_machine_in_building!="NULL")
+                                        <label><input type="checkbox" checked disabled >ATM Credit Card Machines in Building</label>
+                                    @endif
 
                                     @if($data[0]->other_business_and_communication!="NULL")
                                         <li>Other Business and Communication<strong>{{$data[0]->other_business_and_communication}}</strong></li>
@@ -168,50 +192,6 @@
                                     @endif
 
 
-                      <h3>Rooms</h3>
-                                    @if($data[0]->drawing_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Drawing Room</label>
-                                    @endif
-
-                                    @if($data[0]->dining_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Dining Room</label>
-                                    @endif
-
-                                    @if($data[0]->study_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Study Room</label>
-                                    @endif
-
-                                    @if($data[0]->prayer_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Prayer Room</label>
-                                    @endif
-
-                                    @if($data[0]->powder_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Powder Room</label>
-                                    @endif
-
-                                    @if($data[0]->gym_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Gym Room</label>
-                                    @endif
-
-                                    @if($data[0]->steaming_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Steaming Room</label>
-                                    @endif
-
-
-                                    @if($data[0]->laundry_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Laundry Room</label>
-                                    @endif
-
-
-
-                                    @if($data[0]->lounge_or_sitting_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Lounge or Sitting Room</label>
-                                    @endif
-
-                                    <textarea disabled>Other Rooms :{{ $data[0]->other_room }}
-                                        Number of Store rooms: {{ $data[0]->number_of_store_rooms }}
-                                        Number of Servant Quarters : {{ $data[0]->number_of_servant_quaters }}
-                                    </textarea>
 
                        <h3>Healthcare Recreational</h3>
 
@@ -243,6 +223,12 @@
                                     @if($data[0]->security_staff!="NULL")
                                         <label><input type="checkbox" checked disabled >Security Staff</label>
                                     @endif
+
+                                    @if($data[0]->laundry_or_dry_cleaning_facilities!="NULL")
+                                        <label><input type="checkbox" checked disabled >Laundry or Dry Cleaning Facility</label>
+                                    @endif
+
+
                                     @if($data[0]->facilities_for_disabled!="NULL")
                                         <label><input type="checkbox" checked disabled >Facilities for Disabled</label>
                                     @endif
@@ -251,7 +237,9 @@
                                     @if($data[0]->other_facilities!="")
                                         <li>Other Facilities<strong>{{$data[0]->other_facilities}}</strong></li>
                                     @endif
-
+                                    @if($data[0]->pet_policies!="")
+                                        <li>Pet Policies <strong>{{$data[0]->pet_policies}}</strong></li>
+                                    @endif
 
 
 
