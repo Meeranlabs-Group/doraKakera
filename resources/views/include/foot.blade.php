@@ -29,6 +29,9 @@
 <script src={{url("assets/js/prism.js")}}></script>
 <script src={{url("assets/js/jquery.mCustomScrollbar.min.js")}}></script>
 <script src={{url("assets/js/jquery.newsTicker.js")}}></script>
+<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
 
 <script>
     $('.owl-carousel').owlCarousel({
