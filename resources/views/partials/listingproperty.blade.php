@@ -1,9 +1,8 @@
-<div class="item list" data-map-latitude="48.87" data-map-longitude="2.29" data-id="1">
+<div class="item list" >
     <div class="image-wrapper">
-        <div class="mark-circle description" data-toggle="tooltip" data-placement="right" title="scelerisque ut est" {{ $data->location }} ><i class="fa fa-question"></i></div>
-        <div class="mark-circle map" data-toggle="tooltip" data-placement="right" title="Show on map"><i class="fa fa-map-marker"></i></div>
 
-        <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i>
+
+        <div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Like This Property"><i class="fa fa-thumbs-up"></i>
         </div>
 
 
