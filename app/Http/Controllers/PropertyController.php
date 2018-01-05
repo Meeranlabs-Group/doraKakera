@@ -643,7 +643,7 @@ $result=array();
 //        //$data= Property::find(1)->user;
 $data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->leftjoin('feature','property.id','=','feature.property_id')->
 join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
-    ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->paginate(8);
+    ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->paginate(10);
 
 
 

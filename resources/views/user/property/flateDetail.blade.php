@@ -53,7 +53,14 @@
                     <!--end title-->
                     <section id="gallery">
                         <div class="gallery-detail">
-                            <div class="ribbon"><div class="offer-number">{{$data[0]->purpose}}</div></div>
+                            <div class="ribbon">
+                                <div class="offer-number">{{$data[0]->purpose}}
+                                    <span style="color:blue;">PKR-{{$data[0]->price}}/-</span>
+
+                                </div>
+
+                            </div>
+
 
                             <div class="one-item-carousel">
 
