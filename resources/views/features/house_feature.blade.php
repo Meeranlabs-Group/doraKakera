@@ -156,7 +156,7 @@
 
 
         <div class="col-md-6">
-            <h3> Buisness and Communication</h3>
+            <h3> Business and Communication</h3>
             <div  id="b&c">
             <ul class="checkboxes inline half list-unstyled " >
 
@@ -222,6 +222,7 @@
                 <li><label><input type="checkbox" name="Prayer_Room">Prayer Room</label></li>
                 <li><label><input type="checkbox" name="Powder_Room">Powder Room</label></li>
                 <li><label><input type="checkbox" name="Gym_Room">Gym Room</label></li>
+
 
 
 
