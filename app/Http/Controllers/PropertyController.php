@@ -414,7 +414,7 @@ $result=array();
                     $photo=new Photo;
                     $name = $files[$i]->getClientOriginalName();
 
-                    $name->resize('1200','800');
+                   // $name->resize('1200','800');
 
 
                     if($i==1){
