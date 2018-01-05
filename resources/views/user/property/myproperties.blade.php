@@ -104,7 +104,7 @@
 
         <div class="center">
             <div class="center">
-                {{$property->render()}}
+                {{$data->render()}}
             </div>
             <!-- end pagination-->
         </div>
