@@ -102,9 +102,11 @@
                             @include('addProperty.main-information')
                             @include('addProperty.location')
                             @include('addProperty.gallery')
+<diV class="center">
+                            <a href="#demo" data-toggle="collapse" class="btn btn-danger">Add Features</a>
+</diV>
 
-
-
+<div id="demo" class="collapse">
      <section id="facilities">
 
             <div id="view">
@@ -112,6 +114,7 @@
 
             </div>
       </section>
+</div>
 
 
                             <hr>
@@ -120,9 +123,7 @@
                                     <button type="submit" id="button" class="btn btn-primary btn-rounded btn-xlarge">Submit Now</button>
                                 </div>
                             </section>
-                            <section>
-                                <div class="center"><a href="#" class="btn btn-framed btn-default btn-rounded">Preview</a></div>
-                            </section>
+
 
 
 
