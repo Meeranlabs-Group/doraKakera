@@ -36,16 +36,10 @@
                                 <a href="#" class="tag article">Trend</a>
                             </div>
                         </figure>
-                        <p>
+                        <p class="text-justify">
                             {{ $article->description }}
 
-                            Phasellus metus ipsum, sollicitudin lacinia turpis in, pellentesque pulvinar diam.
-                            Cras ultricies augue sapien, aliquam hendrerit mi suscipit at. Suspendisse vulputate felis eget
-                            felis convallis fermentum et eu nulla. Donec sagittis sit amet erat non eleifend. Mauris at convallis
-                            magna. Quisque pellentesque id mauris vitae placerat. Mauris facilisis odio nec metus cursus commodo.
-                            Integer vel libero nunc. Donec ac lorem commodo, laoreet elit eget, tempus ante. Quisque eu nunc blandit
-                            erat rutrum feugiat ac sed arcu. In nisi risus, molestie a sem adipiscing, porta volutpat velit.
-                            Pellentesque nec felis sit amet nunc porta tincidunt sit amet et justo.
+
                         </p>
                         <a href="/MarketDetail/{{$article->id}}" class="btn btn-rounded btn-default btn-framed btn-small">Read More</a>
                     </article><!-- /.blog-post -->

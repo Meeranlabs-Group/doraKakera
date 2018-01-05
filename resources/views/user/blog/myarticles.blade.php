@@ -38,11 +38,11 @@
                     </thead>
                     <tbody>
 
-                    <div class="embed-responsive embed-responsive-16by9">
-                        <iframe
-                                class="embed-responsive-item"
-                                src="https://www.vieweet.com/iframe/PLXSQBK?ui=iframe" width="300"
-                                height="150"></iframe></div>
+                    {{--<div class="embed-responsive embed-responsive-16by9">--}}
+                        {{--<iframe--}}
+                                {{--class="embed-responsive-item"--}}
+                                {{--src="https://www.vieweet.com/iframe/PLXSQBK?ui=iframe" width="300"--}}
+                                {{--height="150"></iframe></div>--}}
 
 
                     @foreach($articles as $article)
@@ -65,7 +65,7 @@
                                     {{--propertydetail/{{ $property->id }}--}}
                                     <a href=""><h2>{{ $article->title  }}</h2></a>
 
-                                    <figure class="location">{{ $article->description  }}</figure>
+                                    <figure class="location">{{ str_limit($article->description , $limit = 50, $end = '...') }} </figure>
                                     <figure class="label label-info">Type</figure>
                                     <div class="meta">
                                         <span><i class="fa fa-bed"></i>365</span>
@@ -112,20 +112,8 @@
 
 
         <div class="center">
-            <ul class="pagination">
-                <li class="prev">
-                    <a href="#"><i class="arrow_left"></i></a>
-                </li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li class="next">
-                    <a href="#"><i class="arrow_right"></i></a>
-                </li>
-            </ul>
-            <!-- end pagination-->
+        {{ $articles->render() }}
+        <!-- end pagination-->
         </div>
         <!--end main-content-->
     </div>

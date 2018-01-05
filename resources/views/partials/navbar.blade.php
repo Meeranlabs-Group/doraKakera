@@ -112,11 +112,11 @@
                             </li>
                             <li>
                                 <a href="/MarketAnalysis" class="has-child">Market Analysis</a>
-                                <ul class="child-nav">
-                                    <li><a href="MarketDetails.php">Transfer Charges</a></li>
-                                    <li><a href="MarketDetails.php">News</a></li>
-                                    <li><a href="">Property Evaluator</a></li>
-                                </ul>
+                                {{--<ul class="child-nav">--}}
+                                    {{--<li><a href="MarketDetails.php">Transfer Charges</a></li>--}}
+                                    {{--<li><a href="MarketDetails.php">News</a></li>--}}
+                                    {{--<li><a href="">Property Evaluator</a></li>--}}
+                                {{--</ul>--}}
 
 
                             </li>

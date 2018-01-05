@@ -45,8 +45,7 @@ class BlogController extends Controller
         public function approvedArticles(){
 
              $id=Auth::user()->getid();
-             $articles= Blog::where('user_id','=',$id)->where('status','=',1)->get();
-             $result=$this->usermenu();
+             $articles= Blog::where('user_id','=',$id)->where('status','=',1)->paginate(4);
              return view('user.blog.myarticles',compact('articles','result'));
          }
 
@@ -54,7 +53,7 @@ class BlogController extends Controller
         public function disapprovedArticles(){
 
                 $id=Auth::user()->getid();
-                $articles= Blog::where('user_id','=',$id)->where('status','=',0)->get();
+                $articles= Blog::where('user_id','=',$id)->where('status','=',0)->paginate(4);
                  $result=$this->usermenu();
                 return view('user.blog.myarticles',compact('articles','result'));
 
@@ -63,7 +62,7 @@ class BlogController extends Controller
         public function showAll(){  // user articles
 
             $id=Auth::user()->getid();
-            $articles= Blog::where('user_id','=',$id)->get();
+            $articles= Blog::where('user_id','=',$id)->paginate(4);
             $result=$this->usermenu();
 
            return view('user.blog.myarticles',compact('articles','result'));

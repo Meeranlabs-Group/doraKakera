@@ -641,7 +641,7 @@ $result=array();
 // $data=Property::select('property.*')->join('city', 'city.id', '=', 'property.city_id')->join('society','society.id','=','property.society_id')
 //     ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->get();
 //        //$data= Property::find(1)->user;
-$data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->leftjoin('feature','property.id','=','feature.property_id')->
+$data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.user_id','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
 join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
     ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->paginate(10);
 
