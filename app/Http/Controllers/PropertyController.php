@@ -415,6 +415,8 @@ $result=array();
                 for($i=0;$i<count($files);$i++) {
                     $photo=new Photo;
                     $name = $files[$i]->getClientOriginalName();
+
+                    $name->resize('1200','800');
                     $name=preg_replace("/[^a-zA-Z0-9\s]/","",$name);
 
                     $path = $files[$i]->move($request['title'], $name);
@@ -610,7 +612,8 @@ $result=array();
             ->groupBy('property.city_id','city.city_name')->get();
 
 
-        $hot=Property::where('superhot','=',1)->get();
+        $hot=Property::select('city.*','society.*','phase.*','block.*','property.*')->where('superhot','=',1)->leftjoin('feature','property.id','=','feature.property_id')->join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+            ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->get();
 
         $photos = Photo::all();
 
