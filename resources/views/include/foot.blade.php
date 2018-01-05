@@ -6,7 +6,7 @@
 
 <script type="text/javascript" src={{ url("assets/js/jquery-2.2.1.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/jquery-migrate-1.2.1.min.js")}}></script>
-<script type="text/javascript" src={{ url("http://maps.google.com/maps/api/js?sensor=false&libraries=places")}}></script>
+<script type="text/javascript" src={{ url("http://maps.google.com/maps/api/js?key=&sensor=false&libraries=places")}}></script>
 <script type="text/javascript" src={{ url("assets/js/infobox.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/markerclusterer_packed.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/richmarker-compiled.js")}}></script>
@@ -29,8 +29,6 @@
 <script src={{url("assets/js/prism.js")}}></script>
 <script src={{url("assets/js/jquery.mCustomScrollbar.min.js")}}></script>
 <script src={{url("assets/js/jquery.newsTicker.js")}}></script>
-<script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
-<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 
 
 <script>
