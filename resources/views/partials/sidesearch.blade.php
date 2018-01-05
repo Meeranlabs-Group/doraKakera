@@ -21,6 +21,7 @@
                 -filter-check-in" name="check-in" placeholder="Check In">--}}
 
                 <select name="city" id="city" class="form-control" >
+                    <option value="">Select</option>
                @foreach($cites as $city)
 
                     <option value="{{ $city->id }}">{{ $city->city_name }}</option>

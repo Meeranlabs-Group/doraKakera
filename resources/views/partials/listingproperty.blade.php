@@ -42,7 +42,8 @@
 
 
 
-            <a href=" /propertydetail/{{ $data->id }} " ><h3> {{  str_limit($data->title , $limit = 30, $end = '...')  }} </h3></a>
+            <a href=" /propertydetail/{{ $data->id }} " ><h3> {{  str_limit( ucfirst($data->title), $limit = 30, $end = '...')  }} </h3></a>
+
 
 
 

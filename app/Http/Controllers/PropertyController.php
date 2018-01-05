@@ -295,33 +295,31 @@ $result=array();
 
     public function search(Request $request)
     {
-        //
-
-        $city = $request['city'];
-        $address = $request['location'];
-        $area = $request['area'];
-        $size = $request['size'];
-
-
-        $property = Property::orwhere('city', '=', $city)
-
-            ->Where('unit_size', 'like', '%' . $size . '%')
-            ->get();
 
 
         $photos = Photo::all();
-//        foreach ($property as $data)
-//            echo $data->city;
-//
-////       print_r($property);
+        $cites=City::all();
 
-        if ($property=="[]") {
-         return redirect('/properties');
 
-        } else
-        {
-            return view('properties', compact('property', 'photos'));
-    }
+        $city = $request['city'];
+        $society = $request['society'];
+        echo $area = $request['area'];
+        $size = $request['size'];
+
+
+        $property = Property::where('city_id', '=', $city)->orWhere('society_id', '=', $society)->paginate(8);
+
+        //            ->Where('unit_size', 'like', '%' . $size . '%')->paginate(8);
+
+
+        if ($request['city']=="") {
+
+            return redirect('/properties');
+
+        }
+        else {
+            return view('/properties', compact('property', 'photos','cites'));
+        }
 
 
 
@@ -417,6 +415,11 @@ $result=array();
                     $name = $files[$i]->getClientOriginalName();
 
                     $name->resize('1200','800');
+
+
+                    if($i==1){
+                        $photo['rank'] = 1;
+                    }
                     $name=preg_replace("/[^a-zA-Z0-9\s]/","",$name);
 
                     $path = $files[$i]->move($request['title'], $name);
