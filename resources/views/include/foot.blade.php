@@ -6,7 +6,7 @@
 
 <script type="text/javascript" src={{ url("assets/js/jquery-2.2.1.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/jquery-migrate-1.2.1.min.js")}}></script>
-<script type="text/javascript" src={{ url("http://maps.google.com/maps/api/js?key=&sensor=false&libraries=places")}}></script>
+<script type="text/javascript" src={{ url("http://maps.google.com/maps/api/js?key=AIzaSyCER7BUrzg5FXz5hivZKd2XzkWAMrTlX2k&sensor=false&libraries=places")}}></script>
 <script type="text/javascript" src={{ url("assets/js/infobox.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/markerclusterer_packed.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/richmarker-compiled.js")}}></script>
