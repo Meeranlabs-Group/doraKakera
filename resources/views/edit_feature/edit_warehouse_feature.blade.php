@@ -164,22 +164,42 @@
 
                     <ul>
 
+                        @if($feature[0]->central_air_conditioning)
+                            <li><label><input type="checkbox" checked name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+                        @else
+                            <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
+
+                        @endif
 
 
 
 
+                            @if($feature[0]->central_heating)
+                                <li><label><input type="checkbox" checked name="Central_Heating">Central Heating</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
 
-                        <li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>
-                        <li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>
+                            @endif
+                            @if($feature[0]->waste_disposal)
+                                <li><label><input type="checkbox" checked name="Waste_Disposal">Waste Disposal</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>
+                            @endif
+
+                            @if($feature[0]->service_elevators_in_building)
+                                <li><label><input type="checkbox" checked name="Service_Elevators_in_Building">Service Elevators in Building</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Service_Elevators_in_Building">Service Elevators in Building</label></li>
+
+                            @endif
 
 
-                        <li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>
+                            @if($feature[0]->elevator_or_lift)
+                                <li><label><input type="checkbox" checked name="Service_Elevators_in_Building">Elevator or Lift</label></li>
+                            @else
+                                <li><label><input type="checkbox" name="Service_Elevators_in_Building">Elevator or Lift</label></li>
 
-
-                        <li><label><input type="checkbox" name="Service_Elevators_in_Building">Service Elevators in Building</label></li>
-
-                        <li><label><input type="checkbox" name="Elevators_or_Lift">Elevator or Lift</label></li>
-
+                            @endif
 
                     </ul>
                 </div>
@@ -248,7 +268,42 @@
             {{--<!--end checkboxes-->--}}
         {{--</div>--}}
         <!--end col-md-4-->
+        <div class="col-md-6">
+            <h3> Buisness and Communication</h3>
+            <div  id="b&c">
+                <ul class="checkboxes inline half list-unstyled " >
 
+
+                    @if($feature[0]->broadband_internet_access)
+                        <li><label><input type="checkbox" checked name="Broadband_Internet_Access">Broadband Internet Access</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Broadband_Internet_Access">Broadband Internet Access</label></li>
+                    @endif
+
+                    @if($feature[0]->satellite_or_cable_tv_ready)
+                        <li><label><input type="checkbox" checked name="Satellite_or_Cable_TV_Ready">Satellite or Cable TV Ready</label></li>
+                    @else
+                        <li><label><input type="checkbox" name="Satellite_or_Cable_TV_Ready">Satellite or Cable TV Ready</label></li>
+                    @endif
+
+
+
+
+
+
+                    <div class="clearfix"></div>
+                    <li> <label>Other Business and Communication <br>Facilities</label> </li>
+                    <li><div class="form-group width-60">
+
+                            <input type="text" name="Other_Business_and_Communication_Facilities" value="{{ $feature[0]->other_business_and_communication}}">
+                        </div>
+                    </li>
+
+
+                </ul>
+            </div>
+            <!--end checkboxes-->
+        </div>
         <div class="col-md-6">
             <h3>Nearby Locations </h3>
             <div  id="N&L">

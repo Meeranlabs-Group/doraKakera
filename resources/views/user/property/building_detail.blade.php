@@ -89,7 +89,7 @@
 
                                     @if($data[0]->total_number_of_floors!="NULL")
 
-                                            <li>Total Number of Floors  <strong>{{$data[0]->total_number_of_floors}}</strong></li>
+                                            <li>Total Number of Floors  <strong>{{$data[0]->total_floor_building}}</strong></li>
                                     @endif
 
                                     @if($data[0]->electricity_backup_type!="NULL")

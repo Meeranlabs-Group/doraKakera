@@ -229,18 +229,18 @@
         {{--</div>--}}
         <!--end col-md-4-->
         {{--OLD main feature ware house --}}
-        {{--<div class="col-md-6">--}}
-            {{--<h3>Buisness and Communication</h3>--}}
-            {{--<ul class="checkboxes inline half list-unstyled">--}}
-                {{----}}
-                 {{--<li><label><input type="checkbox" name="Broadband_Internet_Access">Broadband Internet Access</label></li>--}}
-                {{--<li><label><input type="checkbox" name="Satellite_or_TV_Cable_Ready">Satellite or TV Cable Ready</label></li>--}}
-                {{----}}
-                {{--<li><label><input type="text" name="Other_Business_and_Communication_Facilities">Other Business and Communication Facilities</label></li>--}}
-               {{----}}
-            {{--</ul>--}}
-            {{--<!--end checkboxes-->--}}
-        {{--</div>--}}
+        <div class="col-md-6">
+            <h3>Buisness and Communication</h3>
+            <ul class="checkboxes inline half list-unstyled">
+
+                 <li><label><input type="checkbox" name="Broadband_Internet_Access">Broadband Internet Access</label></li>
+                <li><label><input type="checkbox" name="Satellite_or_TV_Cable_Ready">Satellite or TV Cable Ready</label></li>
+
+                <li><label>Other Business and Communication Facilities<input type="text" name="Other_Business_and_Communication_Facilities"></label></li>
+
+            </ul>
+            <!--end checkboxes-->
+        </div>
         <!--end col-md-4-->
 
         <div class="col-md-6">

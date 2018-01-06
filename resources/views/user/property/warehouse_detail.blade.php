@@ -89,7 +89,7 @@
 
                                     @if($data[0]->total_number_of_floors!="NULL")
 
-                                            <li>Total Number of Floors  <strong>{{$data[0]->total_number_of_floors}}</strong></li>
+                                        <li>Total Number of Floors  <strong>{{$data[0]->total_floor_building}}</strong></li>
                                     @endif
 
                                     @if($data[0]->electricity_backup_type!="NULL")
@@ -113,15 +113,15 @@
                                     @if($data[0]->central_heating!="NULL")
                                         <label><input type="checkbox" checked disabled>Central Heating</label>
                                     @endif
-
+                                    @if($data[0]->Service_Elevators_in_Building!="NULL")
+                                        <label><input type="checkbox" checked disabled>Service Elevators in Building</label>
+                                    @endif
 
                                     @if($data[0]->waste_disposal!="")
                                         <label><input type="checkbox" checked disabled >Waste Disposal</label>
                                     @endif
 
-                                        @if($data[0]->furnished!="NULL")
-                                            <label><input type="checkbox" checked disabled name="Central_Air_Conditioning">Furnished</label>
-                                        @endif
+
 
                     <h3>Business and Communication</h3>
 
@@ -169,69 +169,13 @@
 
 
                       <h3>Rooms</h3>
-                                    @if($data[0]->drawing_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Drawing Room</label>
-                                    @endif
 
-                                    @if($data[0]->dining_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Dining Room</label>
-                                    @endif
-
-                                    @if($data[0]->study_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Study Room</label>
-                                    @endif
-
-                                    @if($data[0]->prayer_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Prayer Room</label>
-                                    @endif
-
-                                    @if($data[0]->powder_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Powder Room</label>
-                                    @endif
-
-                                    @if($data[0]->gym_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Gym Room</label>
-                                    @endif
-
-                                    @if($data[0]->steaming_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Steaming Room</label>
-                                    @endif
-
-
-                                    @if($data[0]->laundry_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Laundry Room</label>
-                                    @endif
-
-
-
-                                    @if($data[0]->lounge_or_sitting_room!="NULL")
-                                        <label><input type="checkbox" checked disabled >Lounge or Sitting Room</label>
-                                    @endif
 
                                     <textarea disabled>Other Rooms :{{ $data[0]->other_room }}
-                                        Number of Store rooms: {{ $data[0]->number_of_store_rooms }}
-                                        Number of Servant Quarters : {{ $data[0]->number_of_servant_quaters }}
+                                        Number of rooms: {{ $data[0]->number_of_store_rooms }}
+                                        Other Rooms : {{ $data[0]->Other_Rooms }}
                                     </textarea>
 
-                       <h3>Healthcare Recreational</h3>
-
-
-                                    @if($data[0]->lawn_or_garden!="NULL")
-                                        <label><input type="checkbox" checked disabled >Lawn or Garden</label>
-                                    @endif
-                                    @if($data[0]->swimming_pool!="NULL")
-                                        <label><input type="checkbox" checked disabled >Swimming Pool</label>
-                                    @endif
-                                    @if($data[0]->sauna!="NULL")
-                                        <label><input type="checkbox" checked disabled >Sauna</label>
-                                    @endif
-                                    @if($data[0]->jacuzzi!="NULL")
-                                        <label><input type="checkbox" checked disabled >Jacuzzi</label>
-                                    @endif
-
-                                    @if($data[0]->other_health_and_recreational!="")
-                                        <li>Other Healthcare and Recreation Facilities<strong>{{$data[0]->other_health_and_recreational}}</strong></li>
-                                    @endif
 
 
 
@@ -273,12 +217,15 @@
 
                                 <aside class="box">
                                     <dl>
-                                        <dt>Bed Rooms:</dt>
-                                        <dd>{{$data[0]->number_of_bedrooms}}</dd>
-                                        <dt>Bath Rooms:</dt>
-                                        <dd>{{$data[0]->number_of_bathrooms}}</dd>
-                                        <dt>Kitchen Rooms:</dt>
-                                        <dd>{{$data[0]->number_of_kitchens}}</dd>
+                                        <dt>Number of Elevators in Building</dt>
+                                        <dd>{{$data[0]->number_of_elevators_in_building}}</dd>
+                                        <dt>Total Floors in Building</dt>
+                                        <dd>{{$data[0]->total_floor_building}}</dd>
+
+                                        <dt>Floor:</dt>
+                                        <dd>{{$data[0]->floor}}</dd>
+                                        <dt>View:</dt>
+                                        <dd>{{$data[0]->View}}</dd>
 
                                         <dt>Area:</dt>
                                         <dd>{{ $data[0]->unit_size }}-{{ $data[0]->unit_type }}</dd>

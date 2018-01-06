@@ -148,7 +148,7 @@
                     <div class="col-md-3">
                         <div class="form-group width-80">
                             <label>View</label>
-                            <input type="text" name="View">
+
                             <input type="number"  name="View" value="{{ $feature[0]->view }}">
 
                         </div>

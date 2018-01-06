@@ -126,7 +126,7 @@
                     <div class="col-md-3">
                         <div class="form-group width-80">
                             <label>Number of Units</label>
-                            <input type="text" name="Number_of_Units">
+
                             <input type="number"  name="Number_of_Units" value="{{ $feature[0]->number_of_units }}">
                         </div>
                     </div>

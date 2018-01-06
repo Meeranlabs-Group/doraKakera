@@ -326,7 +326,6 @@
                                 <li><label><input type="checkbox" name="Business_Center_or_Media_Room_in_Building">Business Center or Media Room</label></li>
                             @endif
 
-                            <li><label><input type="checkbox" name="Conference_Room_in_Building">Conference Room in Building</label></li>
 
 
                             @if($feature[0]->confrence_room_in_building)
