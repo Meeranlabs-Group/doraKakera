@@ -42,7 +42,7 @@
                     <div class="title">
                         <div class="left">
                             <h1>{{ucfirst($data[0]->title)}}</h1>
-                            <h3><a href="#">{{$data[0]->block_name}}, {{$data[0]->phase_name}},{{$data[0]->society_name}},{{$data[0]->city_name}}</a> (63 properties)</h3>
+                            <h3><a href="#">{{$data[0]->block_name}}</a> - <a href="#">{{$data[0]->phase_name}}</a> - <a href="#">{{$data[0]->society_name}}</a> - <a href="#">{{$data[0]->city_name}}</a>(63 properties)</h3>
                         </div>
 
                         <div class="right">
@@ -83,16 +83,16 @@
 
                                     <h3>Main Features</h3>
 
-                                    @if($data[0]->built_in_year!="NULL")
+                                    @if($data[0]->built_in_year!="")
                                         <li>Built in Year  <strong>{{$data[0]->built_in_year}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->total_floor_building!="NULL")
+                                    @if($data[0]->total_floor_building!="")
 
                                             <li>Total Floors in Building<strong>{{$data[0]->total_floor_building}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->electricity_backup_type!="NULL")
+                                    @if($data[0]->electricity_backup_type!="")
                                         <li>Electricity Backup Type <strong>{{$data[0]->electricity_backup_type}}</strong></li>
                                     @endif
 
@@ -106,47 +106,47 @@
                                         <label><input type="checkbox" checked disabled >Waste Disposal</label>
                                     @endif
 
-                                        @if($data[0]->Elevator_or_Lift!="NULL")
+                                        @if($data[0]->Elevator_or_Lift!="")
                                             <label><input type="checkbox" checked disabled >Elevator_or_Lift</label>
                                         @endif
 
                     <h3>Business and Communication</h3>
 
-                                    @if($data[0]->broadband_internet_access!="NULL")
+                                    @if($data[0]->broadband_internet_access!="")
                                         <label><input type="checkbox" checked disabled >Broadband Internet Access</label>
                                     @endif
-                                    @if($data[0]->satellite_or_cable_tv_ready!="NULL")
+                                    @if($data[0]->satellite_or_cable_tv_ready!="")
                                         <label><input type="checkbox" checked disabled >Satellite or Cable TV Ready</label>
                                     @endif
 
 
-                                    @if($data[0]->other_business_and_communication!="NULL")
+                                    @if($data[0]->other_business_and_communication!="")
                                         <li>Other Business and Communication<strong>{{$data[0]->other_business_and_communication}}</strong></li>
                                     @endif
 
 
 
                      <h3>Nearby Location</h3>
-                                @if($data[0]->nearby_schools!="NULL")
+                                @if($data[0]->nearby_schools!="")
                                         <label><input type="checkbox" checked disabled >Nearby Schools</label>
                                     @endif
 
-                                @if($data[0]->nearby_hospitals!="NULL")
+                                @if($data[0]->nearby_hospitals!="")
                                         <label><input type="checkbox" checked disabled >Nearby Hospitals</label>
                                     @endif
 
-                                @if($data[0]->nearby_shopping_malls!="NULL")
+                                @if($data[0]->nearby_shopping_malls!="")
                                         <label><input type="checkbox" checked disabled >Nearby Shopping Malls</label>
                                     @endif
 
-                                @if($data[0]->nearby_restaurants!="NULL")
+                                @if($data[0]->nearby_restaurants!="")
                                         <label><input type="checkbox" checked disabled >Nearby Restaurants</label>
                                     @endif
-                                @if($data[0]->nearby_public_transport!="NULL")
+                                @if($data[0]->nearby_public_transport!="")
                                         <label><input type="checkbox" checked disabled >Nearby Public Transport Service</label>
                                     @endif
 
-                                    @if($data[0]->distance_from_airport_kms!="NULL")
+                                    @if($data[0]->distance_from_airport_kms!="")
                                         <li>Distance From Airport <strong>{{$data[0]->distance_from_airport_kms}}</strong></li>
                                     @endif
 
@@ -155,7 +155,7 @@
                        <h3>Healthcare Recreational</h3>
 
 
-                                    @if($data[0]->lawn_or_garden!="NULL")
+                                    @if($data[0]->lawn_or_garden!="")
                                         <label><input type="checkbox" checked disabled >Lawn or Garden</label>
                                     @endif
 
@@ -168,17 +168,17 @@
 
                         <h3>Other Facilities</h3>
 
-                                    @if($data[0]->maintenance_staff!="NULL")
+                                    @if($data[0]->maintenance_staff!="")
                                         <label><input type="checkbox" checked disabled >Maintenance Staff</label>
                                     @endif
-                                    @if($data[0]->security_staff!="NULL")
+                                    @if($data[0]->security_staff!="")
                                         <label><input type="checkbox" checked disabled >Security Staff</label>
                                     @endif
 
 
 
 
-                                    @if($data[0]->facilities_for_disabled!="NULL")
+                                    @if($data[0]->facilities_for_disabled!="")
                                         <label><input type="checkbox" checked disabled >Facilities for Disabled</label>
                                     @endif
 

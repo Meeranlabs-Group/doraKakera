@@ -142,7 +142,7 @@ Route::get('/map', function () {
 });
 
 
-Route::get('/propertydetail/{id}','PropertyController@propertydetail');
+Route::get('/propertydetail/{slug}','PropertyController@propertydetail');
 
 
 

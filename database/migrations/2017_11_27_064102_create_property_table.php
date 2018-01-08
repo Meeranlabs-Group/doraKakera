@@ -26,7 +26,7 @@ class CreatePropertyTable extends Migration
 
 
 
-
+            $table->string('slug')->nullable();
             $table->integer('city_id')->nullable();
             $table->integer('society_id')->nullable();
             $table->integer('phase_id')->nullable();

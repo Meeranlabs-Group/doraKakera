@@ -42,7 +42,7 @@
                     <div class="title">
                         <div class="left">
                             <h1>{{ucfirst($data[0]->title)}}</h1>
-                            <h3><a href="#">{{$data[0]->block_name}}, {{$data[0]->phase_name}},{{$data[0]->society_name}},{{$data[0]->city_name}}</a> (63 properties)</h3>
+                            <h3><a href="#">{{$data[0]->block_name}}</a> - <a href="#">{{$data[0]->phase_name}}</a> - <a href="#">{{$data[0]->society_name}}</a> - <a href="#">{{$data[0]->city_name}}</a>(63 properties)</h3>
                         </div>
 
                         <div class="right">
@@ -83,43 +83,43 @@
 
                                     <h3>Main Features</h3>
 
-                                    @if($data[0]->possesion!="NULL")
+                                    @if($data[0]->possesion!="")
                                         <li>Possesion <strong>{{$data[0]->possesion}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->disputed!="NULL")
+                                    @if($data[0]->disputed!="")
                                         <li>Disputed <strong>{{$data[0]->disputed}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->electricity!="NULL")
+                                    @if($data[0]->electricity!="")
                                         <li>Electricity <strong>{{$data[0]->electricity}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->sui_Gas!="NULL")
+                                    @if($data[0]->sui_Gas!="")
                                         <li>Sui Gas <strong>{{$data[0]->sui_Gas}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->irrigation!="NULL")
+                                    @if($data[0]->irrigation!="")
                                         <li>Irrigation <strong>{{$data[0]->irrigation}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->Tube_Wells!="NULL")
+                                    @if($data[0]->Tube_Wells!="")
                                         <li>Tube Wells <strong>{{$data[0]->Tube_Wells}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->Accessible_by_Road!="NULL")
+                                    @if($data[0]->Accessible_by_Road!="")
                                         <li>Accessible by Road <strong>{{$data[0]->Accessible_by_Road}}</strong></li>
                                     @endif
 
-                                   @if($data[0]->Perimeter_Fencing!="NULL")
+                                   @if($data[0]->Perimeter_Fencing!="")
                                         <li>Perimeter Fencing <strong>{{$data[0]->Perimeter_Fencing}}</strong></li>
                                     @endif
 
-                                   @if($data[0]->Is_Land_Fertile!="NULL")
+                                   @if($data[0]->Is_Land_Fertile!="")
                                         <li>Is Land Fertile <strong>{{$data[0]->Is_Land_Fertile}}</strong></li>
                                     @endif
 
-                                   @if($data[0]->Boundary_Lines!="NULL")
+                                   @if($data[0]->Boundary_Lines!="")
                                         <li>Boundary Lines <strong>{{$data[0]->Boundary_Lines}}</strong></li>
                                     @endif
 
@@ -129,26 +129,26 @@
 
 
                      <h3>Nearby Location</h3>
-                                @if($data[0]->nearby_schools!="NULL")
+                                @if($data[0]->nearby_schools!="")
                                         <label><input type="checkbox" checked disabled >Nearby Schools</label>
                                     @endif
 
-                                @if($data[0]->nearby_hospitals!="NULL")
+                                @if($data[0]->nearby_hospitals!="")
                                         <label><input type="checkbox" checked disabled >Nearby Hospitals</label>
                                     @endif
 
-                                @if($data[0]->nearby_shopping_malls!="NULL")
+                                @if($data[0]->nearby_shopping_malls!="")
                                         <label><input type="checkbox" checked disabled >Nearby Shopping Malls</label>
                                     @endif
 
-                                @if($data[0]->nearby_restaurants!="NULL")
+                                @if($data[0]->nearby_restaurants!="")
                                         <label><input type="checkbox" checked disabled >Nearby Restaurants</label>
                                     @endif
-                                @if($data[0]->nearby_public_transport!="NULL")
+                                @if($data[0]->nearby_public_transport!="")
                                         <label><input type="checkbox" checked disabled >Nearby Public Transport Service</label>
                                     @endif
 
-                                    @if($data[0]->distance_from_airport_kms!="NULL")
+                                    @if($data[0]->distance_from_airport_kms!="")
                                         <li>Distance From Airport <strong>{{$data[0]->distance_from_airport_kms}}</strong></li>
                                     @endif
 
@@ -161,7 +161,7 @@
                         <h3>Other Facilities</h3>
 
 
-                                    @if($data[0]->security_staff!="NULL")
+                                    @if($data[0]->security_staff!="")
                                         <label><input type="checkbox" checked disabled >Security Staff</label>
                                     @endif
 

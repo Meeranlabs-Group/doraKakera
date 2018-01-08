@@ -7,7 +7,7 @@
 
 
         <div class="image">
-            <a href="propertydetail/{{ $data->id }}" class="wrapper">
+            <a href="{{ URL::to('/') . '/propertydetail/' . $data->slug }}" class="wrapper">
 
 
                 <div class="gallery">
@@ -41,8 +41,9 @@
 
 
 
-            <a href=" /propertydetail/{{ $data->id }} " ><h3> {{  str_limit( ucfirst($data->title), $limit = 30, $end = '...')  }} </h3></a>
-
+            {{--<a href=" /propertydetail/{{ $data->id }} " ><h3> {{  str_limit( ucfirst($data->title), $limit = 30, $end = '...')  }} </h3></a>--}}
+            <a href="{{ URL::to('/') . '/propertydetail/' . $data->slug }}" ><h3> {{  str_limit( ucfirst($data->title), $limit = 30, $end = '...')  }} </h3></a>
+{{----}}
 
 
 
@@ -59,7 +60,7 @@
             <div class="price-info">Price:<span class="price">PKR- {{ $data->price }}/-</span>
                 <span class="price call"><i class="fa fa-phone"></i> 03224531314</span></div>
 
-            <a href="/propertydetail/{{ $data->id }}"  class="btn btn-rounded btn-small btn-default btn-framed" >View detail</a>
+            <a href="{{ URL::to('/') . '/propertydetail/' . $data->slug }}"  class="btn btn-rounded btn-small btn-default btn-framed" >View detail</a>
         </div>
         <!--end info-->
     </div>

@@ -399,9 +399,35 @@ $result=array();
 //            $post['unit_type'] = $request['unit_type'];
 //            $post['unit_size'] = $request['unit_size'];
 
+            $temp = str_slug($request['title'], '-');
+            if(!Property::all()->where('slug',$temp)->isEmpty()){
+                $i = 1;
+                $newslug = $temp . '-' . $i;
+                while(!Property::all()->where('slug',$newslug)->isEmpty()){
+                    $i++;
+                    $newslug = $temp . '-' . $i;
+                }
+              echo  $temp =  $newslug;
+            }
+               if ($request['society']==""){
+                   $request['society']=2000;
+                   $request['phase']=14;
+                   $request['block']=142;
+
+               }
+               else if($request['phase']=="")
+               {
+                   $request['phase']=14;
+                   $request['block']=142;
+               }
+               else if($request['block']=="")
+               {
+                   $request['block']=142;
+               }
+
             $id = DB::table('property')->insertGetId(
                 [
-                    'user_id'=> Auth::user()->getid(),'title'=> $request['title'], 'property_type'=>  $request['property_type'],'description' => $request['description'],
+                    'user_id'=> Auth::user()->getid(),'title'=> $request['title'],'slug'=> $temp, 'property_type'=>  $request['property_type'],'description' => $request['description'],
                     'price'=>$request['price'],'city_id'=>$request['city'],'society_id'=>$request['society'],
                     'phase_id'=>$request['Phase'],'block_id'=>$request['block'],'address'=>$request['address'],
                     'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],'unit_size'=>$request['unit_size'],'created_at'=>Carbon::now()
@@ -420,9 +446,9 @@ $result=array();
                     if($i==1){
                         $photo['rank'] = 1;
                     }
-                    $name=preg_replace("/[^a-zA-Z0-9\s]/","",$name);
+                    $l=preg_replace("/[^a-zA-Z0-9\s]/","",$request['title']);
 
-                    $path = $files[$i]->move($request['title'], $name);
+                    $path = $files[$i]->move($l, $name);
 
 
                     $photo['property_id'] = $id;
@@ -599,6 +625,7 @@ $result=array();
             ->join('phase','phase.id','=','property.phase_id')
             ->join('block','block.id','=','property.block_id')
             ->where('ad_status','=','1')->paginate(8);
+
         return view('properties',compact('property','photos','cites'));
     }
 
@@ -659,24 +686,72 @@ join('city','city.id','=','property.city_id')->join('society','society.id','=','
 
 
 
-        $data = Property::find($id)->get();
-        $data=Property::where('property.id','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
+       // $data = Property::find($id)->get();
+        $data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.slug','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
         join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
             ->join('phase','phase.id','=','property.phase_id')
             ->join('block','block.id','=','property.block_id')->get();
 
-        $photos = Photo::where("property_id","$id")->get();
+        foreach ($data as $datas) {
+            if ($datas->society_name == "Other") {
+
+                $datas->society_name = "";
+                $datas->phase_name = "";
+                $datas->block_name = "";
+
+            } else if ($datas->phase_name == "Other") {
+                $datas->phase_name = "";
+                $datas->block_name = "";
+            } else if ($datas->block_name == "Other") {
+                $datas->block_name = "";
+            }
+        }
+
+        $photos = Photo::where("property_id",$data[0]->id)->get();
 
 
         $opt=$data[0]->property_type;
 
+
         if ($opt == "Houses"){
-              return view('user.property.houseDetail',compact('data','photos','cites'));
+
+           return view('user.property.houseDetail',compact('data','photos','cites'));
         }
 
         if ($opt == "Flates"){
               return view('user.property.flateDetail',compact('data','photos','cites'));
         }
+        if ($opt == "Buildings"){
+              return view('user.property.building_detail',compact('data','photos','cites'));
+        }
+        if ($opt == "Factories"){
+              return view('user.property.factory_detail',compact('data','photos','cites'));
+        }
+        if ($opt == "Agricultural-Land" || $opt == "Industrial-Land" ){
+              return view('user.property.land_detail',compact('data','photos','cites'));
+        }
+        if ($opt == "Offices"){
+              return view('user.property.office_detail',compact('data','photos','cites'));
+        }
+              if ($opt == "Residential-Plots" || $opt == "Commercial-Plots"){
+              return view('user.property.plot_detail',compact('data','photos','cites'));
+        }
+        if ($opt == "Upper-Portions" || $opt == "Lower-Portions" ||  $opt="Farms-House" ){
+              return view('user.property.portion&farm_detail',compact('data','photos','cites'));
+        }
+
+        if ($opt == "Shops"){
+              return view('user.property.shop_detail',compact('data','photos','cites'));
+        }
+        if ($opt == "Warehouses"){
+              return view('user.property.warehouse_detail',compact('data','photos','cites'));
+        }
+
+
+        if ($opt == "Other") {
+            return view('user.property.other_detail', compact('data', 'photos', 'cites'));
+        }
+
 
 
     }
