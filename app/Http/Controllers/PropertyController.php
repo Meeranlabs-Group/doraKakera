@@ -43,6 +43,26 @@ class PropertyController extends Controller
 
 
     }
+
+
+    public function get_blocks($id,$x){
+
+
+        $names=Block::where('block_name','like','%'.$id.'%')->where('phase_id','=',$x)->pluck("block_name");
+
+print_r($names);
+
+
+
+
+        return json_encode($names);
+
+
+
+    }
+
+
+
     public function getblocks($id){
 
         $codes=Block::where('phase_id','=',$id)->pluck("id");
@@ -309,7 +329,7 @@ $result=array();
 
         $property = Property::where('city_id', '=', $city)->orWhere('society_id', '=', $society)->paginate(8);
 
-        //            ->Where('unit_size', 'like', '%' . $size . '%')->paginate(8);
+        //            ->Where('unit_size', 'like', get_ble . '%')->paginate(8);
 
 
         if ($request['city']=="") {

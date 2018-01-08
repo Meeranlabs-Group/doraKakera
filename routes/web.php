@@ -238,6 +238,7 @@ Route::get('/addproperty', 'PropertyController@addproperty');
 Route::get('/getsocieties/{id}', 'PropertyController@getsocieties');
 Route::get('/getphases/{id}', 'PropertyController@getphases');
 Route::get('/getblocks/{id}', 'PropertyController@getblocks');
+Route::get('/get_blocks/{id}/{x}', 'PropertyController@get_blocks');
 
 
 

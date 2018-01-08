@@ -22,6 +22,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href={{ url("assets/favicon-32x32.png") }}>
     <link rel="icon" type="image/png" sizes="96x96" href={{ url("assets/favicon-96x96.png") }}>
     <link rel="icon" type="image/png" sizes="16x16" href={{ url("assets/favicon-16x16.png") }}>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="manifest" href={{ url("assets/manifest.json") }}>
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/ms-icon-144x144.png">
@@ -42,6 +43,9 @@
     <link rel="stylesheet" href={{ url("assets/css/style.css") }} type="text/css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+
+
+
 
 
     <title>Chohan Estate</title>

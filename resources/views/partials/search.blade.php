@@ -41,7 +41,7 @@
                                             <div class="form-group">
                                                 <label style="color: white" >Property Type</label>
 
-                                                <select class="form-control framed white">
+                                                <select class="form-control framed white selectpicker"  data-live-search="true">
 
                                                     <option value="">  Any Type  </option>
                                                     <option value="" disabled>  --- HOUSE --- </option>
@@ -105,7 +105,7 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                                 <label style="color: white" for="">Location</label>
-                                               <input  placeholder="Enter Location Here">
+                                               <input  placeholder="Enter Location Here" name="test" onkeyup="yes()" id="name">
                                             </div>
                                             <!--end form-group-->
                                         </div>

@@ -407,7 +407,42 @@
 
 
 </script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<script type="text/javascript">
+    function yes() {
+        var availableTags = [
+
+        ];
+
+        var s = document.getElementById("name");
+        var f = document.getElementById("society");
+
+        $.ajax({
+
+
+
+            url:'/get_blocks/' + s.value + '/' + 1,
+            type: "GET",
+            dataType: "json",
+            success: function(data){
+
+                console.log(data);
+            }
+
+        });
+
+
+
+
+
+
+
+        $( "#name" ).autocomplete({
+            source: availableTags
+        });
+    }
+</script>
 
 
 </body>
