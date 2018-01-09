@@ -9,22 +9,12 @@
         <!--end title-->
 
 
-
-
-
-        {{--{{ $Property->where('city','=',"Lahore") }}--}}
-         {{--{{ $total= Property::where('city',"Lahore") }}--}}
-            {{--{{ $total }}--}}
-
         <ul class="list-links">
 
 
             @foreach($Property1 as $property)
 
-
-            {{--<li><a href="#"> {{ $property[0][0]->city }} <span> {{ $property[0][1]->count}} </span></a></li>--}}
-
-                <li><a href="/properties/{{ $property->city_id }}">{{ $property->city_name }}<span>{{ $property->total }}</span></a></li>
+                <li><a href="/houses/{{ $property->city_id }}">{{ $property->city_name }}<span>{{ $property->total }}</span></a></li>
 
             @endforeach
 

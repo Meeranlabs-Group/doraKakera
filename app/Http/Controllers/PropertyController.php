@@ -323,7 +323,7 @@ $result=array();
 
         $city = $request['city'];
         $society = $request['society'];
-        echo $area = $request['area'];
+        $area = $request['area'];
         $size = $request['size'];
 
 
