@@ -263,8 +263,21 @@
                                 </ul>
                             </section>
                             <section id="map">
+
                                 <h2>Map</h2>
-                                <div id="map-item" class="map height-300 box"></div>
+
+                                    <label>Place on Map</label>
+                                    <div class="map height-300 box">
+                                        <iframe
+                                                width="600"
+                                                height="300"
+                                                frameborder="0" style="border:0"
+                                                src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCiORWYia17a_vsgEq5Zi6Wmbvlw1oTAMU
+    &q={{$data[0]->block_name}},{{$data[0]->society_name}},{{$data[0]->city_name}}" >
+                                        </iframe>
+
+                                    </div>
+
                                 <!--end map-->
                             </section>
                         </div>

@@ -21,7 +21,6 @@
 <script type="text/javascript" src={{ url("assets/js/maps.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/custom.js")}}></script>
 
-
 <!--[if lte IE 9]>
 <script src={{ url("assets/js/ie.js")}}></script>
 <![endif]-->

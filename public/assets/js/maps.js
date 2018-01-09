@@ -110,6 +110,7 @@ function weather(_latitude, _longitude){
 function autoComplete(map, marker){
     if( $("#address-autocomplete").length ){
         var input = /** @type {HTMLInputElement} */( document.getElementById('address-autocomplete') );
+        console.log(input);
         var autocomplete = new google.maps.places.Autocomplete(input);
         autocomplete.bindTo('bounds', map);
         google.maps.event.addListener(autocomplete, 'place_changed', function() {
@@ -156,6 +157,23 @@ function autoComplete(map, marker){
         });
     }
 }
+
+
+function geocodeAddress(geocoder, resultsMap) {
+    var address = document.getElementById('address').value;
+    geocoder.geocode({'address': address}, function(results, status) {
+        if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+                map: resultsMap,
+                position: results[0].geometry.location
+            });
+        } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+        }
+    });
+}
+
 
 // Big Map on Home -----------------------------------------------------------------------------------------------------
 
