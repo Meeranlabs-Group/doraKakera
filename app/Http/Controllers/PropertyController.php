@@ -447,7 +447,7 @@ $result=array();
 
             $id = DB::table('property')->insertGetId(
                 [
-                    'user_id'=> Auth::user()->getid(),'title'=> $request['title'],'slug'=> $temp, 'property_type'=>  $request['property_type'],'description' => $request['description'],
+                    'user_id'=> Auth::user()->getid(),'title'=> $request['title'],'address'=> $request['address'],'slug'=> $temp, 'property_type'=>  $request['property_type'],'description' => $request['description'],
                     'price'=>$request['price'],'city_id'=>$request['city'],'society_id'=>$request['society'],
                     'phase_id'=>$request['Phase'],'block_id'=>$request['block'],'address'=>$request['address'],
                     'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],'unit_size'=>$request['unit_size'],'created_at'=>Carbon::now()

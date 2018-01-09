@@ -58,7 +58,10 @@
                     </select>
                 </div>
             </div>
-
+            <div class="form-group">
+                <label for="address-autocomplete">Address<em>*</em></label>
+                <input type="text" class="form-control" id="address-autocomplete" name="address" placeholder="Accommodation Address" required="">
+            </div>
 
         <!--end map-->
             {{--<h3>Position</h3>--}}
