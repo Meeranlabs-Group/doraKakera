@@ -4,11 +4,7 @@
 
 <div id="page-content">
     <div class="container">
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Listing</a></li>
-            <li class="active">Detail</li>
-        </ol>
+    @include('partials.bread_crum_detail')
         <!--end breadcrumb-->
         <div class="row">
 
@@ -263,21 +259,8 @@
                                 </ul>
                             </section>
                             <section id="map">
-
                                 <h2>Map</h2>
-
-                                    <label>Place on Map</label>
-                                    <div class="map height-300 box">
-                                        <iframe
-                                                width="600"
-                                                height="300"
-                                                frameborder="0" style="border:0"
-                                                src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCiORWYia17a_vsgEq5Zi6Wmbvlw1oTAMU
-    &q={{$data[0]->block_name}},{{$data[0]->society_name}},{{$data[0]->city_name}}" >
-                                        </iframe>
-
-                                    </div>
-
+                                <div id="map-item" class="map height-300 box"></div>
                                 <!--end map-->
                             </section>
                         </div>

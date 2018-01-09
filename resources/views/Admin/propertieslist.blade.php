@@ -7,8 +7,10 @@
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
-            <li><a href="#">Listing</a></li>
+            <li class="active">Listing</li>
+            <li ><a href="{{ url("/properties")}}">Properties</a></li>
             <li class="active">Detail</li>
+
         </ol>
         <!--end breadcrumb-->
         <div class="main-content">

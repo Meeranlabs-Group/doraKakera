@@ -4,11 +4,7 @@
 
 <div id="page-content">
     <div class="container">
-        <ol class="breadcrumb">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Listing</a></li>
-            <li class="active">Detail</li>
-        </ol>
+    @include('partials.bread_crum_detail')
         <!--end breadcrumb-->
         <div class="row">
 

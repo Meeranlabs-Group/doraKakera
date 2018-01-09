@@ -127,7 +127,7 @@
 
 
                                    
-                                    <li><a href={{ url("/dhafile") }}>DHA Files</a></li>
+                                    <li><a href={{ url("/dha-file-rates") }}>DHA Files</a></li>
 
 
                             {{--<li>--}}

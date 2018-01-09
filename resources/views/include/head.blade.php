@@ -30,7 +30,18 @@
 
 
 
+    @if((Request::is('dha-file-rates')))
 
+        <meta name="description" content="DHA File Rates File rates are Volatile and subject to change any
+        time. For latest updates please call +923028444781 or email"/>
+        <meta name="robots" content="index,nofollow"/>
+        <meta name="keywords" content="DHA File Rates , Plot For Sale in DHA Phase 1
+        ,Plot For Sale in DHA Phase 2,Plot For Sale in DHA Phase 4,
+        Plot For Sale in DHA Phase 5,Plot For Sale in DHA Phase 6,
+        Plot For Sale in DHA Phase 7,Plot For Sale in DHA Phase 8
+        ,Plot For Sale in DHA Phase 9 Prism, Plot For Sale in DHA Phase 9 Town, Plot For Sale in DHA Phase 10"/>
+
+    @endif
 
 
 

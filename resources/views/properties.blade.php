@@ -6,7 +6,7 @@
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="{{ url("/")}}">Home</a></li>
-            <li ><a href="{{ url("/properties")}}">Homes</a></li>
+            <li ><a href="{{ url("/properties")}}">Properties</a></li>
 
         </ol>
         <!--end breadcrumb-->

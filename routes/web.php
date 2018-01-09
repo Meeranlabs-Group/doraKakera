@@ -123,7 +123,7 @@ Route::get('/about-us','AdminController@aboutus');
 
 
 
-Route::get('/dhafile', function () {
+Route::get('/dha-file-rates', function () {
     return view('dhafile');
 });
 
