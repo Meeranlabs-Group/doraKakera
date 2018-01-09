@@ -58,7 +58,7 @@
             </style>
 
 
-            <h2>File rate Search</h2>
+            {{--<h2>File rate Search</h2>--}}
 
             <div class="col-md-9" >
                 {{--<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">--}}
