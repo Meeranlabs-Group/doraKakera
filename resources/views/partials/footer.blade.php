@@ -8,16 +8,34 @@
                 <h2 class="center " style="color:grey;padding-bottom:15px;">Our Clients</h2>
             </div>
                 <div class="owl-carousel owl-theme ">
-                    <div class="item width-50"  style="margin-bottom:0px;padding-bottom: 0px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Pepsi_logo_2008.svg/1280px-Pepsi_logo_2008.svg.png"/></div>
-                    <div class="item width-50"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/2000px-Coca-Cola_logo.svg.png" /></div>
-                    <div class="item width-50"  style="margin-bottom:0px;padding-bottom: 0px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Pepsi_logo_2008.svg/1280px-Pepsi_logo_2008.svg.png"/></div>
-                    <div class="item width-50"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/2000px-Coca-Cola_logo.svg.png" /></div>
+                     <div class="item width-30"><img src={{asset("/clients_logo/1.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/2.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/3.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/4.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/5.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/6.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/7.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/8.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/9.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/10.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/11.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/12.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/13.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/14.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/15.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/16.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/17.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/18.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/19.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/20.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/21.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/22.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/23.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/24.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/25.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/26.JPG")}} /></div>
+                    <div class="item width-30"><img src={{asset("/clients_logo/27.JPG")}} /></div>
 
-                    <div class="item width-50"  style="margin-bottom:0px;padding-bottom: 0px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Pepsi_logo_2008.svg/1280px-Pepsi_logo_2008.svg.png"/></div>
-                    <div class="item width-50"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/2000px-Coca-Cola_logo.svg.png" /></div>
-
-                    <div class="item width-50"  style="margin-bottom:0px;padding-bottom: 0px;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Pepsi_logo_2008.svg/1280px-Pepsi_logo_2008.svg.png"/></div>
-                    <div class="item width-50"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Coca-Cola_logo.svg/2000px-Coca-Cola_logo.svg.png" /></div>
 
                     {{--<div class="item"><h4>12</h4></div>--}}
                 </div>
@@ -30,7 +48,7 @@
 
 
 
-    <div class="row-two clearfix">
+    <div class="row-two clearfix" style="background-color:#002f6c">
         <div class="container">
             <div class="col-md-6">
            <h3>Head Office</h3>
@@ -61,31 +79,34 @@
 
 
 
-            <div class="col-md-6 width-600px">
-                <h3>Join Us On Facebook</h3>
-                <hr>
-
-                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FChohanEstatePk%2F&tabs=timeline&width=450&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=135209703842275" width="500" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
-
+            <div class="col-md-6 ">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/ChohanEstatePk/" target="_blank"><i class="fa fa-facebook"></i></a>
+                    <a href="https://twitter.com/ChohanEstatePk/" target="_blank"><i class="fa fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/ChohanEstatePk/" target="_blank"><i class="fa fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/watch?v=tVQWQIb_2ok" target="_blank"><i class="fa fa-youtube"></i></a>
+                </div>
             </div>
 
         </div>
-        <div class="bg-transfer"><img src={{ asset("assets/img/footer-bg.jpg") }} alt=""></div>
+
     </div>
 
 
 
-    <div class="row-two clearfix">
-        <div class="container">
+    <div class="row-two clearfix" style="background-color: black">
+        <div class="container" >
             <div class="copyright pull-left">(C) 2018 Chohan Estate, All Rights Reserved</div>
             <div class="footer-nav pull-right">
                 <a href={{ url("/") }}>Home</a>
                 <a href={{ url("/about-us")}}>About Us</a>
-                <a href="listing.html">Listing</a>
+                <a href={{ url("/houses")}}>Houses</a>
+                <a href={{ url("/plots")}}>Plots</a>
                 <a href={{ url("/contact-us")}}>Contact Us</a>
             </div>
         </div>
-        <div class="bg-transfer"><img src={{ asset("assets/img/footer-bg.jpg") }} alt=""></div>
+
     </div>
     <!--end row-two-->
 </footer>

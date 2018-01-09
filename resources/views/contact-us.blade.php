@@ -53,8 +53,8 @@
                                     <strong>Mobile:</strong> 0321 9124124<br>
                                     <strong>Tel:</strong> +92-42-35727771-4, 35728881-4<br>
                                     <strong>Fax:</strong> +92-42-35729990<br>
-                                    <a href="#">hello@example.com</a><br>
-                                    <strong>skype:</strong> your.company
+                                    <a href="#">info@chohanestate.com</a><br>
+
                                 </address>
                                 <h2>Social Profiles</h2>
                                 <div class="social-icons">
@@ -103,7 +103,7 @@
                             <!--end row-->
                             <div class="form-group">
                                 <label for="form-contact-message">Your Message<em>*</em></label>
-                                <textarea class="form-control" id="form-contact-message" rows="8" name="form-contact-message" required="" placeholder="Message"></textarea>
+                                <input class="form-control "  id="form-contact-message"   name="form-contact-message" required="" placeholder="Message"></input>
                             </div>
                             <!--end form-group-->
                             <div id="form-status" class="pull-left"></div>
