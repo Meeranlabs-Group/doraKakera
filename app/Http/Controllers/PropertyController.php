@@ -666,12 +666,12 @@ $result=array();
             ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->get();
 
         $photos = Photo::all();
-
-//print_r($Property1);
+//print_r($hot);
+//print_r($photos);
         $cities= City::all();
 
 //      return view('welcome',compact('hot','photos'));
-        return view('welcome',compact('hot','photos','Property1','articles','cities'));
+     return view('welcome',compact('hot','photos','Property1','articles','cities'));
     }
 
 

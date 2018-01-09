@@ -14,17 +14,18 @@
                 @foreach($photos as $photo)
                     @if( ($data->id == $photo->property_id) &&  $photo->rank ==1 )
 
-                        <a href="propertydetail/{{ $data->id }}"><div class="image"><img height="191px;width:255px;" src= "{{ $photo->path }}" alt=""></div></a>
+
+                        <a href="propertydetail/{{ $data->slug}}"><div class="image"><img height="191px;width:255px;" src= "{{ $photo->path }}" alt=""></div></a>
                     @endif
                 @endforeach
 
                 <div class="description">
-                    <a href="propertydetail/{{ $data->id }}"><h3> {{ str_limit($data->title , $limit = 35, $end = '...') }}   </h3></a>
+                    <a href="propertydetail/{{ $data->slug }}"><h3> {{ str_limit(ucfirst($data->title) , $limit = 25, $end = '...') }}   </h3></a>
                     <figure>{{$data->block_name}},{{ $data->city_name }}</figure>
                     <figure class="label label-InProcess">{{ $data->purpose }}</figure>
                     <h6 class="label label-danger">PKR-{{ $data->price }}</h6>
-                    <p>  {{ str_limit($data->description , $limit = 100, $end = '...') }}  </p>
-                    <a href="propertydetail/{{ $data->id }}" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
+                    <p>  {{ str_limit($data->description , $limit = 60, $end = '...') }}  </p>
+                    <a href="propertydetail/{{ $data->slug }}" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
                 </div>
             </div>
 
