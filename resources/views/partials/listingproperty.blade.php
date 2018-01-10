@@ -50,10 +50,18 @@
             <figure class="location">{{ $data->address }}</figure>
             <figure class="location">{{ $data->block_name }}, {{ $data->phase_name }}, {{ $data->society_name }}, {{ $data->city_name }}</figure>
             <figure class="label label-info">{{ $data->property_type }}</figure>
-            <figure class="label label-Available">Available</figure>
-            <figure class="label label-InProcess">In-Process</figure>
-            <figure class="label label-danger">Sold</figure>
 
+           @if($data->status == 1)
+                <figure class="label label-Available">Available</figure>
+            @endif
+
+            @if($data->status == 2)
+                <figure class="label label-InProcess">In-Process</figure>
+            @endif
+
+            @if($data->status == 3)
+                <figure class="label label-danger">Sold</figure>
+            @endif
             <p>
                 {{ $data->description }}
             </p>

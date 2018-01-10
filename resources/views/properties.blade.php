@@ -6,7 +6,7 @@
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="{{ url("/")}}">Home</a></li>
-            <li ><a href="{{ url("/properties")}}">Properties</a></li>
+            <li ><a href="{{ url("/properties")}}">All Properties</a></li>
 
         </ol>
         <!--end breadcrumb-->
@@ -48,6 +48,11 @@
         </div>
 
         <!-- end pagination-->
+
+
+
+
+        @include('partials.totalproperties')
 
 
 

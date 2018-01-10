@@ -321,25 +321,19 @@ $result=array();
         $cites=City::all();
 
 
+        $purpose= $request['purpose'];
+
         $city = $request['city'];
         $society = $request['society'];
+        $phase = $request['Phase'];
         $area = $request['area'];
         $size = $request['size'];
 
 
-        $property = Property::where('city_id', '=', $city)->orWhere('society_id', '=', $society)->paginate(8);
-
-        //            ->Where('unit_size', 'like', get_ble . '%')->paginate(8);
 
 
-        if ($request['city']=="") {
+        return view('/properties', compact('property', 'photos','cites'));
 
-            return redirect('/properties');
-
-        }
-        else {
-            return view('/properties', compact('property', 'photos','cites'));
-        }
 
 
 
@@ -449,7 +443,7 @@ $result=array();
                 [
                     'user_id'=> Auth::user()->getid(),'title'=> $request['title'],'address'=> $request['address'],'slug'=> $temp, 'property_type'=>  $request['property_type'],'description' => $request['description'],
                     'price'=>$request['price'],'city_id'=>$request['city'],'society_id'=>$request['society'],
-                    'phase_id'=>$request['Phase'],'block_id'=>$request['block'],'address'=>$request['address'],
+                    'phase_id'=>$request['Phase'],'block_id'=>$request['block'],'address'=>$request['address'],'status'=>1,
                     'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],'unit_size'=>$request['unit_size'],'created_at'=>Carbon::now()
 
                 ]
@@ -640,13 +634,16 @@ $result=array();
     public function show_all(){
         $cites=City::all();
         $photos = Photo::all();
+        $Property1 =DB::table('property')->select(DB::raw('count(*) as total'),'property.city_id','city.city_name')->join('city','property.city_id','=','city.id')
+            ->groupBy('property.city_id','city.city_name')->get();
+
         $property=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->leftjoin('feature','property.id','=','feature.property_id')->
         join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
             ->join('phase','phase.id','=','property.phase_id')
             ->join('block','block.id','=','property.block_id')
             ->where('ad_status','=','1')->paginate(8);
 
-        return view('properties',compact('property','photos','cites'));
+        return view('properties',compact('property','Property1','photos','cites'));
     }
 
     public function mainPage(){ //showing cities and their count of properties and Blog Title
