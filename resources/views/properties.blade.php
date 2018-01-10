@@ -52,7 +52,7 @@
 
 
 
-        @include('partials.totalproperties')
+        {{--@include('partials.totalproperties')--}}
 
 
 

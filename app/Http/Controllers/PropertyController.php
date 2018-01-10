@@ -322,21 +322,42 @@ $result=array();
 
 
         $purpose= $request['purpose'];
+        echo "purpose :".$purpose."<br>";
 
         $city = $request['city'];
+        echo "city : ".$city."<br>";
+
         $society = $request['society'];
+        echo "Society: ".$society."<br>";
+
         $phase = $request['Phase'];
-        $area = $request['area'];
+        echo "Phase : ".$phase."<br>";
+        $block = $request['block'];
+        echo "Block : ".$block."<br>";
+
         $size = $request['size'];
+        echo "Size".$size."<br>";
+
+        $area = $request['area'];
+        echo "Area : ".$area."<br>";
 
 
+        $property = Property::where('purpose','=', $purpose)
+            ->where('city_id','=', $city)
+            ->where('society_id', '=', $society)
+            ->where('phase_id','=',$phase)
+            ->where('block_id','=',$block)
+            ->paginate(8);
 
+print_r($property);
 
-        return view('/properties', compact('property', 'photos','cites'));
+        //
+//        $Property1 =DB::table('property')->select(DB::raw('count(*) as total'),'property.society_id','society.society_name')
+//            ->join('society','property.society_id','=','society.id')
+//            ->groupBy('property.society_id','society.society_name')->get();
 
-
-
-
+//        return view('/properties', compact('Property1','property', 'photos','cites'));
+//        return view('/properties', compact('property','photos','cites'));
     }
 
 

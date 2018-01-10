@@ -23,7 +23,6 @@
                 <select name="city" id="city" class="form-control" >
                     <option value="">Select</option>
                @foreach($cites as $city)
-
                     <option value="{{ $city->id }}">{{ $city->city_name }}</option>
                 @endforeach
                 </select>
@@ -34,7 +33,7 @@
                 <label for="form-filter-check-in">Society</label>
                 {{--<input type="text" class="form-control date" id="form-filter-check-in" name="check-in" placeholder="Check In">--}}
                 <select name="society" id="society" class="form-control">
-
+                    <option value="">Select</option>
                 {{--@foreach($societies as $society)--}}
                     {{--<option value="{{ $society->id }}">{{ $society->society_name }}</option>--}}
                     {{--@endforeach--}}
