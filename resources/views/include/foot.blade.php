@@ -252,7 +252,11 @@
                 dataType: "json",
                 success: function(data){
 
-
+                    var option = document.createElement("option");
+                    option.text = "Select Society";
+                    option.value ="";
+                    var select = document.getElementById("society");
+                    select.append(option);
                     for (var i = 0; i < data.length; i++) {
 
 
@@ -321,6 +325,12 @@
                 dataType: "json",
                 success: function(data){
 
+                    var option = document.createElement("option");
+                    option.text = "Select Phase";
+                    option.value ="";
+                    var select = document.getElementById("Phase");
+                    select.append(option);
+
                     for (var i = 0; i < data.length; i++) {
 
 
@@ -380,7 +390,11 @@
                 dataType: "json",
                 success: function(data){
 
-
+                    var option = document.createElement("option");
+                    option.text = "Select Block";
+                    option.value ="";
+                    var select = document.getElementById("block");
+                    select.append(option);
                     for (var i = 0; i < data.length; i++) {
 
 

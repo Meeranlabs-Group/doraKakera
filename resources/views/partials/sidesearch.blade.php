@@ -20,7 +20,7 @@
                 {{--<input type="text" class="form-control date" id="form
                 -filter-check-in" name="check-in" placeholder="Check In">--}}
 
-                <select name="city" id="city" class="form-control" >
+                <select name="city" id="city" class="form-control selectpicker" data-live-search="true">
                     <option value="">Select</option>
                @foreach($cites as $city)
                     <option value="{{ $city->id }}">{{ $city->city_name }}</option>
