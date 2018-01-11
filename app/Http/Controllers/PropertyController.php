@@ -320,44 +320,109 @@ $result=array();
         $photos = Photo::all();
         $cites=City::all();
 
-
         $purpose= $request['purpose'];
-        echo "purpose :".$purpose."<br>";
-
         $city = $request['city'];
-        echo "city : ".$city."<br>";
-
         $society = $request['society'];
-        echo "Society: ".$society."<br>";
-
         $phase = $request['Phase'];
-        echo "Phase : ".$phase."<br>";
-        $block = $request['block'];
-        echo "Block : ".$block."<br>";
-
         $size = $request['size'];
-        echo "Size".$size."<br>";
-
-        $area = $request['area'];
-        echo "Area : ".$area."<br>";
+        $block = $request['block'];
+        $unit_type = $request['area'];
 
 
-        $property = Property::where('purpose','=', $purpose)
-            ->where('city_id','=', $city)
-            ->where('society_id', '=', $society)
-            ->where('phase_id','=',$phase)
-            ->where('block_id','=',$block)
-            ->paginate(8);
 
-print_r($property);
+        $city1 = DB::table('city')->where('city_name','LIKE','%'.$city.'%');
+        $society1 = DB::table('society')->where('society_name','LIKE','%'.$society.'%');
+        $phase1 = DB::table('phase')->where('phase_name','LIKE','%'.$phase.'%');
+        $block1 = DB::table('block')->where('block_name','LIKE','%'.$block.'%');
 
-        //
-//        $Property1 =DB::table('property')->select(DB::raw('count(*) as total'),'property.society_id','society.society_name')
-//            ->join('society','property.society_id','=','society.id')
-//            ->groupBy('property.society_id','society.society_name')->get();
+//            $search=DB:: table('property')->where('property.purpose','LIKE','%'.$purpose.'%')
 
-//        return view('/properties', compact('Property1','property', 'photos','cites'));
-//        return view('/properties', compact('property','photos','cites'));
+
+
+        $search=Property::select('feature.*','property.*')
+            ->leftjoin('feature','property.id','=','feature.property_id')
+
+            ->union($city1)
+            ->union($society1)
+            ->union($phase1)
+            ->union($block1)
+            ->get();
+
+
+   print_r($search);
+//        echo "purpose :".$purpose."<br>";
+//        echo "city : ".$city."<br>";
+//        echo "Society: ".$society."<br>";
+//        echo "Phase : ".$phase."<br>";
+//        echo "Block : ".$block."<br>";
+//        echo "Unit Type : ".$unit_type."<br>";
+//        echo "Size".$size."<br>";
+
+
+
+
+//        $filter=array("purpose" => $purpose,"city_id"=> $city,"society_id" => $society,"phase_id"=>$phase,"block_id"=>$block,
+//            "unit_type"=>$unit_type, "unit_size" => $size);
+//
+//
+//
+//       print_r($filter);
+//
+//
+//
+//        foreach ($filter as $key => $value) {
+//
+//            if($value !=""){
+//
+//                $result[]=array('col'=>$key,'val'=>$value);
+//            }
+//        }
+////print_r($result);
+//
+//        $property1 =Property::with('feature')->
+//        where('ad_status','=','1');
+//
+//            foreach($result as $f){
+//                $property1->where($f['col'],'=',$f['val']);
+//
+//
+//            }
+//
+//$d=$property1->get();
+//
+//        print_r($d);
+////        $property=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')
+//        $property=Property::select() ->leftjoin('feature','property.id','=','feature.property_id')
+//            ->join('city','city.city_name','=',$city)
+//            ->join('society','society.name','=',$society)
+//            ->join('phase','phase.name','=',$phase)
+//            ->join('block','block.name','=',$block)
+//            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
+//            ->where('property.purpose','like','%'.$purpose.'%')
+//
+//
+//        ->paginate(8);
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   //   return view('/properties', compact('property','photos','cites'));
     }
 
 

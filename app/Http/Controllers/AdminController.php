@@ -56,7 +56,14 @@ class AdminController extends Controller
     }
     public function aboutus(){
         $agents=Agent::all();
-        return view('about-us',compact('agents'));
+        $photos = Photo::all();
+
+            $property =DB::table('property')->select(DB::raw('count(*) as total'),'property.city_id','city.city_name')
+                ->join('city','property.city_id','=','city.id')
+                ->groupBy('property.city_id','city.city_name')->get();
+
+
+        return view('about-us',compact('agents','property','photos'));
     }
 
 
