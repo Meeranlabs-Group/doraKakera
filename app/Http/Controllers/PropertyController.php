@@ -339,17 +339,18 @@ $result=array();
 
 
 
-        $search=Property::select('feature.*','property.*')
+        $property=Property::select('feature.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
+            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
             ->leftjoin('feature','property.id','=','feature.property_id')
 
-            ->union($city1)
-            ->union($society1)
-            ->union($phase1)
-            ->union($block1)
-            ->get();
+            ->join('city','city.city_id','=',$city1)
+//            ->merge($society1)
+//            ->merge($phase1)
+//            ->merge($block1)
+            //->get();
+        ->paginate(9);
 
-
-   print_r($search);
+ //  print_r($property);
 //        echo "purpose :".$purpose."<br>";
 //        echo "city : ".$city."<br>";
 //        echo "Society: ".$society."<br>";
@@ -422,7 +423,7 @@ $result=array();
 
 
 
-   //   return view('/properties', compact('property','photos','cites'));
+      return view('/properties', compact('property','photos','cites'));
     }
 
 
