@@ -31,7 +31,13 @@
 <script src={{url("assets/js/jquery.newsTicker.js")}}></script>
 
 
+
+
+
+
 <script>
+
+
     $('.owl-carousel').owlCarousel({
         loop:true,
         margin:5,

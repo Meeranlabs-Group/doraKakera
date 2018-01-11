@@ -4,12 +4,12 @@
             <h2>Location</h2>
             <aside class="step">2</aside>
         </div>
-        <div class="col-md-7">
+        <div class="col-md-7 col-sm-7">
 
-<div class="col-md-6 " style="padding: 0px;">
+<div class="col-md-6 col-sm-6 " style="padding: 0px;">
             <div class="form-group">
                 <label for="address-autocomplete">City<em>*</em></label>
-                <select class="framed width-100" name="city" id="city">
+                <select class="framed width-100" name="city" id="city" required>
                     <option value="" selected="">Select City</option>
 
                     @foreach($cities as $city)
@@ -21,10 +21,10 @@
             </div>
 </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6" style="padding: 0px;">
 
             <div class="form-group">
-                <label for="address-autocomplete">Society<em>*</em></label>
+                <label for="address-autocomplete">Society</label>
 
                 <select class="framed width-100" name="society" id="society">
                     <option value="" selected="">Select Society</option>
@@ -38,29 +38,31 @@
             </div>
 
 
-            <div class="col-md-6" style="padding: 0px;">
+            <div class="col-md-6 col-sm-6" style="padding: 0px;">
 
                 <div class="form-group">
-                    <label for="address-autocomplete">Phase<em>*</em></label>
+                    <label for="address-autocomplete">Phase</label>
                     <select class="framed width-100" name="Phase" id="Phase">
                         <option value="" selected="">Select Phase</option>
 
                     </select>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-6" style="padding: 0px;">
 
                 <div class="form-group">
-                    <label for="address-autocomplete">Block<em>*</em></label>
+                    <label for="address-autocomplete">Block</label>
                     <select class="framed width-100" name="block" id="block">
                         <option value="" selected="">Select Block</option>
 
                     </select>
                 </div>
             </div>
+            <div class="col-md-6 col-sm-6" style="padding: 0px;">
+
             <div class="form-group">
                 <label for="address-autocomplete">Address<em>*</em></label>
-                <input type="text" class="form-control" id="address-autocomplete" name="address" placeholder="Accommodation Address" required="">
+                <input type="text" class="form-control" id="address-autocomplete" name="address" placeholder="Accommodation Address" required>
             </div>
 
         <!--end map-->
@@ -73,17 +75,20 @@
             {{--</ul>--}}
             <!--end checkboxes-->
         </div>
-        <!--end col-md-7-->
-<div class="col-md-5">
 
-    <div class="form-group">
-        <label>Place on Map</label>
-        <div class="map height-300 box" id="map-item"></div>
-    </div></div>
+        <!--end col-md-7-->
+
         <!--end col-md-7-->
     </div>
 
+        <div class="col-md-5" id="xd">
 
+            <div class="form-group">
+                <label>Place on Map</label>
+                <div class="map height-300 box" id="map-item"></div>
+            </div>
+        </div>
+    </div>
     <!--end row-->
 </section>
 

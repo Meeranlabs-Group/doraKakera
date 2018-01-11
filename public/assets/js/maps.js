@@ -142,6 +142,7 @@ function autoComplete(map, marker){
 
         function success(position) {
             map.setCenter(new google.maps.LatLng(position.coords.latitude, position.coords.longitude));
+
             //initSubmitMap(position.coords.latitude, position.coords.longitude);
             $('#latitude').val( position.coords.latitude );
             $('#longitude').val( position.coords.longitude );
