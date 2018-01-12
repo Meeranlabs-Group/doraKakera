@@ -7,6 +7,9 @@
                         <div class="inner">
                             <div class="container">
                                 <h1 class="center">Find Your Best Property</h1>
+
+                                {!! Form::open(['url' => '/search2','class'=>'labels-uppercase','id'=>'form-filter']) !!}
+
                                 <div class="row no-gutters">
 
 
@@ -211,7 +214,7 @@
 
 
                                 </div>
-
+                            {!! Form::close() !!}
                                 <!--end favorite-searches-->
                             </div>
                             <!--end container-->
