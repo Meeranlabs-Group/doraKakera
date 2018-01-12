@@ -40,10 +40,13 @@ class ListingController extends Controller
             ->groupBy('property.society_id','society.society_name')->get();
         $x=$cityid;
 
-  //print_r($Property1);
+        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+            ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+            ->get();
 
 //       return view("listings.society",compact("Property1","x"));
-        return view("listings.society",compact("property3","Property1","x","cites","photos"));
+        return view("listings.society",compact("property3","Property1","x","cites","photos","sidesearch"));
 
     }
 
@@ -69,10 +72,13 @@ class ListingController extends Controller
         $x=$cityid;
         $y=$societyid;
 
-  //print_r($Property1);
+        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+            ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+            ->get();
 
 //       return view("listings.phase",compact("Property1","x","y"));
-        return view("listings.phase",compact("property3","Property1","x","y","cites","photos"));
+        return view("listings.phase",compact("property3","Property1","x","y","cites","photos","sidesearch"));
 
     }
 
@@ -104,9 +110,14 @@ class ListingController extends Controller
         $y=$societyid;
         $z=$phaseid;
 
+        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+            ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+            ->get();
+
 //  print_r($property3);
 
-       return view("listings.block",compact("property3","Property1","x","y","z","cites","photos"));
+       return view("listings.block",compact("property3","Property1","x","y","z","cites","photos","sidesearch"));
     }
 
         public function Show_Properties($cityid,$societyid,$phaseid,$blockid){
@@ -127,10 +138,14 @@ class ListingController extends Controller
             $y=$societyid;
             $z=$phaseid;
             $f=$blockid;
-//            print_r($property);
+
+            $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+                ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+                ->get();
 
 
-            return view("listings.house",compact("property","Property1","cites","photos","x","y","z","f"));
+            return view("listings.house",compact("property","Property1","cites","photos","x","y","z","f","sidesearch"));
         }
 
 

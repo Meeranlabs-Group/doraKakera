@@ -719,37 +719,13 @@ $result=array();
             $feature['boundry_wall'] = $request['Boundary_Wall'];
             $feature['other_plot_features'] = $request['Other_Plot_Features'];
 
-
-
-
-
-
-
-//                    $table->string('number_of_bedrooms')->nullable();
-//                    $table->string('number_of-bathrooms')->nullable();
-
-
         }
 
 
-
-// $post['Published_at']= Carbon::now();
-
-
-
-//        $id= insertGetId($post);
-
-
-//        $post->save();
-
-
-
-
-
-
-
         $feature->save();
-        return redirect('/myproperties');
+//        return redirect('/myproperties');
+        return redirect('/properties');
+
 
     }
 
@@ -765,7 +741,13 @@ $result=array();
             ->join('block','block.id','=','property.block_id')
             ->where('ad_status','=','1')->paginate(8);
 
-        return view('properties',compact('property','Property1','photos','cites'));
+
+        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+            ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+            ->get();
+
+        return view('properties',compact('property','Property1','photos','cites','sidesearch'));
     }
 
 
@@ -792,8 +774,15 @@ $result=array();
 
             ->paginate(8);
 
+        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+            ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+            ->get();
 
-        return view('properties',compact('property','Property1','photos','cites'));
+
+
+
+        return view('properties',compact('property','Property1','photos','cites','sidesearch'));
 
 
     }
@@ -877,47 +866,52 @@ join('city','city.id','=','property.city_id')->join('society','society.id','=','
 
         $photos = Photo::where("property_id",$data[0]->id)->get();
 
+        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+            ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+            ->get();
+
 
         $opt=$data[0]->property_type;
 
 
         if ($opt == "Houses"){
 
-           return view('user.property.houseDetail',compact('data','photos','cites'));
+           return view('user.property.houseDetail',compact('data','photos','cites','sidesearch'));
         }
 
         if ($opt == "Flates"){
-              return view('user.property.flateDetail',compact('data','photos','cites'));
+              return view('user.property.flateDetail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Buildings"){
-              return view('user.property.building_detail',compact('data','photos','cites'));
+              return view('user.property.building_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Factories"){
-              return view('user.property.factory_detail',compact('data','photos','cites'));
+              return view('user.property.factory_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Agricultural-Land" || $opt == "Industrial-Land" ){
-              return view('user.property.land_detail',compact('data','photos','cites'));
+              return view('user.property.land_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Offices"){
-              return view('user.property.office_detail',compact('data','photos','cites'));
+              return view('user.property.office_detail',compact('data','photos','cites','sidesearch'));
         }
               if ($opt == "Residential-Plots" || $opt == "Commercial-Plots"){
-              return view('user.property.plot_detail',compact('data','photos','cites'));
+              return view('user.property.plot_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Upper-Portions" || $opt == "Lower-Portions" ||  $opt="Farms-House" ){
-              return view('user.property.portion&farm_detail',compact('data','photos','cites'));
+              return view('user.property.portion&farm_detail',compact('data','photos','cites','sidesearch'));
         }
 
         if ($opt == "Shops"){
-              return view('user.property.shop_detail',compact('data','photos','cites'));
+              return view('user.property.shop_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Warehouses"){
-              return view('user.property.warehouse_detail',compact('data','photos','cites'));
+              return view('user.property.warehouse_detail',compact('data','photos','cites','sidesearch'));
         }
 
 
         if ($opt == "Other") {
-            return view('user.property.other_detail', compact('data', 'photos', 'cites'));
+            return view('user.property.other_detail', compact('data', 'photos', 'cites','sidesearch'));
         }
 
 
