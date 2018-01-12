@@ -330,10 +330,10 @@ $result=array();
 
 
 
-        $city1 = DB::table('city')->where('city_name','LIKE','%'.$city.'%');
-        $society1 = DB::table('society')->where('society_name','LIKE','%'.$society.'%');
-        $phase1 = DB::table('phase')->where('phase_name','LIKE','%'.$phase.'%');
-        $block1 = DB::table('block')->where('block_name','LIKE','%'.$block.'%');
+//        $city1 = DB::table('city')->where('city_name','LIKE','%'.$city.'%');
+//        $society1 = DB::table('society')->where('society_name','LIKE','%'.$society.'%');
+//        $phase1 = DB::table('phase')->where('phase_name','LIKE','%'.$phase.'%');
+//        $block1 = DB::table('block')->where('block_name','LIKE','%'.$block.'%');
 
 //            $search=DB:: table('property')->where('property.purpose','LIKE','%'.$purpose.'%')
 
@@ -365,6 +365,12 @@ $result=array();
 
 
 
+        if($unit_type!='')
+            $property1 ->where('property.unit_type','=',$unit_type);
+        if($size!='')
+            $property1 ->where('property.unit_size','=',$size);
+
+
         if($purpose!='')
             $property1 ->where('property.purpose','=',$purpose);
         if($city!='')
@@ -386,14 +392,6 @@ $result=array();
         //->get();
         $property=$property1 ->paginate(9);
 
-//   print_r($property);
-//        echo "purpose :".$purpose."<br>";
-//        echo "city : ".$city."<br>";
-//        echo "Society: ".$society."<br>";
-//        echo "Phase : ".$phase."<br>";
-//        echo "Block : ".$block."<br>";
-//        echo "Unit Type : ".$unit_type."<br>";
-//        echo "Size".$size."<br>";
 
 
 
@@ -461,6 +459,7 @@ $result=array();
 
         return view('/properties', compact('property','photos','cites'));
     }
+
 
 
     public function updateproperty(Request $request){
