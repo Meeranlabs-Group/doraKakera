@@ -337,20 +337,56 @@ $result=array();
 
 //            $search=DB:: table('property')->where('property.purpose','LIKE','%'.$purpose.'%')
 
+//
+//
+//        $property1=Property::select('feature.*','society.*','city.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
+//       // $property1=Property::select('city.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
+//            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
+//            ->leftjoin('feature','property.id','=','feature.property_id')
+//
+//            ->leftjoin('city','city.id','=','property.city_id');
+////            if($city!='')
+////           $property1 ->where('city_id','=',$city);
+//
+//      $property1 ->leftjoin('society','society.id','=','property.society_id');
+//      $property1 ->leftjoin('society','society.id','=','property.society_id');
+////        if($society!='')
+////            $property1 ->where('society_id','=',$society);
+//           // ->leftjoin('society','society.id','=','property.society_id')
+////            ->merge($society1)
+////            ->merge($phase1)
+////            ->merge($block1)
+//            //->get();
+//
+//
+        $property1=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*');
+//        if($unit_type!='')
+//            $property1 ->where('property.unit_type','=',$purpose);
 
 
-        $property=Property::select('feature.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
-            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
-            ->leftjoin('feature','property.id','=','feature.property_id')
 
-            ->join('city','city.city_id','=',$city1)
-//            ->merge($society1)
-//            ->merge($phase1)
-//            ->merge($block1)
-            //->get();
-        ->paginate(9);
+        if($purpose!='')
+            $property1 ->where('property.purpose','=',$purpose);
+        if($city!='')
+            $property1 ->where('property.city_id','=',$city);
+        if($society!='')
+            $property1 ->where('property.society_id','=',$society);
+        if($phase!='')
+            $property1 ->where('property.phase_id','=',$phase);
+        if($block!='')
+            $property1 ->where('property.block_id','=',$block);
 
- //  print_r($property);
+        $property1  ->leftjoin('feature','property.id','=','feature.property_id')->
+        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+            ->join('phase','phase.id','=','property.phase_id')
+            ->join('block','block.id','=','property.block_id')
+            ->where('ad_status','=','1');
+
+
+        //->get();
+        $property=$property1 ->paginate(9);
+
+//   print_r($property);
 //        echo "purpose :".$purpose."<br>";
 //        echo "city : ".$city."<br>";
 //        echo "Society: ".$society."<br>";
@@ -423,7 +459,7 @@ $result=array();
 
 
 
-      return view('/properties', compact('property','photos','cites'));
+        return view('/properties', compact('property','photos','cites'));
     }
 
 
