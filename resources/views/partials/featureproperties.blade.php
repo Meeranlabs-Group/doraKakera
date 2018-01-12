@@ -23,6 +23,7 @@
                 <div class="description">
                     <a href="propertydetail/{{ $data->slug }}"><h3> {{ str_limit(ucfirst($data->title) , $limit = 25, $end = '...') }}   </h3></a>
                     <figure>{{$data->block_name}},{{ $data->city_name }}</figure>
+
                     <figure class="label label-InProcess">{{ $data->purpose }}</figure>
                     <figure class="label label-InProcess">{{ $data->property_type }}</figure>
                     <figure class="label label-success">{{$data->unit_size}} {{$data->unit_type}}</figure>
