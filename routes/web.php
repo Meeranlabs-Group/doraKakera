@@ -153,6 +153,8 @@ Route::get('/dha-file-rates', function () {
     return view('dhafile');
 });
 
+Route::get('/dha-plots','PropertyController@show_all_plots');
+
 Route::get('/properties','PropertyController@show_all');
 
 

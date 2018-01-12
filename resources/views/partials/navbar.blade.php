@@ -122,7 +122,7 @@
                             </li>
 
                             <li>
-                                <a href={{ url("/properties") }} >DHA Plots</a>
+                                <a href={{ url("/dha-plots") }} >DHA Plots</a>
                             </li>
 
 

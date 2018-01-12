@@ -733,6 +733,36 @@ $result=array();
         return view('properties',compact('property','Property1','photos','cites'));
     }
 
+
+    public function show_all_plots(){
+        $cites=City::all();
+        $photos = Photo::all();
+        $Property1 =DB::table('property')->select(DB::raw('count(*) as total'),'property.city_id','city.city_name')->join('city','property.city_id','=','city.id')
+            ->groupBy('property.city_id','city.city_name')->get();
+
+
+        $property=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')
+            ->leftjoin('feature','property.id','=','feature.property_id')
+            ->join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+            ->join('phase','phase.id','=','property.phase_id')
+            ->join('block','block.id','=','property.block_id')
+            ->where('ad_status','=','1')
+            ->where('property.society_id','=',"52")->where('property.city_id','=',"2")
+
+            ->Where(function ($query) {
+
+                $query->orWhere('property.property_type','=',"Residential-Plots")->orWhere('property.property_type','=',"Commercial-Plots")
+                ->orWhere('property.property_type','=',"Agricultural-Land")->orWhere('property.property_type','=',"Industrial-Land");
+            })
+
+            ->paginate(8);
+
+
+        return view('properties',compact('property','Property1','photos','cites'));
+
+
+    }
+
     public function mainPage(){ //showing cities and their count of properties and Blog Title
 
 
