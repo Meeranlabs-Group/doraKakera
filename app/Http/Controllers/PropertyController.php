@@ -508,7 +508,7 @@ $result=array();
                     $i++;
                     $newslug = $temp . '-' . $i;
                 }
-              echo  $temp =  $newslug;
+              $temp =  $newslug;
             }
                if ($request['society']==""){
                    $request['society']=2000;

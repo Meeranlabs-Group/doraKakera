@@ -19,6 +19,7 @@ class CreateBlogTable extends Migration
             $table->string('title');
             $table->longText('description');
             $table->string('path');
+            $table->string('slug');
             $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });

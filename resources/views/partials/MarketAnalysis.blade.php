@@ -24,9 +24,9 @@
                     @foreach($articles as $article)
 
                     <article class="blog-post">
-                        <a href="/MarketDetail/{{$article->id}}">
+                        <a href="/MarketDetail/{{$article->slug}}">
                             <img src="{{ asset($article->path)}}"></a>
-                        <header><a href="/MarketDetail/{{$article->id}}"><h2>{{ $article->title }}</h2></a></header>
+                        <header><a href="/MarketDetail/{{$article->slug}}"><h2>{{ $article->title }}</h2></a></header>
                         <figure class="meta">
                             <a href="#" class="link icon"><i class="fa fa-user"></i>Admin</a>
                             <a href="#" class="link icon"><i class="fa fa-calendar"></i>{{ $article->created_at }}4</a>
@@ -36,12 +36,12 @@
                                 <a href="#" class="tag article">Trend</a>
                             </div>
                         </figure>
-                        <p class="text-justify">
-                            {{ $article->description }}
+                        <p class="text-justify " style="font-size: large">
 
+                            {{ str_limit(ucfirst($article->description) , $limit = 500, $end = '...') }}
 
                         </p>
-                        <a href="/MarketDetail/{{$article->id}}" class="btn btn-rounded btn-default btn-framed btn-small">Read More</a>
+                        <a href="/MarketDetail/{{$article->slug}}" class="btn btn-rounded btn-default btn-framed btn-small">Read More</a>
                     </article><!-- /.blog-post -->
                   @endforeach
 
@@ -61,22 +61,22 @@
                 <!--end main-content-->
             </div>
             <!--end col-md-9-->
-            <div class="col-md-3">
-                <div class="sidebar">
-                    <h2>Archive</h2>
-                    <ul class="links">
-                        <li><a href="#">January</a></li>
-                        <li><a href="#">February</a></li>
-                        <li><a href="#">April</a></li>
-                        <li><a href="#">March</a></li>
-                        <li><a href="#">July</a></li>
-                        <li><a href="#">September</a></li>
-                        <li><a href="#">October</a></li>
-                        <li><a href="#">December</a></li>
-                    </ul>
-                </div>
-                <!--end sidebar-->
-            </div>
+            {{--<div class="col-md-3">--}}
+                {{--<div class="sidebar">--}}
+                    {{--<h2>Archive</h2>--}}
+                    {{--<ul class="links">--}}
+                        {{--<li><a href="#">January</a></li>--}}
+                        {{--<li><a href="#">February</a></li>--}}
+                        {{--<li><a href="#">April</a></li>--}}
+                        {{--<li><a href="#">March</a></li>--}}
+                        {{--<li><a href="#">July</a></li>--}}
+                        {{--<li><a href="#">September</a></li>--}}
+                        {{--<li><a href="#">October</a></li>--}}
+                        {{--<li><a href="#">December</a></li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+                {{--<!--end sidebar-->--}}
+            {{--</div>--}}
             <!--end col-md-3-->
         </div>
         <!--end row-->

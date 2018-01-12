@@ -1,3 +1,4 @@
+
 <div class="item list" >
     <div class="image-wrapper">
 
@@ -50,6 +51,9 @@
             <figure class="location">{{ $data->address }}</figure>
             <figure class="location">{{ $data->block_name }}, {{ $data->phase_name }}, {{ $data->society_name }}, {{ $data->city_name }}</figure>
             <figure class="label label-info">{{ $data->property_type }}</figure>
+
+            <figure class="label label-success">{{$data->unit_size}} {{$data->unit_type}}</figure>
+            <h6 class="label label-danger">PKR-{{ nice_number($data->price) }}</h6>
 
            @if($data->status == 1)
                 <figure class="label label-Available">Available</figure>

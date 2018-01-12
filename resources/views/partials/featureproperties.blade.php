@@ -1,3 +1,4 @@
+
 <div class="block">
     <div class="container">
         <div class="title">
@@ -23,7 +24,9 @@
                     <a href="propertydetail/{{ $data->slug }}"><h3> {{ str_limit(ucfirst($data->title) , $limit = 25, $end = '...') }}   </h3></a>
                     <figure>{{$data->block_name}},{{ $data->city_name }}</figure>
                     <figure class="label label-InProcess">{{ $data->purpose }}</figure>
-                    <h6 class="label label-danger">PKR-{{ $data->price }}</h6>
+                    <figure class="label label-InProcess">{{ $data->property_type }}</figure>
+                    <figure class="label label-success">{{$data->unit_size}} {{$data->unit_type}}</figure>
+                    <h6 class="label label-danger">PKR-{{ nice_number($data->price) }}</h6>
                     <p>  {{ str_limit($data->description , $limit = 60, $end = '...') }}  </p>
                     <a href="propertydetail/{{ $data->slug }}" class="btn btn-default btn-small btn-framed btn-rounded">More</a>
                 </div>

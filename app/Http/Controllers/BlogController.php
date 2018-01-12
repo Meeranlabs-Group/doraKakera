@@ -19,12 +19,23 @@ class BlogController extends Controller
 
         public function saveArticle(Request $request){
 
+            $temp = str_slug($request['title'], '-');
+            if(!Property::all()->where('slug',$temp)->isEmpty()){
+                $i = 1;
+                $newslug = $temp . '-' . $i;
+                while(!Property::all()->where('slug',$newslug)->isEmpty()){
+                    $i++;
+                    $newslug = $temp . '-' . $i;
+                }
+                $temp =  $newslug;
+            }
 
             $article= new Blog();
 
             $article['user_id']=Auth::user()->getid();
-            echo $article['title']=$request->title;
-            echo $article['description']=$request->description;
+            $article['title']=$request->title;
+            $article['description']=$request->description;
+            $article['slug']=$request->title;
 
             $files=$request->file('file');
             $name = $files->getClientOriginalName();
@@ -38,7 +49,7 @@ class BlogController extends Controller
 
 
         public function blogDetail($id){
-            $article=Blog::where("id",'=',$id)->get();
+            $article=Blog::where("slug",'=',$id)->get();
             return view('partials.MarketDetails',compact('article'));
          }
 

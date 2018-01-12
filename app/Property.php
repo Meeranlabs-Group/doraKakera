@@ -49,19 +49,19 @@ class Property extends Model
     public function getid(){
         return $this->id;
     }
-    public function setSlugAttribute($value)
-    {
-        $temp = str_slug($this->title, '-');
-        if(!Article::all()->where('slug',$temp)->isEmpty()){
-            $i = 1;
-            $newslug = $temp . '-' . $i;
-            while(!Article::all()->where('slug',$newurl)->isEmpty()){
-                $i++;
-                $newslug = $temp . '-' . $i;
-            }
-            $temp =  $newslug;
-        }
-        $this->attributes['slug'] = $temp;
-    }
+//    public function setSlugAttribute($value)
+//    {
+//        $temp = str_slug($this->title, '-');
+//        if(!Article::all()->where('slug',$temp)->isEmpty()){
+//            $i = 1;
+//            $newslug = $temp . '-' . $i;
+//            while(!Article::all()->where('slug',$newurl)->isEmpty()){
+//                $i++;
+//                $newslug = $temp . '-' . $i;
+//            }
+//            $temp =  $newslug;
+//        }
+//        $this->attributes['slug'] = $temp;
+//    }
 
 }
