@@ -320,6 +320,28 @@ $result=array();
         $photos = Photo::all();
         $cites=City::all();
 
+        $Houses= $request['Houses'];
+        $Flates = $request['Flates'];
+        $Farms_House = $request['Farms-House'];
+        $Offices = $request['Offices'];
+        $Rooms = $request['Rooms'];
+        $Shops = $request['Shops'];
+        $Upper_Portions = $request['Upper-Portions'];
+
+        $Lower_Portions = $request['Lower-Portions'];
+        $Residential_Plots = $request['Residential-Plots'];
+        $Commercial_Plots = $request['Commercial-Plots'];
+        $Agricultural_Land = $request['Agricultural-Land'];
+        $Industrial_Land = $request['Industrial-Land'];
+        $Warehouses = $request['Warehouses'];
+
+        $Factories = $request['Factories'];
+        $Buildings = $request['Buildings'];
+        $Plot_Files = $request['Plot-Files'];
+
+        $Plot_Forms = $request['Plot-Forms'];
+        $Other = $request['Other'];
+
         $purpose= $request['purpose'];
         $city = $request['city'];
         $society = $request['society'];
@@ -363,12 +385,62 @@ $result=array();
 //        if($unit_type!='')
 //            $property1 ->where('property.unit_type','=',$purpose);
 
+        if($Houses!='')
+            $property1 ->orwhere('property.property_type','=',$Houses);
 
+        if($Flates!='')
+            $property1 ->orwhere('property.property_type','=',$Flates);
+
+        if($Farms_House!='')
+            $property1 ->orwhere('property.property_type','=',$Farms_House);
+
+        if($Offices!='')
+            $property1 ->orwhere('property.property_type','=',$Offices);
+
+        if($Rooms!='')
+            $property1 ->orwhere('property.property_type','=',$Rooms);
+
+        if($Shops!='')
+            $property1 ->orwhere('property.property_type','=',$Shops);
+
+        if($Upper_Portions!='')
+            $property1 ->orwhere('property.property_type','=',$Upper_Portions);
+
+        if($Lower_Portions!='')
+            $property1 ->orwhere('property.property_type','=',$Lower_Portions);
+
+        if($Residential_Plots!='')
+            $property1 ->orwhere('property.property_type','=',$Residential_Plots);
+
+        if($Commercial_Plots!='')
+            $property1 ->orwhere('property.property_type','=',$Commercial_Plots);
+
+        if($Agricultural_Land!='')
+            $property1 ->orwhere('property.property_type','=',$Agricultural_Land);
+
+        if($Industrial_Land!='')
+            $property1 ->orwhere('property.property_type','=',$Industrial_Land);
+
+        if($Warehouses!='')
+            $property1 ->orwhere('property.property_type','=',$Warehouses);
+
+
+        if($Factories!='')
+            $property1 ->orwhere('property.property_type','=',$Factories);
+        if($Buildings!='')
+            $property1 ->orwhere('property.property_type','=',$Buildings);
+
+        if($Plot_Files!='')
+            $property1 ->orwhere('propertyproperty_typee','=',$Plot_Files);
+        if($Plot_Forms!='')
+            $property1 ->orwhere('property.property_type','=',$Plot_Forms);
 
         if($unit_type!='')
             $property1 ->where('property.unit_type','=',$unit_type);
         if($size!='')
             $property1 ->where('property.unit_size','=',$size);
+        if($Other!='')
+            $property1 ->orwhere('property.property_type','=',$Other);
 
 
         if($purpose!='')
