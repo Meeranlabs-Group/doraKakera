@@ -787,8 +787,8 @@ $result=array();
 
             ->Where(function ($query) {
 
-                $query->orWhere('property.property_type','=',"Residential-Plots")->orWhere('property.property_type','=',"Commercial-Plots")
-                ->orWhere('property.property_type','=',"Agricultural-Land")->orWhere('property.property_type','=',"Industrial-Land");
+                $query->Where('property.property_type','=',"Residential-Plots")->orWhere('property.property_type','=',"Commercial-Plots")
+                    ->orWhere('property.property_type','=',"Agricultural-Land")->orWhere('property.property_type','=',"Industrial-Land");
             })
 
             ->paginate(8);
@@ -798,11 +798,10 @@ $result=array();
 
 
     }
-
     public function mainPage(){ //showing cities and their count of properties and Blog Title
 
 
-     $articles= Blog::all();
+     $articles= Blog::all(); 
 
 
  
