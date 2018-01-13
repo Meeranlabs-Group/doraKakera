@@ -112,6 +112,7 @@
         $("#show").click(function(){
             $("#0").show();
             $("#p").val($("#show").val());
+
         });
 
 

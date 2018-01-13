@@ -311,7 +311,7 @@ $result=array();
 
 
     }
-    public function search1(Request $request)
+    public function search4(Request $request)
     {
 
 
@@ -319,49 +319,26 @@ $result=array();
         $cites=City::all();
 
 
-        $purpose= $request['purpose'];
+//        echo $request['buy'];
+//        echo $request['city'];
+    //    echo $request['property_type'];
+       $purpose= $request->all();
+
         $city = $request['city'];
         $society = $request['society'];
         $phase = $request['Phase'];
         $size = $request['size'];
         $block = $request['block'];
+        $property_type = $request['property_type'];
+
         $unit_type = $request['area'];
 
+        $sfrom = $request['sfrom'];
+        $sto = $request['sto'];
 
 
-//        $city1 = DB::table('city')->where('city_name','LIKE','%'.$city.'%');
-//        $society1 = DB::table('society')->where('society_name','LIKE','%'.$society.'%');
-//        $phase1 = DB::table('phase')->where('phase_name','LIKE','%'.$phase.'%');
-//        $block1 = DB::table('block')->where('block_name','LIKE','%'.$block.'%');
-
-//            $search=DB:: table('property')->where('property.purpose','LIKE','%'.$purpose.'%')
-
-//
-//
-//        $property1=Property::select('feature.*','society.*','city.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
-//       // $property1=Property::select('city.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
-//            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
-//            ->leftjoin('feature','property.id','=','feature.property_id')
-//
-//            ->leftjoin('city','city.id','=','property.city_id');
-////            if($city!='')
-////           $property1 ->where('city_id','=',$city);
-//
-//      $property1 ->leftjoin('society','society.id','=','property.society_id');
-//      $property1 ->leftjoin('society','society.id','=','property.society_id');
-////        if($society!='')
-////            $property1 ->where('society_id','=',$society);
-//           // ->leftjoin('society','society.id','=','property.society_id')
-////            ->merge($society1)
-////            ->merge($phase1)
-////            ->merge($block1)
-//            //->get();
-//
-//
         $property1=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*');
-
-        // $property1 ->Where(function ($property1,$Houses,$Flates,$Farms_House,$Offices,$Rooms,$Shops,$Upper_Portions,$Lower_Portions,$Residential_Plots,$Commercial_Plots,$Agricultural_Land, $Industrial_Land,$Warehouses, $Factories,$Buildings,$Plot_Files,$Plot_Forms,$Other) {
-        $property1 ->Where(function ($req)use ($property1,$request)  {
+                      $property1 ->Where(function ($req)use ($property1,$request)  {
 
 
             $Houses= $request['Houses'];
@@ -441,11 +418,26 @@ $result=array();
 
         });
 
+        $property1 ->whereBetween('property.unit_size', array('1', '2'));
+
+        if($property_type!='')
+        {
+
+            $property1 ->where('property_type','=',$property_type);
+               //  echo $property_type;
+
+        }
         if($unit_type!='')
             $property1 ->where('property.unit_type','=',$unit_type);
-        if($size!='')
-            $property1 ->where('property.unit_size','=',$size);
 
+
+            if($sfrom!=''||$sto!='')
+            {
+
+                $property1 ->whereBetween('property.unit_size', array('1', '2'));
+
+
+            }
 
         if($purpose!='')
             $property1 ->where('property.purpose','=',$purpose);
@@ -467,85 +459,205 @@ $result=array();
 
 
         $property=$property1
-             ->get();
+     //        ->get();
 
-           // ->paginate(9);
-         print_r($property);
-
-
-
-
-//        $filter=array("purpose" => $purpose,"city_id"=> $city,"society_id" => $society,"phase_id"=>$phase,"block_id"=>$block,
-//            "unit_type"=>$unit_type, "unit_size" => $size);
-//
-//
-//
-//       print_r($filter);
-//
-//
-//
-//        foreach ($filter as $key => $value) {
-//
-//            if($value !=""){
-//
-//                $result[]=array('col'=>$key,'val'=>$value);
-//            }
-//        }
-////print_r($result);
-//
-//        $property1 =Property::with('feature')->
-//        where('ad_status','=','1');
-//
-//            foreach($result as $f){
-//                $property1->where($f['col'],'=',$f['val']);
-//
-//
-//            }
-//
-//$d=$property1->get();
-//
-//        print_r($d);
-////        $property=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')
-//        $property=Property::select() ->leftjoin('feature','property.id','=','feature.property_id')
-//            ->join('city','city.city_name','=',$city)
-//            ->join('society','society.name','=',$society)
-//            ->join('phase','phase.name','=',$phase)
-//            ->join('block','block.name','=',$block)
-//            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
-//            ->where('property.purpose','like','%'.$purpose.'%')
-//
-//
-//        ->paginate(8);
-//
+            ->paginate(9);
+         print_r($purpose);
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      //  return view('/properties', compact('property','photos','cites'));
+        return view('/properties', compact('property','photos','cites'));
     }
     public function search2(Request $request)
     {
 
-        print_r('in search');
+        echo "hello";
 
 
 
     }
+    public function search1(Request $request)
+    {
+
+
+        $photos = Photo::all();
+        $cites=City::all();
+
+
+        $purpose= $request['purpose'];
+        $property_type= $request['property_type'];
+        $city = $request['city'];
+        $society = $request['society'];
+        $phase = $request['Phase'];
+        $size = $request['size'];
+        $block = $request['block'];
+
+
+
+        $sfrom = $request['sfrom'];
+        $sto = $request['sto'];
+        $unit_type = $request['unit_type'];
+
+        $pfrom = $request['pfrom'];
+        $pto = $request['pto'];
+
+        $property1=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*');
+
+        // $property1 ->Where(function ($property1,$Houses,$Flates,$Farms_House,$Offices,$Rooms,$Shops,$Upper_Portions,$Lower_Portions,$Residential_Plots,$Commercial_Plots,$Agricultural_Land, $Industrial_Land,$Warehouses, $Factories,$Buildings,$Plot_Files,$Plot_Forms,$Other) {
+//        $property1 ->Where(function ($req)use ($property1,$request)  {
+//
+//
+//            $Houses= $request['Houses'];
+//            $Flates = $request['Flates'];
+//            $Farms_House = $request['Farms-House'];
+//            $Offices = $request['Offices'];
+//            $Rooms = $request['Rooms'];
+//            $Shops = $request['Shops'];
+//            $Upper_Portions = $request['Upper-Portions'];
+//
+//            $Lower_Portions = $request['Lower-Portions'];
+//            $Residential_Plots = $request['Residential-Plots'];
+//            $Commercial_Plots = $request['Commercial-Plots'];
+//            $Agricultural_Land = $request['Agricultural-Land'];
+//            $Industrial_Land = $request['Industrial-Land'];
+//            $Warehouses = $request['Warehouses'];
+//
+//            $Factories = $request['Factories'];
+//            $Buildings = $request['Buildings'];
+//            $Plot_Files = $request['Plot-Files'];
+//
+//            $Plot_Forms = $request['Plot-Forms'];
+//            $Other = $request['Other'];
+//
+//
+//            if($Houses!='')
+//                $property1 ->orwhere('property.property_type','=',$Houses);
+//
+//            if($Flates!='')
+//                $property1 ->orwhere('property.property_type','=',$Flates);
+//
+//            if($Farms_House!='')
+//                $property1 ->orwhere('property.property_type','=',$Farms_House);
+//
+//            if($Offices!='')
+//                $property1 ->orwhere('property.property_type','=',$Offices);
+//
+//            if($Rooms!='')
+//                $property1 ->orwhere('property.property_type','=',$Rooms);
+//
+//            if($Shops!='')
+//                $property1 ->orwhere('property.property_type','=',$Shops);
+//
+//            if($Upper_Portions!='')
+//                $property1 ->orwhere('property.property_type','=',$Upper_Portions);
+//
+//            if($Lower_Portions!='')
+//                $property1 ->orwhere('property.property_type','=',$Lower_Portions);
+//
+//            if($Residential_Plots!='')
+//                $property1 ->orwhere('property.property_type','=',$Residential_Plots);
+//
+//            if($Commercial_Plots!='')
+//                $property1 ->orwhere('property.property_type','=',$Commercial_Plots);
+//
+//            if($Agricultural_Land!='')
+//                $property1 ->orwhere('property.property_type','=',$Agricultural_Land);
+//
+//            if($Industrial_Land!='')
+//                $property1 ->orwhere('property.property_type','=',$Industrial_Land);
+//
+//            if($Warehouses!='')
+//                $property1 ->orwhere('property.property_type','=',$Warehouses);
+//
+//
+//            if($Factories!='')
+//                $property1 ->orwhere('property.property_type','=',$Factories);
+//            if($Buildings!='')
+//                $property1 ->orwhere('property.property_type','=',$Buildings);
+//
+//            if($Plot_Files!='')
+//                $property1 ->orwhere('propertyproperty_typee','=',$Plot_Files);
+//            if($Plot_Forms!='')
+//                $property1 ->orwhere('property.property_type','=',$Plot_Forms);
+//            if($Other!='')
+//                $property1 ->orwhere('property.property_type','=',$Other);
+//
+//        });
+
+
+        if($purpose!='')
+            $property1 ->where('property.purpose','=',$purpose);
+        if($city!='')
+            $property1 ->where('property.city_id','=',$city);
+        if($society!='')
+            $property1 ->where('property.society_id','=',$society);
+        if($phase!='')
+            $property1 ->where('property.phase_id','=',$phase);
+        if($block!='')
+            $property1 ->where('property.block_id','=',$block);
+        if($property_type!='')
+            $property1 ->where('property.property_type','=',$property_type);
+
+
+        if($unit_type!='')
+            $property1 ->where('property.unit_type','=',$unit_type);
+
+
+        if($sfrom!='')
+        {
+
+            $property1 ->where('property.unit_size', '>',$sfrom);
+
+
+        }
+
+        if($sto!='')
+        {
+
+            $property1 ->where('property.unit_size', '<',$sto);
+
+
+        }
+
+        if($pfrom!='')
+        {
+
+            $property1 ->where('property.price', '>',$pfrom);
+
+
+        }
+
+        if($pto!='')
+        {
+
+            $property1 ->where('property.unit_size', '<',$pto);
+
+
+        }
+
+
+
+        $property1  ->leftjoin('feature','property.id','=','feature.property_id')->
+        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+            ->join('phase','phase.id','=','property.phase_id')
+            ->join('block','block.id','=','property.block_id')
+            ->where('ad_status','=','1');
+
+
+
+        $property=$property1
+             //->get();
+
+            ->paginate(9);
+     //    print_r($property);
+
+
+
+
+        return view('/properties', compact('property','photos','cites'));
+    }
+
     public function search(Request $request)
     {
 

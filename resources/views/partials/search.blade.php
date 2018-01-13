@@ -1,6 +1,6 @@
 <div id="page-content">
     <div class="hero-section" data-height="600">
-        <form id="form-hero">
+
             <div class="hero-inner">
                 <div class="hero-wrapper" >
                     <div class="caption">
@@ -8,16 +8,19 @@
                             <div class="container">
                                 <h1 class="center">Find Your Best Property</h1>
 
-                                {!! Form::open(['url' => '/search2','class'=>'labels-uppercase','id'=>'form-filter']) !!}
+                                {!! Form::open(['url' => '/search1','class'=>'labels-uppercase','id'=>'form-filter']) !!}
 
                                 <div class="row no-gutters">
 
 
 
-                                <input type="hidden" id="p" value=""></input>
+                                <input type="hidden" name="purpose"id="p" value=""></input>
                                     <div class="col-md-2 col-sm-2 col-md-offset-3 col-sm-offset-3">
                                         <div class="form-group">
-                                            <button type="button" id="show" value="BUY" class="btn btn-primary">BUY</button>
+                                            <button type="button"  id="show" value="Sale"  class="btn btn-primary">BUY</button>
+
+                                            {{--<input  value="hello" name="type1"  id="type">--}}
+
                                         </div>
                                     </div>
 
@@ -29,7 +32,7 @@
 
                                     <div class="col-md-2 col-sm-2">
                                         <div class="form-group">
-                                            <button type="button" id="show1" value="RENT" class="btn btn-primary">RENT</button>
+                                            <button type="button"  id="show1" value="Rent" class="btn btn-primary">RENT</button>
                                         </div>
                                     </div>
 
@@ -44,7 +47,7 @@
                                             <div class="form-group">
                                                 <label style="color: white" >Property Type</label>
 
-                                                <select class="form-control framed white selectpicker"  data-live-search="true">
+                                                <select class="form-control framed white selectpicker"  name="property_type" id="property_type" data-live-search="true">
 
                                                     <option value="">  Any Type  </option>
                                                     <option value="" disabled>  --- HOUSE --- </option>
@@ -117,7 +120,7 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                                 <label style="color: white">Property Size Unit</label>
-                                                <select class="form-control framed white">
+                                                <select name="unit_type" class="form-control framed white">
 
                                                     <option value="">Size Unit Type</option>
                                                     <option value="Marla">Marla</option>
@@ -142,7 +145,7 @@
                                         <div class="col-md-2 col-sm-2 ">
                                             <div class="form-group">
                                                 <label style="color: white">To</label>
-                                                <input type="number" name="sTo">
+                                                <input type="number" name="sto">
 
                                             </div>
                                             <!--end form-group-->
@@ -152,32 +155,12 @@
 
                                         <div class="col-md-4 col-sm-4 ">
                                             <div class="form-group">
-                                                <label style="color: white">Property Size Unit</label>
-                                                <select class="form-control framed white">
-                                                    <option value="">  Any Type  </option>
-                                                    <option value="">  --- HOUSE --- </option>
-                                                    <option value="">  Houses</option>
-                                                    <option value="">  Flates</option>
-                                                    <option value="">  Upper Portions</option>
-                                                    <option value="">  Lower Portions</option>
-                                                    <option value="">  Farms House</option>
-                                                    <option value="">  Rooms</option>
+                                                <label style="color: white">Property Price</label>
+                                                <select name="unit_price" class="form-control framed white">
 
-                                                    <option value="">  --- PLOTS ---</option>
-                                                    <option value="">  Residential Plots</option>
-                                                    <option value="">  Commercial Plots</option>
-                                                    <option value="">  Agricultural Land</option>
-                                                    <option value="">  Industrial Land</option>
-                                                    <option value="">  Plot Files</option>
-                                                    <option value="">  Plot Forms</option>
+                                                    <option value="">Select Unit</option>
+                                                    <option value="Square_Feet">PKR</option>
 
-                                                    <option value="">  --- COMMERCIAL ---</option>
-                                                    <option value="">  Offices</option>
-                                                    <option value="">  Shops</option>
-                                                    <option value="">  Warehouses</option>
-                                                    <option value="">  Factories</option>
-                                                    <option value="">  Buildings</option>
-                                                    <option value="">  Other</option>
                                                 </select>
                                             </div>
                                             <!--end form-group-->
@@ -186,7 +169,7 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group ">
                                                 <label style="color: white">From</label>
-                                                <input type="number" name="" />
+                                                <input type="number" name="pfrom" />
                                             </div>
                                             <!--end form-group-->
                                         </div>
@@ -194,7 +177,7 @@
                                         <div class="col-md-4 col-sm-4">
                                             <div class="form-group">
                                                 <label style="color: white">To</label>
-                                                <input type="number" />
+                                                <input type="number" name="pto" />
                                             </div>
                                             <!--end form-group-->
                                         </div>
@@ -240,7 +223,7 @@
             <!--end hero-inner-->
 
             <!--end plate-->
-        </form>
+
         <!--end form-->
     </div>
 
@@ -262,7 +245,18 @@
 
 </div>
 
+<script>
+    function myFunction() {
+        document.getElementById("type").innerHTML = "Paragraph changed.";
+    }
+</script>
+
 <script type="text/javascript">
+
+
+
+
+
     function removeOptions(selectbox)
     {
         var i;

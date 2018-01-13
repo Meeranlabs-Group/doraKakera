@@ -115,7 +115,7 @@ Route::get('/editproperty/{id}','PropertyController@editproperty');
 Route::get('/deleteproperty/{id}','PropertyController@deleteproperty');
 
 Route::post('/search', 'PropertyController@search');
-Route::post('/search2', 'PropertyController@search2');
+Route::post('/search1', 'PropertyController@search1');
 
 
 Route::get('/Housesview', function (){return View::make('features.house_feature');});
