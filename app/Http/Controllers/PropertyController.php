@@ -492,15 +492,17 @@ $result=array();
         $phase = $request['Phase'];
         $size = $request['size'];
         $block = $request['block'];
+        $location = $request['test'];
 
 
 
-        $sfrom = $request['sfrom'];
-        $sto = $request['sto'];
+        $sfrom = (int)$request['sfrom'];
+        $sto = (int)$request['sto'];
+
         $unit_type = $request['unit_type'];
 
-        $pfrom = $request['pfrom'];
-        $pto = $request['pto'];
+        $pfrom = (int)$request['pfrom'];
+        $pto =(int) $request['pto'];
 
         $property1=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*');
 
@@ -604,37 +606,90 @@ $result=array();
             $property1 ->where('property.unit_type','=',$unit_type);
 
 
-        if($sfrom!='')
-        {
+        if($location!='')
+            $property1 ->where('property.unit_type','=',$unit_type);
 
-            $property1 ->where('property.unit_size', '>',$sfrom);
-
-
-        }
-
-        if($sto!='')
-        {
-
-            $property1 ->where('property.unit_size', '<',$sto);
+        $property1 ->Where(function ($req)use ($property1,$location)  {
 
 
-        }
-
-        if($pfrom!='')
-        {
-
-            $property1 ->where('property.price', '>',$pfrom);
 
 
-        }
 
-        if($pto!='')
-        {
+            if($location!='')
+                $property1 ->orwhere('city.city_name','like','%'.$location.'%');
+            if($location!='')
+                $property1 ->orwhere('society.society_name','like','%'.$location.'%');
+            if($location!='')
+                $property1 ->orwhere('block.block_name','like','%'.$location.'%');
+            if($location!='')
+                $property1 ->orwhere('phase.phase_name','like','%'.$location.'%');
 
-            $property1 ->where('property.unit_size', '<',$pto);
 
 
-        }
+
+        });
+
+
+        if($sfrom!=''&& $sto!='')
+        $property1->whereBetween('property.unit_size', [$sfrom,$sto]);
+        else if($sfrom!='')
+            $property1->where('property.unit_size','>=',$sfrom);
+        else if($sto!='')
+            $property1->where('property.unit_size','<=',$sto);
+
+        if($pfrom!=''&& $pto!='')
+            $property1->whereBetween('property.price', [$pfrom,$pto]);
+        else if($pfrom!='')
+            $property1->where('property.price','>=',$pfrom);
+        else if($pto!='')
+            $property1->where('property.price','<=',$pto);
+
+
+//        if($sfrom!=''&& $sto!='')
+//        $property1->whereBetween('property.unit_size', [$sfrom,$sto]);
+//
+//        if($sfrom!=''&& $sto!='')
+//        $property1->whereBetween('property.unit_size', [$sfrom,$sto]);
+
+//        if($pfrom!=''||$pto!='')
+//        $property1->whereBetween('property.price', [$pfrom,$pto]);
+
+//      //  $property1->where('property.unit_size', 'BETWEEN',1, 'AND',3);
+////
+//        if($sfrom!='')
+//        {
+//
+//            $property1 ->where('property.unit_size', '>',$sfrom);
+//
+//
+//        }
+
+
+//        if($sto!='')
+//        {
+//
+//            $property1 ->where('property.unit_size', '<','5');
+//
+//
+//        }
+//
+
+//
+//        if($pfrom!='')
+//        {
+//
+//            $property1 ->where('property.price', '>',$pfrom);
+//
+//
+//        }
+//
+//        if($pto!='')
+//        {
+//
+//            $property1 ->where('property.price', '<',$pto);
+//
+//
+//        }
 
 
 
@@ -647,10 +702,11 @@ $result=array();
 
 
         $property=$property1
-             //->get();
+           // ->get();
 
-            ->paginate(9);
-     //    print_r($property);
+           ->paginate(9);
+       $demo=$request->all();
+      // print_r( $sto );
 
 
 
