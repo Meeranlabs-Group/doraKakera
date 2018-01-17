@@ -44,36 +44,38 @@
             <li><a href="{{ asset('maps/GARDEN-TOWN.jpg') }}">New Garden Town</a></li>
 
             <li><a href="{{ asset('maps/IZMIR-TOWN.jpg') }}">Izmir Town</a></li>
-            <li><a href="{{ asset('maps/JOHAR-TOWN-2.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/JUBLLE-TOWN.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/LAHORE.jpg') }}">DHA Phase 2</a></li>
+
+            <li><a href="{{ asset('maps/uu.jpg') }}">Johar Town Phase 1</a></li>
+            <li><a href="{{ asset('maps/JOHAR-TOWN-2.jpg') }}">JOHAR TOWN Phase 2</a></li>
+            <li><a href="{{ asset('maps/JUBLLE-TOWN.jpg') }}">JUBLLE TOWN</a></li>
+            <li><a href="{{ asset('maps/LAHORE.jpg') }}">LAHORE</a></li>
             {{--<li><a href="{{ asset('maps/) }}">DHA Phase 2</a></li>--}}
             <li><a href="{{ asset('maps/LDA-1.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/MODEL-TOWN.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/MUSLIM-TOWN.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/NFC-2.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/OPF.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/PECO.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/PND.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/PUBLIC-HALTH.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/PUNJAB-COP.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/MODEL-TOWN.jpg') }}">MODEL TOWN</a></li>
+            <li><a href="{{ asset('maps/MUSLIM-TOWN.jpg') }}">MUSLIM-TOWN</a></li>
+            <li><a href="{{ asset('maps/NFC-2.jpg') }}">NFC</a></li>
+            <li><a href="{{ asset('maps/OPF.jpg') }}">O.P.F Housing Scheem</a></li>
+            <li><a href="{{ asset('maps/PECO.jpg') }}">Marghzar</a></li>
+            <li><a href="{{ asset('maps/PND.jpg') }}">P & D | Iqbal Avenue PH:3 Nespak PH:2</a></li>
+            <li><a href="{{ asset('maps/PUBLIC-HALTH.jpg') }}">Public Health Housing Scheem</a></li>
+            <li><a href="{{ asset('maps/PUNJAB-COP.jpg') }}">Punjab Co-Operative Housing Society</a></li>
 
 
-            <li><a href="{{ asset('maps/RAILTOWN.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/rsz_1new_phase_67.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/SABZAZAR.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/STATE-LIFE-1.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/RAILTOWN.jpg') }}">RailTown Co-Operative Housing Society</a></li>
+            <li><a href="{{ asset('maps/rsz_1new_phase_67.jpg') }}">DHA Phase 6,7 and 9</a></li>
+            <li><a href="{{ asset('maps/SABZAZAR.jpg') }}">Sabzazar</a></li>
+            <li><a href="{{ asset('maps/STATE-LIFE-1.jpg') }}">State Life Phase 1</a></li>
 
 
-            <li><a href="{{ asset('maps/STATE-LIFE-2.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/SUIGAS-2.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/TnT.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/TOWN-SHIP.jpg') }}">DHA Phase 2</a></li>
+            <li><a href="{{ asset('maps/STATE-LIFE-2.jpg') }}">State Life Phase 2</a></li>
+            <li><a href="{{ asset('maps/SUIGAS-2.jpg') }}">Sui Gas Housing Society</a></li>
+            <li><a href="{{ asset('maps/TnT.jpg') }}">T&T Abpara housing Society</a></li>
+            <li><a href="{{ asset('maps/TOWN-SHIP.jpg') }}">Town Ship</a></li>
 
 
-            <li><a href="{{ asset('maps/uu.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/WAPDA-TOWN.jpg') }}">DHA Phase 2</a></li>
-            <li><a href="{{ asset('maps/Z-BLOCK.jpg') }}">DHA Phase 2</a></li>
+
+            <li><a href="{{ asset('maps/WAPDA-TOWN.jpg') }}">Wapda Town</a></li>
+            <li><a href="{{ asset('maps/Z-BLOCK.jpg') }}">Phase 8 Z Block IVY</a></li>
             <li><a href="{{ asset('maps/HBFC.jpg') }}"> HBFC Officers Co. Housing Society</a></li>
 
         </ul>
