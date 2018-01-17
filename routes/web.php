@@ -18,8 +18,6 @@ Route::get('/','PropertyController@mainPage');
 
 
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Admin Routes
@@ -191,7 +189,6 @@ Route::get('/houses/{cityid}', 'ListingController@Show_Societies');
 Route::get('/houses/{cityid}/{societyid}', 'ListingController@Show_Phases');
 Route::get('/houses/{cityid}/{societyid}/{phaseid}', 'ListingController@Show_Block');
 Route::get('/houses/{cityid}/{societyid}/{phaseid}/{blockid}', 'ListingController@Show_Properties');
-
 
 
 
