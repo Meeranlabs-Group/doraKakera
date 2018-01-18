@@ -41,7 +41,7 @@
                                     <td>
                                         <div class="image-wrapper">
                                             {{--<div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>--}}
-                                            <a href="propertydetail/{{ $property->slug }}" class="image">
+                                            <a href="propertydetail/{{ $property->id }}" class="image">
                                                 <div class="bg-transfer">
 
 
@@ -56,7 +56,7 @@
                                             </a>
                                         </div>
                                         <div class="info">
-                                            <a href="propertydetail/{{ $property->slug }}"><h2>{{  str_limit( ucfirst($property->title), $limit = 60, $end = '...')  }} </h2></a>
+                                            <a href="propertydetail/{{ $property->id }}"><h2>{{$property->title}}</h2></a>
                                             <figure class="location">{{$property->block_name }}</figure>
                                             <figure class="label label-info">{{$property->property_type}}</figure>
                                             <div class="meta">
@@ -70,36 +70,33 @@
                                     {{--<td><div class="featured yes"><i class="fa fa-check"></i><aside></aside></div></td>--}}
                                     <td class="views">426</td>
                                     <td class="reviews">45</td>
-                                    <td class="rating">
-
-                                        @if($property->ad_status == 0)
-                                            <p>Pending</p>
-                                        @else
-                                            <p>Approved</p>
-                                        @endif
-
-                                    </td>
+                                    <td class="rating">9.3</td>
 
                                     <td class="last-reservation">
 
                                         <div >
-                                            <a href="/editproperty/{{$property->slug}}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
+                                            <a href="/editproperty/{{$property->id}}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
 
-                                            <a href="/deleteproperty/{{$property->slug}}" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>
+                                            <a href="/deleteproperty/{{$property->id}}" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>
                                         </div>
-
                                         <!--end edit-options-->
-
                                     </td>
                                 </tr>
 
+
                             @endforeach
+
                             </tbody>
                         </table>
                     </div>
                     <!--end my-items-->
                 </div>
             </div>
+
+
+
+
+
 
             <div class="center">
             {{ $data->render() }}
