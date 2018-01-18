@@ -131,86 +131,97 @@ $result=array();
         public function editproperty($id)
     {
 
-        $property = Property::where('id','=',$id)->get();
 
-        $feature= feature::where('property_id','=',$id)->get();
+//        $property = Property::where('id','=',$id)->get();
+//        $feature= feature::where('property_id','=',$id)->get();
+
+        $feature=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.slug','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
+        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+            ->join('phase','phase.id','=','property.phase_id')
+            ->join('block','block.id','=','property.block_id')->get();
+
+
+
+
         $photos =Photo::where('property_id','=',$id);
 
 
 
 
 
+//        print_r($feature);
+
 //
 //        //HOUSE PORTION
 //
-        if($property[0]->property_type== "Houses"){
-            return view('edit_feature.edit_house_feature',compact('property','feature','photos'));
+        if($feature[0]->property_type== "Houses"){
+            return view('edit_feature.edit_house_feature',compact('feature','photos'));
         }
 
 
-        else if($property[0]->property_type== "Flates"){
-            return view('edit_feature.edit_flat_feature',compact('property','feature','photos'));
+        else if($feature[0]->property_type== "Flates"){
+            return view('edit_feature.edit_flat_feature',compact('feature','photos'));
         }
-        else if($property[0]->property_type== "Buildings"){
-            return view('edit_feature.edit_building_feature',compact('property','feature','photos'));
-        }
-
-
-        else if($property[0]->property_type== "Office"){
-            return view('edit_feature.edit_office_feature',compact('property','feature','photos'));
-        }
-        else if($property[0]->property_type== "Warehouses"){
-            return view('edit_feature.edit_warehouse_feature',compact('property','feature','photos'));
-        }
-
-        else if($property[0]->property_type== "Upper-Portions"){
-            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
-        }
-
-        else if($property[0]->property_type== "Lower-Portions"){
-            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
-        }
-
-        else if($property[0]->property_type== "Farms-House"){
-            return view('edit_feature.edit_portion&farm_feature',compact('property','feature','photos'));
-        }
-
-        else if($property[0]->property_type== "Residential-Plots"){
-            return view('edit_feature.edit_plot_feature',compact('property','feature','photos'));
-        }
-
-        else if($property[0]->property_type== "Commercial-Plots"){
-            return view('edit_feature.edit_plot_feature',compact('property','feature','photos'));
-        }
-
-        else if($property[0]->property_type== "Agricultural-Land"){
-            return view('edit_feature.edit_land_feature',compact('property','feature','photos'));
-        }
-
-        else if($property[0]->property_type== "Industrial-Land"){
-            return view('edit_feature.edit_land_feature',compact('property','feature','photos'));
+        else if($feature[0]->property_type== "Buildings"){
+            return view('edit_feature.edit_building_feature',compact('feature','photos'));
         }
 
 
-        else if($property[0]->property_type== "Shops"){
-            return view('edit_feature.edit_shop_feature',compact('property','feature','photos'));
+        else if($feature[0]->property_type== "Office"){
+            return view('edit_feature.edit_office_feature',compact('feature','photos'));
+        }
+        else if($feature[0]->property_type== "Warehouses"){
+            return view('edit_feature.edit_warehouse_feature',compact('feature','photos'));
         }
 
-        else if($property[0]->property_type== "Warehouses"){
-            return view('edit_feature.edit_Warehouses_feature',compact('property','feature','photos'));
+        else if($feature[0]->property_type== "Upper-Portions"){
+            return view('edit_feature.edit_portion&farm_feature',compact('feature','photos'));
         }
 
-        else if($property[0]->property_type== "Factories"){
-            return view('edit_feature.edit_factory_feature',compact('property','feature','photos'));
+        else if($feature[0]->property_type== "Lower-Portions"){
+            return view('edit_feature.edit_portion&farm_feature',compact('feature','photos'));
         }
 
-        else if($property[0]->property_type== "Buildings"){
-            return view('edit_feature.edit_building_feature',compact('property','feature','photos'));
+        else if($feature[0]->property_type== "Farms-House"){
+            return view('edit_feature.edit_portion&farm_feature',compact('feature','photos'));
+        }
+
+        else if($feature[0]->property_type== "Residential-Plots"){
+            return view('edit_feature.edit_plot_feature',compact('feature','photos'));
+        }
+
+        else if($feature[0]->property_type== "Commercial-Plots"){
+            return view('edit_feature.edit_plot_feature',compact('feature','photos'));
+        }
+
+        else if($feature[0]->property_type== "Agricultural-Land"){
+            return view('edit_feature.edit_land_feature',compact('feature','photos'));
+        }
+
+        else if($feature[0]->property_type== "Industrial-Land"){
+            return view('edit_feature.edit_land_feature',compact('feature','photos'));
+        }
+
+
+        else if($feature[0]->property_type== "Shops"){
+            return view('edit_feature.edit_shop_feature',compact('feature','photos'));
+        }
+
+        else if($feature[0]->property_type== "Warehouses"){
+            return view('edit_feature.edit_Warehouses_feature',compact('feature','photos'));
+        }
+
+        else if($feature[0]->property_type== "Factories"){
+            return view('edit_feature.edit_factory_feature',compact('feature','photos'));
+        }
+
+        else if($feature[0]->property_type== "Buildings"){
+            return view('edit_feature.edit_building_feature',compact('feature','photos'));
         }
 
         else
         {
-            return view('edit_feature.edit_other_feature',compact('property','feature','photos'));
+            return view('edit_feature.edit_other_feature',compact('feature','photos'));
         }
 
 
@@ -693,6 +704,11 @@ $result=array();
 
 
 
+        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+            ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+            ->get();
+
         $property1  ->leftjoin('feature','property.id','=','feature.property_id')->
         join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
             ->join('phase','phase.id','=','property.phase_id')
@@ -711,7 +727,7 @@ $result=array();
 
 
 
-        return view('/properties', compact('property','photos','cites'));
+        return view('/properties', compact('property','photos','cites','sidesearch'));
     }
 
     public function search(Request $request)
@@ -860,55 +876,53 @@ $result=array();
 
     public function updateproperty(Request $request){
 
-        $property_id= $request['property_id'];
-        $feature_id = $request['feature_id'];
 
 
+        print_r($request);
 
-
-        Property::where('id','=',$property_id)->update(['title'=> $request['title'],'property_type'=>$request['property_type'],
-            'description' => $request['description'], 'price' =>$request['price'], 'city_id'=>$request['city'],'society_id'=>$request['society'],
-            'phase_id'=>$request['Phase'],'block_id'=>$request['block'],
-            'address'=>$request['address'], 'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],
-            'unit_size'=>$request['unit_size'] ]);
-
-
-        feature::where('property_id','=',$property_id)->update([ 'built_in_year' => $request['Built_in_Year'],
-            'view' => $request['View'], 'parking_space' => $request['Parking_Spaces'], 'double_glazed_window'=> $request['Double_Glazed_Windows'],
-            'central_air_conditioning'=>$request['Central_Air_Conditioning'],'central_heating'=>$request['Central_Heating'],
-            'flooring_type'=>$request['Flooring_type'],'electricity_backup_type' => $request['Electricity_Backup'],
-            'waste_disposal' => $request['Waste_Disposal'],'floor' => $request['Floor'],'total_number_of_floors'=> $request['Total_Number_of_Floors'],
-            'other_main_feature'=> $request['Other_Main_Features'],  'furnished' => $request['Furnished'],'furnished'=> $request['Furnished'],
-            'lobby_in_building' => $request['Lobby_in_Building'], 'total_floor_building'=>$request['Total_Floors_in_Building'],
-            'number_of_elevators_in_building' => $request['Number_of_Elevators_in_Building'],'service_elevators_in_building'=> $request['Service_Elevators_in_Building'],
-            'public_parking'=>$request['Public_Parking'],'underground_parking'=> $request['Underground_Parking'],'elevator_or_lift' => $request['Elevator_or_Lift'],
-            'number_of_units'=> $request['Number_of_Units'],'flooring_type' => $request['Flooring_type'],'electricity_backup_type'=>$request['Electricity_Backup_type'],
-            'broadband_internet_access'=> $request['Broadband_Internet_Access'],'satellite_or_cable_tv_ready'=> $request['Satellite_or_Cable_TV_Ready'],
-            'intercom'=> $request['Intercom'],'other_business_and_communication'=> $request['Other_Business_and_Communication_Facilities'],
-            'business_center_or_media_room_building'=> $request['Business_Center_or_Media_Room_in_Building'],'confrence_room_in_building'=> $request['Conference_Room_in_Building'],
-            'atm_and_machine_in_building'=>$request['ATM_Credit_Card_Machines_in_Building'],'nearby_schools'=>$request['Nearby_Schools'],
-            'nearby_hospitals'=> $request['Nearby_Hospitals'],'nearby_shopping_malls'=> $request['Nearby_Shopping_Malls'],
-            'nearby_restaurants'=> $request['Nearby_Restaurants'],'distance_from_airport_kms'=> $request['Distance_From_Airport(kms)'],
-            'other_nearby_places'=> $request['Other_Nearby_Places'],'nearby_public_transport'=> $request['Nearby_Public_Transport_Service'],
-            'number_of_bedrooms'=> $request['Number_of_Bedrooms'],'number_of_bathrooms'=> $request['Number_of_Bathrooms'],
-            'number_of_servant_quaters' => $request['Number_of_Servant_Quarters'],'drawing_room'=>$request['Drawing_Room'],
-            'dining_room'=> $request['Dining_Room'],'number_of_kitchens'=> $request['Number_of_Kitchens'],'study_room'=> $request['Study_Room'],
-            'prayer_room'=> $request['Prayer_Room'],'powder_room'=> $request['Powder_Room'],'gym_room'=>$request['Gym_Room'],
-            'number_of_store_rooms'=> $request['Number_of_Store_Rooms'],'steaming_room'=> $request['Steaming_Room'],
-            'lounge_or_sitting_room'=> $request['Lounge_or_Sitting_Room'],'laundry_room' => $request['Laundry_Room'],
-            'other_room'=> $request['Other_Rooms'],'lawn_or_garden'=> $request['Lawn_or_Garden'],'swimming_pool'=>$request['Swimming_Pool'],
-            'sauna' => $request['Sauna'],'jacuzzi'=> $request['Jacuzzi'],'other_health_and_recreational'=> $request['Other_Healthcare_and_Recreation_Facilities'],
-            'maintenance_staff' => $request['Maintenance_Staff'], 'security_staff'=> $request['Security_Staff'],'facilities_for_disabled'=>$request['Facilities_for_Disabled'],
-            'laundry_or_dry_cleaning_facilities'=>$request['Laundry_or_Dry_Cleaning_Facility'],'communal_or_shared_kitchen_in_building'=>$request['Communal_or_Shared_Kitchen_in_Building'],
-            'cctv_security_installed'=>$request['CCTV_Security_Installed'],'cafeteria_or_canteen_in_building'=> $request['Cafeteria_or_Canteen_in_Building'],
-            'pet_policy_type'=> $request['Pet_Policy_type'],'facilities'=> $request['Other_Facilities'],'possesion'=>$request['Possesion'],
-            'corner'=> $request['Corner'],'park_facing'=>$request['Park_Facing'],'disputed' =>$request['Disputed'],'file'=> $request['File'],
-            'balloted'=> $request['Balloted'],'sewerage'=>$request['Sewerage'], 'electricity'=> $request['Electricity'],
-            'water_supply'=> $request['Water_Supply'],'sui_gas'=> $request['Sui_Gas'],'boundry_wall'=>$request['Boundary_Wall'],
-            'other_plot_features'=>$request['Other_Plot_Features']
-        ]);
-        
-        return redirect('/myproperties');
+//        Property::where('id','=',$request['property_id'])->update(['title'=> $request['title'],'slug'=> $request['title'],'property_type'=>$request['property_type'],
+//            'description' => $request['description'], 'price' =>$request['price'], 'city_id'=>$request['city'],'society_id'=>$request['society'],
+//            'phase_id'=>$request['Phase'],'block_id'=>$request['block'],
+//            'address'=>$request['address'], 'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],
+//            'unit_size'=>$request['unit_size']] );
+//
+//
+//        feature::where('property_id','=',$request['property_id'])->update([ 'built_in_year' => $request['Built_in_Year'],
+//            'view' => $request['View'], 'parking_space' => $request['Parking_Spaces'], 'double_glazed_window'=> $request['Double_Glazed_Windows'],
+//            'central_air_conditioning'=>$request['Central_Air_Conditioning'],'central_heating'=>$request['Central_Heating'],
+//            'flooring_type'=>$request['Flooring_type'],'electricity_backup_type' => $request['Electricity_Backup'],
+//            'waste_disposal' => $request['Waste_Disposal'],'floor' => $request['Floor'],'total_number_of_floors'=> $request['Total_Number_of_Floors'],
+//            'other_main_feature'=> $request['Other_Main_Features'],  'furnished' => $request['Furnished'],'furnished'=> $request['Furnished'],
+//            'lobby_in_building' => $request['Lobby_in_Building'], 'total_floor_building'=>$request['Total_Floors_in_Building'],
+//            'number_of_elevators_in_building' => $request['Number_of_Elevators_in_Building'],'service_elevators_in_building'=> $request['Service_Elevators_in_Building'],
+//            'public_parking'=>$request['Public_Parking'],'underground_parking'=> $request['Underground_Parking'],'elevator_or_lift' => $request['Elevator_or_Lift'],
+//            'number_of_units'=> $request['Number_of_Units'],'flooring_type' => $request['Flooring_type'],'electricity_backup_type'=>$request['Electricity_Backup_type'],
+//            'broadband_internet_access'=> $request['Broadband_Internet_Access'],'satellite_or_cable_tv_ready'=> $request['Satellite_or_Cable_TV_Ready'],
+//            'intercom'=> $request['Intercom'],'other_business_and_communication'=> $request['Other_Business_and_Communication_Facilities'],
+//            'business_center_or_media_room_building'=> $request['Business_Center_or_Media_Room_in_Building'],'confrence_room_in_building'=> $request['Conference_Room_in_Building'],
+//            'atm_and_machine_in_building'=>$request['ATM_Credit_Card_Machines_in_Building'],'nearby_schools'=>$request['Nearby_Schools'],
+//            'nearby_hospitals'=> $request['Nearby_Hospitals'],'nearby_shopping_malls'=> $request['Nearby_Shopping_Malls'],
+//            'nearby_restaurants'=> $request['Nearby_Restaurants'],'distance_from_airport_kms'=> $request['Distance_From_Airport(kms)'],
+//            'other_nearby_places'=> $request['Other_Nearby_Places'],'nearby_public_transport'=> $request['Nearby_Public_Transport_Service'],
+//            'number_of_bedrooms'=> $request['Number_of_Bedrooms'],'number_of_bathrooms'=> $request['Number_of_Bathrooms'],
+//            'number_of_servant_quaters' => $request['Number_of_Servant_Quarters'],'drawing_room'=>$request['Drawing_Room'],
+//            'dining_room'=> $request['Dining_Room'],'number_of_kitchens'=> $request['Number_of_Kitchens'],'study_room'=> $request['Study_Room'],
+//            'prayer_room'=> $request['Prayer_Room'],'powder_room'=> $request['Powder_Room'],'gym_room'=>$request['Gym_Room'],
+//            'number_of_store_rooms'=> $request['Number_of_Store_Rooms'],'steaming_room'=> $request['Steaming_Room'],
+//            'lounge_or_sitting_room'=> $request['Lounge_or_Sitting_Room'],'laundry_room' => $request['Laundry_Room'],
+//            'other_room'=> $request['Other_Rooms'],'lawn_or_garden'=> $request['Lawn_or_Garden'],'swimming_pool'=>$request['Swimming_Pool'],
+//            'sauna' => $request['Sauna'],'jacuzzi'=> $request['Jacuzzi'],'other_health_and_recreational'=> $request['Other_Healthcare_and_Recreation_Facilities'],
+//            'maintenance_staff' => $request['Maintenance_Staff'], 'security_staff'=> $request['Security_Staff'],'facilities_for_disabled'=>$request['Facilities_for_Disabled'],
+//            'laundry_or_dry_cleaning_facilities'=>$request['Laundry_or_Dry_Cleaning_Facility'],'communal_or_shared_kitchen_in_building'=>$request['Communal_or_Shared_Kitchen_in_Building'],
+//            'cctv_security_installed'=>$request['CCTV_Security_Installed'],'cafeteria_or_canteen_in_building'=> $request['Cafeteria_or_Canteen_in_Building'],
+//            'pet_policy_type'=> $request['Pet_Policy_type'],'facilities'=> $request['Other_Facilities'],'possesion'=>$request['Possesion'],
+//            'corner'=> $request['Corner'],'park_facing'=>$request['Park_Facing'],'disputed' =>$request['Disputed'],'file'=> $request['File'],
+//            'balloted'=> $request['Balloted'],'sewerage'=>$request['Sewerage'], 'electricity'=> $request['Electricity'],
+//            'water_supply'=> $request['Water_Supply'],'sui_gas'=> $request['Sui_Gas'],'boundry_wall'=>$request['Boundary_Wall'],
+//            'other_plot_features'=>$request['Other_Plot_Features']
+//        ]);
+//
+//        return redirect('/myproperties');
     }
 
 
