@@ -732,35 +732,6 @@ $result=array();
 
 
 
-//        $city1 = DB::table('city')->where('city_name','LIKE','%'.$city.'%');
-//        $society1 = DB::table('society')->where('society_name','LIKE','%'.$society.'%');
-//        $phase1 = DB::table('phase')->where('phase_name','LIKE','%'.$phase.'%');
-//        $block1 = DB::table('block')->where('block_name','LIKE','%'.$block.'%');
-
-//            $search=DB:: table('property')->where('property.purpose','LIKE','%'.$purpose.'%')
-
-//
-//
-//        $property1=Property::select('feature.*','society.*','city.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
-//       // $property1=Property::select('city.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
-//            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
-//            ->leftjoin('feature','property.id','=','feature.property_id')
-//
-//            ->leftjoin('city','city.id','=','property.city_id');
-////            if($city!='')
-////           $property1 ->where('city_id','=',$city);
-//
-//      $property1 ->leftjoin('society','society.id','=','property.society_id');
-//      $property1 ->leftjoin('society','society.id','=','property.society_id');
-////        if($society!='')
-////            $property1 ->where('society_id','=',$society);
-//           // ->leftjoin('society','society.id','=','property.society_id')
-////            ->merge($society1)
-////            ->merge($phase1)
-////            ->merge($block1)
-//            //->get();
-//
-//
         $property1=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*');
 
       // $property1 ->Where(function ($property1,$Houses,$Flates,$Farms_House,$Offices,$Rooms,$Shops,$Upper_Portions,$Lower_Portions,$Residential_Plots,$Commercial_Plots,$Agricultural_Land, $Industrial_Land,$Warehouses, $Factories,$Buildings,$Plot_Files,$Plot_Forms,$Other) {
@@ -875,71 +846,14 @@ $result=array();
             ->paginate(9);
        // print_r($property);
 
+        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
+            ->groupBy('property_type')
+//            ->orderBy('count', 'asc')
+            ->get();
 
 
 
-//        $filter=array("purpose" => $purpose,"city_id"=> $city,"society_id" => $society,"phase_id"=>$phase,"block_id"=>$block,
-//            "unit_type"=>$unit_type, "unit_size" => $size);
-//
-//
-//
-//       print_r($filter);
-//
-//
-//
-//        foreach ($filter as $key => $value) {
-//
-//            if($value !=""){
-//
-//                $result[]=array('col'=>$key,'val'=>$value);
-//            }
-//        }
-////print_r($result);
-//
-//        $property1 =Property::with('feature')->
-//        where('ad_status','=','1');
-//
-//            foreach($result as $f){
-//                $property1->where($f['col'],'=',$f['val']);
-//
-//
-//            }
-//
-//$d=$property1->get();
-//
-//        print_r($d);
-////        $property=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')
-//        $property=Property::select() ->leftjoin('feature','property.id','=','feature.property_id')
-//            ->join('city','city.city_name','=',$city)
-//            ->join('society','society.name','=',$society)
-//            ->join('phase','phase.name','=',$phase)
-//            ->join('block','block.name','=',$block)
-//            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
-//            ->where('property.purpose','like','%'.$purpose.'%')
-//
-//
-//        ->paginate(8);
-//
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return view('/properties', compact('property','photos','cites'));
+        return view('/properties', compact('property','photos','cites','sidesearch'));
     }
 
 
