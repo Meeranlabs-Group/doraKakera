@@ -9,8 +9,6 @@
         </ul>
 
 
-
-
         <div  id="filter-advanced-search">
         <div class="wrapper">
 
