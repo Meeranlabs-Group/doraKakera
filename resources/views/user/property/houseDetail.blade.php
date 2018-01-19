@@ -35,6 +35,7 @@
 
 
                 <div class="main-content">
+
                     <div class="title">
                         <div class="left">
                             <h1>{{ucfirst($data[0]->title)}}</h1>
@@ -64,6 +65,7 @@
                             </div>
                         </div>
                     </section>
+
                     <h2>Description</h2>
                     <div class="row">
                         <div class="col-md-8">
@@ -73,12 +75,13 @@
                                 </p>
 
                             </section>
+
+
+                            <h2>Main Features</h2>
+
                             <section id="facilities">
-                                <h2>Facilities</h2>
-                                <ul >
 
-                                    <h3>Main Features</h3>
-
+                                <div class="row">
                                     @if($data[0]->built_in_year!="")
                                         <li>Built in Year  <strong>{{$data[0]->built_in_year}}</strong></li>
                                     @endif
@@ -119,28 +122,76 @@
                                         @if($data[0]->furnished!="")
                                             <label><input type="checkbox" checked disabled name="Central_Air_Conditioning">Furnished</label>
                                         @endif
+                                </div>
 
-                    <h3>Business and Communication</h3>
-
-                                    @if($data[0]->broadband_internet_access!="")
-                                        <label><input type="checkbox" checked disabled >Broadband Internet Access</label>
-                                    @endif
-                                    @if($data[0]->satellite_or_cable_tv_ready!="")
-                                        <label><input type="checkbox" checked disabled >Satellite or Cable TV Ready</label>
-                                    @endif
-
-                                    @if($data[0]->intercom!="")
-                                        <label><input type="checkbox" checked disabled >Intercom</label>
-                                    @endif
+                                <h2>Business and Communication</h2>
+                <div class="row">
 
 
-                                    @if($data[0]->other_business_and_communication!="")
-                                        <li>Other Business and Communication<strong>{{$data[0]->other_business_and_communication}}</strong></li>
-                                    @endif
+                    @if($data[0]->broadband_internet_access!="")
+                    <div class="col-md-4 col-sm-4">
+                        <div class="feature">
+                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Broadband Internet Access</h4>
+                        </div>
+                    </div>
+                    @endif
+
+                <!--end feature-->
+                        @if($data[0]->satellite_or_cable_tv_ready!="")
+                        <div class="col-md-4 col-sm-4">
+                        <div class="feature">
+                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Satellite or Cable TV Ready</h4>
+                        </div>
+                    </div>
+                        @endif
+
+
+
+
+                        @if($data[0]->intercom!="")
+                            <div class="col-md-4 col-sm-4">
+                                    <div class="feature">
+                                            <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Intercom</h4>
+                                    </div>
+                            <!--end feature-->
+                            </div>
+                        @endif
+
+
+
+                        @if($data[0]->other_business_and_communication!="")
+                        <div class="col-md-4 col-sm-4">
+                            <div class="feature">
+                                    <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Other Business and Communication: {{$data[0]->other_business_and_communication}}</h4>
+                            </div>
+                                            <!--end feature-->
+                        </div>
+                        @endif
+
+</div>
+
+
+                                    {{----}}
+                                    {{--@if($data[0]->broadband_internet_access!="")--}}
+                                        {{--<label><input type="checkbox" checked disabled >Broadband Internet Access</label>--}}
+                                    {{--@endif--}}
+                                    {{--@if($data[0]->satellite_or_cable_tv_ready!="")--}}
+                                        {{--<label><input type="checkbox" checked disabled >Satellite or Cable TV Ready</label>--}}
+                                    {{--@endif--}}
+
+                                    {{--@if($data[0]->intercom!="")--}}
+                                        {{--<label><input type="checkbox" checked disabled >Intercom</label>--}}
+                                    {{--@endif--}}
+
+
+                                    {{--@if($data[0]->other_business_and_communication!="")--}}
+                                        {{--<li>Other Business and Communication<strong>{{$data[0]->other_business_and_communication}}</strong></li>--}}
+                                    {{--@endif--}}
 
 
 
                      <h3>Nearby Location</h3>
+                            <div class="row">
                                 @if($data[0]->nearby_schools!="")
                                         <label><input type="checkbox" checked disabled >Nearby Schools</label>
                                     @endif
@@ -164,8 +215,12 @@
                                         <li>Distance From Airport <strong>{{$data[0]->distance_from_airport_kms}}</strong></li>
                                     @endif
 
+                            </div>
+
 
                       <h3>Rooms</h3>
+
+                                <div class="row">
                                     @if($data[0]->drawing_room!="")
                                         <label><input type="checkbox" checked disabled >Drawing Room</label>
                                     @endif
@@ -210,8 +265,12 @@
                                         Number of Servant Quarters : {{ $data[0]->number_of_servant_quaters }}
                                     </textarea>
 
+
+                                </div>
+
                        <h3>Healthcare Recreational</h3>
 
+                                <div class="row">
 
                                     @if($data[0]->lawn_or_garden!="")
                                         <label><input type="checkbox" checked disabled >Lawn or Garden</label>
@@ -229,10 +288,10 @@
                                     @if($data[0]->other_health_and_recreational!="")
                                         <li>Other Healthcare and Recreation Facilities<strong>{{$data[0]->other_health_and_recreational}}</strong></li>
                                     @endif
+                                </div>
 
-
-
-                        <h3>Other Facilities</h3>
+                                <h3>Other Facilities</h3>
+                                <div class="row">
 
                                     @if($data[0]->maintenance_staff!="")
                                         <label><input type="checkbox" checked disabled >Maintenance Staff</label>
@@ -249,14 +308,8 @@
                                         <li>Other Facilities<strong>{{$data[0]->other_facilities}}</strong></li>
                                     @endif
 
+                                </div>
 
-
-
-
-
-
-
-                                </ul>
                             </section>
                             <section id="map">
                                 <h2>Map</h2>
@@ -265,6 +318,9 @@
                             </section>
                         </div>
                         <!--end col-md-8-->
+
+
+
                         <div class="col-md-4">
                             <div class="sidebar">
 
