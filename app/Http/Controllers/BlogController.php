@@ -62,18 +62,17 @@ class BlogController extends Controller
 
 
         public function disapprovedArticles(){
-
                 $id=Auth::user()->getid();
                 $articles= Blog::where('user_id','=',$id)->where('status','=',0)->paginate(4);
                  $result=$this->usermenu();
                 return view('user.blog.myarticles',compact('articles','result'));
-
         }
 
         public function showAll(){  // user articles
 
             $id=Auth::user()->getid();
             $articles= Blog::where('user_id','=',$id)->paginate(4);
+
             $result=$this->usermenu();
 
            return view('user.blog.myarticles',compact('articles','result'));
