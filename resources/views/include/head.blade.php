@@ -59,9 +59,34 @@
         ,Plot For Sale in DHA Phase 9 Prism, Plot For Sale in DHA Phase 9 Town, Plot For Sale in DHA Phase 10"/>
 
     @endif
+  @if(Request::is('/'))
+    <meta name="description" content="chohanestate,  the largest real estate company
+     in Pakistan - offering the highest levels of service to property buyers sellers landlords
+     tenants alike and to real estate agents in Karachi Lahore Islamabad and all over Pakistan.
+      We are providing quality property - commercial plots, lands and markets - villas - apartments - bungalows - home buying and villa rentals." />
 
 
 
+
+        <meta property="og:url" content="https://www.chohanestate.com" />
+        <meta property="og:title" content="The Largest real Estate Company - Buy Sell Rent Homes & Properties In Pakistan Real Estate - ChohanEstate" />
+        <meta property="og:description"content="chohanestate, the largest real estate company
+        in Pakistan - offering the highest levels of service to property buyers sellers landlords
+        tenants alike and to real estate agents in Lahore Islamabad and all over Pakistan.
+        We are providing quality property - commercial plots, lands and markets - villas - apartments - bungalows - home buying and villa rentals." />
+
+        <meta property="og:ttl" content="86400" />
+
+
+   @endif
+
+    <meta name="keywords" content="chohan,chohnestate, property portal, Pakistani property portal, property, properties, buy property,
+         sell property, rent property, buy properties, sell properties, rent properties, real estate agents, property in Pakistan, Pakistan, Karachi Lahore Islamabad,
+         Karachi, Lahore, Islamabad, buy property in Lahore, buy, sell, agents, home buying, real estate, mortgage, home, finance, financer, advertising, advertise" />
+    @if(Request::is('/'))
+
+
+    @endif
 
     <link href={{ url("assets/fonts/font-awesome.css") }} rel="stylesheet" type="text/css">
     <link href={{ url("assets/fonts/elegant-fonts.css") }} rel="stylesheet" type="text/css">
