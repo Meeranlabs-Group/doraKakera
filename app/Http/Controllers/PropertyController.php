@@ -50,7 +50,7 @@ class PropertyController extends Controller
 
         $names=Block::where('block_name','like','%'.$id.'%')->where('phase_id','=',$x)->pluck("block_name");
 
-        print_r($names);
+print_r($names);
 
 
 
@@ -89,9 +89,9 @@ class PropertyController extends Controller
     public function getsocieties($id){
 
         $codes=Society::where('city_id','=',$id)->pluck("id");
-        $names=Society::where('city_id','=',$id)->pluck("society_name");
+$names=Society::where('city_id','=',$id)->pluck("society_name");
 
-        $result=array();
+$result=array();
 
 
         foreach( $codes as $index => $code ) {
@@ -109,12 +109,12 @@ class PropertyController extends Controller
 
     }
     public function addproperty(){
-        $cities=City::all();
+       $cities=City::all();
 //       $phases=Phase::all();
 //        $societies=Society::all();
 //       $blocks=Block::all();
 
-        return view('addproperty',compact('cities','societies','phases','blocks'));
+       return view('addproperty',compact('cities','societies','phases','blocks'));
     }
     public function deleteproperty($id)
     {
@@ -128,29 +128,12 @@ class PropertyController extends Controller
     }
 
 
-    public function editproperty($id)
+        public function editproperty($id)
     {
 
         $property = Property::where('id','=',$id)->get();
 
-<<<<<<< HEAD
         $feature= feature::where('property_id','=',$id)->get();
-=======
-//        $property = Property::where('id','=',$id)->get();
-//        $feature= feature::where('property_id','=',$id)->get();
-
-
-        $cities= City::all();
-
-        $feature=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.slug','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
-        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
-            ->join('phase','phase.id','=','property.phase_id')
-            ->join('block','block.id','=','property.block_id')->get();
-
-
-
-
->>>>>>> a6e8c8d3d3f4530e407161beded9aa510cc07cfd
         $photos =Photo::where('property_id','=',$id);
 
 
@@ -160,7 +143,6 @@ class PropertyController extends Controller
 //
 //        //HOUSE PORTION
 //
-<<<<<<< HEAD
         if($property[0]->property_type== "Houses"){
             return view('edit_feature.edit_house_feature',compact('property','feature','photos'));
         }
@@ -224,80 +206,11 @@ class PropertyController extends Controller
 
         else if($property[0]->property_type== "Buildings"){
             return view('edit_feature.edit_building_feature',compact('property','feature','photos'));
-=======
-        if($feature[0]->property_type== "Houses"){
-            return view('edit_feature.edit_house_feature',compact('feature','photos','cities'));
-        }
-
-
-        else if($feature[0]->property_type== "Flates"){
-            return view('edit_feature.edit_flat_feature',compact('feature','photos','cities'));
-        }
-        else if($feature[0]->property_type== "Buildings"){
-            return view('edit_feature.edit_building_feature',compact('feature','photos','cities'));
-        }
-
-
-        else if($feature[0]->property_type== "Office"){
-            return view('edit_feature.edit_office_feature',compact('feature','photos','cities'));
-        }
-        else if($feature[0]->property_type== "Warehouses"){
-            return view('edit_feature.edit_warehouse_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Upper-Portions"){
-            return view('edit_feature.edit_portion&farm_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Lower-Portions"){
-            return view('edit_feature.edit_portion&farm_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Farms-House"){
-            return view('edit_feature.edit_portion&farm_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Residential-Plots"){
-            return view('edit_feature.edit_plot_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Commercial-Plots"){
-            return view('edit_feature.edit_plot_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Agricultural-Land"){
-            return view('edit_feature.edit_land_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Industrial-Land"){
-            return view('edit_feature.edit_land_feature',compact('feature','photos','cities'));
-        }
-
-
-        else if($feature[0]->property_type== "Shops"){
-            return view('edit_feature.edit_shop_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Warehouses"){
-            return view('edit_feature.edit_Warehouses_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Factories"){
-            return view('edit_feature.edit_factory_feature',compact('feature','photos','cities'));
-        }
-
-        else if($feature[0]->property_type== "Buildings"){
-            return view('edit_feature.edit_building_feature',compact('feature','photos','cities'));
->>>>>>> a6e8c8d3d3f4530e407161beded9aa510cc07cfd
         }
 
         else
         {
-<<<<<<< HEAD
             return view('edit_feature.edit_other_feature',compact('property','feature','photos'));
-=======
-            return view('edit_feature.edit_other_feature',compact('feature','photos','cities'));
->>>>>>> a6e8c8d3d3f4530e407161beded9aa510cc07cfd
         }
 
 
@@ -408,8 +321,8 @@ class PropertyController extends Controller
 
 //        echo $request['buy'];
 //        echo $request['city'];
-        //    echo $request['property_type'];
-        $purpose= $request->all();
+    //    echo $request['property_type'];
+       $purpose= $request->all();
 
         $city = $request['city'];
         $society = $request['society'];
@@ -425,7 +338,7 @@ class PropertyController extends Controller
 
 
         $property1=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*');
-        $property1 ->Where(function ($req)use ($property1,$request)  {
+                      $property1 ->Where(function ($req)use ($property1,$request)  {
 
 
             $Houses= $request['Houses'];
@@ -511,20 +424,20 @@ class PropertyController extends Controller
         {
 
             $property1 ->where('property_type','=',$property_type);
-            //  echo $property_type;
+               //  echo $property_type;
 
         }
         if($unit_type!='')
             $property1 ->where('property.unit_type','=',$unit_type);
 
 
-        if($sfrom!=''||$sto!='')
-        {
+            if($sfrom!=''||$sto!='')
+            {
 
-            $property1 ->whereBetween('property.unit_size', array('1', '2'));
+                $property1 ->whereBetween('property.unit_size', array('1', '2'));
 
 
-        }
+            }
 
         if($purpose!='')
             $property1 ->where('property.purpose','=',$purpose);
@@ -546,10 +459,10 @@ class PropertyController extends Controller
 
 
         $property=$property1
-            //        ->get();
+     //        ->get();
 
             ->paginate(9);
-        print_r($purpose);
+         print_r($purpose);
 
 
 
@@ -718,7 +631,7 @@ class PropertyController extends Controller
 
 
         if($sfrom!=''&& $sto!='')
-            $property1->whereBetween('property.unit_size', [$sfrom,$sto]);
+        $property1->whereBetween('property.unit_size', [$sfrom,$sto]);
         else if($sfrom!='')
             $property1->where('property.unit_size','>=',$sfrom);
         else if($sto!='')
@@ -789,11 +702,11 @@ class PropertyController extends Controller
 
 
         $property=$property1
-            // ->get();
+           // ->get();
 
-            ->paginate(9);
-        $demo=$request->all();
-        // print_r( $sto );
+           ->paginate(9);
+       $demo=$request->all();
+      // print_r( $sto );
 
 
 
@@ -819,88 +732,117 @@ class PropertyController extends Controller
 
 
 
+//        $city1 = DB::table('city')->where('city_name','LIKE','%'.$city.'%');
+//        $society1 = DB::table('society')->where('society_name','LIKE','%'.$society.'%');
+//        $phase1 = DB::table('phase')->where('phase_name','LIKE','%'.$phase.'%');
+//        $block1 = DB::table('block')->where('block_name','LIKE','%'.$block.'%');
+
+//            $search=DB:: table('property')->where('property.purpose','LIKE','%'.$purpose.'%')
+
+//
+//
+//        $property1=Property::select('feature.*','society.*','city.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
+//       // $property1=Property::select('city.*','property.*') ->where('property.purpose','like','%'.$purpose.'%')
+//            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
+//            ->leftjoin('feature','property.id','=','feature.property_id')
+//
+//            ->leftjoin('city','city.id','=','property.city_id');
+////            if($city!='')
+////           $property1 ->where('city_id','=',$city);
+//
+//      $property1 ->leftjoin('society','society.id','=','property.society_id');
+//      $property1 ->leftjoin('society','society.id','=','property.society_id');
+////        if($society!='')
+////            $property1 ->where('society_id','=',$society);
+//           // ->leftjoin('society','society.id','=','property.society_id')
+////            ->merge($society1)
+////            ->merge($phase1)
+////            ->merge($block1)
+//            //->get();
+//
+//
         $property1=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*');
 
-        // $property1 ->Where(function ($property1,$Houses,$Flates,$Farms_House,$Offices,$Rooms,$Shops,$Upper_Portions,$Lower_Portions,$Residential_Plots,$Commercial_Plots,$Agricultural_Land, $Industrial_Land,$Warehouses, $Factories,$Buildings,$Plot_Files,$Plot_Forms,$Other) {
-        $property1 ->Where(function ($req)use ($property1,$request)  {
+      // $property1 ->Where(function ($property1,$Houses,$Flates,$Farms_House,$Offices,$Rooms,$Shops,$Upper_Portions,$Lower_Portions,$Residential_Plots,$Commercial_Plots,$Agricultural_Land, $Industrial_Land,$Warehouses, $Factories,$Buildings,$Plot_Files,$Plot_Forms,$Other) {
+       $property1 ->Where(function ($req)use ($property1,$request)  {
 
 
-            $Houses= $request['Houses'];
-            $Flates = $request['Flates'];
-            $Farms_House = $request['Farms-House'];
-            $Offices = $request['Offices'];
-            $Rooms = $request['Rooms'];
-            $Shops = $request['Shops'];
-            $Upper_Portions = $request['Upper-Portions'];
+           $Houses= $request['Houses'];
+           $Flates = $request['Flates'];
+           $Farms_House = $request['Farms-House'];
+           $Offices = $request['Offices'];
+           $Rooms = $request['Rooms'];
+           $Shops = $request['Shops'];
+           $Upper_Portions = $request['Upper-Portions'];
 
-            $Lower_Portions = $request['Lower-Portions'];
-            $Residential_Plots = $request['Residential-Plots'];
-            $Commercial_Plots = $request['Commercial-Plots'];
-            $Agricultural_Land = $request['Agricultural-Land'];
-            $Industrial_Land = $request['Industrial-Land'];
-            $Warehouses = $request['Warehouses'];
+           $Lower_Portions = $request['Lower-Portions'];
+           $Residential_Plots = $request['Residential-Plots'];
+           $Commercial_Plots = $request['Commercial-Plots'];
+           $Agricultural_Land = $request['Agricultural-Land'];
+           $Industrial_Land = $request['Industrial-Land'];
+           $Warehouses = $request['Warehouses'];
 
-            $Factories = $request['Factories'];
-            $Buildings = $request['Buildings'];
-            $Plot_Files = $request['Plot-Files'];
+           $Factories = $request['Factories'];
+           $Buildings = $request['Buildings'];
+           $Plot_Files = $request['Plot-Files'];
 
-            $Plot_Forms = $request['Plot-Forms'];
-            $Other = $request['Other'];
-
-
-            if($Houses!='')
-                $property1 ->orwhere('property.property_type','=',$Houses);
-
-            if($Flates!='')
-                $property1 ->orwhere('property.property_type','=',$Flates);
-
-            if($Farms_House!='')
-                $property1 ->orwhere('property.property_type','=',$Farms_House);
-
-            if($Offices!='')
-                $property1 ->orwhere('property.property_type','=',$Offices);
-
-            if($Rooms!='')
-                $property1 ->orwhere('property.property_type','=',$Rooms);
-
-            if($Shops!='')
-                $property1 ->orwhere('property.property_type','=',$Shops);
-
-            if($Upper_Portions!='')
-                $property1 ->orwhere('property.property_type','=',$Upper_Portions);
-
-            if($Lower_Portions!='')
-                $property1 ->orwhere('property.property_type','=',$Lower_Portions);
-
-            if($Residential_Plots!='')
-                $property1 ->orwhere('property.property_type','=',$Residential_Plots);
-
-            if($Commercial_Plots!='')
-                $property1 ->orwhere('property.property_type','=',$Commercial_Plots);
-
-            if($Agricultural_Land!='')
-                $property1 ->orwhere('property.property_type','=',$Agricultural_Land);
-
-            if($Industrial_Land!='')
-                $property1 ->orwhere('property.property_type','=',$Industrial_Land);
-
-            if($Warehouses!='')
-                $property1 ->orwhere('property.property_type','=',$Warehouses);
+           $Plot_Forms = $request['Plot-Forms'];
+           $Other = $request['Other'];
 
 
-            if($Factories!='')
-                $property1 ->orwhere('property.property_type','=',$Factories);
-            if($Buildings!='')
-                $property1 ->orwhere('property.property_type','=',$Buildings);
+           if($Houses!='')
+               $property1 ->orwhere('property.property_type','=',$Houses);
 
-            if($Plot_Files!='')
-                $property1 ->orwhere('propertyproperty_typee','=',$Plot_Files);
-            if($Plot_Forms!='')
-                $property1 ->orwhere('property.property_type','=',$Plot_Forms);
-            if($Other!='')
-                $property1 ->orwhere('property.property_type','=',$Other);
+           if($Flates!='')
+               $property1 ->orwhere('property.property_type','=',$Flates);
 
-        });
+           if($Farms_House!='')
+               $property1 ->orwhere('property.property_type','=',$Farms_House);
+
+           if($Offices!='')
+               $property1 ->orwhere('property.property_type','=',$Offices);
+
+           if($Rooms!='')
+               $property1 ->orwhere('property.property_type','=',$Rooms);
+
+           if($Shops!='')
+               $property1 ->orwhere('property.property_type','=',$Shops);
+
+           if($Upper_Portions!='')
+               $property1 ->orwhere('property.property_type','=',$Upper_Portions);
+
+           if($Lower_Portions!='')
+               $property1 ->orwhere('property.property_type','=',$Lower_Portions);
+
+           if($Residential_Plots!='')
+               $property1 ->orwhere('property.property_type','=',$Residential_Plots);
+
+           if($Commercial_Plots!='')
+               $property1 ->orwhere('property.property_type','=',$Commercial_Plots);
+
+           if($Agricultural_Land!='')
+               $property1 ->orwhere('property.property_type','=',$Agricultural_Land);
+
+           if($Industrial_Land!='')
+               $property1 ->orwhere('property.property_type','=',$Industrial_Land);
+
+           if($Warehouses!='')
+               $property1 ->orwhere('property.property_type','=',$Warehouses);
+
+
+           if($Factories!='')
+               $property1 ->orwhere('property.property_type','=',$Factories);
+           if($Buildings!='')
+               $property1 ->orwhere('property.property_type','=',$Buildings);
+
+           if($Plot_Files!='')
+               $property1 ->orwhere('propertyproperty_typee','=',$Plot_Files);
+           if($Plot_Forms!='')
+               $property1 ->orwhere('property.property_type','=',$Plot_Forms);
+           if($Other!='')
+               $property1 ->orwhere('property.property_type','=',$Other);
+
+    });
 
         if($unit_type!='')
             $property1 ->where('property.unit_type','=',$unit_type);
@@ -928,42 +870,82 @@ class PropertyController extends Controller
 
 
         $property=$property1
-            // ->get();
+           // ->get();
 
             ->paginate(9);
-        // print_r($property);
-
-        $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
-            ->groupBy('property_type')
-//            ->orderBy('count', 'asc')
-            ->get();
+       // print_r($property);
 
 
 
-        return view('/properties', compact('property','photos','cites','sidesearch'));
+
+//        $filter=array("purpose" => $purpose,"city_id"=> $city,"society_id" => $society,"phase_id"=>$phase,"block_id"=>$block,
+//            "unit_type"=>$unit_type, "unit_size" => $size);
+//
+//
+//
+//       print_r($filter);
+//
+//
+//
+//        foreach ($filter as $key => $value) {
+//
+//            if($value !=""){
+//
+//                $result[]=array('col'=>$key,'val'=>$value);
+//            }
+//        }
+////print_r($result);
+//
+//        $property1 =Property::with('feature')->
+//        where('ad_status','=','1');
+//
+//            foreach($result as $f){
+//                $property1->where($f['col'],'=',$f['val']);
+//
+//
+//            }
+//
+//$d=$property1->get();
+//
+//        print_r($d);
+////        $property=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')
+//        $property=Property::select() ->leftjoin('feature','property.id','=','feature.property_id')
+//            ->join('city','city.city_name','=',$city)
+//            ->join('society','society.name','=',$society)
+//            ->join('phase','phase.name','=',$phase)
+//            ->join('block','block.name','=',$block)
+//            ->where('property.unit_type','like','%'.$unit_type.'%')->where('property.unit_size','like','%'.$size.'%')
+//            ->where('property.purpose','like','%'.$purpose.'%')
+//
+//
+//        ->paginate(8);
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        return view('/properties', compact('property','photos','cites'));
     }
 
 
 
     public function updateproperty(Request $request){
-//
-//
-//
-//            echo $request['purpose'];
-//echo "<br>";
-//        echo $request['property_id'];
-//        echo "<br>";
-//         echo $request['title'];
-//        echo "<br>";
-//         echo $request['property_type'];
-//
-//        echo "<br>";
-//        echo $request['address'];
-//        echo "<br>";
-//        echo $request['city'];
-//
 
-<<<<<<< HEAD
         $property_id= $request['property_id'];
         $feature_id = $request['feature_id'];
 
@@ -978,19 +960,6 @@ class PropertyController extends Controller
 
 
         feature::where('property_id','=',$property_id)->update([ 'built_in_year' => $request['Built_in_Year'],
-=======
-
-//        Property::where('id','=',$request['property_id'])->update(['title'=> $request['title'],
-//            'slug'=> $request['title'],'property_type'=>$request['property_type'],
-//            'description' => $request['description'], 'price' =>$request['price'], 'city_id'=>$request['city'],
-//            'society_id'=>$request['society'],
-//            'phase_id'=>$request['Phase'],'block_id'=>$request['block'],
-//            'address'=>$request['address'], 'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],
-//            'unit_size'=>$request['unit_size']] );
-
-
-        feature::where('property_id','=',$request['property_id'])->update([ 'built_in_year' => $request['Built_in_Year'],
->>>>>>> a6e8c8d3d3f4530e407161beded9aa510cc07cfd
             'view' => $request['View'], 'parking_space' => $request['Parking_Spaces'], 'double_glazed_window'=> $request['Double_Glazed_Windows'],
             'central_air_conditioning'=>$request['Central_Air_Conditioning'],'central_heating'=>$request['Central_Heating'],
             'flooring_type'=>$request['Flooring_type'],'electricity_backup_type' => $request['Electricity_Backup'],
@@ -1024,13 +993,8 @@ class PropertyController extends Controller
             'water_supply'=> $request['Water_Supply'],'sui_gas'=> $request['Sui_Gas'],'boundry_wall'=>$request['Boundary_Wall'],
             'other_plot_features'=>$request['Other_Plot_Features']
         ]);
-<<<<<<< HEAD
         
         return redirect('/myproperties');
-=======
-
-//        return redirect('/myproperties');
->>>>>>> a6e8c8d3d3f4530e407161beded9aa510cc07cfd
     }
 
 
@@ -1061,23 +1025,23 @@ class PropertyController extends Controller
                     $i++;
                     $newslug = $temp . '-' . $i;
                 }
-                $temp =  $newslug;
+              $temp =  $newslug;
             }
-            if ($request['society']==""){
-                $request['society']=2000;
-                $request['phase']=14;
-                $request['block']=142;
+               if ($request['society']==""){
+                   $request['society']=2000;
+                   $request['phase']=14;
+                   $request['block']=142;
 
-            }
-            else if($request['phase']=="")
-            {
-                $request['phase']=14;
-                $request['block']=142;
-            }
-            else if($request['block']=="")
-            {
-                $request['block']=142;
-            }
+               }
+               else if($request['phase']=="")
+               {
+                   $request['phase']=14;
+                   $request['block']=142;
+               }
+               else if($request['block']=="")
+               {
+                   $request['block']=142;
+               }
 
             $id = DB::table('property')->insertGetId(
                 [
@@ -1094,7 +1058,7 @@ class PropertyController extends Controller
                     $photo=new Photo;
                     $name = $files[$i]->getClientOriginalName();
 
-                    // $name->resize('1200','800');
+                   // $name->resize('1200','800');
 
 
                     if($i==1){
@@ -1113,10 +1077,17 @@ class PropertyController extends Controller
             }
 
 
-            $feature['property_id']=$id;
+           $feature['property_id']=$id;
 
 
-            /*main feature*/
+
+
+
+
+
+
+
+                          /*main feature*/
             $feature['built_in_year'] = $request['Built_in_Year'];
             $feature['view'] = $request['View'];
             $feature['parking_space'] = $request['Parking_Spaces'];
@@ -1148,7 +1119,7 @@ class PropertyController extends Controller
 
 
 
-            //            Buisness and Communication
+                //            Buisness and Communication
             $feature['broadband_internet_access'] = $request['Broadband_Internet_Access'];
             $feature['satellite_or_cable_tv_ready'] = $request['Satellite_or_Cable_TV_Ready'];
             $feature['intercom'] = $request['Intercom'];
@@ -1163,13 +1134,13 @@ class PropertyController extends Controller
 
 //            Nearby Locations and Other Facilities
 
-            $feature['nearby_schools'] = $request['Nearby_Schools'];
-            $feature['nearby_hospitals'] = $request['Nearby_Hospitals'];
-            $feature['nearby_shopping_malls'] = $request['Nearby_Shopping_Malls'];
-            $feature['nearby_restaurants'] = $request['Nearby_Restaurants'];
-            $feature['distance_from_airport_kms'] = $request['Distance_From_Airport(kms)'];
-            $feature['other_nearby_places'] = $request['Other_Nearby_Places'];
-            $feature['nearby_public_transport'] = $request['Nearby_Public_Transport_Service'];
+                $feature['nearby_schools'] = $request['Nearby_Schools'];
+                $feature['nearby_hospitals'] = $request['Nearby_Hospitals'];
+                $feature['nearby_shopping_malls'] = $request['Nearby_Shopping_Malls'];
+                $feature['nearby_restaurants'] = $request['Nearby_Restaurants'];
+                $feature['distance_from_airport_kms'] = $request['Distance_From_Airport(kms)'];
+                $feature['other_nearby_places'] = $request['Other_Nearby_Places'];
+                $feature['nearby_public_transport'] = $request['Nearby_Public_Transport_Service'];
 
 
             //            Rooms
@@ -1195,27 +1166,27 @@ class PropertyController extends Controller
             //            Healthcare Recreational
 
 
-            $feature['lawn_or_garden'] = $request['Lawn_or_Garden'];
-            $feature['swimming_pool'] = $request['Swimming_Pool'];
-            $feature['sauna'] = $request['Sauna'];
-            $feature['jacuzzi'] = $request['Jacuzzi'];
-            $feature['other_health_and_recreational'] = $request['Other_Healthcare_and_Recreation_Facilities'];
+                $feature['lawn_or_garden'] = $request['Lawn_or_Garden'];
+                $feature['swimming_pool'] = $request['Swimming_Pool'];
+                $feature['sauna'] = $request['Sauna'];
+                $feature['jacuzzi'] = $request['Jacuzzi'];
+                $feature['other_health_and_recreational'] = $request['Other_Healthcare_and_Recreation_Facilities'];
 
 
-            //            Other Facilities
+                //            Other Facilities
 
-            $feature['maintenance_staff'] = $request['Maintenance_Staff'];
-            $feature['security_staff'] = $request['Security_Staff'];
-            $feature['facilities_for_disabled'] = $request['Facilities_for_Disabled'];
-            $feature['laundry_or_dry_cleaning_facilities'] = $request['Laundry_or_Dry_Cleaning_Facility'];
-            $feature['communal_or_shared_kitchen_in_building'] = $request['Communal_or_Shared_Kitchen_in_Building'];
-            $feature['cctv_security_installed'] = $request['CCTV_Security_Installed'];
-            $feature['cafeteria_or_canteen_in_building'] = $request['Cafeteria_or_Canteen_in_Building'];
-            $feature['pet_policy_type'] = $request['Pet_Policy_type'];
-            $feature['facilities'] = $request['Other_Facilities'];
+                $feature['maintenance_staff'] = $request['Maintenance_Staff'];
+                $feature['security_staff'] = $request['Security_Staff'];
+                $feature['facilities_for_disabled'] = $request['Facilities_for_Disabled'];
+                $feature['laundry_or_dry_cleaning_facilities'] = $request['Laundry_or_Dry_Cleaning_Facility'];
+                $feature['communal_or_shared_kitchen_in_building'] = $request['Communal_or_Shared_Kitchen_in_Building'];
+                $feature['cctv_security_installed'] = $request['CCTV_Security_Installed'];
+                $feature['cafeteria_or_canteen_in_building'] = $request['Cafeteria_or_Canteen_in_Building'];
+                $feature['pet_policy_type'] = $request['Pet_Policy_type'];
+                $feature['facilities'] = $request['Other_Facilities'];
 
 
-            //plot features
+                //plot features
 
             $feature['possesion'] = $request['Possesion'];
             $feature['corner'] = $request['Corner'];
@@ -1234,8 +1205,8 @@ class PropertyController extends Controller
 
 
         $feature->save();
-        return redirect('/myproperties');
-//        return redirect('/properties');
+//        return redirect('/myproperties');
+        return redirect('/properties');
 
 
     }
@@ -1260,6 +1231,7 @@ class PropertyController extends Controller
 
         return view('properties',compact('property','Property1','photos','cites','sidesearch'));
     }
+
 
     public function show_all_plots(){
         $cites=City::all();
@@ -1299,10 +1271,10 @@ class PropertyController extends Controller
     public function mainPage(){ //showing cities and their count of properties and Blog Title
 
 
-        $articles= Blog::all();
+     $articles= Blog::all(); 
 
 
-
+ 
 
 
         $Property1 =DB::table('property')->select(DB::raw('count(*) as total'),'property.city_id','city.city_name')->join('city','property.city_id','=','city.id')
@@ -1318,38 +1290,42 @@ class PropertyController extends Controller
         $cities= City::all();
 
 //      return view('welcome',compact('hot','photos'));
-        return view('welcome',compact('hot','photos','Property1','articles','cities'));
+     return view('welcome',compact('hot','photos','Property1','articles','cities'));
     }
+
 
     public function myproperties(){
 
         $id=Auth::user()->id;
-        //$data=Property::select('property.*')->leftjoin('feature','property.id','=','feature.property_id')->get();
+       //$data=Property::select('property.*')->leftjoin('feature','property.id','=','feature.property_id')->get();
         //$data= Property::find(1)->user;
 
         $photos = Photo::all();
 
-        $result=$this->usermenu();
+            $result=$this->usermenu();
 
 // $data=Property::select('property.*')->join('city', 'city.id', '=', 'property.city_id')->join('society','society.id','=','property.society_id')
 //     ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->get();
 //        //$data= Property::find(1)->user;
-        $data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.user_id','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
-        join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
-            ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->paginate(10);
+$data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.user_id','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
+join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
+    ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->paginate(10);
 
 
 
-        return view('user.property.myproperties',compact('data','photos','result'));
+      return view('user.property.myproperties',compact('data','photos','result'));
 
     }
+
+
+
 
     public function propertydetail($id){
         $cites=City::all();
 
 
 
-        // $data = Property::find($id)->get();
+       // $data = Property::find($id)->get();
         $data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.slug','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
         join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
             ->join('phase','phase.id','=','property.phase_id')
@@ -1383,36 +1359,36 @@ class PropertyController extends Controller
 
         if ($opt == "Houses"){
 
-            return view('user.property.houseDetail',compact('data','photos','cites','sidesearch'));
+           return view('user.property.houseDetail',compact('data','photos','cites','sidesearch'));
         }
 
         if ($opt == "Flates"){
-            return view('user.property.flateDetail',compact('data','photos','cites','sidesearch'));
+              return view('user.property.flateDetail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Buildings"){
-            return view('user.property.building_detail',compact('data','photos','cites','sidesearch'));
+              return view('user.property.building_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Factories"){
-            return view('user.property.factory_detail',compact('data','photos','cites','sidesearch'));
+              return view('user.property.factory_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Agricultural-Land" || $opt == "Industrial-Land" ){
-            return view('user.property.land_detail',compact('data','photos','cites','sidesearch'));
+              return view('user.property.land_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Offices"){
-            return view('user.property.office_detail',compact('data','photos','cites','sidesearch'));
+              return view('user.property.office_detail',compact('data','photos','cites','sidesearch'));
         }
-        if ($opt == "Residential-Plots" || $opt == "Commercial-Plots"){
-            return view('user.property.plot_detail',compact('data','photos','cites','sidesearch'));
+              if ($opt == "Residential-Plots" || $opt == "Commercial-Plots"){
+              return view('user.property.plot_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Upper-Portions" || $opt == "Lower-Portions" ||  $opt="Farms-House" ){
-            return view('user.property.portion&farm_detail',compact('data','photos','cites','sidesearch'));
+              return view('user.property.portion&farm_detail',compact('data','photos','cites','sidesearch'));
         }
 
         if ($opt == "Shops"){
-            return view('user.property.shop_detail',compact('data','photos','cites','sidesearch'));
+              return view('user.property.shop_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Warehouses"){
-            return view('user.property.warehouse_detail',compact('data','photos','cites','sidesearch'));
+              return view('user.property.warehouse_detail',compact('data','photos','cites','sidesearch'));
         }
 
 

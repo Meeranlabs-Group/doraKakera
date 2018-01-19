@@ -51,7 +51,7 @@
                             <td>
                                 <div class="image-wrapper">
                                     {{--<div class="mark-circle top" data-toggle="tooltip" data-placement="right" title="Top accommodation"><i class="fa fa-thumbs-up"></i></div>--}}
-                                    <a href="/MarketDetail/{{ $article->id }}" class="image">
+                                    <a href="edit.html" class="image">
                                         <div class="bg-transfer">
                                             <img src="{{$article->path}}" alt="{{$article->title}}" class="image">
                                         </div>
@@ -63,12 +63,12 @@
                                 <div class="info">
 
                                     {{--propertydetail/{{ $property->id }}--}}
-                                    <a href="/MarketDetail/{{ $article->id }}"><h2>{{ $article->title  }}</h2></a>
+                                    <a href=""><h2>{{ $article->title  }}</h2></a>
 
                                     <figure class="location">{{ str_limit($article->description , $limit = 50, $end = '...') }} </figure>
                                     <figure class="label label-info">Type</figure>
                                     <div class="meta">
-                                        <span><i class="fa fa-bed"></i>36555</span>
+                                        <span><i class="fa fa-bed"></i>365</span>
                                         <span class="price-info">Price: <span class="price">Price</span></span>
                                     </div>
                                     <!--end meta-->
@@ -76,7 +76,7 @@
                                 <!--end info-->
                             </td>
                             {{--<td><div class="featured yes"><i class="fa fa-check"></i><aside></aside></div></td>--}}
-                            <td class="views">425556</td>
+                            <td class="views">426</td>
                             <td class="reviews">45</td>
 
 

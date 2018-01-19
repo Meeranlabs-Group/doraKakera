@@ -65,6 +65,15 @@
                 <input type="text" class="form-control" id="address-autocomplete" name="address" placeholder="Accommodation Address" required>
             </div>
 
+        <!--end map-->
+            {{--<h3>Position</h3>--}}
+            {{--<ul class="checkboxes inline list-unstyled">--}}
+                {{--<li><label><input type="checkbox" name="corner">Corner</label></li>--}}
+                {{--<li><label><input type="checkbox" name="near_to_park">Near the park</label></li>--}}
+                {{--<li><label><input type="checkbox" name="Near the ski center">Near to Main Road</label></li>--}}
+                {{--<li><label><input type="checkbox" name="At he town center">Near to Mosque</label></li>--}}
+            {{--</ul>--}}
+            <!--end checkboxes-->
         </div>
 
         <!--end col-md-7-->

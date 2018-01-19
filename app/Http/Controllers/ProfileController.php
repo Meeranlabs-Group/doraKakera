@@ -34,14 +34,18 @@ class ProfileController extends Controller
 
     public function RentProperties(){
 
-        $id=Auth::user()->id;
-        $data= Property::where('user_id','=',$id)
-//            ->where('ad_status','=',1)
-            ->where('purpose','=','Rent')->paginate(8);
 
+
+        $id=Auth::user()->id;
+
+        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Rent')->get();
         $photos = Photo::all();
 
+
+
         $result=$this->usermenu();
+
+
 
         return view('user.property.myproperties',compact('data','photos','result'));
 
@@ -51,10 +55,9 @@ class ProfileController extends Controller
 
 
         $id=Auth::user()->id;
-        $data= Property::where('user_id','=',$id)
-//            ->where('ad_status','=',1)
-            ->where('purpose','=','Sale')->paginate(8);
+        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Sale')->get();
         $photos = Photo::all();
+
         $result=$this->usermenu();
 
         return view('user.property.myproperties',compact('data','photos','result'));

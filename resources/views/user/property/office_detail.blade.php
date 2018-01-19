@@ -279,7 +279,30 @@
                                 </aside>
 
                                 <aside>
-                                    @include('user.property.contact_us');
+                                    <h1 style="color:grey;">Contact Us</h1>
+                                    <address style="padding-left:10%;">
+
+                                        <strong>Head Office</strong><br>
+                                        G -16, Phase 1, Masjid Chowk,<br>
+                                        Defence Housing Authority Lahore Cantt., Pakistan.<br>
+                                        <br>
+                                        <strong>UAN:</strong> +92-42-111-124-124<br>
+                                        <strong>Mobile:</strong> 0321 9124124<br>
+                                        <strong>Tel:</strong> +92-42-35727771-4, 35728881-4<br>
+                                        <strong>Fax:</strong> +92-42-35729990<br>
+                                        <a href="#">hello@example.com</a><br>
+                                        <strong>skype:</strong> your.company
+                                        <h2>Social Profiles</h2>
+                                        <div class="social-icons">
+                                            <a href="https://www.facebook.com/ChohanEstatePk/" target="_blank"><i class="fa fa-facebook"></i></a>
+                                            <a href="https://twitter.com/ChohanEstatePk/" target="_blank"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://www.instagram.com/ChohanEstatePk/" target="_blank"><i class="fa fa-instagram"></i></a>
+                                            <a href="https://www.youtube.com/watch?v=tVQWQIb_2ok" target="_blank"><i class="fa fa-youtube"></i></a>
+                                        </div>
+
+
+
+                                    </address>
                                 </aside>
                             </div>
                             <!--end sidebar-->
