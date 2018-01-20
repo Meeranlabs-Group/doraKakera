@@ -38,7 +38,7 @@ class ProfileController extends Controller
 
         $id=Auth::user()->id;
 
-        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Rent')->get();
+        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Rent')->paginate(8);
         $photos = Photo::all();
 
 
@@ -55,7 +55,7 @@ class ProfileController extends Controller
 
 
         $id=Auth::user()->id;
-        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Sale')->get();
+        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Sale')->paginate(8);
         $photos = Photo::all();
 
         $result=$this->usermenu();
