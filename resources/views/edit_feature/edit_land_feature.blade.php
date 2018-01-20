@@ -65,7 +65,7 @@
                         <li><label><input type="checkbox" name="Is_Land_Fertile">Is Land Fertile</label></li>
                     @endif
 
-                    @if($feature[0]->Boundary_Lines)
+                    @if($feature[0]->boundary_Lines)
                         <li><label><input type="checkbox" checked  name="Boundary_Lines">Boundary Lines</label></li>
                     @else
                         <li><label><input type="checkbox" name="Boundary_Lines">Boundary Lines</label></li>

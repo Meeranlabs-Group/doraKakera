@@ -1,4 +1,8 @@
-<h1 style="color:grey;">Contact Us</h1>
+
+
+
+
+<h1 style="color:grey">Contact Us</h1>
 <address style="padding-left:10%;">
 
     <strong>Head Office</strong><br>
@@ -59,8 +63,8 @@
     @endif
 
 
-    {{--<a href="#">info@chohanestate.com</a><br>--}}
-    {{--<strong>skype:</strong> your.company--}}
+    <a href="#">info@chohanestate.com</a><br>
+    <strong>skype:</strong> your.company
 
     <h2>Social Profiles</h2>
     <div class="social-icons">

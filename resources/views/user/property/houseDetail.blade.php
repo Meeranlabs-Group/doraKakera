@@ -81,48 +81,52 @@
 
                             <section id="facilities">
 
-                                <div class="row">
-                                    @if($data[0]->built_in_year!="")
-                                        <li>Built in Year  <strong>{{$data[0]->built_in_year}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->total_number_of_floors!="")
-
-                                        <li>Total Number of Floors  <strong>{{$data[0]->total_number_of_floors}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->electricity_backup_type!="")
-                                        <li>Electricity Backup Type <strong>{{$data[0]->electricity_backup_type}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->	flooring_type!="")
-                                        <li>Flooring Type <strong>{{$data[0]->flooring_type}}</strong></li>
-                                    @endif
-
-                                    {{ $data[0]->central_air_conditioning}}
-                                    @if($data[0]->double_glazed_window!="")
-                                        <label><input type="checkbox" checked disabled >Double Glazed Windows</label>
-                                    @endif
+                                @include('user.property.main_feature')
 
 
-                                    @if($data[0]->central_air_conditioning!="")
-                                        <label><input type="checkbox" checked disabled >Central Air Conditioning</label>
-                                    @endif
+
+                                {{--<div class="row">--}}
+                                    {{--@if($data[0]->built_in_year!="")--}}
+                                        {{--<li>Built in Year  <strong>{{$data[0]->built_in_year}}</strong></li>--}}
+                                    {{--@endif--}}
+
+                                    {{--@if($data[0]->total_number_of_floors!="")--}}
+
+                                        {{--<li>Total Number of Floors  <strong>{{$data[0]->total_number_of_floors}}</strong></li>--}}
+                                    {{--@endif--}}
+
+                                    {{--@if($data[0]->electricity_backup_type!="")--}}
+                                        {{--<li>Electricity Backup Type <strong>{{$data[0]->electricity_backup_type}}</strong></li>--}}
+                                    {{--@endif--}}
+
+                                    {{--@if($data[0]->	flooring_type!="")--}}
+                                        {{--<li>Flooring Type <strong>{{$data[0]->flooring_type}}</strong></li>--}}
+                                    {{--@endif--}}
+
+                                    {{--{{ $data[0]->central_air_conditioning}}--}}
+                                    {{--@if($data[0]->double_glazed_window!="")--}}
+                                        {{--<label><input type="checkbox" checked disabled >Double Glazed Windows</label>--}}
+                                    {{--@endif--}}
 
 
-                                    @if($data[0]->central_heating!="")
-                                        <label><input type="checkbox" checked disabled>Central Heating</label>
-                                    @endif
+                                    {{--@if($data[0]->central_air_conditioning!="")--}}
+                                        {{--<label><input type="checkbox" checked disabled >Central Air Conditioning</label>--}}
+                                    {{--@endif--}}
 
 
-                                    @if($data[0]->waste_disposal!="")
-                                        <label><input type="checkbox" checked disabled >Waste Disposal</label>
-                                    @endif
+                                    {{--@if($data[0]->central_heating!="")--}}
+                                        {{--<label><input type="checkbox" checked disabled>Central Heating</label>--}}
+                                    {{--@endif--}}
 
-                                    @if($data[0]->furnished!="")
-                                        <label><input type="checkbox" checked disabled name="Central_Air_Conditioning">Furnished</label>
-                                    @endif
-                                </div>
+
+                                    {{--@if($data[0]->waste_disposal!="")--}}
+                                        {{--<label><input type="checkbox" checked disabled >Waste Disposal</label>--}}
+                                    {{--@endif--}}
+
+                                    {{--@if($data[0]->furnished!="")--}}
+                                        {{--<label><input type="checkbox" checked disabled name="Central_Air_Conditioning">Furnished</label>--}}
+                                    {{--@endif--}}
+                                {{--</div>--}}
 
                                 <h2>Business and Communication</h2>
                                 <div class="row">
@@ -131,7 +135,7 @@
                                     @if($data[0]->broadband_internet_access!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Broadband Internet Access</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Broadband Internet Access</h5>
                                             </div>
                                         </div>
                                     @endif
@@ -140,7 +144,7 @@
                                     @if($data[0]->satellite_or_cable_tv_ready!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Satellite or Cable TV Ready</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Satellite or Cable TV Ready</h5>
                                             </div>
                                         </div>
                                     @endif
@@ -151,7 +155,7 @@
                                     @if($data[0]->intercom!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Intercom</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Intercom</h5>
                                             </div>
                                             <!--end feature-->
                                         </div>
@@ -162,7 +166,7 @@
                                     @if($data[0]->other_business_and_communication!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Other Business and Communication: {{$data[0]->other_business_and_communication}}</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Other Business and Communication: {{$data[0]->other_business_and_communication}}</h5>
                                             </div>
                                             <!--end feature-->
                                         </div>

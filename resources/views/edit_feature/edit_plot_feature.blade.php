@@ -16,13 +16,13 @@
                     <li><label><input type="checkbox" name="Possesion">Possesion</label></li>
                 @endif
 
-                    @if($feature[0]->Corner)
+                    @if($feature[0]->corner)
                         <li><label><input type="checkbox" checked  name="Corner">Corner</label></li>
                     @else
                         <li><label><input type="checkbox" name="Corner">Corner</label></li>
                     @endif
 
-                    @if($feature[0]->Park_Facing)
+                    @if($feature[0]->park_facing)
                         <li><label><input type="checkbox" checked  name="Park_Facing">Park Facing</label></li>
                     @else
                         <li><label><input type="checkbox" name="Park_Facing">Park Facing</label></li>
@@ -34,21 +34,21 @@
                         <li><label><input type="checkbox" name="Disputed">Disputed</label></li>
                     @endif
 
-                    @if($feature[0]->File)
+                    @if($feature[0]->file)
                         <li><label><input type="checkbox" checked  name="File">File</label></li>
                     @else
                         <li><label><input type="checkbox" name="File">File</label></li>
                     @endif
 
 
-                    @if($feature[0]->Balloted)
+                    @if($feature[0]->balloted)
                         <li><label><input type="checkbox" checked  name="Balloted">Balloted</label></li>
                     @else
                         <li><label><input type="checkbox" name="Balloted">Balloted</label></li>
                     @endif
 
 
-                    @if($feature[0]->Sewerage)
+                    @if($feature[0]->sewerage)
                         <li><label><input type="checkbox" checked  name="Sewerage">Sewerage</label></li>
                     @else
                         <li><label><input type="checkbox" name="Sewerage">Sewerage</label></li>
@@ -61,7 +61,7 @@
                     @endif
 
 
-                    @if($feature[0]->Water_Supply)
+                    @if($feature[0]->water_supply)
                         <li><label><input type="checkbox" checked  name="Water_Supply">Water Supply</label></li>
                     @else
                         <li><label><input type="checkbox" name="Water_Supply">Water Supply</label></li>
@@ -73,7 +73,7 @@
                         <li><label><input type="checkbox" name="Sui_Gas">Sui Gas</label></li>
                     @endif
 
-                    @if($feature[0]->Boundary_Wall)
+                    @if($feature[0]->boundry_wall)
                         <li><label><input type="checkbox" checked  name="Boundary_Wall">Boundary Wall</label></li>
                     @else
                         <li><label><input type="checkbox" name="Boundary_Wall">Boundary Wall</label></li>
@@ -84,7 +84,7 @@
 
                 <li> <label>Other Plot Features</label> </li>
                 <li><div class="form-group width-60">
-                        <input type="text" name="Other_Plot_Features" value="{{ $feature[0]->Other_Plot_Features }}">
+                        <input type="text" name="Other_Plot_Features" value="{{ $feature[0]->other_plot_features }}">
 
                     </div>
                 </li>
@@ -128,9 +128,15 @@
                     @else
                         <li><label><input type="checkbox" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>
                     @endif
+                        <div class="clearfix"></div>
+
+                        <li><label>Other Nearby Places</label></li>
+                        <li><div class="form-group width-60">
+
+                                <input type="text" name="Other_Nearby_Places" value="{{ $feature[0]->other_nearby_places }}">
+                            </div></li>
 
 
-                    <li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>
                     <div class="clearfix"></div>
                     <li><label>Distance From Airport(kms)</label></li>
                     <li><div class="form-group width-60">

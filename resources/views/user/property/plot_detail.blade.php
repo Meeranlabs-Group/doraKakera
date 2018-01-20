@@ -83,25 +83,25 @@
                                         <li>Possesion <strong>{{$data[0]->possesion}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->Corner!="")
+                                    @if($data[0]->corner!="")
                                         <li>Corner <strong>{{$data[0]->Corner}}</strong></li>
                                     @endif
 
-                                     @if($data[0]->Park_Facing!="")
+                                     @if($data[0]->park_facing!="")
                                         <li>Park Facing <strong>{{$data[0]->Park_Facing}}</strong></li>
                                     @endif
 
 
-                                    @if($data[0]->Balloted!="")
+                                    @if($data[0]->balloted!="")
                                         <li>Balloted <strong>{{$data[0]->Balloted}}</strong></li>
                                     @endif
 
 
-                                    @if($data[0]->Sewerage!="")
+                                    @if($data[0]->sewerage!="")
                                         <li>Sewerage <strong>{{$data[0]->Sewerage}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->Water_Supply!="")
+                                    @if($data[0]->water_supply!="")
                                         <li>Water Supply <strong>{{$data[0]->Water_Supply}}</strong></li>
                                     @endif
 
@@ -120,7 +120,7 @@
                                         <li>Sui Gas <strong>{{$data[0]->sui_Gas}}</strong></li>
                                     @endif
 
-                                    @if($data[0]->irrigation!="")
+                                    @if($data[0]->Irrigation!="")
                                         <li>Irrigation <strong>{{$data[0]->irrigation}}</strong></li>
                                     @endif
 
@@ -140,7 +140,7 @@
                                         <li>Is Land Fertile <strong>{{$data[0]->Is_Land_Fertile}}</strong></li>
                                     @endif
 
-                                   @if($data[0]->Boundary_Wall!="")
+                                   @if($data[0]->boundry_wall!="")
                                         <li>Boundary Wall <strong>{{$data[0]->Boundary_Wall}}</strong></li>
                                     @endif
 
@@ -211,7 +211,7 @@
                                     <dl>
 
                                         <dt>Other Plot Features</dt>
-                                        <dd>{{$data[0]->Other Plot Feature}}</dd>
+                                        <dd>{{$data[0]->Other_Plot_Feature}}</dd>
 
 
                                         <dt>Area:</dt>
