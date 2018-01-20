@@ -225,7 +225,7 @@
                                 <!--end favorite-searches-->
                             </div>
                             <!--end container-->
-                            <div class="bg-transfer"><img src="http://bestmarketing.com.pk/wp-content/uploads/2016/07/5622b4c69601a28d54d22619_Full-Res.jpg" alt="abc"></div>
+                            <div class="bg-transfer"><img src={{ asset('assets/img/sample.jpg') }} alt="abc"></div>
                             <!--end bg-transfer-->
                         </div>
                         <!--end inner-->

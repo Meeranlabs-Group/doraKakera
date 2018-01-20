@@ -6,18 +6,19 @@
 <script type="text/javascript" src={{ url("assets/js/jquery-2.2.1.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/jquery-migrate-1.2.1.min.js")}}></script>
 <script type="text/javascript" src={{ url("http://maps.google.com/maps/api/js?key=AIzaSyCER7BUrzg5FXz5hivZKd2XzkWAMrTlX2k&sensor=false&libraries=places")}}></script>
-
-
+{{--<script type="text/javascript" src={{ url("assets/js/infobox.js")}}></script>--}}
+{{--<script type="text/javascript" src={{ url("assets/js/markerclusterer_packed.js")}}></script>--}}
+{{--<script type="text/javascript" src={{ url("assets/js/richmarker-compiled.js")}}></script>--}}
+<script type="text/javascript" src={{ url("assets/js/markerwithlabel_packed.js")}}></script>
 <script type="text/javascript" src={{ url("assets/bootstrap/js/bootstrap.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/jquery.validate.min.js")}}></script>
-<script type="text/javascript" src={{ url("assets/js/bootstrap-datepicker.js")}}></script>
-
+{{--<script type="text/javascript" src={{ url("assets/js/bootstrap-datepicker.js")}}></script>--}}
+<script type="text/javascript" src={{ url("assets/js/icheck.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/owl.carousel.js")}}></script>
-
+{{--<script type="text/javascript" src={{ url("assets/js/masonry.pkgd.min.js")}}></script>--}}
 <script type="text/javascript" src={{ url("assets/js/jQuery.MultiFile.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/maps.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/custom.js")}}></script>
-
 
 <!--[if lte IE 9]>
 <script src={{ url("assets/js/ie.js")}}></script>
