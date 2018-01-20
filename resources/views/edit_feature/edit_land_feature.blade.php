@@ -35,7 +35,7 @@
                         <li><label><input type="checkbox" name="Sui_Gas">Sui Gas</label></li>
                     @endif
 
-                    @if($feature[0]->irrigation)
+                    @if($feature[0]->Irrigation)
                         <li><label><input type="checkbox" checked  name="Irrigation">Irrigation</label></li>
                     @else
                         <li><label><input type="checkbox" name="Irrigation">Irrigation</label></li>

@@ -119,7 +119,7 @@
                                         </div>
                                     @endif
 
-                                    @if($data[0]->sui_Gas!="")
+                                    @if($data[0]->sui_gas!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
                                                 <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Sui Gas</h4>
@@ -129,7 +129,7 @@
                                         </div>
                                     @endif
 
-                                    @if($data[0]->irrigation!="")
+                                    @if($data[0]->Irrigation!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
                                                 <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Irrigation</h4>

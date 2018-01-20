@@ -932,7 +932,10 @@ class PropertyController extends Controller
             'laundry_or_dry_cleaning_facilities'=>$request['Laundry_or_Dry_Cleaning_Facility'],'communal_or_shared_kitchen_in_building'=>$request['Communal_or_Shared_Kitchen_in_Building'],
             'cctv_security_installed'=>$request['CCTV_Security_Installed'],'cafeteria_or_canteen_in_building'=> $request['Cafeteria_or_Canteen_in_Building'],
             'pet_policy_type'=> $request['Pet_Policy_type'],'facilities'=> $request['Other_Facilities'],'possesion'=>$request['Possesion'],
-            'corner'=> $request['Corner'],'park_facing'=>$request['Park_Facing'],'disputed' =>$request['Disputed'],'file'=> $request['File'],
+            'corner'=> $request['Corner'],'Irrigation'=> $request['Irrigation'],'Tube_Wells'=> $request['Tube_Wells'],
+            'Perimeter_Fencing'=> $request['Perimeter_Fencing'],'Accessible_by_Road'=> $request['Accessible_by_Road'],
+            'Is_Land_Fertile'=> $request['Is_Land_Fertile'],'Boundary_Lines'=> $request['Boundary_Lines'],
+            'park_facing'=>$request['Park_Facing'],'disputed' =>$request['Disputed'],'file'=> $request['File'],
             'balloted'=> $request['Balloted'],'sewerage'=>$request['Sewerage'], 'electricity'=> $request['Electricity'],
             'water_supply'=> $request['Water_Supply'],'sui_gas'=> $request['Sui_Gas'],'boundry_wall'=>$request['Boundary_Wall'],
             'other_plot_features'=>$request['Other_Plot_Features']
