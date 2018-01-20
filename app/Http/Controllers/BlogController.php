@@ -17,86 +17,84 @@ class BlogController extends Controller
 
 
 
-        public function saveArticle(Request $request){
+    public function saveArticle(Request $request){
 
-            $temp = str_slug($request['title'], '-');
-            if(!Property::all()->where('slug',$temp)->isEmpty()){
-                $i = 1;
+        $temp = str_slug($request['title'], '-');
+        if(!Property::all()->where('slug',$temp)->isEmpty()){
+            $i = 1;
+            $newslug = $temp . '-' . $i;
+            while(!Property::all()->where('slug',$newslug)->isEmpty()){
+                $i++;
                 $newslug = $temp . '-' . $i;
-                while(!Property::all()->where('slug',$newslug)->isEmpty()){
-                    $i++;
-                    $newslug = $temp . '-' . $i;
-                }
-                $temp =  $newslug;
             }
-
-            $article= new Blog();
-
-            $article['user_id']=Auth::user()->getid();
-            $article['title']=$request->title;
-            $article['description']=$request->description;
-            $article['slug']=$request->title;
-
-            $files=$request->file('file');
-            $name = $files->getClientOriginalName();
-            $path = $files->move($request['title'], $name);
-            $article['path'] = $path;
-
-                $article->save();
-
-                return redirect('/myarticles');
+            $temp =  $newslug;
         }
 
+        $article= new Blog();
 
-        public function blogDetail($id){
-            $article=Blog::where("slug",'=',$id)->get();
-            return view('partials.MarketDetails',compact('article'));
-         }
+        $article['user_id']=Auth::user()->getid();
+        $article['title']=$request->title;
+        $article['description']=$request->description;
+        $article['slug']=$request->title;
 
-        public function approvedArticles(){
+        $files=$request->file('file');
+        $name = $files->getClientOriginalName();
+        $path = $files->move($request['title'], $name);
+        $article['path'] = $path;
 
-             $id=Auth::user()->getid();
-             $articles= Blog::where('user_id','=',$id)->where('status','=',1)->paginate(4);
-             return view('user.blog.myarticles',compact('articles','result'));
-         }
+        $article->save();
+
+        return redirect('/myarticles');
+    }
 
 
-        public function disapprovedArticles(){
+    public function blogDetail($id){
+        $article=Blog::where("slug",'=',$id)->get();
+        return view('partials.MarketDetails',compact('article'));
+    }
 
-                $id=Auth::user()->getid();
-                $articles= Blog::where('user_id','=',$id)->where('status','=',0)->paginate(4);
-                 $result=$this->usermenu();
-                return view('user.blog.myarticles',compact('articles','result'));
+    public function approvedArticles(){
 
-        }
+        $id=Auth::user()->getid();
+        $articles= Blog::where('user_id','=',$id)->where('status','=',1)->paginate(4);
+        return view('user.blog.myarticles',compact('articles','result'));
+    }
 
-        public function showAll(){  // user articles
 
-            $id=Auth::user()->getid();
-            $articles= Blog::where('user_id','=',$id)->paginate(4);
-            $result=$this->usermenu();
+    public function disapprovedArticles(){
+        $id=Auth::user()->getid();
+        $articles= Blog::where('user_id','=',$id)->where('status','=',0)->paginate(4);
+        $result=$this->usermenu();
+        return view('user.blog.myarticles',compact('articles','result'));
+    }
 
-           return view('user.blog.myarticles',compact('articles','result'));
+    public function showAll(){  // user articles
+
+        $id=Auth::user()->getid();
+        $articles= Blog::where('user_id','=',$id)->paginate(4);
+
+        $result=$this->usermenu();
+
+        return view('user.blog.myarticles',compact('articles','result'));
 //
-        }
+    }
 
-        public function editArticle($id){
+    public function editArticle($id){
+        $data = Blog::where('slug','=',$id)->get();
 
-            $data = Blog::where('id','=',$id)->get();
+        return view('user.blog.editarticle',compact('data'));
+    }
 
-            return view('user.blog.editarticle',compact('data'));
-        }
+    public function allBlogs(){ //market analysis All Blogs
 
-        public function allBlogs(){ //market analysis All Blogs
+        $articles=Blog::paginate(2);
 
-            $articles=Blog::paginate(2);
+        return view('partials.MarketAnalysis',compact('articles'));
+    }
 
-            return view('partials.MarketAnalysis',compact('articles'));
-        }
+    public function updateArticle(Request $request){
 
-        public function updateArticle(Request $request){
-
-            $article_id= $request['article_id'];
+        $article_id= $request['article_id'];
 //            $feature_id = $request['feature_id'];
 
 //            ($files=$request->file('file'));
@@ -104,22 +102,22 @@ class BlogController extends Controller
 //            $path = $files->move($request['title'], $name);
 ////            $update['path'] = $path;
 
-            if( ($files=$request->file('file'))  ){
-                $name = $files->getClientOriginalName();
-                $path = $files->move($request['title'], $name);
+        if( ($files=$request->file('file'))  ){
+            $name = $files->getClientOriginalName();
+            $path = $files->move($request['title'], $name);
 //                $update['path'] = $path;
-            }
-
-
-            else{
-                $path = $request->path;
-            }
-
-
-
-            Blog::where('id','=',$article_id)->update(['title'=> $request['title'],'description'=>$request['description'],
-                'path'=> $path ]);
-
-            return redirect('/myarticles');
         }
+
+
+        else{
+            $path = $request->path;
+        }
+
+
+
+        Blog::where('id','=',$article_id)->update(['title'=> $request['title'],'description'=>$request['description'],
+            'path'=> $path ]);
+
+        return redirect('/myarticles');
+    }
 }

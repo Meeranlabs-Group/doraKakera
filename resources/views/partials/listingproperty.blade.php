@@ -17,9 +17,9 @@
                         @if($photo->property_id == $data->id )
                             <img src="{{ asset($photo->path)  }}" style="width:250px;height: 200px;"  alt="">
                         @endif
-                    {{--<img src="#" class="owl-lazy" alt="" data-src="assets/img/items/02.jpg">--}}
-                    {{--<img src="#" class="owl-lazy" alt="" data-src="assets/img/items/03.jpg">--}}
-                @endforeach
+                        {{--<img src="#" class="owl-lazy" alt="" data-src="assets/img/items/02.jpg">--}}
+                        {{--<img src="#" class="owl-lazy" alt="" data-src="assets/img/items/03.jpg">--}}
+                    @endforeach
                 </div>
             </a>
             <div class="map-item">
@@ -44,13 +44,15 @@
 
             {{--<a href=" /propertydetail/{{ $data->id }} " ><h3> {{  str_limit( ucfirst($data->title), $limit = 30, $end = '...')  }} </h3></a>--}}
             <a href="{{ URL::to('/') . '/propertydetail/' . $data->slug }}" ><h3> {{  str_limit( ucfirst($data->title), $limit = 30, $end = '...')  }} </h3></a>
-{{----}}
+            {{----}}
 
 
 
-            <figure class="location">{{ $data->address }}</figure>
-            <figure class="location">{{ $data->block_name }}, {{ $data->phase_name }}, {{ $data->society_name }}, {{ $data->city_name }}</figure>
-
+            @if($data->society_name == 'Other')
+                <figure class="location">{{ $data->address }}</figure>
+            @else
+                <figure class="location">{{ $data->block_name }}, {{ $data->phase_name }}, {{ $data->society_name }}, {{ $data->city_name }}</figure>
+            @endif
             {{--<figure class="label label-info">{{ $data->property_type }}</figure>--}}
             {{--<figure class="label label-success">{{$data->unit_size}} {{$data->unit_type}}</figure>--}}
             {{--<h6 class="label label-danger">PKR-{{ nice_number($data->price) }}</h6>--}}
@@ -60,7 +62,7 @@
             <figure class="label label-success">{{$data->unit_size}} {{$data->unit_type}}</figure>
             <h6 class="label label-danger">PKR-{{ nice_number($data->price) }}</h6>
 
-           @if($data->status == 1)
+            @if($data->status == 1)
                 <figure class="label label-Available">Available</figure>
             @endif
 
