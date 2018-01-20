@@ -29,7 +29,7 @@
                         <li><label><input type="checkbox" name="Electricity">Electricity</label></li>
                     @endif
 
-                    @if($feature[0]->sui_Gas)
+                    @if($feature[0]->sui_gas)
                         <li><label><input type="checkbox" checked  name="Sui_Gas">Sui Gas</label></li>
                     @else
                         <li><label><input type="checkbox" name="Sui_Gas">Sui Gas</label></li>
