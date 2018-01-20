@@ -4366,7 +4366,7 @@ form {
 }
 form.labels-uppercase .form-group label {
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: bold;
 }
 form.labels-uppercase .form-group.label-inline label {
@@ -4601,8 +4601,8 @@ button:hover, button:active, button:focus {
   font-weight: normal;
 }
 .hero-section form input {
-height:40px;
-width: 80%;
+height:35px;
+width: 100%;
 margin:0px;
 padding:5px;
 }
@@ -4662,11 +4662,12 @@ color: #fff !important;
     border-width: 1px;
     height: 50px;
     width:100%;
-  font-size: 18px;
-  font-weight: normal;
+  font-size: 25px;
+  font-weight: bold;
 }
 .hero-section form .btn:hover, .hero-section form .btn:focus, .hero-section form .btn:active {
   border: none;
+background-color: #1A237E;
 }
 .hero-section form .btn[type="submit"] {
   background-color: #1A237E;
@@ -4794,7 +4795,7 @@ body::before {
   }
 
   .hero-section form input, .hero-section form .btn {
-    padding: 20px;
+    padding: 5px;
     font-size: 16px;
   }
 

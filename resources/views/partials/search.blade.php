@@ -1,6 +1,6 @@
 <div id="page-content">
     <div class="hero-section" data-height="600">
-
+        {!! Form::open(['url' => '/search1','class'=>'labels-uppercase','id'=>'form-filter']) !!}
             <div class="hero-inner">
                 <div class="hero-wrapper" >
                     <div class="caption">
@@ -8,7 +8,7 @@
                             <div class="container">
                                 <h1 class="center">Find Your Best Property</h1>
 
-                                {!! Form::open(['url' => '/search1','class'=>'labels-uppercase','id'=>'form-filter']) !!}
+
 
                                 <div class="row no-gutters">
 
@@ -17,7 +17,7 @@
                                 <input type="hidden" name="purpose"id="p" value=""></input>
                                     <div class="col-md-2 col-sm-2 col-md-offset-3 col-sm-offset-3">
                                         <div class="form-group">
-                                            <button type="button"  id="show" value="Sale"  class="btn btn-primary">BUY</button>
+                                            <button  type="button" id="show" value="Sale"  class="btn">BUY</button>
 
                                             {{--<input  value="hello" name="type1"  id="type">--}}
 
@@ -26,13 +26,13 @@
 
                                     <div class="col-md-2 col-sm-2">
                                         <div class="form-group">
-                                            <button type="button" onclick="location.href='{{ url("/addproperty") }}';"  class="btn btn-primary submit">SELL</button>
+                                            <button  onclick="location.href='{{ url("/addproperty") }}';"  class="btn btn-primary submit">SELL</button>
                                         </div>
                                     </div>
 
                                     <div class="col-md-2 col-sm-2">
                                         <div class="form-group">
-                                            <button type="button"  id="show1" value="Rent" class="btn btn-primary">RENT</button>
+                                            <button type="button" id="show1" value="Rent" class="btn ">RENT</button>
                                         </div>
                                     </div>
 
@@ -78,10 +78,10 @@
                                             </div>
                                             <!--end form-group-->
                                         </div>
-                                        <div class="col-md-4 col-sm-4">
+                                        <div class="col-md-4 col-sm-6">
                                             <div class="form-group">
                                                 <label style="color: white" for="city">City</label>
-                                                <select class="form-control framed white" name="city" id="city1">
+                                                <select class="form-control framed white" name="city" id="city">
                                                     <option value="" selected>Select City</option>
 
                                                     @foreach($cities as $city)
@@ -93,7 +93,7 @@
                                         </div>
 
 
-                                        <div class="col-md-4 col-sm-4">
+                                        <div class="col-md-4 col-sm-6">
                                             <div class="form-group">
                                                 <label style="color: white" for="">Society</label>
                                                 <select class="form-control framed white" id="society" name="society">
@@ -108,16 +108,62 @@
 
 
 
-                                        <div class="col-md-4 col-sm-4">
+                                        <div class="col-md-4 col-sm-6">
                                             <div class="form-group">
-                                                <label style="color: white" for="">Location</label>
-                                               <input  placeholder="Enter Location Here" name="test" onkeyup="yes()" id="name">
+                                                <label style="color: white" for="">Phase</label>
+                                                <select class="form-control framed white" name="phase" id="Phase">
+                                                    <option value="" selected>Select Phase</option>
+                                                </select>
+                                            </div>
+                                            <!--end form-group-->
+                                        </div>
+ <div class="col-md-4 col-sm-6">
+                                            <div class="form-group">
+                                                <label style="color: white" for="">BLock</label>
+                                                <select class="form-control framed white" name="block" id="block">
+                                                    <option value="" selected>Select Block</option>
+                                                </select>
                                             </div>
                                             <!--end form-group-->
                                         </div>
 
-
-                                        <div class="col-md-4 col-sm-4">
+										
+                                          <div class="col-md-2 col-sm-3">
+                                            <div class="form-group">
+												<label style="color: white">From </label>
+												<input type="number" name="pfrom" placeholder="From"/>
+                                            </div>
+                                            <!--end form-group-->
+											 
+                                           
+                                               
+                                                
+                                            
+                                            <!--end form-group-->
+                                      
+											   </div>
+											  
+											   
+										
+										  <div class="col-md-2 col-sm-3">
+                                            <div class="form-group">
+												<label style="color: white">To </label>
+												 <input type="number" name="pto" placeholder="To" />
+                                            </div>
+                                            <!--end form-group-->
+											 
+                                           
+                                               
+                                                
+                                            
+                                            <!--end form-group-->
+                                      
+											   </div>
+                                               
+										
+										
+										
+                                        <div class="col-md-4 col-sm-6">
                                             <div class="form-group">
                                                 <label style="color: white">Property Size Unit</label>
                                                 <select name="unit_type" class="form-control framed white">
@@ -134,15 +180,15 @@
                                             <!--end form-group-->
                                         </div>
 
-                                        <div class="col-md-2 col-sm-2">
+                                        <div class="col-md-2 col-sm-3">
                                             <div class="form-group">
-                                                <label style="color: white">From</label>
+												<label style="color: white">From</label>
                                                 <input type="number" name="sfrom">
 
                                             </div>
                                             <!--end form-group-->
                                         </div>
-                                        <div class="col-md-2 col-sm-2 ">
+                                        <div class="col-md-2 col-sm-3 ">
                                             <div class="form-group">
                                                 <label style="color: white">To</label>
                                                 <input type="number" name="sto">
@@ -153,35 +199,13 @@
 
 
 
-                                        <div class="col-md-4 col-sm-4 ">
-                                            <div class="form-group">
-                                                <label style="color: white">Property Price</label>
-                                                <select name="unit_price" class="form-control framed white">
+                                           
+											  
+                                       
 
-                                                    <option value="">Select Unit</option>
-                                                    <option value="Square_Feet">PKR</option>
 
-                                                </select>
-                                            </div>
-                                            <!--end form-group-->
-                                        </div>
-
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group ">
-                                                <label style="color: white">From</label>
-                                                <input type="number" name="pfrom" />
-                                            </div>
-                                            <!--end form-group-->
-                                        </div>
-
-                                        <div class="col-md-4 col-sm-4">
-                                            <div class="form-group">
-                                                <label style="color: white">To</label>
-                                                <input type="number" name="pto" />
-                                            </div>
-                                            <!--end form-group-->
-                                        </div>
-
+                                      
+                                       
                                         <div class="col-md-4 col-sm-4 col-md-offset-4 col-sm-offset-4">
                                             <button type="submit" class="btn btn-rounded margin-btn" >Search</button>
                                         </div>
@@ -201,7 +225,7 @@
                                 <!--end favorite-searches-->
                             </div>
                             <!--end container-->
-                            <div class="bg-transfer"><img src={{ asset("assets/img/sample.jpg") }} alt=""></div>
+                            <div class="bg-transfer"><img src="http://bestmarketing.com.pk/wp-content/uploads/2016/07/5622b4c69601a28d54d22619_Full-Res.jpg" alt="abc"></div>
                             <!--end bg-transfer-->
                         </div>
                         <!--end inner-->
@@ -235,7 +259,7 @@
 
             @foreach($articles as $article)
               <li>
-                <a href="MarketDetail/{{ $article->id }}">{{ $article->title }}</a>
+                <a href="MarketDetail/{{ $article->slug }}">{{ $article->title }}</a>
             </li>
                 @endforeach
         </ul>
@@ -245,90 +269,5 @@
 
 </div>
 
-<script>
-    function myFunction() {
-        document.getElementById("type").innerHTML = "Paragraph changed.";
-    }
-</script>
-
-<script type="text/javascript">
 
 
-
-
-
-    function removeOptions(selectbox)
-    {
-        var i;
-        for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
-        {
-            selectbox.remove(i);
-        }
-    }
-    //using the function:
-
-    document.getElementById('city1').onchange = function () {
-        removeOptions(document.getElementById("society"));
-
-
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-        var e = document.getElementById("city1");
-        var value = e.options[e.selectedIndex].value;
-        if(value){
-
-
-            removeOptions(document.getElementById("society"));
-
-
-
-
-
-
-
-            $.ajax({
-
-
-
-                url:'/getsocieties/' + value,
-                type: "GET",
-                dataType: "json",
-                success: function(data){
-
-
-                    for (var i = 0; i < data.length; i++) {
-
-
-                        var option = document.createElement("option");
-                        option.text = data[i].name;
-                        option.value = data[i].id;
-                        var select = document.getElementById("society");
-                        select.append(option);
-
-
-                    }
-
-
-
-                }
-
-            });
-        }
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-</script>

@@ -2,7 +2,7 @@
     <header>
         <div class="container">
             <div class="secondary-nav">
-                <div class="nav-trigger"><a data-toggle="collapse" href="#secondary-nav" aria-expanded="false" aria-controls="secondary-nav"><i class="fa fa-user"></i></a></div>
+                <div class="nav-trigger"><a data-toggle="collapse" href="#secondary-nav"  aria-expanded="true" aria-controls="secondary-nav"><i class="fa fa-user"></i></a></div>
                 <div id="secondary-nav">
                     <nav>
 
@@ -141,7 +141,7 @@
 
                             {{--</li>--}}
                             <li>
-                                <a href={{ url("/map") }}>Maps</a>
+                                <a href={{ url("/Society-Maps") }}>Maps</a>
 
                             </li>
 

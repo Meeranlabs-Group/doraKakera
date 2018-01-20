@@ -1,4 +1,3 @@
-
 <a href="#page-header" class="to-top scroll" data-show-after-scroll="600"><i class="arrow_up"></i></a>
 
 
@@ -7,16 +6,14 @@
 <script type="text/javascript" src={{ url("assets/js/jquery-2.2.1.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/jquery-migrate-1.2.1.min.js")}}></script>
 <script type="text/javascript" src={{ url("http://maps.google.com/maps/api/js?key=AIzaSyCER7BUrzg5FXz5hivZKd2XzkWAMrTlX2k&sensor=false&libraries=places")}}></script>
-<script type="text/javascript" src={{ url("assets/js/infobox.js")}}></script>
-<script type="text/javascript" src={{ url("assets/js/markerclusterer_packed.js")}}></script>
-<script type="text/javascript" src={{ url("assets/js/richmarker-compiled.js")}}></script>
-<script type="text/javascript" src={{ url("assets/js/markerwithlabel_packed.js")}}></script>
+
+
 <script type="text/javascript" src={{ url("assets/bootstrap/js/bootstrap.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/jquery.validate.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/bootstrap-datepicker.js")}}></script>
-<script type="text/javascript" src={{ url("assets/js/icheck.min.js")}}></script>
+
 <script type="text/javascript" src={{ url("assets/js/owl.carousel.js")}}></script>
-<script type="text/javascript" src={{ url("assets/js/masonry.pkgd.min.js")}}></script>
+
 <script type="text/javascript" src={{ url("assets/js/jQuery.MultiFile.min.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/maps.js")}}></script>
 <script type="text/javascript" src={{ url("assets/js/custom.js")}}></script>
@@ -26,7 +23,6 @@
 <script src={{ url("assets/js/ie.js")}}></script>
 <![endif]-->
 
-<script src={{url("assets/js/prism.js")}}></script>
 <script src={{url("assets/js/jquery.mCustomScrollbar.min.js")}}></script>
 <script src={{url("assets/js/jquery.newsTicker.js")}}></script>
 
@@ -36,6 +32,11 @@
 
 
 <script>
+	$('.Btn').click(function(e) {
+    $('.Btn').not(this).removeClass('active');    
+    $(this).toggleClass('active');
+    e.preventDefault();
+});
 
 
     $('.owl-carousel').owlCarousel({
@@ -101,34 +102,6 @@
 </script>
 
 
-
-
-
-
-
-<script>
-    $(document).ready(function(){
-
-        $("#show").click(function(){
-            $("#0").show();
-            $("#p").val($("#show").val());
-
-        });
-
-
-        $("#show1").click(function(){
-            $("#0").show();
-            $("#p").val($("#show1").val());
-        });
-
-
-
-
-    });
-</script>
-
-
-
 <script>
 
     var _latitude = 31.483434 ;
@@ -139,6 +112,188 @@
 </script>
 
 
+
+
+<script>
+    $(document).ready(function(){
+
+		$("#0").show();
+		$("#show").focus();
+
+        $("#show").click(function(e){
+			
+            $("#p").val($("#show").val());
+			
+        });
+
+
+        $("#show1").click(function(e){
+			
+            $("#p").val($("#show1").val());
+			
+			
+
+        });
+
+
+
+
+    });
+</script>
+
+
+
+
+<script type="text/javascript">
+
+
+
+
+
+    function removeOptions(selectbox)
+    {
+        var i;
+        for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
+        {
+            selectbox.remove(i);
+        }
+    }
+    //using the function:
+
+    document.getElementById('city1').onchange = function () {
+        removeOptions(document.getElementById("society1"));
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var e = document.getElementById("city1");
+        var value = e.options[e.selectedIndex].value;
+        if(value){
+
+
+            removeOptions(document.getElementById("society1"));
+
+
+            $.ajax({
+
+
+
+                url:'/getsocieties/' + value,
+                type: "GET",
+                dataType: "json",
+                success: function(data){
+
+
+                    for (var i = 0; i < data.length; i++) {
+
+
+                        var option = document.createElement("option");
+                        option.text = data[i].name;
+                        option.value = data[i].id;
+                        var select = document.getElementById("society1");
+                        select.append(option);
+
+
+                    }
+
+
+
+                }
+
+            });
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+</script>
+
+
+<script type="text/javascript">
+
+
+
+
+
+    function removeOptions(selectbox)
+    {
+        var i;
+        for(i = selectbox.options.length - 1 ; i >= 0 ; i--)
+        {
+            selectbox.remove(i);
+        }
+    }
+    //using the function:
+
+    document.getElementById('society1').onchange = function () {
+        removeOptions(document.getElementById('phase1'));
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        var e = document.getElementById('society1');
+        var value = e.options[e.selectedIndex].value;
+        if(value){
+
+
+            removeOptions(document.getElementById('phase1'));
+
+
+            $.ajax({
+
+
+
+                url:'/getphases/' + value,
+                type: "GET",
+                dataType: "json",
+                success: function(data){
+
+
+                    for (var i = 0; i < data.length; i++) {
+
+
+                        var option = document.createElement("option");
+                        option.text = data[i].name;
+                        option.value = data[i].id;
+                        var select = document.getElementById('phase1');
+                        select.append(option);
+
+
+                    }
+
+
+
+                }
+
+            });
+        }
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+</script>
 
 <script>
     document.getElementById('object-type').onchange = function () {
@@ -332,7 +487,7 @@
                 type: "GET",
                 dataType: "json",
                 success: function(data){
-
+console.log(data);
                     var option = document.createElement("option");
                     option.text = "Select Phase";
                     option.value ="";
