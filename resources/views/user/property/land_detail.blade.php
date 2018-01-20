@@ -92,7 +92,7 @@
                                     @if($data[0]->possesion!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Possesion</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Possesion</h5>
                                             </div>
                                             <!--end feature-->
                                         </div>
@@ -101,7 +101,7 @@
                                     @if($data[0]->disputed!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Disputed</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Disputed</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -112,7 +112,7 @@
                                     @if($data[0]->electricity!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Electricity</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Electricity</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -122,7 +122,7 @@
                                     @if($data[0]->sui_gas!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Sui Gas</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Sui Gas</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -132,7 +132,7 @@
                                     @if($data[0]->Irrigation!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Irrigation</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Irrigation</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -142,7 +142,7 @@
                                     @if($data[0]->Tube_Wells!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Tube Wells</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Tube Wells</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -153,7 +153,7 @@
                                     @if($data[0]->Accessible_by_Road!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Accessible by Road</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Accessible by Road</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -163,7 +163,7 @@
                                     @if($data[0]->Perimeter_Fencing!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Perimeter Fencing</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Perimeter Fencing</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -173,7 +173,7 @@
                                     @if($data[0]->Is_Land_Fertile!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Is Land Fertile</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Is Land Fertile</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -183,7 +183,7 @@
                                     @if($data[0]->Boundary_Lines!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Boundary Lines</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Boundary Lines</h5>
 
                                             </div>
                                         </div>
@@ -199,7 +199,7 @@
                                     @if($data[0]->nearby_schools!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Schools</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Schools</h5>
                                             </div>
                                             <!--end feature-->
                                         </div>
@@ -209,7 +209,7 @@
                                     @if($data[0]->nearby_hospitals!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Hospitals</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Hospitals</h5>
                                             </div>
                                         </div>
                                         <!--end feature-->
@@ -219,7 +219,7 @@
                                     @if($data[0]->nearby_shopping_malls!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Shopping Malls</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Shopping Malls</h5>
                                             </div>
                                             <!--end feature-->
                                         </div>
@@ -229,7 +229,7 @@
                                     @if($data[0]->nearby_restaurants!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Restaurants</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Restaurants</h5>
                                             </div>
                                             <!--end feature-->
                                         </div>
@@ -238,7 +238,7 @@
                                     @if($data[0]->nearby_public_transport!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Public Transport Service</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Nearby Public Transport Service</h5>
                                             </div>
                                             <!--end feature-->
                                         </div>
@@ -252,7 +252,7 @@
 
                                                 {{--<li>Distance From Airport <strong>{{$data[0]->distance_from_airport_kms}}</strong></li>--}}
 
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Distance From Airport {{$data[0]->distance_from_airport_kms}}</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Distance From Airport {{$data[0]->distance_from_airport_kms}}</h5>
 
                                             </div>
                                             <!--end feature-->
@@ -271,7 +271,7 @@
                                     @if($data[0]->security_staff!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Security Staff</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Security Staff</h5>
                                             </div>
                                         </div>
                                         <!--end feature-->
@@ -281,7 +281,7 @@
                                     @if($data[0]->other_facilities!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h4><i class="icon_box-checked" style="color: #1fad83"> </i>Other Facilities {{$data[0]->other_facilities}}</h4>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Other Facilities {{$data[0]->other_facilities}}</h5>
                                             </div>
                                         </div>
                                 @endif
