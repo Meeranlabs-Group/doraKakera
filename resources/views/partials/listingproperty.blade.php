@@ -33,11 +33,15 @@
     </div>
     <!--end image-->
     <div class="description">
-        <div class="meta">
-            <span><i class="fa fa-bed"></i>{{ $data->number_of_bedrooms }}</span>
-            <span><i class="fa fa-bath"></i>{{ $data->number_of_bathrooms }}</span>
-        </div>
         <!--end meta-->
+        @if($data->property_type=="Houses" || $data->property_type=="Flates"|| $data->property_type=="Upper-Portions"|| $data->property_type=="Lower-Portions"|| $data->property_type=="Farms-House"  )
+            <div class="meta">
+
+                <span><i class="fa fa-bed"></i>{{ $data->number_of_bedrooms }}</span>
+                <span><i class="fa fa-bath"></i>{{ $data->number_of_bathrooms }}</span>
+            </div>
+        @endif
+    <!--end meta-->
         <div class="info">
 
 

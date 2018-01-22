@@ -121,7 +121,7 @@ Route::post('/search1', 'PropertyController@search1');
 Route::get('/Housesview', function (){return View::make('features.house_feature');});
 Route::get('/Flatesview', function () {return View::make('features.flat_feature');});
 Route::get('/Upper-Portionsview', function () {return View::make('features.portion&farm_feature');});
-Route::get('/Lower-Portions', function () {return View::make('features.portion&farm_feature');});
+Route::get('/Lower-Portionsview', function () {return View::make('features.portion&farm_feature');});
 Route::get('/Farms-Houseview', function () {return View::make('features.portion&farm_feature');});
 Route::get('/Residential-Plotsview', function () {return View::make('features.plot_feature');});
 Route::get('/Commercial-Plotsview', function () {return View::make('features.plot_feature');});
@@ -157,9 +157,6 @@ Route::get('/dha-file-rates', function () {
 Route::get('/dha-plots','PropertyController@show_all_plots');
 
 Route::get('/properties','PropertyController@show_all');
-
-
-//Route::get('/properties/{city}','PropertyController@show_all');
 
 
 Route::get('/map', function () {
