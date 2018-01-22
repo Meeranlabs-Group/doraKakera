@@ -33,7 +33,6 @@
     </div>
     <!--end image-->
     <div class="description">
-        <!--end meta-->
         @if($data->property_type=="Houses" || $data->property_type=="Flates"|| $data->property_type=="Upper-Portions"|| $data->property_type=="Lower-Portions"|| $data->property_type=="Farms-House"  )
             <div class="meta">
 
