@@ -187,10 +187,10 @@ Route::get('/MarketDetail/{id}', 'BlogController@blogDetail');
 |
 */
 
-Route::get('/houses/{cityid}', 'ListingController@Show_Societies');
-Route::get('/houses/{cityid}/{societyid}', 'ListingController@Show_Phases');
-Route::get('/houses/{cityid}/{societyid}/{phaseid}', 'ListingController@Show_Block');
-Route::get('/houses/{cityid}/{societyid}/{phaseid}/{blockid}', 'ListingController@Show_Properties');
+Route::get('/houses/{cityname}/{cityid}', 'ListingController@Show_Societies');
+Route::get('/houses/{cityname}/{societyname}/{cityid}/{societyid}', 'ListingController@Show_Phases');
+Route::get('/houses/{cityname}/{societyname}/{phasename}/{cityid}/{societyid}/{phaseid}', 'ListingController@Show_Block');
+Route::get('/houses/{cityname}/{societyname}/{phasename}/{blockname}/{cityid}/{societyid}/{phaseid}/{blockid}', 'ListingController@Show_Properties');
 
 
 

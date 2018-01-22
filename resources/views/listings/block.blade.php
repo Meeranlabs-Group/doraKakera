@@ -4,8 +4,12 @@
     <div class="container">
         <ol class="breadcrumb">
             <li><a href="{{ url("/")}}">Home</a></li>
-            <li ><a href="{{ url("/houses/$x") }}">{{$property3[0]->city_name}}</a></li>
-            <li ><a href="{{ url("/houses/$x/$y")}}">{{$property3[0]->society_name}}</a></li>
+            <li ><a href="/houses/{{ str_slug($property3[0]->city_name) }}/{{ $property3[0]->city_id }}">{{$property3[0]->city_name}}</a></li>
+            <li ><a href="/houses/{{ str_slug($property3[0]->city_name) }}/{{ str_slug($property3[0]->society_name) }}/{{ $x }}/{{ $property3[0]->society_id }}">{{$property3[0]->society_name}}</a></li>
+
+
+
+
             <li class="active">{{$property3[0]->phase_name}}</li>
 
 
@@ -26,7 +30,8 @@
                         <ul class="list-links">
                             @foreach($Property1 as $property)
 
-                                <li><a href="/houses/{{ $x }}/{{ $y }}/{{ $z }}/{{ $property->block_id }}">{{ $property->block_name }}<span>{{$property->total}}</span></a></li>
+
+                                <li><a href="/houses/{{ str_slug($property3[0]->city_name) }}/{{ str_slug($property3[0]->society_name) }}/{{ str_slug($property3[0]->phase_name)}}/{{ str_slug($property->block_name) }}/{{ $x }}/{{ $y }}/{{ $z }}/{{ $property->block_id }}">{{ $property->block_name }}<span>{{$property->total}}</span></a></li>
                                 {{--<li><a href="/houses/{{ $property->city_id }}">{{ $property->city_name }}<span>{{ $property->total }}</span></a></li>--}}
                             @endforeach
                         </ul>

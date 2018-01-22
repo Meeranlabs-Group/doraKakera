@@ -18,7 +18,7 @@ class ListingController extends Controller
     //
 
 
-    public function Show_Societies($cityid){
+    public function Show_Societies($cname,$cityid){
 
 
 
@@ -45,12 +45,13 @@ class ListingController extends Controller
 //            ->orderBy('count', 'asc')
             ->get();
 
-//       return view("listings.society",compact("Property1","x"));
+
         return view("listings.society",compact("property3","Property1","x","cites","photos","sidesearch"));
+
 
     }
 
-    public function Show_Phases($cityid,$societyid){
+    public function Show_Phases($cname,$sname,$cityid,$societyid){
 
 
         $cites=City::all();
@@ -74,15 +75,16 @@ class ListingController extends Controller
 
         $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
             ->groupBy('property_type')
-//            ->orderBy('count', 'asc')
             ->get();
 
-//       return view("listings.phase",compact("Property1","x","y"));
+
+
+
         return view("listings.phase",compact("property3","Property1","x","y","cites","photos","sidesearch"));
 
     }
 
-    public function Show_Block($cityid,$societyid,$phaseid){
+    public function Show_Block($cname,$sname,$pname,$cityid,$societyid,$phaseid){
 
 
 
@@ -120,7 +122,7 @@ class ListingController extends Controller
        return view("listings.block",compact("property3","Property1","x","y","z","cites","photos","sidesearch"));
     }
 
-        public function Show_Properties($cityid,$societyid,$phaseid,$blockid){
+        public function Show_Properties($cname,$sname,$pname,$bname,$cityid,$societyid,$phaseid,$blockid){
 
 
             $cites=City::all();

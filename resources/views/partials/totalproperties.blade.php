@@ -14,7 +14,7 @@
 
             @foreach($Property1 as $property)
 
-                <li><a href="/houses/{{ $property->city_id }}">{{ $property->city_name }}<span>{{ $property->total }}</span></a></li>
+                <li><a href="/houses/{{ str_slug($property->city_name) }}/{{ $property->city_id }}">{{ str_slug($property->city_name) }}<span>{{ $property->total }}</span></a></li>
 
             @endforeach
 

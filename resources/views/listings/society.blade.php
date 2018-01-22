@@ -20,9 +20,8 @@
 
                         <ul class="list-links">
                             @foreach($Property1 as $property)
+                                <li><a href="/houses/{{ str_slug($property3[0]->city_name) }}/{{ str_slug($property->society_name) }}/{{ $x }}/{{ $property->society_id }}">{{ $property->society_name }}<span>{{$property->total}}</span></a></li>
 
-                                <li><a href="/houses/{{ $x }}/{{ $property->society_id }}">{{ $property->society_name }}<span>{{$property->total}}</span></a></li>
-                                {{--<li><a href="/houses/{{ $property->city_id }}">{{ $property->city_name }}<span>{{ $property->total }}</span></a></li>--}}
                             @endforeach
 
 
@@ -47,8 +46,8 @@
                     </div>
 
 
-
                     @foreach($property3 as $data)
+
                         @include('partials.listingproperty')
                     @endforeach
 
