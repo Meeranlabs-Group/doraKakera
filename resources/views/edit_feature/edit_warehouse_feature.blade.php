@@ -58,13 +58,13 @@
                             <select  name="Flooring_type" class="framed width-80">
                                 <option value="{{ $feature[0]->	flooring_type }}">{{ $feature[0]->flooring_type }}</option>
                                 <option value="" disabled>Select</option>
-                                <option value="Flooring_None">None</option>
-                                <option value="Flooring_Tiles">Tiles</option>
-                                <option value="Flooring_Marble">Marble</option>
-                                <option value="Flooring_Wooden">Wooden</option>
-                                <option value="Flooring_Chip">Chip</option>
-                                <option value="Flooring_Cement">Cement</option>
-                                <option value="Flooring_Other">Other</option>
+                                <option value="None">None</option>
+                                <option value="Tiles">Tiles</option>
+                                <option value="Marble">Marble</option>
+                                <option value="Wooden">Wooden</option>
+                                <option value="Chip">Chip</option>
+                                <option value="Cement">Cement</option>
+                                <option value="Other">Other</option>
 
                             </select>
                         </div>
@@ -76,11 +76,11 @@
                             <select name="Electricity_Backup_type" class="framed width-80">
                                 <option value="{{ $feature[0]->electricity_backup_type }}">{{ $feature[0]->electricity_backup_type}}</option>
                                 <option value="" disabled>Select</option>
-                                <option value="Electricity_Backup_None">None</option>
-                                <option value="Electricity_Backup_Generator">Generator</option>
-                                <option value="Electricity_Backup_Ups">Ups</option>
-                                <option value="Electricity_Backup_Solar">Solar</option>
-                                <option value="Electricity_Backup_Other">Other</option>
+                                <option value="None">None</option>
+                                <option value="Generator">Generator</option>
+                                <option value="Ups">Ups</option>
+                                <option value="Solar">Solar</option>
+                                <option value="Other">Other</option>
                             </select>
 
 

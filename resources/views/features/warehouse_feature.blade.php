@@ -69,11 +69,11 @@
                         <div class="form-group width-80">
                             <label>Electricity Backup</label>
                             <select name="Electricity_Backup_type" class="framed width-80">
-                                <option value="Electricity_Backup_None">None</option>
-                                <option value="Electricity_Backup_Generator">Generator</option>
-                                <option value="Electricity_Backup_Ups">Ups</option>
-                                <option value="Electricity_Backup_Solar">Solar</option>
-                                <option value="Electricity_Backup_Other">Other</option>
+                                <option value="None">None</option>
+                                <option value="Generator">Generator</option>
+                                <option value="Ups">Ups</option>
+                                <option value="Solar">Solar</option>
+                                <option value="Other">Other</option>
                             </select>
 
 

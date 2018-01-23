@@ -59,16 +59,16 @@
                             <div class="form-group width-80">
                                 <label>Flooring</label>
                                 <select  name="Flooring_type" class="framed width-80">
-                                    <option value="{{ $feature[0]->Flooring_type }}">{{ $feature[0]->number_of_bedrooms }}</option>
+                                    <option value="{{ $feature[0]->flooring_type }}">{{ $feature[0]->flooring_type}}</option>
                                     <option value="" disabled>Select</option>
 
-                                    <option value="Flooring_None">None</option>
-                                    <option value="Flooring_Tiles">Tiles</option>
-                                    <option value="Flooring_Marble">Marble</option>
-                                    <option value="Flooring_Wooden">Wooden</option>
-                                    <option value="Flooring_Chip">Chip</option>
-                                    <option value="Flooring_Cement">Cement</option>
-                                    <option value="Flooring_Other">Other</option>
+                                    <option value="None">None</option>
+                                    <option value="Tiles">Tiles</option>
+                                    <option value="Marble">Marble</option>
+                                    <option value="Wooden">Wooden</option>
+                                    <option value="Chip">Chip</option>
+                                    <option value="Cement">Cement</option>
+                                    <option value="Other">Other</option>
 
                                 </select>
                             </div>
@@ -78,13 +78,13 @@
                             <div class="form-group width-80">
                                 <label>Electricity Backup</label>
                                 <select name="Electricity_Backup_type" class="framed width-80">
-                                    <option value="{{ $feature[0]->Electricity_Backup_type }}">{{ $feature[0]->number_of_bedrooms }}</option>
+                                    <option value="{{ $feature[0]->electricity_backup_type }}">{{ $feature[0]->electricity_backup_type}}</option>
                                     <option value="" disabled>Select</option>
-                                    <option value="Electricity_Backup_None">None</option>
-                                    <option value="Electricity_Backup_Generator">Generator</option>
-                                    <option value="Electricity_Backup_Ups">Ups</option>
-                                    <option value="Electricity_Backup_Solar">Solar</option>
-                                    <option value="Electricity_Backup_Other">Other</option>
+                                    <option value="None">None</option>
+                                    <option value="Generator">Generator</option>
+                                    <option value="Ups">Ups</option>
+                                    <option value="Solar">Solar</option>
+                                    <option value="Other">Other</option>
                                 </select>
 
 
@@ -155,13 +155,13 @@
                                 <li><label><input type="checkbox" name="Public_Parking">Public Parking</label></li>
                             @endif
 
-                            @if($feature[0]->underground_Parking)
+                            @if($feature[0]->underground_parking)
                                 <li><label><input type="checkbox" checked name="Underground_Parking">Underground Parking</label></li>
                             @else
                                 <li><label><input type="checkbox" name="Underground_Parking">Underground Parking</label></li>
                             @endif
 
-                            @if($feature[0]->Lobby_in_Building)
+                            @if($feature[0]->lobby_in_building)
                                 <li><label><input type="checkbox" checked name="Lobby_in_Building">Lobby in Building</label></li>
                             @else
                                 <li><label><input type="checkbox" name="Lobby_in_Building">Lobby in Building</label></li>
@@ -367,17 +367,17 @@
                     <li><div class="form-group width-60">
 
                             <select name="Pet_Policy_type">
-                                <option value="{{ $feature[0]->	pet_policies }}">{{ $feature[0]->pet_policies }}</option>
+                                <option value="{{ $feature[0]->	pet_policy_type }}">{{ $feature[0]->pet_policy_type}}</option>
                                 <option value="" disabled>Select</option>
-                                <option value="Pet_Policy_Allowed">Allowed</option>
-                                <option value="Pet_Policy_Not_Allowed">Not Allowed</option>
+                                <option value="Pet_Allowed">Allowed</option>
+                                <option value="Pet_Not_Allowed">Not Allowed</option>
                             </select>
                         </div>
                     </li>
 
 
                     <li><label>Other Facilities</label></li>
-                    <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->other_facilities}}">
+                    <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->facilities}}">
 
                         </div>
 
