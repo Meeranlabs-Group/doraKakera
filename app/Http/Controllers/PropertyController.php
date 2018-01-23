@@ -864,6 +864,7 @@ class PropertyController extends Controller
             ->get();
 
 
+//        $last=Property::orderBy('id', 'desc')->first()->id;
 
         return view('/properties', compact('property','photos','cites','sidesearch'));
     }
@@ -990,10 +991,14 @@ class PropertyController extends Controller
                 $request['block']=142;
             }
 
+
+
+
             $id = DB::table('property')->insertGetId(
                 [
                     'user_id'=> Auth::user()->getid(),'title'=> $request['title'],'address'=> $request['address'],'slug'=> $temp, 'property_type'=>  $request['property_type'],'description' => $request['description'],
                     'price'=>$request['price'],'city_id'=>$request['city'],'society_id'=>$request['society'],
+
                     'phase_id'=>$request['Phase'],'block_id'=>$request['block'],'address'=>$request['address'],'status'=>1,
                     'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],'unit_size'=>$request['unit_size'],'created_at'=>Carbon::now()
 
@@ -1007,14 +1012,12 @@ class PropertyController extends Controller
 
                     // $name->resize('1200','800');
 
-
                     if($i==1){
                         $photo['rank'] = 1;
                     }
                     $l=preg_replace("/[^a-zA-Z0-9\s]/","",$request['title']);
 
                     $path = $files[$i]->move($l, $name);
-
 
                     $photo['property_id'] = $id;
                     $photo['path'] = $path;
@@ -1025,8 +1028,6 @@ class PropertyController extends Controller
 
 
             $feature['property_id']=$id;
-
-
             /*main feature*/
             $feature['built_in_year'] = $request['Built_in_Year'];
             $feature['view'] = $request['View'];
