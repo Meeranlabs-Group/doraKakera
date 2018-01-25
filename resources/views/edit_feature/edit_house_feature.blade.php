@@ -68,7 +68,7 @@
 
                                     <select  name="Number_of_Bedrooms" class="framed width-80">
 
-                                        <option value="{{$feature[0]->number_of_bathrooms }}" selected>{{$feature[0]->number_of_bathrooms}}</option>
+                                        <option value="{{$feature[0]->number_of_bedrooms }}" selected>{{$feature[0]->number_of_bedrooms}}</option>
 
                                         <option value="">Select</option>
 
@@ -133,11 +133,9 @@
                                 <div class="form-group width-80">
                                     <label>Flooring</label>
                                     <select name="Flooring_type" class="framed width-80">
-                                        <option value="None">None</option>
-
                                         <option value="{{ $feature[0]->flooring_type  }}">{{ $feature[0]->flooring_type  }}</option>
-                                        <option value="">Select</option>
-
+                                        <option disabled>Select</option>
+                                        <option value="None">None</option>
                                         <option value="Tiles">Tiles</option>
                                         <option value="Marble">Marble</option>
                                         <option value="Wooden">Wooden</option>
@@ -308,7 +306,7 @@
                                 @endif
 
 
-                                <li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>
+
                                 <div class="clearfix"></div>
                                 <li><label>Distance From Airport(kms)</label></li>
                                 <li><div class="form-group width-60">
@@ -432,9 +430,9 @@
                         <ul class="checkboxes inline half list-unstyled">
 
                             @if($feature[0]->lawn_or_garden)
-                                <li><label><input type="checkbox" checked name="Swimming_Pool">Lawn or Garden</label></li>
+                                <li><label><input type="checkbox" checked name="Lawn_or_Garden">Lawn or Garden</label></li>
                             @else
-                                <li><label><input type="checkbox" name="Swimming_Pool">Lawn or Garden</label></li>
+                                <li><label><input type="checkbox" name="Lawn_or_Garden">Lawn or Garden</label></li>
                             @endif
 
 
@@ -493,7 +491,7 @@
 
 
                                     <li><label>Other Facilities</label></li>
-                                    <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->other_facilities}}">
+                                    <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->facilities}}">
 
                                         </div>
 

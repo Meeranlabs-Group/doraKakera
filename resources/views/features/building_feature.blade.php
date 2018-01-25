@@ -86,13 +86,6 @@
                     <div class="col-md-3">
                         <div class="form-group width-80">
                             <label>Total Floors in Building</label>
-                            {{--<div class="input-number">--}}
-                                {{--<div class="change-button plus">--}}
-                                    {{--<i class="fa fa-caret-up"></i>--}}
-                                {{--</div>--}}
-                                {{--<div class="change-button minus">--}}
-                                    {{--<i class="fa fa-caret-down"></i>--}}
-                                {{--</div>--}}
                                 <input type="number" name="Total_Floors_in_Building">
                             </div>
                         </div>

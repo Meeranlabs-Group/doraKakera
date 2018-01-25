@@ -65,7 +65,7 @@
                         <li><label><input type="checkbox" name="Is_Land_Fertile">Is Land Fertile</label></li>
                     @endif
 
-                    @if($feature[0]->boundary_Lines)
+                    @if($feature[0]->Boundary_Lines)
                         <li><label><input type="checkbox" checked  name="Boundary_Lines">Boundary Lines</label></li>
                     @else
                         <li><label><input type="checkbox" name="Boundary_Lines">Boundary Lines</label></li>
@@ -134,7 +134,7 @@
                     @endif
 
 
-                    <li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>
+
                     <div class="clearfix"></div>
                     <li><label>Distance From Airport(kms)</label></li>
                     <li><div class="form-group width-60">
@@ -174,7 +174,7 @@
                 @endif
 
                     <li><label>Other Facilities</label></li>
-                    <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->other_facilities}}">
+                    <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->facilities}}">
 
                         </div>
 

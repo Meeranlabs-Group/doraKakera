@@ -5,7 +5,7 @@
 
 <div id="page-content">
     <div class="container">
-    @include('partials.bread_crum_detail')
+    {{--@include('partials.bread_crum_detail')--}}
     <!--end breadcrumb-->
         <div class="main-content">
             <div class="title">
@@ -72,9 +72,12 @@
                                     <td class="reviews">45</td>
                                     <td class="rating">
                                         @if($property->ad_status==0)
-                                            <p>Pending</p>
+                                            <h1 class="label label-warning">Pending</h1>
+
+                                        @elseif($property->ad_status==1)
+                                            <h1 class="label label-success">Approved</h1>
                                         @else
-                                            <p>Approved</p>
+                                            <h1 class="label label-danger">Deleted</h1>
                                         @endif
 
                                     </td>
@@ -82,9 +85,15 @@
                                     <td class="last-reservation">
 
                                         <div >
-                                            <a href="/editproperty/{{$property->slug}}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
+                                            @if($property->ad_status==2)
+                                                {{--profile controller--}}
+                                                <a href="/updatePropertyStatus/{{$property->slug}}">Send for Approve</a>
 
-                                            <a href="/deleteproperty/{{$property->slug}}" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>
+                                            @else
+                                                <a href="/editproperty/{{$property->slug}}" class="link icon"><i class="fa fa-edit"></i>Edit</a>
+                                                <a href="/deleteproperty/{{$property->slug}}" class="link icon delete"><i class="fa fa-trash"></i>Delete</a>
+                                            @endif
+
                                         </div>
                                         <!--end edit-options-->
                                     </td>

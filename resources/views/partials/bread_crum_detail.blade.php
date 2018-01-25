@@ -13,5 +13,4 @@
         <li class="active">{{ucfirst($data[0]->title)}}</li>
     @endif
 
-
 </ol>

@@ -119,7 +119,7 @@ class PropertyController extends Controller
     public function deleteproperty($id)
     {
 
-        $property = Property::where('id', '=', $id)->update([ 'ad_status'=> 0 ]);
+        $property = Property::where('slug', '=', $id)->update([ 'ad_status'=> 2 ]);
         return redirect('/myproperties');
 
 //        $feature = feature::where('property_id', '=', $id)->get();
@@ -875,30 +875,10 @@ class PropertyController extends Controller
 //
 //
 
-
-
-
-//            echo $request['purpose'];
-//echo "<br>";
-//        echo $request['property_id'];
-//        echo "<br>";
-//         echo $request['title'];
-//        echo "<br>";
-//         echo $request['property_type'];
-//
-//        echo "<br>";
-//        echo $request['address'];
-//        echo "<br>";
-//        echo $request['city'];
-//        echo "<br>";
-//        echo $request['Sui_Gas'];
-//
-
-
         Property::where('id','=',$request['property_id'])->update(['title'=> $request['title'],
             'slug'=> $request['title'],'property_type'=>$request['property_type'],
             'description' => $request['description'], 'price' =>$request['price'], 'city_id'=>$request['city'],
-            'society_id'=>$request['society'],
+            'society_id'=>$request['society'],'ad_status'=>0,
             'phase_id'=>$request['Phase'],'block_id'=>$request['block'],
             'address'=>$request['address'], 'purpose'=>$request['purpose'],'unit_type'=>$request['unit_type'],
             'unit_size'=>$request['unit_size']] );
@@ -933,7 +913,8 @@ class PropertyController extends Controller
             'laundry_or_dry_cleaning_facilities'=>$request['Laundry_or_Dry_Cleaning_Facility'],'communal_or_shared_kitchen_in_building'=>$request['Communal_or_Shared_Kitchen_in_Building'],
             'cctv_security_installed'=>$request['CCTV_Security_Installed'],'cafeteria_or_canteen_in_building'=> $request['Cafeteria_or_Canteen_in_Building'],
             'pet_policy_type'=> $request['Pet_Policy_type'],'facilities'=> $request['Other_Facilities'],'possesion'=>$request['Possesion'],
-            'corner'=> $request['Corner'],'Irrigation'=> $request['Irrigation'],'Tube_Wells'=> $request['Tube_Wells'],
+            'corner'=> $request['Corner'],'Irrigation'=> $request['Irrigation'],'Nearby_Water_Resources'=> $request['Nearby_Water_Resources'],
+            'Tube_Wells'=> $request['Tube_Wells'],'Other_Land_Features'=> $request['Other_Land_Features'],
             'Perimeter_Fencing'=> $request['Perimeter_Fencing'],'Accessible_by_Road'=> $request['Accessible_by_Road'],
             'Is_Land_Fertile'=> $request['Is_Land_Fertile'],'Boundary_Lines'=> $request['Boundary_Lines'],
             'park_facing'=>$request['Park_Facing'],'disputed' =>$request['Disputed'],'file'=> $request['File'],
@@ -1039,7 +1020,7 @@ class PropertyController extends Controller
             $feature['central_air_conditioning'] = $request['Central_Air_Conditioning'];
             $feature['central_heating'] = $request['Central_Heating'];
             $feature['flooring_type'] = $request['Flooring_type'];
-            $feature['electricity_backup_type'] = $request['Electricity_Backup'];
+            $feature['electricity_backup_type'] = $request['Electricity_Backup_type'];
             $feature['waste_disposal'] = $request['Waste_Disposal'];
 
             $feature['floor'] = $request['Floor'];
@@ -1130,15 +1111,30 @@ class PropertyController extends Controller
             //plot features
 
             $feature['possesion'] = $request['Possesion'];
+            $feature['disputed'] = $request['Disputed'];
+            $feature['Irrigation'] = $request['Irrigation'];
+            $feature['electricity'] = $request['Electricity'];
+            $feature['sui_gas'] = $request['Sui_Gas'];
+            $feature['Tube_Wells'] = $request['Tube_Wells'];
+            $feature['Accessible_by_Road'] = $request['Accessible_by_Road'];
+            $feature['Perimeter_Fencing'] = $request['Perimeter_Fencing'];
+            $feature['Is_Land_Fertile'] = $request['Is_Land_Fertile'];
+            $feature['Boundary_Lines'] = $request['Boundary_Lines'];
+            $feature['Nearby_Water_Resources'] = $request['Nearby_Water_Resources'];
+            $feature['Other_Land_Features'] = $request['Other_Land_Features'];
+
+
+
+
+
+
+
             $feature['corner'] = $request['Corner'];
             $feature['park_facing'] = $request['Park_Facing'];
-            $feature['disputed'] = $request['Disputed'];
             $feature['file'] = $request['File'];
             $feature['balloted'] = $request['Balloted'];
             $feature['sewerage'] = $request['Sewerage'];
-            $feature['electricity'] = $request['Electricity'];
             $feature['water_supply'] = $request['Water_Supply'];
-            $feature['sui_gas'] = $request['Sui_Gas'];
             $feature['boundry_wall'] = $request['Boundary_Wall'];
             $feature['other_plot_features'] = $request['Other_Plot_Features'];
 
@@ -1162,7 +1158,12 @@ class PropertyController extends Controller
         join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
             ->join('phase','phase.id','=','property.phase_id')
             ->join('block','block.id','=','property.block_id')
-            ->where('ad_status','=','1')->paginate(8);
+            ->where('ad_status','=','1')->paginate(5);
+
+//        foreach($property as $prop){
+//            echo $prop->property_type;
+//            echo "<br>";
+//        }
 
 
         $sidesearch=Property::selectRaw('property_type, COUNT(*) as count')
@@ -1246,9 +1247,10 @@ class PropertyController extends Controller
 // $data=Property::select('property.*')->join('city', 'city.id', '=', 'property.city_id')->join('society','society.id','=','property.society_id')
 //     ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->get();
 //        //$data= Property::find(1)->user;
-        $data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.user_id','=',$id)->leftjoin('feature','property.id','=','feature.property_id')->
+        $data=Property::select('feature.*','city.*','society.*','phase.*','block.*','property.*')->where('property.user_id','=',$id)
+            ->where('ad_status','!=',2)->leftjoin('feature','property.id','=','feature.property_id')->
         join('city','city.id','=','property.city_id')->join('society','society.id','=','property.society_id')
-            ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->paginate(10);
+            ->join('phase','phase.id','=','property.phase_id')->join('block','block.id','=','property.block_id')->paginate(8);
 
 
 
@@ -1299,43 +1301,46 @@ class PropertyController extends Controller
         }
 
         if ($opt == "Flates"){
+
             return view('user.property.flateDetail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Buildings"){
+
             return view('user.property.building_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Factories"){
+
             return view('user.property.factory_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Agricultural-Land" || $opt == "Industrial-Land" ){
+
             return view('user.property.land_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Offices"){
+
             return view('user.property.office_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Residential-Plots" || $opt == "Commercial-Plots"){
+
+
             return view('user.property.plot_detail',compact('data','photos','cites','sidesearch'));
         }
-        if ($opt == "Upper-Portions" || $opt == "Lower-Portions" ||  $opt="Farms-House" ){
+        if ($opt == "Upper-Portions" || $opt == "Lower-Portions" ||  $opt == "Farms-House" ){
+
             return view('user.property.portion&farm_detail',compact('data','photos','cites','sidesearch'));
         }
 
         if ($opt == "Shops"){
+
             return view('user.property.shop_detail',compact('data','photos','cites','sidesearch'));
         }
         if ($opt == "Warehouses"){
             return view('user.property.warehouse_detail',compact('data','photos','cites','sidesearch'));
         }
 
-
         if ($opt == "Other") {
             return view('user.property.other_detail', compact('data', 'photos', 'cites','sidesearch'));
         }
 
-
-
     }
-
-
-
 }

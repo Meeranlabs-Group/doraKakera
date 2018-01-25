@@ -22,7 +22,6 @@
                             <li><a href="#description" class="scroll">Description</a></li>
                             <li><a href="#map" class="scroll">Map</a></li>
                             <li><a href="#facilities" class="scroll">Facilities</a></li>
-
                         </ul>
                     </div>
                 </div>
@@ -188,6 +187,28 @@
                                             </div>
                                         </div>
                                 @endif
+
+
+                                    @if($data[0]->Nearby_Water_Resources!="")
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="feature">
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Near by Water Resources: <strong>{{$data[0]->Nearby_Water_Resources}}</strong></h5>
+
+                                            </div>
+                                        </div>
+                                @endif
+
+                                    @if($data[0]->Other_Land_Features!="")
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="feature">
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Other Land Features: <strong>{{$data[0]->Other_Land_Features}}</strong></h5>
+
+                                            </div>
+                                        </div>
+                                @endif
+
+
+
                                 <!--end feature-->
 
 
@@ -278,10 +299,10 @@
                                     @endif
 
 
-                                    @if($data[0]->other_facilities!="")
+                                    @if($data[0]->facilities!="")
                                         <div class="col-md-4 col-sm-4">
                                             <div class="feature">
-                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Other Facilities {{$data[0]->other_facilities}}</h5>
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Other Facilities: <strong>{{$data[0]->facilities}}</strong></h5>
                                             </div>
                                         </div>
                                 @endif

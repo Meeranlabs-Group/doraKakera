@@ -114,41 +114,12 @@
                         <section>
                             <h3>Property Type </h3>
                             <ul class="checkboxes">
-                                {{--@foreach($sidesearch as $count)--}}
-                                    {{--<li><label><input type="checkbox" name="{{$count->property_type}}" value="{{$count->property_type}}">{{$count->property_type}}<span>{{$count->count}}</span></label></li>--}}
-                                {{--@endforeach--}}
-
-                                <li><label><input type="checkbox" name="Houses" value="Houses">Houses<span>67</span></label></li>
-                                <li><label><input type="checkbox" name="Flates" value="Flates">Flates<span>67</span></label></li>
-                                <li><label><input type="checkbox" name="Farms_House-Portions" value="Farms_House">Farms_House<span>67</span></label></li>
-                                <li><label><input type="checkbox" name="Offices" value="Offices">Offices<span>67</span></label></li>
-
+                                @foreach($sidesearch as $count)
+                                    <li><label><input type="checkbox" name="{{$count->property_type}}" value="{{$count->property_type}}">{{$count->property_type}}<span>{{$count->count}}</span></label></li>
+                                @endforeach
 
 
                             </ul>
-
-
-                            <div class="collapse" id="all-property-types">
-                                <ul class="checkboxes">
-                                    <li><label><input type="checkbox" name="Rooms" value="Rooms">Rooms<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Shops" value="Shops">Shops<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Upper-Portions" value="Upper-Portions">Upper Portions<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Lower-Portions" value="Lower-Portions">Lower-Portions<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Residential-Plots" value="Residential-Plots">Residential Plots<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Commercial-Plots" value="Commercial-Plots">Commercial Plots<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Agricultural-Land" value="Agricultural-Land">Agricultural Land<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Industrial-Land" value="Industrial-Land">Industrial Land<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Warehouses" value="Warehouses">Warehouses<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Factories" value="Factories">Factories<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Buildings" value="Buildings">Buildings<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Plot-Files" value="Plot-Files">Plot Files<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Plot-Forms" value="Plot-Forms">Plot Forms<span>67</span></label></li>
-                                    <li><label><input type="checkbox" name="Other" value="Other">Other<span>67</span></label></li>
-
-                                </ul>
-                            </div>
-                            <!--end checkboxes-->
-                            <a href="#all-property-types" class="link" data-toggle="collapse" aria-expanded="false" aria-controls="all-property-types">Show all</a>
                         </section>
                         <!--end section-->
                         {{--<section>--}}

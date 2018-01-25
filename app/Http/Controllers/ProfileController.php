@@ -34,18 +34,12 @@ class ProfileController extends Controller
 
     public function RentProperties(){
 
-
-
         $id=Auth::user()->id;
 
-        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Rent')->paginate(8);
+        $data= Property::where('user_id','=',$id)->where('purpose','=','Rent')->paginate(8);
         $photos = Photo::all();
 
-
-
         $result=$this->usermenu();
-
-
 
         return view('user.property.myproperties',compact('data','photos','result'));
 
@@ -55,7 +49,7 @@ class ProfileController extends Controller
 
 
         $id=Auth::user()->id;
-        $data= Property::where('user_id','=',$id)->where('ad_status','=',1)->where('purpose','=','Sale')->paginate(8);
+        $data= Property::where('user_id','=',$id)->where('purpose','=','Sale')->paginate(8);
         $photos = Photo::all();
 
         $result=$this->usermenu();
@@ -63,6 +57,27 @@ class ProfileController extends Controller
         return view('user.property.myproperties',compact('data','photos','result'));
 }
 
+
+public function deletedData(){
+
+    $id=Auth::user()->id;
+    $data= Property::where('user_id','=',$id)->where('ad_status','=',2)->paginate(8);
+    $photos = Photo::all();
+    $result=$this->usermenu();
+    return view('user.property.myproperties',compact('data','photos','result'));
+}
+
+
+
+public function updatePropertyStatus($id){
+
+
+
+    Property::where('slug','=',$id)->update(['ad_status'=>0]);
+
+    return redirect('/deleted');
+
+}
     public function updateprofile(Request $request){
 
         $update=new User();
@@ -113,7 +128,6 @@ class ProfileController extends Controller
 
 
             if (Hash::check($request['password'], Auth::user()->password ) ){
-                echo "dsvjsdnvkj";
             }
 
 

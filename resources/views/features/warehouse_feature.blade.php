@@ -53,13 +53,13 @@
                             <label>Flooring</label>
                             <select  name="Flooring_type" class="framed width-80">
 
-                                <option value="Flooring_None">None</option>
-                                <option value="Flooring_Tiles">Tiles</option>
-                                <option value="Flooring_Marble">Marble</option>
-                                <option value="Flooring_Wooden">Wooden</option>
-                                <option value="Flooring_Chip">Chip</option>
-                                <option value="Flooring_Cement">Cement</option>
-                                <option value="Flooring_Other">Other</option>
+                                <option value="None">None</option>
+                                <option value="Tiles">Tiles</option>
+                                <option value="Marble">Marble</option>
+                                <option value="Wooden">Wooden</option>
+                                <option value="Chip">Chip</option>
+                                <option value="Cement">Cement</option>
+                                <option value="Other">Other</option>
 
                             </select>
                         </div>
@@ -85,32 +85,14 @@
 
                     <div class="col-md-3">
                         <div class="form-group width-80">
-                            <label>Total Floors in Building</label>
-                            {{--<div class="input-number">--}}
-                                {{--<div class="change-button plus">--}}
-                                    {{--<i class="fa fa-caret-up"></i>--}}
-                                {{--</div>--}}
-                                {{--<div class="change-button minus">--}}
-                                    {{--<i class="fa fa-caret-down"></i>--}}
-                                {{--</div>--}}
+                                <label>Total Floors in Building</label>
                                 <input type="number" name="Total_Floors_in_Building">
-                            {{--</div>--}}
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="form-group width-80">
-                            <label>Number of Elevators in Building</label>
-                            {{--<div class="input-number">--}}
-                                {{--<div class="change-button plus">--}}
-                                    {{--<i class="fa fa-caret-up"></i>--}}
-                                {{--</div>--}}
-                                {{--<div class="change-button minus">--}}
-                                    {{--<i class="fa fa-caret-down"></i>--}}
-                                {{--</div>--}}
+                                <label>Number of Elevators in Building</label>
                                 <input type="number" name="Number_of_Elevators_in_Building">
-
-                            {{--</div>--}}
-
 
                         </div>
                     </div>
@@ -118,17 +100,8 @@
                     <div class="col-md-3">
                         <div class="form-group width-80">
                             <label>Floor</label>
-                            {{--<div class="input-number">--}}
-                                {{--<div class="change-button plus">--}}
-                                    {{--<i class="fa fa-caret-up"></i>--}}
-                                {{--</div>--}}
-                                {{--<div class="change-button minus">--}}
-                                    {{--<i class="fa fa-caret-down"></i>--}}
-                                {{--</div>--}}
+
                                 <input type="number" name="Floor">
-
-                            {{--</div>--}}
-
 
                         </div>
                     </div>
@@ -172,7 +145,7 @@
 
                         <li><label><input type="checkbox" name="Service_Elevators_in_Building">Service Elevators in Building</label></li>
 
-                        <li><label><input type="checkbox" name="Elevators_or_Lift">Elevator or Lift</label></li>
+                        <li><label><input type="checkbox" name="Elevator_or_Lift">Elevator or Lift</label></li>
 
 
                     </ul>
@@ -182,59 +155,12 @@
         </div>
 
 
-        {{--<div class="col-md-12">--}}
-            {{--<h3>Main Features</h3>--}}
-            {{--<ul class="checkboxes inline half list-unstyled">--}}
-                {{----}}
-                {{--<li><label><input type="text" name="Built_in_Year">Built in Year</label></li>--}}
-                {{--<li><label><input type="text" name="Parking_Spaces">Parking Spaces</label></li>--}}
- {{----}}
-                {{--<li><label><input type="checkbox" name="Central_Air_Conditioning">Central Air Conditioning</label></li>--}}
-                {{--<li><label><input type="checkbox" name="Central_Heating">Central Heating</label></li>--}}
-                {{----}}
-                {{--<label>Flooring</label>--}}
-                {{--<select name="Flooring_type">--}}
-                {{--<option value="Flooring_Tiles">Tiles</option>--}}
-                {{--<option value="Flooring_Marble">Marble</option>--}}
-                {{--<option value="Flooring_Wooden">Wooden</option>--}}
-                {{--<option value="Flooring_Chip">Chip</option>--}}
-                {{--<option value="Flooring_Cement">Cement</option>--}}
-                {{--<option value="Flooring_Other">Other</option>--}}
-                {{--</select>--}}
-                {{----}}
-                {{--<label>Electricity Backup</label>--}}
-                {{--<select name="Electricity_Backup_type">--}}
-                {{--<option value="Electricity_Backup_None">None</option>--}}
-                {{--<option value="Electricity_Backup_Generator">Generator</option>--}}
-                {{--<option value="Electricity_Backup_Ups">Ups</option>--}}
-                {{--<option value="Electricity_Backup_Solar">Solar</option>--}}
-                {{--<option value="Electricity_Backup_Other">Other</option>--}}
-                {{--</select>--}}
-                {{----}}
-               {{--<li><label><input type="checkbox" name="Waste_Disposal">Waste Disposal</label></li>--}}
-                {{----}}
-                {{--<li><label><input type="text" name="Total_Number_of_Floors">Total Number of Floors</label></li>--}}
-                {{----}}
-                {{--<li><label><input type="checkbox" name="Elevators_or_Lift">Elevator or Lift</label></li> --}}
-                {{----}}
-                {{--<li><label><input type="text" name="Other_Main_Features">Other Main Features</label></li>--}}
-                  {{----}}
-                {{----}}
-               {{----}}
-                {{----}}
-                {{----}}
-
-            {{--</ul>--}}
-            {{--<!--end checkboxes-->--}}
-        {{--</div>--}}
-        <!--end col-md-4-->
-        {{--OLD main feature ware house --}}
         <div class="col-md-6">
             <h3>Buisness and Communication</h3>
             <ul class="checkboxes inline half list-unstyled">
 
                  <li><label><input type="checkbox" name="Broadband_Internet_Access">Broadband Internet Access</label></li>
-                <li><label><input type="checkbox" name="Satellite_or_TV_Cable_Ready">Satellite or TV Cable Ready</label></li>
+                <li><label><input type="checkbox" name="Satellite_or_Cable_TV_Ready" >Satellite or TV Cable Ready</label></li>
 
                 <li><label>Other Business and Communication Facilities<input type="text" name="Other_Business_and_Communication_Facilities"></label></li>
 
@@ -282,25 +208,7 @@
             </ul>
             <!--end checkboxes-->
         </div>
-        {{--old near by feature--}}
-        {{--<div class="col-md-6">--}}
-            {{--<h3>Nearby Locations and Other Facilities</h3>--}}
-            {{--<ul class="checkboxes inline half list-unstyled"> --}}
-                {{----}}
-                {{--<li><label><input type="text" name="Nearby_Schools">Nearby Schools</label></li>--}}
-                {{--<li><label><input type="text" name="Nearby_Hospitals">Nearby Hospitals</label></li>--}}
-                {{--<li><label><input type="text" name="Nearby_Shopping_Malls">Nearby Shopping Malls</label></li>--}}
-                {{--<li><label><input type="text" name="Nearby_Restaurants">Nearby Restaurants</label></li>--}}
-                {{--<li><label><input type="text" name="Distance_From_Airport(kms)">Distance From Airport(kms)</label></li>--}}
-                {{--<li><label><input type="text" name="Nearby_Public_Transport_Service">Nearby Public Transport Service</label></li>--}}
-                {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
 
-            {{--</ul>--}}
-            {{--<!--end checkboxes-->--}}
-        {{--</div>--}}
-        <!--end col-md-4-->
-    </div>
-    <!--end row-->
 
     <div class="row">
         <div class="col-md-6">
@@ -311,7 +219,7 @@
                 <li><label>Number of Rooms</label></li>
                 <li><div class="form-group width-60">
 
-                        <input type="text" name="Number_of_Rooms">
+                        <input type="text" name="Number_of_Store_Rooms">
                     </div></li>
                 <li><label>Other Rooms</label></li>
                 <li><div class="form-group width-60">
@@ -321,9 +229,6 @@
             </ul>
             <!--end checkboxes-->
         </div>
-        <!--end col-md-4-->
-
-
         <!--end col-md-4-->
     </div>
     <!--end row-->

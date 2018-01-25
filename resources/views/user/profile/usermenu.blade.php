@@ -23,7 +23,7 @@
 
                     <li><label><a href="/userrent"><h3>Rent<span>{{ $result[1] }}</span></h3></a></label></li>
                     <li><label><a href="/usersale"><h3>Sale<span>{{ $result[0]}}</span></h3></a></label></li>
-                    <li><label><a href=""><h3>Deleted<span>67</span></h3></a></label></li>
+                    <li><label><a href="/deleted"><h3>Deleted<span>{{ $result[5]}}</span></h3></a></label></li>
                     <li><label><a href="/addproperty"><h3>Add Property</h3></a></label></li>
                 </ul>
 

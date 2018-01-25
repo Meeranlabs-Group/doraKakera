@@ -88,6 +88,9 @@ Route::post('/updatepassword','ProfileController@updatepassword');  //profile up
 Route::get('/userrent','ProfileController@RentProperties');  //profile update
 Route::get('/usersale','ProfileController@SaleProperties');  //profile update
 
+Route::get('/deleted','ProfileController@deletedData');  //delete property
+Route::get('/updatePropertyStatus/{id}','ProfileController@updatePropertyStatus');  //request to approve Property status
+
 
 /*
 |--------------------------------------------------------------------------

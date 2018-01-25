@@ -66,7 +66,7 @@
                     </div>
 
                     <div class="col-md-3">
-                        <div class="form-group width-80">
+                        <div class="form-group width-80">2
                             <label>Electricity Backup</label>
                             <select name="Electricity_Backup_type" class="framed width-80">
                                 <option value="None">None</option>

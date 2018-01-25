@@ -71,21 +71,20 @@
                         </div>
                     </div>
 
+
+
                     <div class="col-md-3">
                         <div class="form-group width-80">
                             <label>Electricity Backup</label>
                             <select name="Electricity_Backup_type" class="framed width-80">
                                 <option value="{{ $feature[0]->Electricity_Backup_type }}">{{ $feature[0]->Electricity_Backup_type }}</option>
-                                <option value="" disabled>Select</option>
+                                <option disabled>Select</option>
                                 <option value="None">None</option>
                                 <option value="Generator">Generator</option>
                                 <option value="Ups">Ups</option>
                                 <option value="Solar">Solar</option>
                                 <option value="Other">Other</option>
                             </select>
-
-
-
                         </div>
                     </div>
 

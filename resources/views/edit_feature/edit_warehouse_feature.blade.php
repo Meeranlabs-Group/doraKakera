@@ -100,7 +100,7 @@
                                 {{--<div class="change-button minus">--}}
                                     {{--<i class="fa fa-caret-down"></i>--}}
                                 {{--</div>--}}
-                            <input type="number"  name="Total_Number_of_Floors" value="{{ $feature[0]->total_number_of_floors }}">
+                            <input type="number"  name="Total_Floors_in_Building" value="{{ $feature[0]->total_floor_building }}">
                             {{--</div>--}}
                         </div>
                     </div>
@@ -132,7 +132,7 @@
                                     {{--<i class="fa fa-caret-down"></i>--}}
                                 {{--</div>--}}
 
-                            <input type="number"  name="Floor" value="{{ $feature[0]->Floor }}">
+                            <input type="number"  name="Floor" value="{{ $feature[0]->floor }}">
                             {{--</div>--}}
 
 
@@ -142,7 +142,7 @@
                         <div class="form-group width-80">
                             <label>View</label>
 
-                            <input type="number"  name="View" value="{{ $feature[0]->View }}">
+                            <input type="text"  name="View" value="{{ $feature[0]->view }}">
                         </div>
                     </div>
 
@@ -195,9 +195,9 @@
 
 
                             @if($feature[0]->elevator_or_lift)
-                                <li><label><input type="checkbox" checked name="Service_Elevators_in_Building">Elevator or Lift</label></li>
+                                <li><label><input type="checkbox" checked name="Elevator_or_Lift">Elevator or Lift</label></li>
                             @else
-                                <li><label><input type="checkbox" name="Service_Elevators_in_Building">Elevator or Lift</label></li>
+                                <li><label><input type="checkbox" name="Elevator_or_Lift">Elevator or Lift</label></li>
 
                             @endif
 
@@ -373,7 +373,7 @@
                 <li><label>Other Facilities</label></li>
                 <li><div class="form-group width-60">
 
-                        <input type="text" name="Other_Facilities" value="{{ $feature[0]->other_facilities }}">
+                        <input type="text" name="Other_Facilities" value="{{ $feature[0]->facilities }}">
                     </div></li>
             </ul>
             <!--end checkboxes-->
@@ -404,14 +404,14 @@
             <ul class="checkboxes inline half list-unstyled">
 
 
-                <li><label>Number of Rooms</label></li>
+                <li><label>Number of Store Rooms</label></li>
                 <li><div class="form-group width-60">
-                        <input type="text" name="Number_of_Rooms" value="{{ $feature[0]->Number_of_Rooms }}">
+                        <input type="text" name="Number_of_Store_Rooms" value="{{ $feature[0]->number_of_store_rooms }}">
 
                     </div></li>
                 <li><label>Other Rooms</label></li>
                 <li><div class="form-group width-60">
-                        <input type="text" name="Other_Rooms" value="{{ $feature[0]->Other_Rooms }}">
+                        <input type="text" name="Other_Rooms" value="{{ $feature[0]->other_room }}">
 
                     </div></li>
             </ul>

@@ -58,7 +58,7 @@
                         <div class="form-group width-80">
                             <label>Electricity Backup</label>
                             <select name="Electricity_Backup_type" class="framed width-80">
-                                <option value="{{ $feature[0]->Electricity_Backup_type }}">{{ $feature[0]->number_of_bedrooms }}</option>
+                                <option value="{{ $feature[0]->electricity_backup_type }}">{{ $feature[0]->electricity_backup_type }}</option>
                                 <option value="" disabled>Select</option>
                                 <option value="None">None</option>
                                 <option value="Generator">Generator</option>
@@ -243,7 +243,7 @@
                     @endif
 
 
-                    <li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>
+                    {{--<li><label><input type="text" name="Other_Nearby_Places">Other Nearby Places</label></li>--}}
                     <div class="clearfix"></div>
                     <li><label>Distance From Airport(kms)</label></li>
                     <li><div class="form-group width-60">
@@ -284,7 +284,7 @@
                     @endif
 
                     <li><label>Other Facilities</label></li>
-                    <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->other_facilities}}">
+                    <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->facilities}}">
 
                         </div>
 
@@ -303,7 +303,7 @@
             <ul class="checkboxes inline half list-unstyled">
 
 
-                @if($feature[0]->lawn_or_Garden)
+                @if($feature[0]->lawn_or_garden)
                     <li><label><input type="checkbox" checked  name="Lawn_or_Garden">Lawn or Garden</label></li>
                 @else
                     <li><label><input type="checkbox" name="Lawn_or_Garden">Lawn or Garden</label></li>
@@ -313,7 +313,7 @@
 
 
                 <li><div class="form-group width-60">
-                        <input type="text" name="Other_Healthcare_and_Recreation_Facilities(kms)" value="{{ $feature[0]->other_healthcare_and_recreation_facilities }}">
+                        <input type="text" name="Other_Healthcare_and_Recreation_Facilities" value="{{ $feature[0]->other_health_and_recreational }}">
 
                     </div>
                 </li>
