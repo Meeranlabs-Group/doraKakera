@@ -12,13 +12,13 @@
             <div class="gallery-item">
 
 
-                @foreach($photos as $photo)
-                    @if( ($data->id == $photo->property_id) &&  $photo->rank ==1 )
+                {{--@foreach($photos as $photo)--}}
+                    {{--@if( ($data->id == $photo->property_id) &&  $photo->rank ==1 )--}}
 
 
-                        <a href="propertydetail/{{ $data->slug}}"><div class="image"><img height="191px;width:255px;" src= "{{ $photo->path }}" alt=""></div></a>
-                    @endif
-                @endforeach
+                        <a href="propertydetail/{{ $data->slug}}"><div class="image"><img height="191px;width:255px;" src= "{{ $data->path }}" alt=""></div></a>
+                    {{--@endif--}}
+                {{--@endforeach--}}
 
                 <div class="description">
                     <a href="propertydetail/{{ $data->slug }}"><h3> {{ str_limit(ucfirst($data->title) , $limit = 25, $end = '...') }}   </h3></a>

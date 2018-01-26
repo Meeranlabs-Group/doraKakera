@@ -74,128 +74,209 @@
 
                             </section>
                             <section id="facilities">
-                                <h2>Facilities</h2>
-                                <ul >
 
-                                    <h3>Main Features</h3>
 
-                                    @if($data[0]->possesion!="")
-                                        <li>Possesion <strong>{{$data[0]->possesion}}</strong></li>
+                                    <h2>Main Features</h2>
+<div class="row">
+
+
+    @if($data[0]->possesion!="")
+        <div class="col-md-4 col-sm-4">
+            <div class="feature">
+                <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Possesion</h5>
+            </div>
+            <!--end feature-->
+        </div>
+    @endif
+
+
+        @if($data[0]->corner!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Corner Plot</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+
+            @if($data[0]->park_facing!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Front of Park</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+
+
+        @if($data[0]->disputed!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Disputed</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+        @if($data[0]->file!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>File</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+
+
+    @if($data[0]->balloted!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Balloted</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+
+        @if($data[0]->sewerage!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Sewerage</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+        @if($data[0]->electricity!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Electricity Available</h5>
+                </div>
+            <!--end feature-->
+            </div>
+        @endif
+
+
+        @if($data[0]->water_supply!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Water Supply</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+
+        @if($data[0]->sui_gas!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Sui Gas</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+        @if($data[0]->boundry_wall!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Boundry Wall</h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+
+
+
+        @if($data[0]->other_plot_features!="")
+            <div class="col-md-4 col-sm-4">
+                <div class="feature">
+                    <h5><i class="icon_box-checked" style="color: #1fad83"> </i>Plot Features: <strong>{{$data[0]->other_plot_features}}</strong></h5>
+                </div>
+                <!--end feature-->
+            </div>
+        @endif
+
+
+
+
+</div>
+
+
+
+                     <h2>Nearby Location</h2>
+
+                                <div class="row">
+
+
+                                    @if($data[0]->nearby_schools!="")
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="feature">
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"></i>Nearby Schools</h5>
+                                            </div>
+                                            <!--end feature-->
+                                        </div>
                                     @endif
-
-                                    @if($data[0]->corner!="")
-                                        <li>Corner <strong>{{$data[0]->Corner}}</strong></li>
+                                    @if($data[0]->nearby_hospitals!="")
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="feature">
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"></i>Nearby Hospitals</h5>
+                                            </div>
+                                            <!--end feature-->
+                                        </div>
                                     @endif
-
-                                     @if($data[0]->park_facing!="")
-                                        <li>Park Facing <strong>{{$data[0]->Park_Facing}}</strong></li>
+                                    @if($data[0]->nearby_shopping_malls!="")
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="feature">
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"></i>Nearby Shopping Malls</h5>
+                                            </div>
+                                            <!--end feature-->
+                                        </div>
                                     @endif
-
-
-                                    @if($data[0]->balloted!="")
-                                        <li>Balloted <strong>{{$data[0]->Balloted}}</strong></li>
+                                    @if($data[0]->nearby_restaurants!="")
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="feature">
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"></i>Nearby Restaurants</h5>
+                                            </div>
+                                            <!--end feature-->
+                                        </div>
                                     @endif
-
-
-                                    @if($data[0]->sewerage!="")
-                                        <li>Sewerage <strong>{{$data[0]->Sewerage}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->water_supply!="")
-                                        <li>Water Supply <strong>{{$data[0]->Water_Supply}}</strong></li>
-                                    @endif
-
-
-
-
-                                @if($data[0]->disputed!="")
-                                        <li>Disputed <strong>{{$data[0]->disputed}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->electricity!="")
-                                        <li>Electricity <strong>{{$data[0]->electricity}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->sui_Gas!="")
-                                        <li>Sui Gas <strong>{{$data[0]->sui_Gas}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->Irrigation!="")
-                                        <li>Irrigation <strong>{{$data[0]->irrigation}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->Tube_Wells!="")
-                                        <li>Tube Wells <strong>{{$data[0]->Tube_Wells}}</strong></li>
-                                    @endif
-
-                                    @if($data[0]->Accessible_by_Road!="")
-                                        <li>Accessible by Road <strong>{{$data[0]->Accessible_by_Road}}</strong></li>
-                                    @endif
-
-                                   @if($data[0]->Perimeter_Fencing!="")
-                                        <li>Perimeter Fencing <strong>{{$data[0]->Perimeter_Fencing}}</strong></li>
-                                    @endif
-
-                                   @if($data[0]->Is_Land_Fertile!="")
-                                        <li>Is Land Fertile <strong>{{$data[0]->Is_Land_Fertile}}</strong></li>
-                                    @endif
-
-                                   @if($data[0]->boundry_wall!="")
-                                        <li>Boundary Wall <strong>{{$data[0]->Boundary_Wall}}</strong></li>
-                                    @endif
-
-
-
-
-                     <h3>Nearby Location</h3>
-                                @if($data[0]->nearby_schools!="")
-                                        <label><input type="checkbox" checked disabled >Nearby Schools</label>
-                                    @endif
-
-                                @if($data[0]->nearby_hospitals!="")
-                                        <label><input type="checkbox" checked disabled >Nearby Hospitals</label>
-                                    @endif
-
-                                @if($data[0]->nearby_shopping_malls!="")
-                                        <label><input type="checkbox" checked disabled >Nearby Shopping Malls</label>
-                                    @endif
-
-                                @if($data[0]->nearby_restaurants!="")
-                                        <label><input type="checkbox" checked disabled >Nearby Restaurants</label>
-                                    @endif
-                                @if($data[0]->nearby_public_transport!="")
-                                        <label><input type="checkbox" checked disabled >Nearby Public Transport Service</label>
+                                    @if($data[0]->nearby_public_transport!="")
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="feature">
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"></i>Nearby Public Transport Service</h5>
+                                            </div>
+                                            <!--end feature-->
+                                        </div>
                                     @endif
 
                                     @if($data[0]->distance_from_airport_kms!="")
-                                        <li>Distance From Airport <strong>{{$data[0]->distance_from_airport_kms}}</strong></li>
+                                        <div class="col-md-4 col-sm-4">
+                                            <div class="feature">
+                                                <h5><i class="icon_box-checked" style="color: #1fad83"></i>Distance From Airport <strong>{{$data[0]->distance_from_airport_kms}}</strong></h5>
+                                            </div>
+                                            <!--end feature-->
+                                        </div>
                                     @endif
 
 
+                                </div>
 
+                        <h2>Other Facilities</h2>
+<div class="row">
 
+                                @if($data[0]->security_staff!="")
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="feature">
+                                            <h5><i class="icon_box-checked" style="color: #1fad83"></i>Security Staff</h5>
+                                        </div>
+                                        <!--end feature-->
+                                    </div>
+                                @endif
 
-
-
-                        <h3>Other Facilities</h3>
-
-
-                                    @if($data[0]->security_staff!="")
-                                        <label><input type="checkbox" checked disabled >Security Staff</label>
-                                    @endif
-
-                                    @if($data[0]->other_facilities!="")
-                                        <li>Other Facilities<strong>{{$data[0]->other_facilities}}</strong></li>
-                                    @endif
-
-
-
-
-
-
-
-
-                                </ul>
+                                @if($data[0]->facilities!="")
+                                    <div class="col-md-4 col-sm-4">
+                                        <div class="feature">
+                                            <h5><i class="icon_box-checked" style="color: #1fad83"></i>Other Facilities <strong>{{$data[0]->facilities}}</strong></h5>
+                                        </div>
+                                        <!--end feature-->
+                                    </div>
+                                @endif
+</div>
                             </section>
                             <section id="map">
                                 <h2>Map</h2>
@@ -210,8 +291,8 @@
                                 <aside class="box">
                                     <dl>
 
-                                        <dt>Other Plot Features</dt>
-                                        <dd>{{$data[0]->Other_Plot_Feature}}</dd>
+                                        {{--<dt>Other Plot Features</dt>--}}
+                                        {{--<dd>{{$data[0]->Other_Plot_Feature}}</dd>--}}
 
 
                                         <dt>Area:</dt>
@@ -221,7 +302,7 @@
                                 </aside>
 
                                 <aside>
-                                    <h1 style="color:grey;">Contact Us</h1>
+                                    {{--<h1 style="color:grey;">Contact Us</h1>--}}
                                     @include('user.property.contact_detail')
                                 </aside>
                             </div>

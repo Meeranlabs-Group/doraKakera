@@ -130,11 +130,7 @@
                     @endif
                         <div class="clearfix"></div>
 
-                        <li><label>Other Nearby Places</label></li>
-                        <li><div class="form-group width-60">
 
-                                <input type="text" name="Other_Nearby_Places" value="{{ $feature[0]->other_nearby_places }}">
-                            </div></li>
 
 
                     <div class="clearfix"></div>
@@ -178,7 +174,7 @@
                 @endif
 
                 <li><label>Other Facilities</label></li>
-                <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->other_facilities}}">
+                <li>   <div class="form-group width-60"> <input type="text" name="Other_Facilities" value="{{ $feature[0]->facilities}}">
 
                     </div>
 
